@@ -20,7 +20,7 @@ Vous avez sans doute vu passer la faille concernant le protocole SSLv3 trouvée 
 Il faut par contre noter que <a href="http://fr.wikipedia.org/wiki/Internet_Explorer_6">Internet Explorer 6</a> sous Windows XP ne pourra plus se connecter de manière "sécurisée". Pour rappel, IE6 n'est plus maintenu par Microsoft depuis 2010, le bleu sur la carte ci-dessous signifie que <a href="https://www.modern.ie/en-us/ie6countdown">IE6 est à moins de 1% de parts de marché des navigateurs dans cette zone</a> et moins de 0.8% des navigateurs en France : 
 
 
-![IE6](/content/images/2015/09/ie6world.png)
+![IE6](/images/2015/09/ie6world.png)
 
 <center>**<a href="https://www.modern.ie/en-us/ie6countdown">IE6 représente largement moins de 1% des navigateurs</a> en Europe et en Amérique du nord**.</center>
 
@@ -31,7 +31,7 @@ Il faut par contre noter que <a href="http://fr.wikipedia.org/wiki/Internet_Expl
 
 Après avoir ouvert votre navigateur, tapez <code>about:config</code> dans votre barre d'adresse, après avoir cliqué sur <em>"je ferai attention, promis"</em>, vous arrivez dans la configuration de votre navigateur. Vous pouvez alors rechercher <code>security.tls.version.min</code> dans la barre de recherche. Le but ici est de modifier la valeur minimum pour la version de TLS, il suffit donc de mettre <code>security.tls.version.min</code> à 1 pour dire à Firefox d'utiliser TLSv1.0 au minimum (et non SSLv3). Il faut redémarrer son navigateur pour prendre en compte cette modification.
 
-![](/content/images/2015/09/firefoxssl.png)
+![](/images/2015/09/firefoxssl.png)
 
 À noter que <a href="https://blog.mozilla.org/security/2014/10/14/the-poodle-attack-and-the-end-of-ssl-3-0/">SSLv3 sera désactivé par défaut à partir de Mozilla Firefox 34</a>.
 
@@ -43,7 +43,7 @@ Selon Adam Langley (Senior Staff Software Engineer, Google), Google Chrome impl�
 
 Pour IE6, la méthode est très simple : arrêtez de l'utiliser, passez à <a href="https://www.mozilla.org/fr/">Mozilla Firefox</a> ! Pour les autres versions, vous pouvez activer/désactiver les protocoles dans <em>outils &gt; options Internet &gt; avancé</em>. Vous pouvez désactiver tout en bas SSLv3 et activer TLSv1.1 et TLSv1.2 si ce n'est pas le cas (et vérifiez bien que SSLv2 est AUSSI désactivé, on ne sait jamais).
 
-![](/content/images/2015/09/ie8ssl.png)
+![](/images/2015/09/ie8ssl.png)
 
 <center>Capture d'écran d'un IE8 sous Microsoft Windows (oui, c'est vieux).</center>
 

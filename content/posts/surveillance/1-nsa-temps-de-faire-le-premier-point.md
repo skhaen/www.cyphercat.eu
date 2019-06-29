@@ -3,30 +3,25 @@ author = "Skhaen"
 categories = ["SIGINT", "adminsys", "leaks"]
 date = 2014-07-04T10:00:00Z
 description = ""
-draft = false
 slug = "nsa-temps-de-faire-le-premier-point"
-tags = ["SIGINT", "adminsys", "leaks"]
+tags = ["snowden"]
 title = "[Snowden] NSA - temps de faire le (premier) point."
 
 +++
 
 > *Ne trouvant aucune base de données des différents programmes provenant des fuites de Snowden, [nous](https://github.com/nsa-observer) avons travaillé à la création d'une [base de données](https://www.nsa-observer.net) concernant la NSA et le GCHQ. L'article qui suit est une synthèse d'une partie de nos travaux.*
 
-<hr />
+![nsa](/images/2015/09/nsaobserver_programs.png)
 
-![](/content/images/2015/09/nsaobserver_programs.png)
-
-### (petite) Introduction
+# (petite) Introduction
 
 En 1988, le journaliste [Duncan Campbel](https://en.wikipedia.org/wiki/Duncan_Campbell_%28journalist%29) révèla l'existence d'un programme de renseignement, *[Echelon](https://fr.wikipedia.org/wiki/ECHELON)*, dans un article pour The New Statesman qui s'intitulait "*[Somebody's listening](http://www.duncancampbell.org/menu/journalism/newstatesman/newstatesman-1988/They%27ve%20got%20it%20taped.pdf)*". En 1996, c'était le journaliste néo-zélandais [Nicky Hager](http://www.nickyhager.info/) qui publiait "*[Secret power](http://www.nickyhager.info/ebook-of-secret-power/)*" sur l'implication de son pays dans le programme. En 1999, suite à une demande du Parlement Européen, Duncan Campbell rend un rapport intitulé "[*Interception capabilities 2000*](http://www.cyber-rights.org/interception/stoa/interception_capabilities_2000.htm])" pour le *[STOA](https://fr.wikipedia.org/wiki/STOA)* (*Science and Technology Options Assessment* du Parlement Européen -- traduction française disponible sous le titre "[*surveillance éléctronique planétaire*](http://www.editions-allia.com/fr/livre/438/surveillance-electronique-planetaire)" aux éditions Allia).
-
-<!--more-->
 
 Pour rappel, le [projet Echelon](https://fr.wikipedia.org/wiki/ECHELON) désignait un système mondial d'interception [SIGINT](https://fr.wikipedia.org/wiki/Renseignement_d%27origine_%C3%A9lectromagn%C3%A9tique] des communications privées et publiques) via les satellites, et regroupant les États-Unis (NSA), le Royaume-Uni (GCHQ), le Canada (CSTC), l’Australie (DSD) et la Nouvelle-Zélande (GCSB) dans le cadre du [traité UKUSA](https://fr.wikipedia.org/wiki/UKUSA).
 
 Pour ne pas rester derrière, la France a rapidement mis en route un projet similaire, surnommé "*[frenchelon](http://bugbrother.blog.lemonde.fr/2009/06/16/frenchelon-la-carte-des-stations-espion-du-renseignement-francais/)*".
 
-### Ce qui nous amène à...
+# Ce qui nous amène à...
 
 Edward Snowden. Cet (ex-)analyste de la CIA et de la NSA décide d'alerter l'ensemble de la planète sur les capacités d'écoute et d'interception des États-unis et de ses alliés. Nous n'allons pas nous étendre là-dessus. Vous pouvez lire cette histoire un peu partout autour de vous.
 
@@ -34,7 +29,7 @@ Fin 2013, ne trouvant aucune base de données des différents programmes, [La Qu
 
 
 
-### et à un premier tour d'horizon
+# et à un premier tour d'horizon
 
 Même si l'immense majorité des programmes est sous l'égide de la NSA (*National Security Agency*) et donc des États-unis, certains programmes viennent d'autres pays (en particulier du Royaume-uni via le GCHQ). La NSA classe ses pays partenaires en 3 grandes familles :
 
@@ -47,10 +42,9 @@ Même si l'immense majorité des programmes est sous l'égide de la NSA (*Nation
 
 
 * **Nine Eyes** : consiste aux Five Eyes avec en plus : le Danemark, la France, les Pays-bas et la Norvége.
-
 * **Fourteen Eyes** (SSEUR - Sigint Senior EURope) : consiste aux Nine Eyes avec en plus l'Allemagne, la Belgique, l'Italie, l'Espagne et la Suède.
 
-## La collecte de données
+# La collecte de données
 
 Les services récupèrent tout ce qu'ils peuvent, c'est à dire dans le désordre :
 
@@ -58,7 +52,7 @@ Tout ce que vous faites avec un navigateur (sans oublier sa version, la langue, 
 
 Pour faire simple, **tout** ce que vous faites laisse forcément des traces quelque part. Et c'est ce qu'ils cherchent, collectent, et parfois stockent. Voici donc la première partie de ce tour d'horizon concernant quelques programmes de la NSA et du GCHQ.
 
-#### [UPSTREAM](https://www.nsa-observer.net/category/program/family/collect/name/UPSTREAM) / [TEMPORA](https://www.nsa-observer.net/category/program/family/collect/name/TEMPORA) / [RAMPART](https://www.nsa-observer.net/category/program/family/collect/name/RAMPART)-(x)
+## [UPSTREAM](https://www.nsa-observer.net/category/program/family/collect/name/UPSTREAM) / [TEMPORA](https://www.nsa-observer.net/category/program/family/collect/name/TEMPORA) / [RAMPART](https://www.nsa-observer.net/category/program/family/collect/name/RAMPART)-(x)
 
 Aussi connu sous le nom de "*[ROOM641A](https://en.wikipedia.org/wiki/UPSTREAM)*", le programme UPSTREAM a commencé en 2003, a été révélé en 2006 et consiste à la collecte via des "écoutes" sur les câbles de fibres optiques (oui, je [simplifie énormément](https://en.wikipedia.org/wiki/Fiber_tapping)). Le projet UPSTREAM concerne la collecte sur l'ensemble des fibres optiques trans-océaniques, qui permettent l'acheminement des communications internationales, comme Internet, les appels, les sms...
 
@@ -66,38 +60,38 @@ Aussi connu sous le nom de "*[ROOM641A](https://en.wikipedia.org/wiki/UPSTREAM)*
 
 **TEMPORA** est l'équivalent d'**UPSTREAM** pour le Royaume-uni, et **RAMPART** l'équivalent en coopération via certains pays Européens.
 
-#### [PRISM](https://www.nsa-observer.net/category/program/family/process/name/PRISM)
+## [PRISM](https://www.nsa-observer.net/category/program/family/process/name/PRISM)
 
 PRISM est un accès direct aux serveurs de certaines compagnies américaines : Microsoft (+Skype), Yahoo, Google (+Youtube), Facebook, PalTalk, AOL, Apple...
 
 Ce programme permet de faire des requêtes concernant des personnes ou des groupes précis concernant les emails, les chats/vidéos, les photos, les données stockées (coucou le cloud), de la VoiP, etc etc. Il suffit de voir les différents services de ses compagnies pour avoir une idée de qu'ils peuvent avoir. PRISM est donc utilisé pour "cibler" quelqu'un en particulier.
 
-####  [MUSCULAR](https://www.nsa-observer.net/category/program/family/collect/name/MUSCULAR)
+## [MUSCULAR](https://www.nsa-observer.net/category/program/family/collect/name/MUSCULAR)
 
 Ce programme a fait beaucoup parler de lui quand il a été rendu public, et pour cause : il permet l'interception des données entre les datacenters de Google (et de Yahoo) ce qui permet entre autre d'éviter les connexion HTTPS clients/serveurs. Google a chiffré ses communications inter-datacenters depuis.
 
-#### [VICTORY DANCE](https://www.nsa-observer.net/category/mission/family/collect/name/VICTORYDANCE)
+## [VICTORY DANCE](https://www.nsa-observer.net/category/mission/family/collect/name/VICTORYDANCE)
 
 Coopération entre la CIA et la NSA au Yémen. Ils ont listé les empreintes wifi de presque toutes les grandes villes Yéménites via des drones (si vous ne voyez pas à quoi ça peut servir, cf. [XKEYSCORE](https://www.nsa-observer.net/category/program/family/process/name/XKEYSCORE)).
 
 Je vous laisse vous rappeler ce que [les Google Cars ont fait pendant un bon moment dans le reste du monde](http://www.nytimes.com/interactive/2012/05/23/business/How-Google-Collected-Data-From-Wi-Fi-Networks.html?ref=technology&_r=0) et ce que ça a pu devenir depuis...
 
-#### [MYSTIC](https://www.nsa-observer.net/category/program/family/collect/name/MYSTIC)
+## [MYSTIC](https://www.nsa-observer.net/category/program/family/collect/name/MYSTIC)
 
 MYSTIC est un ensemble de programme qui collecte des données (le plus souvent provenant des téléphones et/ou des GSM) dans certains pays. On peut ainsi noter ACIDWASH (qui a collecté entre 30 et 40 millions de métadonnées par jour en Afghanistan), DUSKPALLET (qui vise les GSM au Kenya), EVENINGWEASEL (wifi mexicain) et [SOMALGET](https://www.nsa-observer.net/category/program/family/collect/name/SOMALGET).
 
 [SOMALGET](https://www.nsa-observer.net/category/program/family/collect/name/SOMALGET) permet de "monitorer" les systèmes de télécommunications d'un pays (via des entreprises américaines implantées localement le plus souvent). Ce programme a visé les [Bahamas ](https://firstlook.org/theintercept/article/2014/05/19/data-pirates-caribbean-nsa-recording-every-cell-phone-call-bahamas/) (sans doute pour servir de test avant de passer à plus gros) puis  l'[Afghanistan](https://wikileaks.org/WikiLeaks-statement-on-the-mass.html) où il a collecté et stocké TOUS les appels téléphoniques, aussi bien localement que vers l'international.
 
 
-## Mais que fait-on des données après ?
+# Mais que fait-on des données après ?
 
 Voici justement quelques exemples.
 
-#### [ANTICRISIS GIRL](https://www.nsa-observer.net/category/program/family/collect/name/ANTICRISISGIRL)
+## [ANTICRISIS GIRL](https://www.nsa-observer.net/category/program/family/collect/name/ANTICRISISGIRL)
 
 Via des programmes comme [UPSTREAM](https://www.nsa-observer.net/category/program/family/collect/name/UPSTREAM) / [TEMPORA](https://www.nsa-observer.net/category/program/family/collect/name/TEMPORA) / [RAMPART](https://www.nsa-observer.net/category/program/family/collect/name/RAMPART) qui permettent de faire de la collecte passive, il est possible de collecter les adresses IP des personnes se connectant à un site, [par exemple au site wikileaks.org ou au recherches Google ayant permis l'accès au site](https://firstlook.org/theintercept/article/2014/02/18/snowden-docs-reveal-covert-surveillance-and-pressure-tactics-aimed-at-wikileaks-and-its-supporters/).
 
-#### [XKEYSCORE](https://www.nsa-observer.net/category/program/family/process/name/XKEYSCORE)
+## [XKEYSCORE](https://www.nsa-observer.net/category/program/family/process/name/XKEYSCORE)
 
 XKEYSCORE consiste en un ensemble d'interfaces et de bases de données qui permettent de sélectionner certaines données collectés via différents moyens (et il y en a beaucoup).
 
@@ -111,29 +105,29 @@ Ne vous leurrez pas, ce dernier exemple est bel et bien réel, je vous laisse vo
 * [XKeyscore exposed: How NSA tracks all German Tor users as 'extremists'](http://rt.com/news/170208-nsa-spies-tor-users/)
 * [The NSA Is Targeting Users of Privacy Services, Leaked Code Shows](http://www.wired.com/2014/07/nsa-targets-users-of-privacy-services/).
 
-#### [OPTIC NERVE](https://www.nsa-observer.net/category/program/family/collect/name/OPTIC%20NERVE) (GCHQ)
+## [OPTIC NERVE](https://www.nsa-observer.net/category/program/family/collect/name/OPTIC%20NERVE) (GCHQ)
 
 En 2008, ce programme a collecté une photo toutes les 5 secondes provenant de chaque flux vidéos des [chat Yahoo](https://messenger.yahoo.com/) (soit environ 1.8 millions d'utilisateurs sur une période de 6 mois). Les documents indique qu'il y a un avertissement pour les opérateurs car l'on y trouve entre 8 et 12% de "nudité" (à prendre au sens large).
 
 Pour information, en 2008 déjà, le GCHQ indique faire des tests pour de la reconnaissance faciale automatique, ainsi que pour la XBOX360. Nous sommes maintenant en 2014, je parie que c'est aussi le cas pour [Skype](http://pses2014.libwalk.so/#/9/2)) ainsi que pour Snapchat. N'oubliez pas que [la X BOX ONE](http://pses2014.libwalk.so/#/9/2) a une caméra et un micro allumé 24/7, avec de la reconnaissance faciale/vocale par défaut).
 
-#### [La NSA espionne aussi certains sites pornos](http://www.bbc.com/news/technology-25118156)
+## [La NSA espionne aussi certains sites pornos](http://www.bbc.com/news/technology-25118156)
 
 Et oui ! Et il parait que c'est pour la lutte contre le terrorisme (comme le reste quoi...) : par exemple pouvoir faire pression sur un intégriste musulman parce qu'il a été "vu" en train de regarder du porno.
 
 
-## Une cible ? Que peut-on faire ?
+# Une cible ? Que peut-on faire ?
 
 
-#### [QUANTUM](https://www.nsa-observer.net/category/attack%20vector/family/network/name/QUANTUM) (à lire en écoutant [Attack](http://www.youtube.com/watch?v=olILVp-J7Y8) !)
+## [QUANTUM](https://www.nsa-observer.net/category/attack%20vector/family/network/name/QUANTUM) (à lire en écoutant [Attack](http://www.youtube.com/watch?v=olILVp-J7Y8) !)
 
 Pour rediriger une cible vers un serveur [FOXACID](https://www.nsa-observer.net/category/program/family/target/name/FOXACID), la NSA réalise un [Man-in-the-Middle](http://en.wikipedia.org/wiki/Man-in-the-middle_attack) (ou Man-on-the-Side) sur une connexion vers des serveurs de compagnies US (google (gmail), yahoo, linkedin..) grâce à l'emplacement de noeuds ([TAO](https://www.nsa-observer.net/category/compartment/family/collect/name/TAO) nodes) à des endroits clés sur le réseau (comprendre : "sur les dorsals de certains FAI"). La NSA utilise donc ses noeuds pour permettre des redirections à la volée vers les serveurs [FOXACID](https://www.nsa-observer.net/category/program/family/target/name/FOXACID), qui lanceront eux-mêmes différents types d'attaques selon la cible et les besoins.
 
 Il existe beaucoup de sous-programmes pour QUANTUM, chacun vise quelque chose en particulier, comme [QUANTUMBOT](https://www.nsa-observer.net/category/attack%20vector/family/network/name/QUANTUMBOT) pour IRC, [QUANTUMINSERT](https://www.nsa-observer.net/category/attack%20vector/family/network/name/QUANTUM%20INSERT) (implantation de malware - utilisé dans le  _hack_ de Belgacom), [QUANTUMCOOKIE](https://www.nsa-observer.net/category/attack%20vector/family/network/name/QUANTUMCOOKIE) (force les cookies dans le navigateur ciblé), [QUANTUMSPIM](https://www.nsa-observer.net/category/program/family/collect/name/QUANTUMSPIM) (messagerie instantanée, comme MSN ou XMPP)...
 
-#### [HUNT SYSADMINS](https://www.nsa-observer.net/category/mission/family/collect/name/IHUNTSYSADMINS) (à lire en écoutant "*[a bullet in your head](http://www.youtube.com/watch?v=o_-QGNUYL5g)*")
+## [HUNT SYSADMINS](https://www.nsa-observer.net/category/mission/family/collect/name/IHUNTSYSADMINS) (à lire en écoutant "*[a bullet in your head](http://www.youtube.com/watch?v=o_-QGNUYL5g)*")
 
-    ATTENTION : j'ai volontairement fait au plus rapide en "coupant" la partie technique, merci de suivre les liens pour approfondir ! C'est TRÈS intéressant !
+> ATTENTION : j'ai volontairement fait au plus rapide en "coupant" la partie technique, merci de suivre les liens pour approfondir ! C'est TRÈS intéressant !
 
 Je dois vous avouer que j'ai réellement hurlé en lisant les posts sur un forum interne d'un opérateur de la NSA qui s'intitule "[hunt sysadmins](https://firstlook.org/theintercept/document/2014/03/20/hunt-sys-admins/)". Cet opérateur raconte que le meilleur moyen d'avoir accès à des informations est de "passer" par les administrateurs systèmes qui ont accès aux serveurs ou au routeurs (possibilité de mettre la main sur la topologie des réseaux, trouver des configurations, obtenir des accès, des emails...).
 
@@ -144,13 +138,13 @@ Il explique ainsi comment **ils collectent PASSIVEMENT toutes les transmissions 
 
 Il explique alors comment identifier un administrateur système, trouver [son webmail et/ou son compte Facebook](https://firstlook.org/theintercept/document/2014/03/20/hunt-sys-admins/) (oui oui) et de là utiliser la famille [QUANTUM](https://www.nsa-observer.net/category/attack%20vector/family/network/name/QUANTUM) pour réaliser une attaque et avoir un accès à sa machine ET/OU au(x) routeur(s).
 
-![IHUNTSYSADMINS_shorter](/content/images/2015/09/IHUNTSYSADMINS_shorter.png)
+![IHUNTSYSADMINS_shorter](/images/2015/09/IHUNTSYSADMINS_shorter.png)
 
-##### Et là, comme tout le monde, tu te dis "Moi j'utilise SSH \o/"
+### Et là, comme tout le monde, tu te dis "Moi j'utilise SSH \o/"
 
 Sauf qu'il explique AUSSI comment identifier une personne ayant accès à un serveur en SSH. **Shorter** : on peut deviner qui a *vraiment* accès à un serveur selon la taille des paquets qui passent et le temps de connexion.
 
-![IHUNTSYSADMINS_shorter_ssh](/content/images/2015/09/IHUNTSYSADMINS_shorter_ssh.png)
+![IHUNTSYSADMINS_shorter_ssh](/images/2015/09/IHUNTSYSADMINS_shorter_ssh.png)
 
 Une fois la source (via l'IP) identifiée, vous pouvez voir (par exemple avec [XKEYSCORE](https://www.nsa-observer.net/category/program/family/process/name/XKEYSCORE)) les connexions à des webmails, Facebook (ou n'importe quoi qui peut l'identifier), et là, PAN ! Tu peux le [QUANTUM](https://www.nsa-observer.net/category/attack%20vector/family/network/name/QUANTUM)-ifier \o/
 
@@ -158,13 +152,13 @@ Et il termine gentiment sur le pourquoi et comment prendre la main sur un routeu
 
 **ATTENTION** : encore une fois,  [TOUT le document est disponible en ligne](http://cryptome.org/2014/03/nsa-hunt-sysadmins.pdf), je vous conseille GRANDEMENT la lecture (et c'est obligatoire si vous êtes sysadmins ;-)).
 
-#### [INTERDICTION](https://www.nsa-observer.net/category/attack%20vector/family/hardware/name/INTERDICTION)
+## [INTERDICTION](https://www.nsa-observer.net/category/attack%20vector/family/hardware/name/INTERDICTION)
 
 C'est tout simplement la possibilité pour la NSA d'intercepter un colis (comme l'ordinateur que vous venez de commander en ligne), d'installer ce qu'ils veulent dessus (comme un firmware persistant dans le BIOS, un composant permettant à un appareil de la famille d'[ANGRYNEIGHBOR](https://www.nsa-observer.net/category/attack%20vector/family/hardware/name/ANGRYNEIGHBOR) (qui porte toujours aussi bien son nom) de fonctionner...).
 
 Il suffit de jeter un coup d'oeil au [catalogue](http://leaksource.wordpress.com/2013/12/30/nsas-ant-division-catalog-of-exploits-for-nearly-every-major-software-hardware-firmware/) pour avoir une idée de ce qu'ils peuvent faire.
 
-## Et pour finir
+# Et pour finir
 
 > "*le monde ne sera pas détruit par ceux qui font le mal, mais par ceux qui les regardent sans rien faire.*"
 > <small>Albert Einstein</small>

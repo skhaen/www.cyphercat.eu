@@ -6,7 +6,7 @@ description = ""
 draft = false
 slug = "deploiement-et-automatisation-avec-ansible-partie-1"
 tags = ["adminsys", "ansible"]
-title = "Déploiement et automatisation avec Ansible - partie 1"
+title = "[Ansible] Déploiement et automatisation avec Ansible - partie 1"
 
 +++
 

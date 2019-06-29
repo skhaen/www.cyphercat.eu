@@ -55,7 +55,7 @@ mv firmware.ram /srv/tftp/
 
 Il faut que notre ordinateur (où se situe le TFTP) possède l'IP **192.168.11.2** car le routeur s'y connecte par défaut dans ce genre de situation, si vous le faite de manière graphique, ça donne quelque chose comme ceci :
 
-![ip_tftp_openwrt](/content/images/2015/09/ip_tftp_openwrt.png)
+![ip_tftp_openwrt](/images/2015/09/ip_tftp_openwrt.png)
 
 **flashopenwrt** est ici le nom de ma configuration avec cette adresse, vous pouvez mettre ce que vous voulez.
 
@@ -81,7 +81,7 @@ Après son ouverture, il faut cliquer sur la première icône de la barre des t�
 
 Vous pouvez alors voir tout ce qui passe sur ce port, écrivez *tftp* dans « *filtrer* » en haut à gauche (puis entrée), ça permettra de filtrer les informations :
 
-![selection tftp wireshark](/content/images/2015/09/selection_tftp_wireshark.png)
+![selection tftp wireshark](/images/2015/09/selection_tftp_wireshark.png)
 
 #### [/facultatif]
 
@@ -91,7 +91,7 @@ On débranche électriquement le routeur, on appuie sur le bouton AOSS (au dessu
 
  Vous devriez alors voir quelque chose comme ce qui suit sur votre wireshark :
  
-![wireshark tftp](/content/images/2015/09/wireshark_tftp-1.png)
+![wireshark tftp](/images/2015/09/wireshark_tftp-1.png)
 
 Si c'est le cas : Bravo ! vous ne vous êtes pas foiré ! :D
 

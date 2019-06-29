@@ -4,11 +4,11 @@ date = 2016-06-17T16:26:21Z
 description = ""
 draft = false
 slug = "about-jacob-appelbaum"
-title = "About Jacob Appelbaum - compilation"
-
+title = "Compilation - Jacob Appelbaum - harassment and sexual misconduct "
 +++
 
-If you see something I forgot, please [contact](https://www.cyphercat.eu/about/) me.
+> When harassment, sexual or otherwise, requires a cost-benefit analysis, you have failed.
+
 
 #### Jacob Appelbaum & others
 
@@ -28,10 +28,6 @@ If you see something I forgot, please [contact](https://www.cyphercat.eu/about/)
 * [The Forest for the Trees](https://blog.patternsinthevoid.net/the-forest-for-the-trees.html) (2016-06-13)
 
 #### Alison Macrina
-
-<blockquote class=pull>
-When harassment, sexual or otherwise, requires a cost-benefit analysis, you have failed.
-</blockquote>
 
 * "Sam" on [jacobappelbaum.net](http://jacobappelbaum.net/)
 * [There’s really no such thing as the ‘voiceless’. There are only the deliberately silenced, or the preferably unheard](https://medium.com/@flexlibris/theres-really-no-such-thing-as-the-voiceless-92b3fa45134d#.tuauqpucl). (2016-06-15)
@@ -64,3 +60,4 @@ And, of course : [jacobappelbaum.net](http://jacobappelbaum.net)
 
 * 2016-07-27 - Add Tor's Statement
 
+If you see something I forgot, please [contact](https://www.cyphercat.eu/about/) me.

@@ -3,8 +3,9 @@ author = "Skhaen"
 date = 2017-02-02T21:07:17Z
 description = ""
 draft = false
+tags = ["traduction"]
 slug = "how-does-fascism-take-hold-by-sandra-schwab"
-title = "How does fascism take hold? (by Sandra Schwab)"
+title = "[Traduction] How does fascism take hold? (by Sandra Schwab)"
 
 +++
 

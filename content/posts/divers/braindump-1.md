@@ -4,7 +4,8 @@ date = 2016-03-31T17:15:37Z
 description = ""
 draft = false
 slug = "braindump-1"
-title = "braindump #1 - livres de 2015"
+title = "[livres] mes lectures de 2015"
+tags = ["livres"]
 
 +++
 

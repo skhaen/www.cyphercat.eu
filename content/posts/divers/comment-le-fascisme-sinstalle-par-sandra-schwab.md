@@ -3,8 +3,9 @@ author = "Skhaen"
 date = 2017-02-02T21:07:22Z
 description = ""
 draft = false
+tags = ["traduction"]
 slug = "comment-le-fascisme-sinstalle-par-sandra-schwab"
-title = "Comment le fascisme s'installe ? (par Sandra Schwab)"
+title = "[Traduction] Comment le fascisme s'installe ? (par Sandra Schwab)"
 
 +++
 

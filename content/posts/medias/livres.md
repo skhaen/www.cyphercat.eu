@@ -5,7 +5,7 @@ date = 2014-05-17T10:00:00Z
 description = ""
 draft = false
 slug = "livres"
-tags = ["misc"]
+tags = ["livres"]
 title = "Livres"
 
 +++

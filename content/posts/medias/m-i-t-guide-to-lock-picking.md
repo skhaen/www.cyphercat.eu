@@ -60,7 +60,7 @@ Les éves déterminent le profil de la clef pouvant être insérée dans l’ent
 La clef adéquate lève les goupilles simultanément jusqu’à ce que l’intervalle (césure) entre les deux goupilles (de rotor et de stator) soit aligné avec la ligne de césure générale de la serrure appelée aussi mise au passage. Ce passage est donc constitué par l’interruption de l’organe de blocage : une brisure de la goupille. Quand toutes les goupilles sont en position d’ouverture (au passage) le barillet dit aussi rotor peut tourner et la serrure peut être ouverte. Une clef inadaptée (dans la coupe des tailles de goupilles) laissera quelques goupilles à une hauteur inadéquate et donc fausse, entre le rotor et le stator, et ces dernières empêcheront la rotation du barillet (ou rotor) dans le cylindre (ou stator) en se bloquant contre ce dernier.
 
  
-![img](/content/images/2016/07/image1.png)
+![img](/images/2016/07/image1.png)
 
 Fig. 2.2: Fonctionnement d’une serrure à goupilles.
 
@@ -78,17 +78,17 @@ Fig. 2.2: Fonctionnement d’une serrure à goupilles.
 
 Pour devenir un bon ouvreur, vous aurez besoin de comprendre de façon détaillée comment fonctionne une serrure et quels sont les différents mécanismes physiques ou mécaniques qui entrent en jeu lorsqu’elle est tâtée ou crochetée. Ce manuel présente deux modèles différents de serrures pour mieux vous aider à en comprendre le fonctionnement. Ce chapitre présente un modèle qui souligne l’importance de la position de chacune des goupilles. Le chapitre4 (page8) utilise ce même modèle pour expliquer les principes du tâtage. Le chapitre9 analyse certains défauts mécaniques plus complexes.
 
-![img](/content/images/2016/07/image2_goupille.png)
+![img](/images/2016/07/image2_goupille.png)
 
 Fig. 3.1: Modèle de serrure.
 
 Le modèle de serrure de démonstration est présenté sur la figure3.1. Ce n’est pas la coupe d’une véritable serrure, mais la représentation schématisée d’un mécanisme très simple utilisé dans un but didactique (inspiré d’une serrure d’époque romaine). Le rôle de cette serrure est d’empêcher deux plaques de métal de glisser l’une sur l’autre à moins que la clef adéquate ne soit présente. Cette serrure est constituée de deux plaques superposées et percées de trous de passage qui les traversent. Le schéma montre une serrure à deux pistons: deux goupilles sont placées dans chaque trou de passage de façon à ce que l’intervalle (césure) entre elles ne s’alignent pas au passage avec la ligne de césure générale. Le sommet de la goupille active doit être amené sur la ligne de césure générale des plaques pour autoriser l’ouverture. Une protubérance située sur la partie inférieure de la plaque du bas empêche les goupilles de tomber en dehors des plaques, et un ressort placé au-dessus de la plaque supérieure appuie sur la goupille passive (la goupille supérieure, passive ou goupille de stator).
 
-![img](/content/images/2016/07/image3_serrure.png)
+![img](/images/2016/07/image3_serrure.png)
 
 Fig. 3.2: La clef lève les goupilles.
 
-![img](/content/images/2016/07/image5.png)
+![img](/images/2016/07/image5.png)
 
 Fig. 3.3: La clef adéquate permet aux plaques de glisser.
 
@@ -102,15 +102,15 @@ La figure3.3 illustre également l’une des caractéristiques fondamentales des
 
 Le modèle de démonstration souligne le défaut de base qui permet le crochetage: le jeu mécanique. Ce défaut permet d’ouvrir une serrure en positionnant les goupilles par tâtage l’une après l’autre, Il n’est alors plus nécessaire qu’une clef soulève tous les goupilles en même temps. Les figures4.1 et 4.3 montrent comment les goupilles d’une serrure peuvent être soulevées une par une par tâtage. La première étape de cette procédure consiste à appliquer une force translatoire sur la serrure en poussant longitudinalement sur la plaque du bas. Cette force permet à une ou à plusieurs des goupilles d’être coincées entre les deux plaques en raison des jeux mécaniques. Le défaut le plus classique des serrures est qu’une seule goupille bloque l’ouverture (le glissement) des deux plaques. Dans la figure4.1 on peut remarquer que la goupille de gauche bloque les plaques. Pourtant, même si une goupille bloque, elle peut être poussée vers le haut grâce à un outil de crochetage que l’on appelle palpeur (pick ou lifter en anglais) voir la figure4.2. Quand le sommet de la goupille active atteint la ligne de césure générale, la plaque du bas peut alors glisser légèrement. Si le palpeur est retiré, la goupille sera maintenue par chevauchement ou cisaillement de la plaque du bas, et la goupille active retombera en bas à sa place initiale voir la figure4.3. Le léger mouvement de la plaque du bas cause alors le blocage d’une nouvelle goupille. La même procédure pourra alors être utilisée pour positionner correctement cette dernière.
 
-![img](/content/images/2016/07/Image6.png)
+![img](/images/2016/07/Image6.png)
 
 Fig. 4.1: Blocage d’une goupille.
 
-![img](/content/images/2016/07/Image7.png)
+![img](/images/2016/07/Image7.png)
 
 Fig. 4.2: Utilisation du crochet palpeur pour positionner une goupille.
 
-![img](/content/images/2016/07/Image8.png)
+![img](/images/2016/07/Image8.png)
 
 Fig. 4.3: Première goupille positionnée.
 
@@ -127,19 +127,19 @@ Le chapitre9 traite des différents défauts qui font qu’une seule goupille à
 
 Le modèle de serrure didactique peut expliquer les effets qui impliquent plus d’une goupille, mais un modèle différent est nécessaire pour expliquer le fonctionnement détaillé d’une seule goupille Cf. le schéma 5.1. Le modèle de goupilles en colonne souligne le rapport entre la pression rotative à appliquer et la force à employer pour soulever chaque goupille. Il est essentiel que vous compreniez cette interdépendance.
 
-![img](/content/images/2016/07/Image9.png)
+![img](/images/2016/07/Image9.png)
 
 Fig. 5.1: Modèle de goupilles en colonne.
 
 Pour comprendre la sensation du tâtage vous devez savoir comment le mouvement d’une goupille est affectée par la rotation appliquée par votre outil de tension (que l’on appelle un entraîneur) et par la pression appliquée par votre crochet palpeur. Un bon moyen de représenter cette interaction est un graphique représentant la pression minimum nécessaire pour déplacer une goupille, en fonction de la profondeur qu’elle doit atteindre à partir de sa position initiale. Le reste de ce chapitre extrapolera le graphique des forces à appliquer pour le modèle des goupilles en colonne. Le schéma 5.2 représente la position d’une goupille lorsqu’une force rotative est appliquée sur le rotor. Les forces en présences sont les frottements des côtés de la goupille, la pression du ressort au-dessus du mécanisme, et le contact de la goupille du dessous. La force à appliquer sur le crochet palpeur détermine la pression du contact en dessous.
 
-![img](/content/images/2016/07/Image10.png)
+![img](/images/2016/07/Image10.png)
 
 Fig. 5.2: Goupille soumise à une force rotative.
 
 La pression du ressort augmente lorsque les goupilles sont poussées dans le cylindre, mais cette augmentation est légère, nous supposerons donc que cette tension est constante. Les goupilles ne se déplaceront pas à moins que vous appliquiez assez de pression pour comprimer le ressort. La friction due à la tension rotative est proportionnelle à la manière dont la goupille est bloquée entre le rotor et le stator qui est, dans ce cas, proportionnel à la rotation. Plus vous imprimez une rotation au barillet, plus dur sera le déplacement des goupilles. Pour déplacer une goupille vous devez donc appliquer une pression supérieure à la somme de la pression du ressort et des forces de frottement.
 
-![img](/content/images/2016/07/Image11.png)
+![img](/images/2016/07/Image11.png)
 
 Fig. 5.3: Changement de situation : la goupille atteint la ligne de césure.
 
@@ -147,11 +147,11 @@ Quand la goupille atteint la ligne de césure, la situation change soudainement 
 
 Si les goupilles sont poussées plus loin dans le cylindre, la goupille entre à son tour en friction dans la situation initiale. Voir le schéma 5.4. Ainsi, la tension nécessaire pour déplacer les goupilles de part et d’autre de la ligne de césure est approximativement la même. Accroître la rotation augmente la tension nécessaire. Au niveau de la ligne de césure, la tension augmente énormément et brusquement lorsque la goupille entre en contact avec le stator. Cette analyse est résumée graphiquement dans le schéma 5.5.
 
-![img](/content/images/2016/07/Image12.png)
+![img](/images/2016/07/Image12.png)
 
 Fig. 5.4: Goupille poussée trop loin.
 
-![img](/content/images/2016/07/Image13.png)
+![img](/images/2016/07/Image13.png)
 
 Fig. 5.5: Tension nécessaire en fonction du déplacement de la goupille.
 
@@ -161,13 +161,13 @@ Fig. 5.5: Tension nécessaire en fonction du déplacement de la goupille.
 
 Toute pression supérieure à la partie plate du diagramme des forces et inférieure à l’extrémité supérieure fonctionnera. Lorsque le crochet passera sur une goupille, ce dernier se déplacera jusqu’à ce qu’il rencontre le cylindre (ou stator), mais il n’y entrera pas Cf. le schéma 5.3. La force de contact exercée sur la ligne de césure résiste à la pression du crochet, ce dernier passe donc sur la goupille sans la faire pénétrer dans le cylindre. Si la tension rotative adéquate est appliquée, le rotor ou barillet tournera légèrement. Lorsque le crochet ou pick abandonnera la goupille, cette dernière retombera à sa place initiale, mais la goupille passive sera coincée sur le bord du rotor (ou barillet) et restera au-dessus de la ligne de césure Cf. le schéma 6.1. En théorie un seul passage sur les goupilles pourrait entraîner l’ouverture de la serrure.
 
-![img](/content/images/2016/07/Image14.png)
+![img](/images/2016/07/Image14.png)
 
 Fig. 6.1: 
 
 En pratique une ou deux goupilles se positionneront lors d’un seul passage du crochet, donc plusieurs passages seront nécessaires. En résumé, vous devez déplacer rapidement le crochet racleur d’avant en arrière sur les goupilles tout en ajustant la force rotative sur le rotor ou barillet. Les exercices du chapitre8 (page20) vous apprendront comment déterminer la rotation et la pression adéquate. Vous trouverez que les goupilles d’une serrure ont tendance à se positionner dans un ordre particulier. Beaucoup de facteurs déterminent cet ordre (voir le chapitre9), mais la cause fondamentale est un non-alignement de l’axe du barillet avec l’axe sur lequel les trous de passage des goupilles ont étés forés Cf. le schéma 6.2. Si l’axe des trous des goupilles est à l’oblique par rapport à l’axe central du rotor, les goupilles se positionneront de l’avant vers l’arrière si le rotor pivote dans un sens, et de l’arrière vers l’avant si ce rotor pivote dans l’autre sens. Beaucoup de serrures ont ce défaut.
 
-![img](/content/images/2016/07/Image15.png)
+![img](/images/2016/07/Image15.png)
 
 Fig. 6.2: 
 
@@ -247,7 +247,7 @@ Il peut être très frustrant de passer un temps incalculable à crocheter une s
 
 La direction dans laquelle il faut tourner le rotor dépend du mécanisme du pêne, pas de la serrure, mais il y a quelques règles générales à connaître. La plupart des cadenas bon marchés s’ouvriront quel que soit le sens dans lequel le rotor est actionné, ainsi vous pouvez choisir le sens qui vous semble le plus confortable pour l’utilisation de l’entraîneur. Certains cadenas quant à eux ne peuvent être ouverts que si le rotor est actionné dans le sens des aiguilles d’une montre. Les serrures à double cylindre s’ouvrent généralement par la rotation du fond de la serrure (c’est-à-dire, du côté plat de la clef plus ou moins loin du chambranle de la porte) Les serrures à barillet simple suivent également cette règle. Voire le schéma 9.1. Les serrures intégrées dans les poignées de porte s’ouvrent habituellement dans le sens des aiguilles d’une montre. Les serrures de bureau et des classeurs s’ouvrent également dans le sens des aiguilles d’une montre.
 
-![img](/content/images/2016/07/Image16_17.png)
+![img](/images/2016/07/Image16_17.png)
 
 Fig. 9.1: Sens dans lequel faire pivoter le barillet
 
@@ -259,7 +259,7 @@ La question complémentaire de: Dans quel sens faire tourner une serrure ? est J
 
 Faire pivoter une serrure de plus de 180 degrés est difficile parce que les goupilles pénètrent à nouveau dans le stator de la serrure qui est alors rebloqué, cf. le paragraphe 9.11.
 
-![img](/content/images/2016/07/Image18.png)
+![img](/images/2016/07/Image18.png)
 
 Fig. 9.2: La goupille est faussement positionnée à cause des déformations dues à l'élasticité du matériau
 
@@ -270,7 +270,7 @@ Crocheter une serrure dont les ressorts se trouvent sur le dessus est différent
 
 **Note** - cas des serrures dites à profil européen: Avec les goupilles positionnées hors de la zone de manipulation, il est plus facile de trouver les goupilles restant à positionner. Il est aussi plus aisé de tester le léger jeu des goupilles correctement positionnées. Quand les ressorts sont sur le dessus, la gravité laissera redescendre les goupilles positionnées vers le bas après qu’elles aient été bloquées sur la ligne de césure. Dans ce cas vous pouvez identifier les goupilles positionnées en remarquant les plus faciles à soulever et celles dont on ne sent pas l’élasticité. Celles en position cliquettent lorsque vous passez le crochet dessus parce qu’elles ne sont pas comprimées mais bloquées sur la ligne de césure.
 
-![img](/content/images/2016/07/Image19.png)
+![img](/images/2016/07/Image19.png)
 
 Fig. 9.3: Jusqu’où tourner ? 
 
@@ -280,7 +280,7 @@ Si vous pratiquez le raclage sur une serrure et que les goupilles ne se position
 
 Quand vous rencontrez cette situation, relâchez la rotation et recommencez en vous concentrant sur les goupilles du fond. Essayez avec une légère rotation et une pression modérée ou une forte rotation et une pression importante. Essayez de sentir le déclic qui se produit quand une goupille atteint la ligne de césure générale et que le rotor tourne légèrement. Le déclic sera plus facile à sentir si vous utilisez un entraîneur rigide.
 
-![img](/content/images/2016/07/Image20.png)
+![img](/images/2016/07/Image20.png)
 
 Fig. 9.4: 
 
@@ -290,7 +290,7 @@ Les phénomènes de jeu intéressant le crochetage se produisent sur des distanc
 
 De telles déformations peuvent être utilisées à votre avantage si vous voulez forcer plusieurs goupilles à la fois. Par exemple, crocheter une serrure dont les goupilles nécessitent d’être mis en place de l’avant vers l’arrière, est un processus lent parce que les goupilles se positionnent chacune à tour de rôle. C’est particulièrement vrai si vous appliquez seulement une pression en retirant le crochet de la serrure. Chaque passage du crochet positionnera seulement la goupille de devant qui bloque. Beaucoup de passages répétées seront alors nécessaire pour que toutes les goupilles soient correctement positionnées. Si la priorité de sens n’est pas très importante (c’est-à-dire que l’axe des trous du rotor est légèrement a l’oblique par rapport à la ligne centrale du barillet), alors vous pouvez positionner certaines goupilles supplémentaires en appliquant une rotation plus importante. D’un point de vue purement mécanique, la rotation exerce une torsion sur le rotor qui a pour conséquences de plus dévier l’avant du rotor que son arrière. Avec une légère rotation l’arrière du rotor reste à sa place initiale, mais avec rotation moyenne ou plus forte, les goupilles du devant bloquent suffisamment pour permettre à l’arrière du rotor de tourner et donc aux goupilles du fond de positionner à leur tour. Ainsi avec une rotation plus importante un seul passage du crochet peut en positionner plusieurs à la fois, et la serrure peut être ouverte rapidement. Cependant, une rotation trop importante entraîne également des problèmes particuliers de blocage.
 
-![img](/content/images/2016/07/Image21.png)
+![img](/images/2016/07/Image21.png)
 
 Fig. 9.5: 
 
@@ -300,7 +300,7 @@ Quand la rotation est importante, les goupilles du devant et les trous du rotor 
 
 Le rotor ou barillet est maintenu dans le stator ou cylindre par un usinage plus large sur le devant (en chapeau) et par une came ou un clips à l’arrière, plus large que le trou foré dans le stator. Si la came n’est pas ajustée correctement, le rotor peut avoir un léger jeu et ainsi bouger légèrement d’avant en arrière dans le stator. En utilisant le crochet de l’arrière vers l’avant, ce mouvement fera avancer le rotor, et si vous appliquez une certaine pression en introduisant le crochet, le rotor sera poussé vers l’arrière. Le problème avec un rotor ayant du jeu est que les goupilles passives se positionnent sur l’arrière des trous de passage des goupilles du rotor plutôt que sur les côtés de ces trous. Quand vous poussez le rotor, les goupilles vont se déloger. Vous pouvez utiliser ce défaut à votre avantage en appliquant simplement une pression lors du passage du crochet de l’arrière vers l’avant ou de l’avant vers l’arrière. Ou bien, vous pouvez utiliser votre doigt ou le l’entraîneur pour empêcher le rotor d’avancer.
 
-![img](/content/images/2016/07/Image22.png)
+![img](/images/2016/07/Image22.png)
 
 Fig. 9.6: 
 
@@ -312,7 +312,7 @@ La seule chose qui résiste à ce mouvement est la tension du ressort. Si la gou
 
 La goupille au diamètre plus petit peut être poussée jusqu’au bout dans le stator sans perdre de son élasticité, mais quand la pression de crochetage est relâchée, la goupille active reviendra à sa place initiale, la passive plus large accrochant le bord du trou de passage dans le rotor.
 
-![img](/content/images/2016/07/Image23.png)
+![img](/images/2016/07/Image23.png)
 
 Fig. 9.7: Champignon, bobine, et goupilles en dents de scie
 
@@ -325,7 +325,7 @@ Quelques fabricants de serrures (par exemple, Yale) biseautent les bords des tro
 Une serrure dont le rotor a des trous de passage biseautés exige de la racler plus longuement, qu’une serrure qui n’est pas équipée de ce dispositif, parce que la passive se positionne sur le bord biseauté du trou de passage au lieu de se placer sur le sommet du rotor. Le rotor ne tournera alors pas si une des passives est accrochée par un bord biseauté du trou de passage. Cette goupille doit subir un nouveau raclage pour pousser la passive vers le haut et pouvoir enfin passer ce biseau. La passive de gauche dans le schéma9.6 est positionnée. La passive repose sur le bord biseauté du trou de passage, et la plaque du fond se déplace assez pour permettre à la passive de droite de coincer. Il présente ce qui se passe lorsque la passive de droite est positionnée. La plaque du bas glisse plus loin à droite et dés lors la passive de gauche est pincée entre la partie du biseau et la plaque du haut. Elle est bloquée par le biseau. Pour ouvrir la serrure, la passive de gauche doit être poussée au-dessus du biseau. Une fois que cette passive est libérée, la plaque du bas peut glisser et la passive de droite peut à son tour être coincée contre son trou biseauté de passage sur le rotor.
 
 
-![img](/content/images/2016/07/Image24.png)
+![img](/images/2016/07/Image24.png)
 
 Fig. 9.8: Séparateur pour clef "passe partout"
 
@@ -335,7 +335,7 @@ Si vous rencontrez une serrure dont le rotor est équipé de trous de passage de
 
 **Note**: un truc généralement utilisé par les fabricants de serrures pour rendre plus difficile le crochetage est de modifier la forme des passives. Les formes les plus communes sont le champignon, la bobine , en dents de scie, le diabolo, les goupilles formées de disques en pile, etc (voir le schéma 9.7).
 
-![img](/content/images/2016/07/Image25.png)
+![img](/images/2016/07/Image25.png)
 
 Fig. 9.9: Un séparateur ou une passive peuvent entrer dans le trou de passage
 
@@ -354,7 +354,7 @@ En général, les séparateurs rendent les serrures plus faciles à crocheter. I
 Un séparateur trop mince peut causer de sérieux problèmes. Si vous appliquez une forte rotation et que le rotor est équipé de trous de passage biseautés, le séparateur peut se tordre et se coincer sur la ligne de césure. Il est aussi possible que le séparateur tombe dans le trou de passage de la goupille de la serrure si le barillet a pivoté de 180 degrés. (Pour résoudre ce problème se référer au paragraphe 9.11).
 
 
-![img](/content/images/2016/07/Image26.png)
+![img](/images/2016/07/Image26.png)
 
 Fig. 9.10: Fonctionnement d'une serrure à paillettes
 
@@ -397,7 +397,7 @@ La forme du bout du crochet détermine la précision avec laquelle celui ci peut
 * Le palpeur avec un **bout en crochet** est conçu pour aligner les goupilles une par une. Il peut aussi être utilisé pour racler les goupilles, mais la pression nécessaire ne peut alors être appliquée que de l’arrière vers l’avant. Le bout en crochet vous permet de sentir la réaction de chaque goupille avec précision et d’appliquer une pression variable. Les bouts en crochet peuvent être plat ou plus ou moins arrondi de façon à pouvoir aligner plus facilement le crochet avec les goupilles. L’avantage fondamental de tâter les goupilles une par une est de pouvoir éviter de les érafler. Racler les pistons laisse des rayures à leur l’extrémité et dans le passage de clef, ainsi que de la limaille de métal un peu partout dans la serrure. Si vous désirez ne pas laisser de traces, vous devez éviter le raclage. 
 * Le **crochet en serpent** peut être utilisée pour le raclage ou pour le tâtage. Quand vous utilisez la technique du raclage, les multiples protubérances d’un tel outil sont plus efficaces qu’un crochet classique. Le crochet en serpent est particulièrement adaptée à l’ouverture des serrures et verrous domestiques à cinq goupilles. Quand un crochet en serpent est utilisée pour le crochetage, il peut positionner deux ou trois goupilles en même temps. En fait, le crochet en serpent agit comme le segment d’une clef qui pourrait être ajustée pour soulever ou abaisser son extrémité, en l’inclinant de long en large, ou en utilisant son extrémité dans un sens ou dans un autre. Vous devez utiliser une tension rotative modérée ou forte avec le crochet en serpent pour permettre à plusieurs goupilles de se positionner en même temps. Ce type de crochetage est plus rapide que d’utiliser un palpeur classique (en diamant ou en crochet) mais il laisse aussi plus de traces.
 
-![img](/content/images/2016/07/Image27.png)
+![img](/images/2016/07/Image27.png)
 
 Fig. 10.1: 
 
@@ -411,7 +411,7 @@ Les lamelles d’acier de balayeuses de rue constituent un excellent matériau p
 
 Cette torsade permet de contrôler plus facilement la rotation du barillet en choisissant l’endroit précis où la poignée va dévier de sa position initiale. La poignée agit alors comme un ressort qui agirait plus souplement sur la rotation. L’inconvénient de cette méthode est que vous obtiendrez moins de réponse de la part du rotor lorsque vous appliquerez une force rotative. Pour crocheter des serrures plus complexes il vous faudra apprendre a appliquer une tension progressive avec un tenseur rigide.
 
-![img](/content/images/2016/07/Image28.png)
+![img](/images/2016/07/Image28.png)
 
 Fig. 10.2: 
 

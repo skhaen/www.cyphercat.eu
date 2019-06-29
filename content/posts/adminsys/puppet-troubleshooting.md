@@ -6,7 +6,7 @@ description = ""
 draft = false
 slug = "puppet-troubleshooting"
 tags = ["puppet", "adminsys", "ssl"]
-title = "Puppet troubleshooting"
+title = "[Puppet] troubleshooting"
 
 +++
 

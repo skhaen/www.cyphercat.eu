@@ -156,7 +156,7 @@ less /var/www/alternc/m/monjolisite/wp-content/plugins/wsanalytics-google-analyt
 
 On y trouve quelque chose comme ceci :
 
-![virusvirusvirus.png](/content/images/2015/09/virusvirusvirus.png)
+![virusvirusvirus.png](/images/2015/09/virusvirusvirus.png)
 
 Et là, on appelle ça un fichier vérolé :]
 

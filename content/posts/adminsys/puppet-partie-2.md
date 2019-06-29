@@ -4,7 +4,7 @@ date = 2017-05-20T12:02:04Z
 description = ""
 draft = false
 slug = "puppet-partie-2"
-title = "Puppet [2] : run puppet et cron"
+title = "[Puppet] [2] : run puppet et cron"
 
 +++
 
@@ -15,7 +15,7 @@ Lancement automatique du run puppet sur les nodes avec [cron](https://docs.puppe
 > **note** : chaque tache cron ajouté nativement par puppet sera mis dans `crontab`, vous pouvez les **l**ister  avec `crontab -l` sur vos nodes. 
 
 
-```puppet
+```yaml
   cron { "puppet":
     ensure  => present,
     command => 'puppet agent -t --http_read_timeout 2m --logdest /var/log/puppetlabs/puppet/puppet`/bin/date +\\%Y\\%m\\%d\\%H\\%M`.log 1>/dev/null 2>&1',

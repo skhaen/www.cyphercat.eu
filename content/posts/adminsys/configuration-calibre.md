@@ -29,7 +29,7 @@ La documentation d'installation pour Linux se trouve sur [calibre-ebook.com/down
 
 La méthode la plus simple consiste à installer la version se trouvant dans les [dépôts de Debian](https://packages.debian.org/jessie/calibre) avec la commande suivante :
 
-```
+```bash
 sudo apt-get install calibre
 ```
 
@@ -55,11 +55,11 @@ Calibre vous permet de gérer automatiquement le "tri" des livres lors de l'expo
 
 1.  Après avoir branché votre liseuse, cliqué sur le menu déroulant de l'icône "dispositif" puis sur "configurer votre appareil"
 
-![dispositif](/content/images/2015/12/S-lection_119.png)
+![dispositif](/images/2015/12/S-lection_119.png)
 
 2. Vous pouvez alors configurer un modèle de tri par défaut pour ce périphérique :
 
-![configurer Odyssey](/content/images/2015/12/Configurer-Odyssey_118.png)
+![configurer Odyssey](/images/2015/12/Configurer-Odyssey_118.png)
 
 Vous pouvez faire des tests avec les lignes suivantes pour voir ce qui vous convient le plus. N'hésitez pas à partager si vous avez autres choses (les explications sont en dessous) :  
 

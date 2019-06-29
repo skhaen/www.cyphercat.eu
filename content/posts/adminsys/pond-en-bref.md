@@ -126,7 +126,7 @@ On peut alors voir plusieurs fichiers (par exemple avec la commande **ls**) dont
         
 La fenêtre suivante s'ouvre alors 
 
-![](/content/images/2015/09/Pond_010-1.png)
+![](/images/2015/09/Pond_010-1.png)
 
 * On choisit une bonne **[phrase de passe](https://www.keepassx.org/)** puis on valide. Pour info, le fichier de pond se trouve dans *~/.config/pond* (vous pouvez voir son emplacement dans *identity*).
 

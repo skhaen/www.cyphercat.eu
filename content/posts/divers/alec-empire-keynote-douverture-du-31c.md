@@ -5,12 +5,12 @@ date = 2015-01-05T16:20:00Z
 description = ""
 draft = false
 slug = "alec-empire-keynote-douverture-du-31c"
-tags = ["misc"]
-title = "Alec Empire - keynote d'ouverture du 31c"
+tags = ["traduction"]
+title = "[Traduction] Alec Empire - keynote d'ouverture du 31c3"
 
 +++
 
-Le texte que vous allez lire est la traduction de la keynote d'ouverture du 31c3 d'Alec Empire, le texte complet (en anglais) est disponible sur le site d'Atari Teenage Riot sous le titre "*[#31c3 A New Dawn (Alec Empire)](http://atari-teenage-riot.tumblr.com/post/106445636152/31c3-a-new-dawn-alec-empire-full-text-incl)*".
+> Le texte que vous allez lire est la traduction de la keynote d'ouverture du 31c3 d'Alec Empire, le texte complet (en anglais) est disponible sur le site d'Atari Teenage Riot sous le titre "*[#31c3 A New Dawn (Alec Empire)](http://atari-teenage-riot.tumblr.com/post/106445636152/31c3-a-new-dawn-alec-empire-full-text-incl)*".
 
 
 **Traducteurs/Traductrices** : Skhaen, dattaz, EDGE, SylvainD, s0r00t, vchamper, Fiasco, TeSla, Z., Sniperovitch, mks
@@ -44,15 +44,15 @@ Je suis musicien, producteur, compositeur, ingé son, je suis le directeur de Di
 
 J'ai fait des tournées avec Nine Inch Nails, Wu Tang Clan, Rage Against The Machine, Moby et beaucoup d'autres. Ici, vous pouvez voir un poster de la fin des années 90 (RATM, etc.),
 
-![ATR poster](/content/images/2015/09/ATR_poster.jpg)
+![ATR poster](/images//2015/09/ATR_poster.jpg)
 
  ici vous pouvez voir Trent Reznor avec un t-shirt d'Atari Teenage Riot… 
 
-![Reznor](/content/images/2015/09/31c3_keynote_reznor.png)
+![Reznor](/images//2015/09/31c3_keynote_reznor.png)
 
 voici ici une photo légendaire d'Aphex Twin avec, comme  quelqu'un sur Internet l'a souligné, une mystérieuse personne assise dans le garage, portant un T-shirt d'ATR.
 
-![Aphex twin](/content/images/2015/09/31c3_keynote_aphex_twin.png)
+![Aphex twin](/images//2015/09/31c3_keynote_aphex_twin.png)
 
 
 Vers la fin des années 90, les Beastie Boys ont sorti un album d'ATR appelé « Burn Berlin Burn », ça a fait fureur. La version internationale de « Burn Berlin Burn » sera légèrement différente et s’appellera « Delete Yourself ». Les 20 dernières années de ma vie ont été une virée totale !
@@ -79,7 +79,7 @@ Atari Teenage Riot n'est pas un groupe comme on peut souvent l'entendre. C'est p
 
 Il possède une interface MIDI rapide et très précise, et avec chaque année qui passe cela devient un nouveau défi que de pousser cette petite machine dans ses retranchements. Et aujourd'hui, elle ne coûte plus grand chose. 20$ peut-être... quelque chose comme ça.
 
-![ATR Atari](/content/images/2015/09/ATR_atari.jpg)
+![ATR Atari](/images//2015/09/ATR_atari.jpg)
 
 ### Vous pouvez créer de l'art et de la beauté avec un ordinateur
 
@@ -118,7 +118,7 @@ Des personnes de la communauté hacker me demandent souvent : pourquoi n'y a-t-i
 
 Oui, les gens ont des amis qui font peut-être quelque chose, mais il faut avouer que depuis le combat Metallica / Napster, les artistes et les musiciens ne veulent plus vraiment s'impliquer. Mais je pense qu'ils le devraient. Les gens me demandent souvent : « pourquoi n'y a-t-il pas plus de musique contestataire ? ».
 
-![ATR triangle](/content/images/2015/09/ATR_triangle.jpg)
+![ATR triangle](/images//2015/09/ATR_triangle.jpg)
 
 <center>Le triangle : Haute Qualité - Grande Vitesse - Bas Coût.</center>
 
@@ -283,7 +283,7 @@ Bien qu'à ce moment, l'essentiel de l'information ait été connu, ressentir ce
 
 Voici une photo de manifestants à Tokyo pendant les rassemblements de Fukushima en 2011.
 
-![ATR Tepco](/content/images/2015/09/ATR_tepco.jpg)
+![ATR Tepco](/images//2015/09/ATR_tepco.jpg)
 
 
 Il y est indiqué "Anti Tepco Riot" -- si vous êtes un artiste, soyez ouvert et laissez les autres développer votre art.
@@ -389,7 +389,7 @@ En réponse à ses requêtes sur la situation de l'application, la tête pensant
 
 Méfiez-vous de l'autorité, promouvez la décentralisation.
 
-![ATR appli iphone](/content/images/2015/09/ATR_appli_iphone.jpg)
+![ATR appli iphone](/images//2015/09/ATR_appli_iphone.jpg)
 
  ————
 

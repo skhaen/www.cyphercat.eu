@@ -6,7 +6,7 @@ description = ""
 draft = false
 slug = "deploiement-et-automatisation-avec-puppet-partie-1"
 tags = ["puppet", "adminsys", "ssl"]
-title = "Puppet [1] : Déploiement et automatisation avec Puppet 4.9"
+title = "[Puppet] [1] : Déploiement et automatisation avec Puppet 4.9"
 
 +++
 

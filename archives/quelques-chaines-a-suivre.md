@@ -13,7 +13,6 @@ C'est plus un mémo qu'autre chose, mais c'est toujours utile, si je n'ai que de
 ## Cinéma / Vidéo
 
 * [Every Frame a Painting](https://www.youtube.com/channel/UCjFqcJQXGZ6T6sxyFB-5i6A) (En) ♥♥♥♥♥
-* [Rocket Jump School](https://www.youtube.com/channel/UC3KpzBeoM8lDvn85m4szzfA) (En) ♥♥♥
 * [Crossed](https://www.youtube.com/watch?v=wCgs8edZGfE&list=PLx58Sm1jzcB5KTTLovalMvt8T1-Ji_bS8) (Fr) ♥♥♥♥ par Karim Debbache (ou sur [dailymotion](http://www.dailymotion.com/playlist/x49nwr_karimdebbache_crossed/1#video=x187b17))
 * [Chroma](http://www.dailymotion.com/playlist/x49nxu_karimdebbache_chroma/1#video=x458bdl) ♥♥♥♥ (Fr) aussi par Karim Debbache
 * [Le fossoyeur de film](https://www.youtube.com/channel/UCwbV8cTR4yBgFdfa_BXV2OA) (Fr) ♥♥♥
@@ -21,10 +20,6 @@ C'est plus un mémo qu'autre chose, mais c'est toujours utile, si je n'ai que de
 ## Histoire
 
 * [Nota Bene](https://www.youtube.com/channel/UCP46_MXP_WG_auH88FnfS1A) (Fr) ♥♥
-
-## Misc
-
-* [Mr Antoine Daniel](https://www.youtube.com/channel/UCtI6_1vGanPlH5lgVIDjJGQ) (Fr) ♥♥♥♥ juste pour l'intro de [l'épisode 37](https://www.youtube.com/watch?v=_ghgW_tSPAI)
 
 ## Musique
 
