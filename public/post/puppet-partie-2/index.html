@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<meta itemprop="name" content="Puppet [2] : run puppet et cron">
+<meta itemprop="description" content="Lancer un run puppet avec cron Lancement automatique du run puppet sur les nodes avec cron toutes les heures :
+ note : chaque tache cron ajouté nativement par puppet sera mis dans crontab, vous pouvez les lister avec crontab -l sur vos nodes.
+ cron { &quot;puppet&quot;: ensure =&gt; present, command =&gt; &#39;puppet agent -t --http_read_timeout 2m --logdest /var/log/puppetlabs/puppet/puppet`/bin/date &#43;\\%Y\\%m\\%d\\%H\\%M`.log 1&gt;/dev/null 2&gt;&amp;1&#39;, user =&gt; &#39;root&#39;, minute =&gt; fqdn_rand(60), require =&gt; File[&#39;/var/log/puppet&#39;], }  Si vous souhaites voir le détail des options, c&rsquo;est sur configuration.">
+
+
+<meta itemprop="datePublished" content="2017-05-20T12:02:04&#43;00:00" />
+<meta itemprop="dateModified" content="2017-05-20T12:02:04&#43;00:00" />
+<meta itemprop="wordCount" content="286">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta property="og:title" content="Puppet [2] : run puppet et cron" />
+<meta property="og:description" content="Lancer un run puppet avec cron Lancement automatique du run puppet sur les nodes avec cron toutes les heures :
+ note : chaque tache cron ajouté nativement par puppet sera mis dans crontab, vous pouvez les lister avec crontab -l sur vos nodes.
+ cron { &quot;puppet&quot;: ensure =&gt; present, command =&gt; &#39;puppet agent -t --http_read_timeout 2m --logdest /var/log/puppetlabs/puppet/puppet`/bin/date &#43;\\%Y\\%m\\%d\\%H\\%M`.log 1&gt;/dev/null 2&gt;&amp;1&#39;, user =&gt; &#39;root&#39;, minute =&gt; fqdn_rand(60), require =&gt; File[&#39;/var/log/puppet&#39;], }  Si vous souhaites voir le détail des options, c&rsquo;est sur configuration." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="cyphercat.eu/post/puppet-partie-2/" />
+<meta property="article:published_time" content="2017-05-20T12:02:04&#43;00:00"/>
+<meta property="article:modified_time" content="2017-05-20T12:02:04&#43;00:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Puppet [2] : run puppet et cron"/>
+<meta name="twitter:description" content="Lancer un run puppet avec cron Lancement automatique du run puppet sur les nodes avec cron toutes les heures :
+ note : chaque tache cron ajouté nativement par puppet sera mis dans crontab, vous pouvez les lister avec crontab -l sur vos nodes.
+ cron { &quot;puppet&quot;: ensure =&gt; present, command =&gt; &#39;puppet agent -t --http_read_timeout 2m --logdest /var/log/puppetlabs/puppet/puppet`/bin/date &#43;\\%Y\\%m\\%d\\%H\\%M`.log 1&gt;/dev/null 2&gt;&amp;1&#39;, user =&gt; &#39;root&#39;, minute =&gt; fqdn_rand(60), require =&gt; File[&#39;/var/log/puppet&#39;], }  Si vous souhaites voir le détail des options, c&rsquo;est sur configuration."/>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/cyphercat.eu/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/cyphercat.eu/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/cyphercat.eu/favicon-16x16.png">
+	<link rel="manifest" href="/cyphercat.eu/site.webmanifest">
+	<link rel="mask-icon" href="/cyphercat.eu/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/cyphercat.eu/favicon.ico">
+
+	<title>Puppet [2] : run puppet et cron</title>
+	<link rel="stylesheet" href="/cyphercat.eu/css/style.min.568c54a56780af2a70c45272522247710b69dbfc080b315211fb98381e3796f8.css" integrity="sha256-VoxUpWeArypwxFJyUiJHcQtp2/wICzFSEfuYOB43lvg=">
+	
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="cyphercat.eu">A cup of tea?</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					
+
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner thin animated fadeIn faster">
+		<h1>Puppet [2] : run puppet et cron</h1>
+		<div class="content">
+			
+
+<h1 id="lancer-un-run-puppet-avec-cron">Lancer un run puppet avec cron<a href="#lancer-un-run-puppet-avec-cron" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
+
+<p>Lancement automatique du run puppet sur les nodes avec <a href="https://docs.puppet.com/puppet/latest/types/cron.html">cron</a> toutes les heures :</p>
+
+<blockquote>
+<p><strong>note</strong> : chaque tache cron ajouté nativement par puppet sera mis dans <code>crontab</code>, vous pouvez les <strong>l</strong>ister  avec <code>crontab -l</code> sur vos nodes.</p>
+</blockquote>
+
+<pre><code class="language-puppet">  cron { &quot;puppet&quot;:
+    ensure  =&gt; present,
+    command =&gt; 'puppet agent -t --http_read_timeout 2m --logdest /var/log/puppetlabs/puppet/puppet`/bin/date +\\%Y\\%m\\%d\\%H\\%M`.log 1&gt;/dev/null 2&gt;&amp;1',
+    user    =&gt; 'root',
+    minute  =&gt; fqdn_rand(60),
+    require =&gt; File['/var/log/puppet'],
+  }
+</code></pre>
+
+<p>Si vous souhaites voir le détail des options, c&rsquo;est sur <a href="https://docs.puppet.com/puppet/latest/configuration.html#httpreadtimeout">configuration.html</a>. Le <code>$fqdn_rand(60)</code> (cf. <a href="https://docs.puppet.com/puppet/latest/function.html#fqdnrand">#fqdnrand</a>, permet d&rsquo;indiquer aléatoirement une valeur de 0 à 60 (la valeur max étant non inclus selon la documentation) pour la configuration du cron.</p>
+
+<p>Cette méthode permet d&rsquo;éviter d&rsquo;avoir tout les runs qui se lancent au meme moment, ce qui pourrait surchager le master.</p>
+
+<blockquote>
+<p><strong>ATTENTION</strong> : Si vous des anciennes versions de Puppet sur vos nodes (2.7 sur Debian wheezy sans les backports par exemple), certaines options peuvent ne pas passer : n&rsquo;hésitez pas à vérifier ce qui est valide/obsolète et à tester.</p>
+</blockquote>
+
+<ul>
+<li><p>On n&rsquo;oublie pas de vérifier que le <a href="https://docs.puppet.com/puppet/latest/type.html#file">dossier</a> <code>/var/log/puppet</code> est bien présent (les <a href="https://docs.puppet.com/puppet/4.8/services_agent_unix.html#logging">logs, c&rsquo;est la vie</a>) :</p>
+
+<pre><code>file { &quot;/var/log/puppetlabs/puppet&quot;:	
+ensure =&gt; directory,
+owner  =&gt; puppet, 
+group  =&gt; puppet,
+mode   =&gt; '0750',
+}
+</code></pre></li>
+
+<li><p>on ajoute une tache planifié pour supprimer automatiquement les logs après 3 jours toutes les nuits à 1h :</p>
+
+<pre><code>cron { &quot;remove-puppet-log&quot;:0
+ensure  =&gt; present,
+command =&gt; &quot;find /var/log/puppetlabs/puppet/ -type f -iname \&quot;puppetd*log\&quot; -mtime +3 -delete&quot;,
+user    =&gt; 'root',
+hour    =&gt; 1,
+minute  =&gt; fqdn_rand(60);
+}
+</code></pre></li>
+
+<li><p>puis on vérifie bien que le <code>service</code> puppet est arreté lors de chaque run (on souhaite une gestion des run via cron, et non via le daemon) :</p>
+
+<pre><code>service { puppet:
+ensure    =&gt; stopped, 
+hasstatus =&gt; true
+}
+
+</code></pre></li>
+</ul>
+
+		</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2019 <a href="cyphercat.eu"></a></p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="cyphercat.eu/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
+
+
+	<script src="/cyphercat.eu/js/main.min.35ccbf1cdceb91e4c64c06b5d009d6e2977fafe56beda7762febd4e67528d2ac.js" integrity="sha256-Ncy/HNzrkeTGTAa10AnW4pd/r+Vr7ad2L+vU5nUo0qw="></script>
+
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>spam on Cyphercat</title>
+    <link>http://www.cyphercat.eu/tags/spam/</link>
+    <description>Recent content in spam on Cyphercat</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Tue, 04 Aug 2015 20:11:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.cyphercat.eu/tags/spam/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Envoi de spam à partir d&#39;un serveur, comment faire ?</title>
+      <link>http://www.cyphercat.eu/posts/envoi-de-spam-a-partir-dun-serveur-comment-faire/</link>
+      <pubDate>Tue, 04 Aug 2015 20:11:00 +0000</pubDate>
+      
+      <guid>http://www.cyphercat.eu/posts/envoi-de-spam-a-partir-dun-serveur-comment-faire/</guid>
+      <description>Au menu aujourd&amp;rsquo;hui, accueillir comme il se doit sur votre serveur un envoi de spam. Pour changer, on partira du principe que l&amp;rsquo;on est sur une Debian avec un postfix. Notre serveur s&amp;rsquo;appelle exemple.octopuce.fr, et notre site de référence installé sur ce serveur s&amp;rsquo;appelle exemple.com.
+On partira aussi du principe que l&amp;rsquo;on n&amp;rsquo;aime pas beaucoup le spam&amp;hellip; voir même qu&amp;rsquo;on lui mettrait bien un bon coup de clavier en pleine gueule.</description>
+    </item>
+    
+  </channel>
+</rss>

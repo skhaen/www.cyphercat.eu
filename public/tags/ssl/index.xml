@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ssl on Cyphercat</title>
+    <link>http://www.cyphercat.eu/tags/ssl/</link>
+    <description>Recent content in ssl on Cyphercat</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Sun, 12 Feb 2017 19:28:25 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.cyphercat.eu/tags/ssl/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Puppet [1] : Déploiement et automatisation avec Puppet 4.9</title>
+      <link>http://www.cyphercat.eu/posts/deploiement-et-automatisation-avec-puppet-partie-1/</link>
+      <pubDate>Sun, 12 Feb 2017 19:28:25 +0000</pubDate>
+      
+      <guid>http://www.cyphercat.eu/posts/deploiement-et-automatisation-avec-puppet-partie-1/</guid>
+      <description>Puppet est l&amp;rsquo;outil de gestion de configuration le plus connu, il a vu le jour en 2005, bien avant ses principaux concurrents (2009 pour Chef, 2011 pour Salt, 2012 pour Ansible). Il propose depuis maintenant longtemps une solution open-source en parallèle de la version entreprise (qui est évidemment payante) et il a eu le temps de grandir pour atteindre une taille plus que respectable.
+Au contraire d&amp;rsquo;Ansible où ça reste plutôt simple pour le moment, les premières recherches que vous allez faire ont toutes les chances de vous laisser quelque part entre &amp;ldquo;mais je commence par quoi bordel ?</description>
+    </item>
+    
+    <item>
+      <title>Puppet troubleshooting</title>
+      <link>http://www.cyphercat.eu/posts/puppet-troubleshooting/</link>
+      <pubDate>Fri, 10 Feb 2017 21:43:03 +0000</pubDate>
+      
+      <guid>http://www.cyphercat.eu/posts/puppet-troubleshooting/</guid>
+      <description>This article is a copy/paste of the conference &amp;ldquo;Puppet troubleshooting&amp;rdquo; by Thomas Uphill at PuppetConf2016. It&amp;rsquo;s a memo for myself, I don&amp;rsquo;t want to reread the 70 slides when I want to find something&amp;hellip;
+FIRST  document current state discover recent changes (commits, &amp;hellip;) change ONE thing at a time. If it doesn&amp;rsquo;t fix the problem, revert it.   When you have eliminated all which is impossible, then whatever remains, however improbable, must be the truth Sir Arthur Conan Doyles</description>
+    </item>
+    
+    <item>
+      <title>Debug SSL/TLS avec OpenSSL - partie 1</title>
+      <link>http://www.cyphercat.eu/posts/debug-tls/</link>
+      <pubDate>Fri, 17 Jul 2015 12:53:00 +0000</pubDate>
+      
+      <guid>http://www.cyphercat.eu/posts/debug-tls/</guid>
+      <description>Si tu es en pleine session de dé/bug SSL/TLS, cet article peut t&amp;rsquo;éviter quelques désagréments ;-)
+SSL Labs, l&amp;rsquo;incontournable On ne le présente plus, le site de Qualys permet de tester la configuration de son serveur facilement avec une interface web bien faite. Le test permet d&amp;rsquo;avoir un rapport concernant les points suivants :
+ Authentification : validité du certificat (nom du site, période de validité&amp;hellip;), présence et validité de la chaîne de certificat (chain) Protocoles diposnibles (SSLv2, SSLv3, TLS 1.</description>
+    </item>
+    
+    <item>
+      <title>DIE SSLv3, DIE!</title>
+      <link>http://www.cyphercat.eu/posts/die-sslv3-die/</link>
+      <pubDate>Wed, 15 Oct 2014 15:35:00 +0000</pubDate>
+      
+      <guid>http://www.cyphercat.eu/posts/die-sslv3-die/</guid>
+      <description>Vous avez sans doute vu passer la faille concernant le protocole SSLv3 trouvée par une équipe de Google et annoncée dans la nuit du 14 octobre 2014 (POODLE, pour Padding Oracle On Downgraded Legacy Encryption). Cette faille concerne directement le protocole et ne peut pas être corrigée simplement. La solution la plus saine est de désactiver SSLv3 en vérifiant bien que TLSv1.0, TLSv1.1 et TLSv1.2 fonctionnent.
+ Annonce de Google sur : googleonlinesecurity.</description>
+    </item>
+    
+    <item>
+      <title>Serveur ? Du TLS, avec un peu de HSTS et un soupçon de TLSA s&#39;il vous plait !</title>
+      <link>http://www.cyphercat.eu/posts/serveur-du-tls-avec-un-peu-de-hsts-et-un-soupcon-de-tlsa-sil-vous-plait/</link>
+      <pubDate>Sun, 27 Jul 2014 10:00:00 +0000</pubDate>
+      
+      <guid>http://www.cyphercat.eu/posts/serveur-du-tls-avec-un-peu-de-hsts-et-un-soupcon-de-tlsa-sil-vous-plait/</guid>
+      <description>Continuons notre voyage dans la crypto, nous avons vu dernièrement la mise en place d&amp;rsquo;un serveur Prosody avec une sécurité satisfaisante. Aujourd&amp;rsquo;hui, nous allons jouer avec Apache (mais aussi Nginx), en configurant du SSL/TLS avec du HSTS,
+SSL/TLS (Secure Sockets Layer et Transport Layer Security) Pour bien commencer, je vous conseille vivement la conférence de Benjamin Sonntag sur le SSL/TLS. Il y a dedans tout ce que vous avez besoin de savoir, et bien plus encore.</description>
+    </item>
+    
+    <item>
+      <title>Installer un serveur XMPP/jabber avec Prosody sous Debian</title>
+      <link>http://www.cyphercat.eu/posts/installer-un-serveur-xmppjabber-avec-prosody/</link>
+      <pubDate>Fri, 14 Feb 2014 18:00:00 +0000</pubDate>
+      
+      <guid>http://www.cyphercat.eu/posts/installer-un-serveur-xmppjabber-avec-prosody/</guid>
+      <description>Sous-titre : comment installer Prosody 0.9.3 sous Debian et avoir un A sur xmpp.net.
+update  2015-03-19 : comment avoir un certificat autosigné qui fonctionne avec les versions &amp;ldquo;récentes&amp;rdquo; de pidgin (voir EN BAS de cet article) 2015-01-05 : on oublie bettercryto, et l&amp;rsquo;on rajoute une jolie ciphersuite pour avoir seulement du PFS 2014-12-30 : ajout de la section bettercrypto concernant TLS 2014-12-12 : ajout de la ciphersuite dans la partie SSL/TLS 2014-08-22 : refonte du texte, changement du fournisseur du certificat SSL/TLS de CaCert pour starssl</description>
+    </item>
+    
+  </channel>
+</rss>

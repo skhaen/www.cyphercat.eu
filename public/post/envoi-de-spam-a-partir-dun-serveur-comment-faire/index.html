@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<meta itemprop="name" content="Envoi de spam à partir d&#39;un serveur, comment faire ?">
+<meta itemprop="description" content="Au menu aujourd&rsquo;hui, accueillir comme il se doit sur votre serveur un envoi de spam. Pour changer, on partira du principe que l&rsquo;on est sur une Debian avec un postfix. Notre serveur s&rsquo;appelle exemple.octopuce.fr, et notre site de référence installé sur ce serveur s&rsquo;appelle exemple.com.
+On partira aussi du principe que l&rsquo;on n&rsquo;aime pas beaucoup le spam&hellip; voir même qu&rsquo;on lui mettrait bien un bon coup de clavier en pleine gueule.">
+
+
+<meta itemprop="datePublished" content="2015-08-04T20:11:00&#43;00:00" />
+<meta itemprop="dateModified" content="2015-08-04T20:11:00&#43;00:00" />
+<meta itemprop="wordCount" content="1580">
+
+
+
+<meta itemprop="keywords" content="adminsys,postfix,spam," />
+<meta property="og:title" content="Envoi de spam à partir d&#39;un serveur, comment faire ?" />
+<meta property="og:description" content="Au menu aujourd&rsquo;hui, accueillir comme il se doit sur votre serveur un envoi de spam. Pour changer, on partira du principe que l&rsquo;on est sur une Debian avec un postfix. Notre serveur s&rsquo;appelle exemple.octopuce.fr, et notre site de référence installé sur ce serveur s&rsquo;appelle exemple.com.
+On partira aussi du principe que l&rsquo;on n&rsquo;aime pas beaucoup le spam&hellip; voir même qu&rsquo;on lui mettrait bien un bon coup de clavier en pleine gueule." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="cyphercat.eu/post/envoi-de-spam-a-partir-dun-serveur-comment-faire/" />
+<meta property="article:published_time" content="2015-08-04T20:11:00&#43;00:00"/>
+<meta property="article:modified_time" content="2015-08-04T20:11:00&#43;00:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Envoi de spam à partir d&#39;un serveur, comment faire ?"/>
+<meta name="twitter:description" content="Au menu aujourd&rsquo;hui, accueillir comme il se doit sur votre serveur un envoi de spam. Pour changer, on partira du principe que l&rsquo;on est sur une Debian avec un postfix. Notre serveur s&rsquo;appelle exemple.octopuce.fr, et notre site de référence installé sur ce serveur s&rsquo;appelle exemple.com.
+On partira aussi du principe que l&rsquo;on n&rsquo;aime pas beaucoup le spam&hellip; voir même qu&rsquo;on lui mettrait bien un bon coup de clavier en pleine gueule."/>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/cyphercat.eu/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/cyphercat.eu/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/cyphercat.eu/favicon-16x16.png">
+	<link rel="manifest" href="/cyphercat.eu/site.webmanifest">
+	<link rel="mask-icon" href="/cyphercat.eu/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/cyphercat.eu/favicon.ico">
+
+	<title>Envoi de spam à partir d&#39;un serveur, comment faire ?</title>
+	<link rel="stylesheet" href="/cyphercat.eu/css/style.min.568c54a56780af2a70c45272522247710b69dbfc080b315211fb98381e3796f8.css" integrity="sha256-VoxUpWeArypwxFJyUiJHcQtp2/wICzFSEfuYOB43lvg=">
+	
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="cyphercat.eu">A cup of tea?</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					
+
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner thin animated fadeIn faster">
+		<h1>Envoi de spam à partir d&#39;un serveur, comment faire ?</h1>
+		<div class="content">
+			
+
+<p>Au menu aujourd&rsquo;hui, accueillir comme il se doit sur votre serveur un envoi de spam. Pour changer, on partira du principe que l&rsquo;on est sur une Debian avec un postfix. Notre serveur s&rsquo;appelle <em>exemple.octopuce.fr</em>, et notre site de référence installé sur ce serveur s&rsquo;appelle <em>exemple.com</em>.</p>
+
+<p>On partira aussi du principe que l&rsquo;on n&rsquo;aime pas beaucoup le spam&hellip; voir même qu&rsquo;on lui mettrait bien un bon coup de clavier en pleine gueule.</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7mmuQteX1qA" frameborder="0" allowfullscreen></iframe>
+
+<h2 id="au-commencement-était">Au commencement était&hellip;<a href="#au-commencement-était" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+
+<p>Une liste d&rsquo;envoi de mails (<code>mailq</code>) qui se remplit beaucoup trop rapidement, on parle de plusieurs centaines, voir plusieurs milliers de mails en quelques minutes/heures (selon la technique que l&rsquo;attaquant utilise). Vous pouvez voir en bas de cet article comment être alerté automatiquement.</p>
+
+<p>On commence par regarder la liste d&rsquo;attente des mails (<em>mail queue</em>) avec la commande <code>mailq</code>. La commande <code>less</code> est là pour éviter d&rsquo;afficher plusieurs centaines de mails, on aura ainsi seulement les premiers de la liste :</p>
+
+<pre><code class="language-language-bash">mailq | less
+</code></pre>
+
+<p>Vous devriez voir une suite de blocs qui ressemble à ceci :</p>
+
+<pre><code>E35BA5318CA83     1389 Fri Jul 31 10:25:10  MAILER-DAEMON
+(delivery temporarily suspended: connect to yahoo.com[63.250.192.45]:25: Connection refused)
+                                         darcy.bolden75@yahoo.com
+
+F21DC4093C551     1400 Fri Jul 31 09:36:40  MAILER-DAEMON
+(delivery temporarily suspended: connect to yahoo.com[63.250.192.45]:25: Connection refused)
+                                         nicki.forth76@yahoo.com
+
+F125553301B52     1409 Fri Jul 31 18:15:21  MAILER-DAEMON
+(delivery temporarily suspended: connect to yahoo.com[63.250.192.45]:25: Connection refused)
+                                         renato_kalman62@yahoo.com
+</code></pre>
+
+<p>Détaillons le premier bloc :</p>
+
+<ul>
+<li><code>E35BA5318CA83</code> correspond à l&rsquo;ID du mail</li>
+<li>et <code>1389</code> correspond à la taille du mail en octet</li>
+<li><code>Fri Jul 31 10:25:10</code> correspond à la date de l&rsquo;envoi (idéal pour le retrouver dans les logs ;-))</li>
+<li><code>MAILER-DAEMON</code> est l&rsquo;expéditeur (peut être www-data, une adresse mail&hellip;)</li>
+<li><code>delivery temporarily suspended</code> explique pourquoi le mail est toujours là (dans notre cas, les serveurs de yahoo ne veulent pas de lui)</li>
+<li><code>darcy.bolden75@yahoo.com</code> représente le destinataire</li>
+</ul>
+
+<h2 id="si-ça-ressemble-à-du-spam-que-ça-a-le-goût-du-spam-et-que-ça-tente-de-vous-vendre-du-viagra">Si ça ressemble à du spam, que ça a le goût du spam (et que ça tente de vous vendre du viagra&hellip;)&hellip;<a href="#si-ça-ressemble-à-du-spam-que-ça-a-le-goût-du-spam-et-que-ça-tente-de-vous-vendre-du-viagra" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+
+<p>Je choisis dans mon tas de mail celui avec l&rsquo;ID B58B18A1C2140 et je &ldquo;l&rsquo;ouvre&rdquo; avec la commande <code>postcat</code> (à noter que cette commande affiche par défaut la totalité du mail (header, body, envelope content) :</p>
+
+<pre><code>postcat -q B58B18A1C2140|less
+</code></pre>
+
+<p>Et voici le résultat :</p>
+
+<pre><code>*** ENVELOPE RECORDS deferred/B/B58B18A1C2140 ***
+message_size:             826             195               1               0             826
+message_arrival_time: Fri Jul 24 06:08:12 2015
+create_time: Fri Jul 24 06:08:12 2015
+named_attribute: rewrite_context=local
+sender: mechant@exemple.octopuce.fr
+*** MESSAGE CONTENTS deferred/B/B58B18A1C2140 ***
+Received: by exemple.octopuce.fr (Postfix, from userid 2001)
+	id B58B18A1C2140; Fri, 24 Jul 2015 06:08:12 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=exemple.com;
+	s=alternc; t=1437710892;
+	bh=jovdSJ/Kn2/7639VFyVqNVkUC4F7d1BbnAP59auo7XI=;
+	h=To:Subject:From:Reply-To:Date;
+	b=EkH7RR1L6vi0gkvl/AXhJChbwtOvMTB6KFS/tuoxoo6+O3UINMgxpLqp45vY9E+ED
+	 Dl0rOINTF8YDAGFmv6VCU4SDt1FTmWyjcJyefj1Mc9wl3TGRQVPfUDkUhVrrDB3yau
+	 Boz8MjYyfBIz28gXWB680XdkC1E5LQwnsmmay//8=
+To: anhselagiolong_2710@yahoo.com
+Subject: RE:  Your Top Affordable Vagra solutions
+X-PHP-Originating-Script: 2001:dir.php
+From: &quot;Melba Bauer&quot; &lt;melba_bauer@exemple.com&gt;
+Reply-To:&quot;Melba Bauer&quot; &lt;melba_bauer@exemple.com&gt;
+X-Priority: 3 (Normal)
+MIME-Version: 1.0
+Content-Type: text/html; charset=&quot;iso-8859-1&quot;
+Content-Transfer-Encoding: 8bit
+X-RealFrom:
+Message-Id: &lt;20150724040812.B58B18A1C2140@exemple.octopuce.fr&gt;
+Date: Fri, 24 Jul 2015 06:08:12 +0200 (CEST)
+
+
+&lt;div&gt;
+Your Top Affordable Vagra solutions &amp;ndash; &lt;a href=&quot;http://strobeton.ru/assets/plugins/tinymce/jscripts/tiny_mce/plugins/contextmenu/defines.html&quot;&gt;check it out&lt;/a&gt;
+&lt;/div&gt;
+
+*** HEADER EXTRACTED deferred/B/B58B18A1C2140 ***
+named_attribute: encoding=8bit
+original_recipient:
+recipient: anhselagiolong_2710@yahoo.com
+*** MESSAGE FILE END deferred/B/B58B18A1C2140 ***
+</code></pre>
+
+<p>Les points importants :</p>
+
+<ul>
+<li><strong>create_time</strong>: Fri Jul 24 06:08:12 2015 (date de création)</li>
+<li><strong>Received</strong>: by exemple.octopuce.fr (Postfix, from <strong>userid</strong> 2001) (reçu par)</li>
+<li><strong>sender</strong>: exemple@exemple.octopuce.fr (si c&rsquo;est une de vos adresses mails qui existe réellement, c&rsquo;est simple : changement de mot de passe immédiat).</li>
+<li><strong>X-PHP-Originating-Script</strong>: 2001:dir.php (origine de l&rsquo;envoi (fichier vérolé, formulaire sans captcha&hellip;))</li>
+</ul>
+
+<p>Et puis bon, celui là il est facile, il tente de nous vendre du viagra&hellip; je pouvais pas avoir plus stéréotypé comme exemple&hellip;</p>
+
+<h2 id="viens-on-joue-à-cache-cache-o">Viens, on joue à cache-cache \o/<a href="#viens-on-joue-à-cache-cache-o" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+
+<p>À partir de là, la marche à suivre est la même que dans l&rsquo;article &ldquo;<a href="https://www.libwalk.so/2015/04/29/analyse-log.html">remonter une attaque avec les logs d&rsquo;apache2</a>&rdquo;. Nous allons commencer notre chasse dans le fichier <code>/var/log/mail.log</code>.</p>
+
+<p>On commence par aller voir au moment de l&rsquo;attaque :</p>
+
+<blockquote>
+<p>astuce : <code>/</code> permet de faire une <a href="http://www.tuteurs.ens.fr/unix/exercices/solutions/less-sol.html">recherche dans <code>less</code></a>, comme par exemple <code>2015:06:0</code> si vous n&rsquo;avez qu&rsquo;une seule journée par fichier</p>
+</blockquote>
+
+<pre><code>less /var/log/mail.log
+
+176.9.139.10 - - [24/Jul/2015:06:07:18 +0200] &quot;POST /wp-content/plugins/wsanalytics-google-analytics-and-dashboards/images/dir.php HTTP/1.1&quot; 200 382 &quot;-&quot; &quot;Mozill
+a/5.0 (Windows; U; Windows NT 5.1; zh-CN; rv:1.7.6)&quot; 5
+129.195.0.205 - - [24/Jul/2015:06:07:27 +0200] &quot;GET /wp-includes/js/comment-reply.min.js?ver=4.1.4 HTTP/1.1&quot; 304 - &quot;-&quot; &quot;Mozilla/4.0 (compatible;)&quot; 0
+89.184.77.50 - - [24/Jul/2015:06:07:26 +0200] &quot;POST /wp-content/plugins/wsanalytics-google-analytics-and-dashboards/images/dir.php HTTP/1.1&quot; 200 466 &quot;-&quot; &quot;Mozill
+a/5.0 (Windows; U; Windows NT 5.1; zh-CN; rv:1.7.6)&quot; 2
+89.184.77.50 - - [24/Jul/2015:06:07:34 +0200] &quot;POST /wp-content/plugins/wsanalytics-google-analytics-and-dashboards/images/dir.php HTTP/1.1&quot; 200 219 &quot;-&quot; &quot;Mozill
+a/5.0 (Windows; U; Windows NT 5.1; zh-CN; rv:1.7.6)&quot; 1
+176.9.139.10 - - [24/Jul/2015:06:07:28 +0200] &quot;POST /wp-content/plugins/wsanalytics-google-analytics-and-dashboards/images/dir.php HTTP/1.1&quot; 200 64 &quot;-&quot; &quot;Mozilla
+/5.0 (Windows; U; Windows NT 5.1; zh-CN; rv:1.7.6)&quot; 10
+89.184.77.50 - - [24/Jul/2015:06:07:41 +0200] &quot;POST /wp-content/plugins/wsanalytics-google-analytics-and-dashboards/images/dir.php HTTP/1.1&quot; 200 541 &quot;-&quot; &quot;Mozill
+a/5.0 (Windows; U; Windows NT 5.1; zh-CN; rv:1.7.6)&quot; 2
+89.184.77.50 - - [24/Jul/2015:06:07:48 +0200] &quot;POST /wp-content/plugins/wsanalytics-google-analytics-and-dashboards/images/dir.php HTTP/1.1&quot; 200 370 &quot;-&quot; &quot;Mozill
+a/5.0 (Windows; U; Windows NT 5.1; zh-CN; rv:1.7.6)&quot; 1
+176.9.139.10 - - [24/Jul/2015:06:08:12 +0200] &quot;POST /wp-content/plugins/wsanalytics-google-analytics-and-dashboards/images/dir.php HTTP/1.1&quot; 200 374 &quot;-&quot; &quot;Mozill
+a/5.0 (Windows; U; Windows NT 5.1; zh-CN; rv:1.7.6)&quot; 9
+</code></pre>
+
+<blockquote>
+<p><Mode débutant> oh bah si c&rsquo;est [google analytics] ça doit pas être ça&hellip;</p>
+</blockquote>
+
+<p>OU PAS ! <a href="https://www.libwalk.so/2015/04/29/analyse-log.html">Comme nous l&rsquo;avions vu</a>, nous recherchons des requêtes POST dans les logs, et là nous en avons une jolie fournée ! Les &ldquo;pirates&rdquo; étant des animaux fourbes et rusés, ils n&rsquo;hésitent pas à mettre des faux noms, comme des fichiers wordpress dans l&rsquo;arborescence d&rsquo;un drupal&hellip;</p>
+
+<p>Allons voir de plus près ce fichier !</p>
+
+<pre><code>less /var/www/alternc/m/monjolisite/wp-content/plugins/wsanalytics-google-analytics-and-dashboards/images/dir.php
+</code></pre>
+
+<p>On y trouve quelque chose comme ceci :</p>
+
+<p><img src="/content/images/2015/09/virusvirusvirus.png" alt="virusvirusvirus.png" /></p>
+
+<p>Et là, on appelle ça un fichier vérolé :]</p>
+
+<blockquote>
+<p>Note : si vous n&rsquo;avez que ça dans votre fichier, vous pouvez l&rsquo;effacer directement après avoir remonté entièrement l&rsquo;attaque. Si vous avez du code &ldquo;valide&rdquo; dans le fichier, vous pouvez enlever seulement la partie incompréhensible.</p>
+</blockquote>
+
+<p>Juste pour savoir, j&rsquo;ai eu combien de requêtes sur ce fichier depuis 4 jours ?</p>
+
+<pre><code>cat access-20150721.log access-20150722.log access-20150723.log access-20150724.log|grep -c &quot;/wp-content/plugins/wsanalytics-google-analytics-and-dashboards/images/dir.php&quot;
+3204
+</code></pre>
+
+<p>Ah oui quand même&hellip; Et avec combien d&rsquo;IPs différentes ?</p>
+
+<pre><code>cat access-20150721.log access-20150722.log access-20150723.log access-20150724.log|grep &quot;/wp-content/plugins/wsanalytics-google-analytics-and-dashboards/images/dir.php&quot;|awk '{print $1}'|sort -gu|wc -l
+123
+</code></pre>
+
+<p>Comme vous vous en doutez, la &ldquo;traque&rdquo; ne s&rsquo;arrête pas là. Je vous renvoie à l&rsquo;article <a href="https://www.libwalk.so/2015/04/29/analyse-log.html">remonter une attaque avec les logs d&rsquo;Apache2</a>, vu que c&rsquo;est là que ça va se passer. Je vous conseille de finir de trouver la faille avant de passer à la suite.</p>
+
+<h3 id="kill-everything-with-fire">KILL EVERYTHING WITH FIRE<a href="#kill-everything-with-fire" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p><img src="/images/2015/colin-furze-xmen.jpg"></p>
+
+<p>Mais avant, on va quand même faire une sauvegarde, parce que l&rsquo;on est jamais à l&rsquo;abri d&rsquo;une connerie&hellip; (la commande suivante vous permet de copier votre mailq dans le dossier <code>/var/tmp/svg-mail</code>) :</p>
+
+<pre><code>mkdir /var/tmp/svg-mail
+rsync -avP /var/spool/mail/ /var/tmp/svg-mail
+</code></pre>
+
+<p>Reprenons notre lance-flammes. Comme vous l&rsquo;avez vu au début de cet article, la commande <code>mailq</code> est assez verbeuse, et nous avons juste besoin de l&rsquo;ID des mails pour les effacer. La commande qu&rsquo;il nous faut est la suivante (en changeant MOTIF, bien entendu&hellip;):</p>
+
+<pre><code>mailq|grep MOTIF|awk '{print $1}'|postsuper -d -
+</code></pre>
+
+<ul>
+<li><code>mailq</code> -&gt; affiche la liste des mails en attente</li>
+<li><code>grep</code> MOTIF &ndash;&gt; recherche les lignes avec le <em>motif</em> que nous voulons (ici ce serait <code>MAILER-DAEMON</code>)</li>
+<li><code>awk '{print $1}'</code> -&gt; affiche la première partie de la ligne, ça correspond ici à l&rsquo;ID des mails</li>
+<li><code>postsuper -d -</code> &ndash;&gt;  indique à la commande <code>postsuper</code> d&rsquo;effacer (<code>-d</code> pour <em>delete</em>) les mails qu&rsquo;on lui donne.</li>
+</ul>
+
+<p>Et ça nous donnera quelque chose ressemblant à ceci :</p>
+
+<pre><code>mailq|grep MOTIF|awk '{print $1}'|postsuper -d -
+[...]
+postsuper: F21198830C2B1: removed
+postsuper: F108B894D4171: removed
+postsuper: F22718A48D820: removed
+postsuper: F11EB8FB2A9E7: removed
+postsuper: F02B78A14E94D: removed
+postsuper: F0B5B8D42374F: removed
+postsuper: F02BB8D422BEC: removed
+postsuper: Deleted: 17047 messages
+</code></pre>
+
+<h3 id="spamhaus">Spamhaus<a href="#spamhaus" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p>Si votre serveur a envoyé (beaucoup) de spam, il est sans doute dans les listes de différents organismes (comme les RBL, pour <em>Realtime blacklist</em>), qui fournissent eux mêmes des systèmes antispams. Les plus célèbres d&rsquo;entre eux sont sans doute <a href="http://www.anti-abuse.org/multi-rbl-check/">anti-abuse.org</a> et <a href="https://www.spamhaus.org/">spamhaus</a> qui a le mérite (en plus de faire du très bon travail) d&rsquo;avoir un site plutôt bien foutu, sur lequel on peut <strong>vérifier</strong> et <strong>débloquer</strong> son serveur s&rsquo;il est considéré comme spammeur : <a href="https://www.spamhaus.org/lookup/">spamhaus.org/lookup/</a>.</p>
+
+<h2 id="améliorons-encore">Améliorons encore<a href="#améliorons-encore" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+
+<h3 id="supervision">Supervision<a href="#supervision" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p>Il existe des outils pour vous aider à superviser et à vous alerter en cas de problèmes. Ils peuvent se présenter sous la forme de <a href="https://stackoverflow.com/questions/226699/how-to-monitor-postfix-mta-status/226913#226913">script &ldquo;à la main&rdquo;</a> (merci <a href="http://geekandpoke.typepad.com/geekandpoke/2013/01/stackoverflow.html">stackoverflow</a>). Des checks pour nagios (que ce soit sur les <a href="https://exchange.nagios.org/directory/Plugins/Security/check_dnsbl/details">RBLs</a>) ou la <a href="https://exchange.nagios.org/directory/Plugins/Email-and-Groupware/Postfix/check_postfix_queue/details">taille de la mailq</a>. On peut aussi parler de <a href="http://mailgraph.schweikert.ch/">mailgraph</a> et de <a href="http://linux.die.net/man/1/pflogsumm">pflogsumm</a>.</p>
+
+<p>À noter que <a href="http://www.anti-abuse.org/multi-rbl-check/">anti-abuse.org</a> fournit un service en ligne, <a href="http://www.rblmon.com/">rblmon.com</a> qui peut vous alerter automatiquement quand une de vos IPs arrivent dans une RBL.</p>
+
+<h3 id="php-mail-log">PHP / mail.log<a href="#php-mail-log" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p>Pour retrouver plus facilement les fichiers ayant servi à envoyer du spam, n&rsquo;hésitez pas à les logger via l&rsquo;option <code>mail.log</code> de votre <code>php.ini</code> :</p>
+
+<pre><code>vim /etc/php5/apache2/php.ini
+
+## trouver la ligne &quot;mail.log&quot; et la compléter comme ceci :
+mail.log = /var/log/mail.php.log
+</code></pre>
+
+<p>Puis on crée le fichier (n&rsquo;hésitez pas à modifier les permissions si le coeur vous en dit):</p>
+
+<pre><code>touch /var/log/mail.php.log &amp;&amp; chmod 777 /var/log/mail.php.log
+</code></pre>
+
+<h3 id="spf-dkim-et-dmarc">SPF, DKIM et DMARC<a href="#spf-dkim-et-dmarc" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p>Au fur et à mesure du temps, des techniques ont été inventées pour lutter contre le spam et authentifier les expéditeurs &ldquo;légaux&rdquo;. On parle ici de 3 choses :</p>
+
+<ul>
+<li><a href="https://fr.wikipedia.org/wiki/Sender_Policy_Framework">SPF</a>, pour <em>Sender Policy Framework</em>,</li>
+<li><a href="https://fr.wikipedia.org/wiki/DomainKeys_Identified_Mail">DKIM</a> pour <em>DomainKeys Identified Mail</em>,</li>
+<li><a href="https://fr.wikipedia.org/wiki/DMARC">DMARC</a> pour <em>Domain-based Message Authentication, Reporting and Conformance</em>.</li>
+</ul>
+
+<p>Je vous conseille <strong>vivement</strong> de les configurer sur vos serveurs de mails. Vous pouvez lire à ce sujet <a href="https://www.debian-administration.org/tag/spf">les articles</a> de Steve Kemp.</p>
+
+<p>Des outils le font par défaut, comme <a href="https://github.com/AlternC/AlternC">AlternC</a>.</p>
+
+<p>### antivirus</p>
+
+<p>Si vous avez un antivirus, par exemple <a href="http://www.clamav.net/doc/install.html">clamav</a> (idéalement en y ajoutant les signatures de <a href="https://www.rfxn.com/projects/linux-malware-detect/">maldet</a>) sur votre serveur, il peut vous aider à (re)trouver des fichiers vérolés :</p>
+
+<pre><code>clamscan -ri /var/www/
+
+/var/www/search.php: Php.Trojan.StopPost FOUND
+/var/www/help.php: Php.Trojan.StopPost FOUND
+
+----------- SCAN SUMMARY -----------
+Known viruses: 3912137
+Engine version: 0.98.5
+Scanned directories: 550
+Scanned files: 78469
+Infected files: 2
+Data scanned: 1382.68 MB
+Data read: 1509.90 MB (ratio 0.92:1)
+Time: 132.390 sec (2 m 12 s)
+</code></pre>
+
+		</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2019 <a href="cyphercat.eu"></a></p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="cyphercat.eu/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
+
+
+	<script src="/cyphercat.eu/js/main.min.35ccbf1cdceb91e4c64c06b5d009d6e2977fafe56beda7762febd4e67528d2ac.js" integrity="sha256-Ncy/HNzrkeTGTAa10AnW4pd/r+Vr7ad2L+vU5nUo0qw="></script>
+
+</body>
+
+</html>

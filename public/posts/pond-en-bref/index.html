@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#494f5c">
+	<meta name="msapplication-TileColor" content="#494f5c">
+
+<meta itemprop="name" content="Pond en bref">
+<meta itemprop="description" content="Après avoir relu les différentes raisons de ne pas utiliser PGP (« 15 reasons not to start using PGP »), et accepter que ce n&rsquo;est pas faux, voir même plutôt vrai, je suis retombé en fin d&rsquo;article sur le projet Pond. Et il faut le dire : ça donne envie, même si la peinture n&rsquo;est pas sèche.
+Quelques fonctionnalités en vrac :
+ obligation de passer par le réseau Tor OTR (Off-the-Record Messaging), pas de spam (seules les personnes identifiées peuvent communiquer avec vous) les messages sont effacés au bout d&rsquo;une semaine après la réception les messages sont effacés au bout de deux semaines sur les serveurs si vous ne les avez pas reçus.">
+
+
+<meta itemprop="datePublished" content="2014-04-19T10:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2014-04-19T10:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="808">
+
+
+
+<meta itemprop="keywords" content="adminsys,crypto," />
+<meta property="og:title" content="Pond en bref" />
+<meta property="og:description" content="Après avoir relu les différentes raisons de ne pas utiliser PGP (« 15 reasons not to start using PGP »), et accepter que ce n&rsquo;est pas faux, voir même plutôt vrai, je suis retombé en fin d&rsquo;article sur le projet Pond. Et il faut le dire : ça donne envie, même si la peinture n&rsquo;est pas sèche.
+Quelques fonctionnalités en vrac :
+ obligation de passer par le réseau Tor OTR (Off-the-Record Messaging), pas de spam (seules les personnes identifiées peuvent communiquer avec vous) les messages sont effacés au bout d&rsquo;une semaine après la réception les messages sont effacés au bout de deux semaines sur les serveurs si vous ne les avez pas reçus." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.cyphercat.eu/posts/pond-en-bref/" />
+<meta property="article:published_time" content="2014-04-19T10:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2014-04-19T10:00:00&#43;00:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Pond en bref"/>
+<meta name="twitter:description" content="Après avoir relu les différentes raisons de ne pas utiliser PGP (« 15 reasons not to start using PGP »), et accepter que ce n&rsquo;est pas faux, voir même plutôt vrai, je suis retombé en fin d&rsquo;article sur le projet Pond. Et il faut le dire : ça donne envie, même si la peinture n&rsquo;est pas sèche.
+Quelques fonctionnalités en vrac :
+ obligation de passer par le réseau Tor OTR (Off-the-Record Messaging), pas de spam (seules les personnes identifiées peuvent communiquer avec vous) les messages sont effacés au bout d&rsquo;une semaine après la réception les messages sont effacés au bout de deux semaines sur les serveurs si vous ne les avez pas reçus."/>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>Pond en bref</title>
+	<link rel="stylesheet" href="http://www.cyphercat.eu/css/style.min.568c54a56780af2a70c45272522247710b69dbfc080b315211fb98381e3796f8.css" integrity="sha256-VoxUpWeArypwxFJyUiJHcQtp2/wICzFSEfuYOB43lvg=">
+	
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="http://www.cyphercat.eu">Cyphercat</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					
+				<a href="http://www.cyphercat.eu/posts/">Posts</a>
+				<a href="http://www.cyphercat.eu/about">About</a>
+
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<span class="hdr-social hide-in-mobile"><a href="https://framapiaf.org/@skhaen" target="_blank" rel="noopener me" title="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a><a href="https://instagram.com/" target="_blank" rel="noopener me" title="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line></svg></a><a href="https://github.com/skhaen" target="_blank" rel="noopener me" title="Github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="http://www.cyphercat.eu/posts/">Posts</a></li>
+			<li><a href="http://www.cyphercat.eu/about">About</a></li>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner animated fadeIn faster">
+		<article class="thin">
+			<header class="post-header">
+				<div class="post-meta"><span>Apr 19, 2014</span></div>
+				<h1>Pond en bref</h1>
+			</header>
+			<div class="content">
+				
+
+<p>Après avoir relu les différentes raisons de ne pas utiliser PGP (« <em><a href="15 reasons not to start using PGP">15 reasons not to start using PGP</a></em> »), et accepter que ce n&rsquo;est pas faux, voir même plutôt vrai, je suis retombé en fin d&rsquo;article sur le projet <a href="https://pond.imperialviolet.org/">Pond</a>. Et il faut le dire : ça donne envie, même si la peinture n&rsquo;est pas sèche.</p>
+
+<p>Quelques fonctionnalités en vrac :</p>
+
+<ul>
+<li>obligation de passer par le réseau Tor</li>
+<li>OTR (<a href="https://otr.cypherpunks.ca/">Off-the-Record Messaging</a>),</li>
+<li>pas de spam (seules les personnes identifiées peuvent communiquer avec vous)</li>
+<li>les messages sont effacés au bout d&rsquo;une semaine après la réception</li>
+<li>les messages sont effacés au bout de deux semaines sur les serveurs si vous ne les avez pas reçus.</li>
+<li>les serveurs sont des services cachés Tor (<em><a href="https://www.torproject.org/docs/hidden-services.html.en">Tor hidden services</a></em>).</li>
+</ul>
+
+<p>Pour plus de détails, vous pouvez voir :</p>
+
+<ul>
+<li>la <a href="https://pond.imperialviolet.org/tech.html">partie technique</a>,</li>
+<li>le <a href="https://pond.imperialviolet.org/threat.html">modèle de menaces</a> utilisé.</li>
+</ul>
+
+<h1 id="installation">Installation<a href="#installation" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
+
+<p>Nous allons installer Pond à partir des <a href="https://pond.imperialviolet.org/">paquets pré-compilés</a>, vous pouvez bien entendu le compiler vous même si le coeur vous en dit. Comme vous pouvez le voir, il existe des paquets pour quelques systèmes : Ubuntu 13.10, Debian Wheezy, Fedora et OSX 10.9.</p>
+
+<p>Cette installation concerne <a href="http://debian.org/">Debian Wheezy</a>.</p>
+
+<h2 id="préparation">préparation<a href="#préparation" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+
+<ul>
+<li><p>on commence par installer les paquets nécessaires :</p>
+
+<pre><code>aptitude install libtspi1 libgtkspell-3-0
+
+</code></pre></li>
+</ul>
+
+<h2 id="pond">pond<a href="#pond" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+
+<ul>
+<li><p>on télécharge le paquet pré-compilé pour debian :</p>
+
+<pre><code>wget https://pond.imperialviolet.org/binary/debian/pond.gpg
+
+</code></pre></li>
+
+<li><p>on vérifie la signature du paquet :</p>
+
+<pre><code>gpg pond.gpg
+
+</code></pre></li>
+</ul>
+
+<p>Ce qui vous donne quelque chose comme ceci (<a href="http://www.gnupg.org/howtos/fr/index.html">en savoir plus sur gpg</a>):</p>
+
+<pre><code>gpg: Signature faite le dim. 10 nov. 2013 21:39:30 CET avec la  clef RSA d'identifiant F02C5704
+gpg: Bonne signature de « Adam Langley &lt;agl@imperialviolet.org&gt; »
+gpg: Attention : cette clef n'est pas certifiée avec une signature de confiance.
+gpg: Rien n'indique que la signature appartient à son propriétaire.
+Empreinte de clef principale : C921 7238 4F38 7DBA ED4D  4201 65EB 9636 F02C 5704
+</code></pre>
+
+<ul>
+<li><p>on rend le fichier exécutable (vous avez maintenant 2 fichiers, <strong>pond.gpg</strong> et <strong>pond</strong>) :</p>
+
+<pre><code>chmod +x pond
+
+</code></pre></li>
+</ul>
+
+<h2 id="tor">Tor<a href="#tor" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+
+<p>Il est nécessaire d&rsquo;avoir le logiciel Tor lancé pour permettre à Pond de fonctionner, le <a href="https://www.torproject.org/projects/torbrowser.html.en#downloads">Tor Browser Bundle</a> fait parfaitement l&rsquo;affaire. On peut le télécharger sur <a href="https://www.torproject.org/projects/torbrowser.html.en#downloads">cette page</a> en choisissant sa langue et la bonne version selon son architecture (32 ou 64 bits) :</p>
+
+<ul>
+<li><p>pour connaitre son architecture ( x86_64 = 64 bits / i686 = 32 bits)</p>
+
+<pre><code>uname -m
+
+</code></pre></li>
+
+<li><p>j&rsquo;ai une architecture 64 bits, et je prends en français :</p>
+
+<pre><code>wget https://www.torproject.org/dist/torbrowser/3.5.3/tor-browser-linux64-x.x.x_fr.tar.xz
+</code></pre></li>
+
+<li><p>on décompresse après le téléchargement</p>
+
+<pre><code>tar xvf tor-browser-linux64-x.x.x_fr.tar.xz
+cd tor-browser_fr
+
+</code></pre></li>
+</ul>
+
+<p>On peut alors voir plusieurs fichiers (par exemple avec la commande <strong>ls</strong>) dont <em>start-tor-browser</em> qui nous intéresse pour la suite.</p>
+
+<h1 id="utilisation">Utilisation<a href="#utilisation" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
+
+<ul>
+<li><p>on lance Tor (je vous laisse répondre aux éventuelles questions)</p>
+
+<pre><code>./start-tor-browser
+</code></pre></li>
+
+<li><p>on lance Pond (n&rsquo;oubliez pas de revenir dans le bon dossier pour ça)</p>
+
+<pre><code>./pond
+</code></pre></li>
+</ul>
+
+<p>La fenêtre suivante s&rsquo;ouvre alors</p>
+
+<p><img src="/content/images/2015/09/Pond_010-1.png" alt="" /></p>
+
+<ul>
+<li>On choisit une bonne <strong><a href="https://www.keepassx.org/">phrase de passe</a></strong> puis on valide. Pour info, le fichier de pond se trouve dans <em>~/.config/pond</em> (vous pouvez voir son emplacement dans <em>identity</em>).</li>
+</ul>
+
+<h2 id="ajouter-un-contact">ajouter un contact<a href="#ajouter-un-contact" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+
+<p>Avant toute chose, on choisit l&rsquo;alias du nouveau contact, APRÈS on choisit entre le secret partagé où l&rsquo;échange de clé.</p>
+
+<h3 id="secret-partagé">secret partagé<a href="#secret-partagé" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p>Consiste simplement en un secret partagé (oui, c&rsquo;est facile, c&rsquo;est le titre) : vous définissez une phrase avec votre interlocuteur que vous rentrez chacun de votre côté dans votre pond (avec si vous le voulez les 2 étapes suivantes).</p>
+
+<ul>
+<li><strong>facultatif</strong> : secret partagé + un paquet de cartes :</li>
+</ul>
+
+<p>Je vous laisse lire l&rsquo;explication de <a href="(https://www.schneier.com/solitaire.html)">Bruce Schneier</a> sur ce sujet.</p>
+
+<ul>
+<li><strong>facultatif 2</strong> : secret partagé + un paquet de cartes + la date du jour comme <em><a href="https://en.wikipedia.org/wiki/Salt_%28cryptography%29">salt</a></em> :</li>
+</ul>
+
+<p>La même chose, mais en rajoutant une date choisie pour ajouter un facteur aléatoire.</p>
+
+<h3 id="échange-de-clés">échange de clés<a href="#échange-de-clés" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p>Il existe une autre solution, qui consiste à échanger deux clés avec ton interlocuteur. Vous pouvez le faire par <em>Add</em> puis <em>Manual Keying</em>.</p>
+
+<p>Vous avez un bloc de caractères ressemblant à ceci :</p>
+
+<pre><code>-----BEGIN POND KEY EXCHANGE-----
+	Cs0GCiClnO8gPGj/LTfHORvfWSrAwwnIW9Y19cejMspY3baD4xIgPsUshFslEolA
+htRZ78BkKd3/G7XQOQ8u6nkxFUjUTUEaWHBvbmRzZXJ2ZXI6Ly9JQ1lVSFNBWUdJ
+WFRLWUtYU0FISUJXRUFRQ1RFRjI2V1VXRVBPVkM3NjRXWUVMQ0pNVVBBQGpiNjQ0
+emFwamU1ZHZnazMub25pb24iII59PgPcWl8gX2K6IizjzJXj4smvjKSbKChgwdBL
+	[...]
+/5dRxErpgNvQZptIqk5KNMCrylE8LDZg5s0Wsgsk3BkSQJqXumIWS7XrtQ+3xYVg
+q6Z8seL7srGDOpZNnTfZy/v7O7ebHieZOLLlUj1Afw4/S28QPRpA7sHZQxIjPi01
+ewY=
+-----END POND KEY EXCHANGE-----
+</code></pre>
+
+<p>en dessous, il faut le transmettre à votre interlocteur, qui vous donnera le sien. <strong>Attention</strong> : ce bloc de texte correspond à UNE seule personne. À chaque fois que vous ajoutez un contact le bloc sera différent.</p>
+
+<h2 id="envoyer-un-message">envoyer un message<a href="#envoyer-un-message" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+
+<p>Cliquer sur <em>compose</em> en haut à gauche, choisir son destinataire (<em>TO</em>) qui est déjà authentifié (sinon ce n&rsquo;est pas possible de lui envoyer quelque chose) écrire son message. Pour finir, appuyer sur <em>Send</em>. Simple non ?</p>
+
+<h2 id="quelques-notes">Quelques notes :<a href="#quelques-notes" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+
+<ul>
+<li>Quand vous envoyez un message, il est rouge si il n&rsquo;est pas lu, vert si il l&rsquo;est.</li>
+<li>en allant dans <em>Activity log</em> vous pouvez, en appuyant sur <em>Transact now</em> (en haut à droite) demander à Pond de faire ses appels serveurs avant la prochaine demande programmée.</li>
+<li>ce n&rsquo;est pas fait pour faire du tchat (loin de là même), ça serait plutôt l&rsquo;équivalent du mail dans l&rsquo;absolu)</li>
+</ul>
+
+<p>C&rsquo;est prometteur, mais ça reste de la (pré-)béta.</p>
+
+<p>Je crois que je peux difficilement faire plus bref.</p>
+
+			</div>
+			<hr class="post-end">
+			<footer class="post-info">
+				<p>
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="http://www.cyphercat.eu/tags/adminsys">adminsys</a></span><span class="tag"><a href="http://www.cyphercat.eu/tags/crypto">crypto</a></span>
+				</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2014-04-19 12:00 &#43;0200</p>
+			</footer>
+		</article>
+		<div class="post-nav thin">
+			<a class="next-post" href="http://www.cyphercat.eu/posts/livres/">
+				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;</span><br><span>Livres</span>
+			</a>
+			<a class="prev-post" href="http://www.cyphercat.eu/posts/flasher-un-modem-routeur-buffalo-wbmr-hp-g300h-avec-openwr/">
+				<span class="post-nav-label">&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>Flasher un modem routeur buffalo WBMR HP g300h avec OpenWRT</span>
+			</a>
+		</div>
+		<div id="comments" class="thin">
+</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2019 <a href="http://www.cyphercat.eu">Skhaen</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="http://www.cyphercat.eu/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
+
+
+	<script src="http://www.cyphercat.eu/js/main.min.35ccbf1cdceb91e4c64c06b5d009d6e2977fafe56beda7762febd4e67528d2ac.js" integrity="sha256-Ncy/HNzrkeTGTAa10AnW4pd/r+Vr7ad2L+vU5nUo0qw="></script>
+
+</body>
+
+</html>

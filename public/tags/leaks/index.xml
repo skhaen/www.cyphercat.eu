@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>leaks on Cyphercat</title>
+    <link>http://www.cyphercat.eu/tags/leaks/</link>
+    <description>Recent content in leaks on Cyphercat</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Sun, 25 Jan 2015 16:18:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.cyphercat.eu/tags/leaks/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>NSA - À propos de BULLRUN</title>
+      <link>http://www.cyphercat.eu/posts/nsa-a-propos-de-bullrun/</link>
+      <pubDate>Sun, 25 Jan 2015 16:18:00 +0000</pubDate>
+      
+      <guid>http://www.cyphercat.eu/posts/nsa-a-propos-de-bullrun/</guid>
+      <description>Dans cet article, nous allons revenir sur les révélations du Spiegel datant de fin décembre lors du 31c3 (Chaos Computer Congress) et du 17 janvier 2015 portant sur les moyens offensifs de la NSA ainsi que d&amp;rsquo;autres agences concernant la cryptographie.
+La conférence &amp;ldquo;Reconstructing narratives&amp;rdquo; de Laura Poitras et Jacob Appelbaum présentant ces documents est visible ci-dessous (mais aussi sur le site du CCC).
+BULLRUN, qu&amp;rsquo;est ce que c&amp;rsquo;est ?</description>
+    </item>
+    
+    <item>
+      <title>NSA - TAO, la voie du renseignement</title>
+      <link>http://www.cyphercat.eu/posts/tao-catalogue-ant/</link>
+      <pubDate>Mon, 22 Sep 2014 15:55:00 +0000</pubDate>
+      
+      <guid>http://www.cyphercat.eu/posts/tao-catalogue-ant/</guid>
+      <description>Ne trouvant aucune base de données des différents programmes provenant des fuites de Snowden, nous avons travaillé à la création d&amp;rsquo;une base de données concernant la NSA et le GCHQ. L&amp;rsquo;article qui suit est une synthèse d&amp;rsquo;une partie de nos travaux.
+ It&amp;rsquo;s not as bad as you thought - it&amp;rsquo;s much worseIain Thomson - theregister.co.uk / 2013-12-31
+ Nous allons aborder aujourd&amp;rsquo;hui le &amp;ldquo;catalogue&amp;rdquo; du groupe d&amp;rsquo;élite de la NSA nommé TAO (pour Tailored Access Operations).</description>
+    </item>
+    
+    <item>
+      <title>GCHQ - partie 1 : JTRIG</title>
+      <link>http://www.cyphercat.eu/posts/gchq-partie-1-jtrig/</link>
+      <pubDate>Mon, 07 Jul 2014 16:37:00 +0000</pubDate>
+      
+      <guid>http://www.cyphercat.eu/posts/gchq-partie-1-jtrig/</guid>
+      <description>Ne trouvant aucune base de données des différents programmes provenant des fuites de Snowden, nous avons travaillé à la création d&amp;rsquo;une base de données concernant la NSA et le GCHQ. L&amp;rsquo;article qui suit est une synthèse d&amp;rsquo;une partie de nos travaux.
+  Une dystopie, également appelée contre-utopie, est un récit de fiction dépeignant une société imaginaire organisée de telle façon qu&amp;rsquo;elle empêche ses membres d&amp;rsquo;atteindre le bonheur. Une dystopie peut également être considérée comme une utopie qui vire au cauchemar et conduit donc à une contre-utopie.</description>
+    </item>
+    
+    <item>
+      <title>NSA - temps de faire le (premier) point.</title>
+      <link>http://www.cyphercat.eu/posts/nsa-temps-de-faire-le-premier-point/</link>
+      <pubDate>Fri, 04 Jul 2014 10:00:00 +0000</pubDate>
+      
+      <guid>http://www.cyphercat.eu/posts/nsa-temps-de-faire-le-premier-point/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Ne trouvant aucune base de données des différents programmes provenant des fuites de Snowden, &lt;a href=&#34;https://github.com/nsa-observer&#34;&gt;nous&lt;/a&gt; avons travaillé à la création d&amp;rsquo;une &lt;a href=&#34;https://www.nsa-observer.net&#34;&gt;base de données&lt;/a&gt; concernant la NSA et le GCHQ. L&amp;rsquo;article qui suit est une synthèse d&amp;rsquo;une partie de nos travaux.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://www.cyphercat.eu/content/images/2015/09/nsaobserver_programs.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;petite-introduction&#34;&gt;(petite) Introduction&lt;/h3&gt;
+
+&lt;p&gt;En 1988, le journaliste &lt;a href=&#34;https://en.wikipedia.org/wiki/Duncan_Campbell_%28journalist%29&#34;&gt;Duncan Campbel&lt;/a&gt; révèla l&amp;rsquo;existence d&amp;rsquo;un programme de renseignement, &lt;em&gt;&lt;a href=&#34;https://fr.wikipedia.org/wiki/ECHELON&#34;&gt;Echelon&lt;/a&gt;&lt;/em&gt;, dans un article pour The New Statesman qui s&amp;rsquo;intitulait &amp;ldquo;&lt;em&gt;&lt;a href=&#34;http://www.duncancampbell.org/menu/journalism/newstatesman/newstatesman-1988/They%27ve%20got%20it%20taped.pdf&#34;&gt;Somebody&amp;rsquo;s listening&lt;/a&gt;&lt;/em&gt;&amp;rdquo;. En 1996, c&amp;rsquo;était le journaliste néo-zélandais &lt;a href=&#34;http://www.nickyhager.info/&#34;&gt;Nicky Hager&lt;/a&gt; qui publiait &amp;ldquo;&lt;em&gt;&lt;a href=&#34;http://www.nickyhager.info/ebook-of-secret-power/&#34;&gt;Secret power&lt;/a&gt;&lt;/em&gt;&amp;rdquo; sur l&amp;rsquo;implication de son pays dans le programme. En 1999, suite à une demande du Parlement Européen, Duncan Campbell rend un rapport intitulé &amp;ldquo;&lt;a href=&#34;http://www.cyber-rights.org/interception/stoa/interception_capabilities_2000.htm]&#34;&gt;&lt;em&gt;Interception capabilities 2000&lt;/em&gt;&lt;/a&gt;&amp;rdquo; pour le &lt;em&gt;&lt;a href=&#34;https://fr.wikipedia.org/wiki/STOA&#34;&gt;STOA&lt;/a&gt;&lt;/em&gt; (&lt;em&gt;Science and Technology Options Assessment&lt;/em&gt; du Parlement Européen &amp;ndash; traduction française disponible sous le titre &amp;ldquo;&lt;a href=&#34;http://www.editions-allia.com/fr/livre/438/surveillance-electronique-planetaire&#34;&gt;&lt;em&gt;surveillance éléctronique planétaire&lt;/em&gt;&lt;/a&gt;&amp;rdquo; aux éditions Allia).&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

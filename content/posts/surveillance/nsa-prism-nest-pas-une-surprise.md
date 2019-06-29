@@ -1,0 +1,50 @@
++++
+author = "Skhaen"
+categories = ["SIGINT"]
+date = 2014-09-12T15:57:00Z
+description = ""
+draft = false
+slug = "nsa-prism-nest-pas-une-surprise"
+tags = ["SIGINT"]
+title = "[Snowden] NSA - PRISM n'est pas une surprise"
+
++++
+
+> **NOTE** : j'avais publié à l'origine cet article sur [cyphercat.eu](http://www.cyphercat.eu) après qu'un journaliste me demanda ce que je pensais de PRISM. Je le republie (en le modifiant légèrement) ici pour en garder une trace.
+
+En 1988, le journaliste <a href="https://en.wikipedia.org/wiki/Duncan_Campbell_%28journalist%29">Duncan Campbell</a> révèla l'existence d'un programme de renseignement, <em><a href="https://fr.wikipedia.org/wiki/ECHELON">Echelon</a></em>, dans un article pour The New Statesman qui s'intitulait « <em><a href="http://www.duncancampbell.org/menu/journalism/newstatesman/newstatesman-1988/They%27ve%20got%20it%20taped.pdf">Somebody's listening</a></em> ». En 1996, c'était le journaliste néo-zélandais <a href="http://www.nickyhager.info/">Nicky Hager</a> qui publiait « <em><a href="http://www.nickyhager.info/ebook-of-secret-power/">Secret power</a></em> » sur l'implication de son pays dans le programme. En 1999, suite à une demande du Parlement Européen, Duncan Campbell rend un rapport intitulé « <a href="http://www.cyber-rights.org/interception/stoa/interception_capabilities_2000.htm"><em>Interception Capabilities 2000</em></a> » pour le </em><a href="https://fr.wikipedia.org/wiki/STOA">STOA</a></em> (traduction française disponible sous le titre « <a href="http://www.editions-allia.com/fr/livre/438/surveillance-electronique-planetaire"><em>surveillance electronique planétaire</em></a> » aux éditions Allia).
+
+
+Pour rappel, le <a href="https://fr.wikipedia.org/wiki/ECHELON">projet Echelon</a> désignait un système mondial d'interception des communications privées et publiques (<a href="https://fr.wikipedia.org/wiki/Renseignement_d%27origine_%C3%A9lectromagn%C3%A9tique">SIGINT</a>) via les satellites, et regroupant les États-Unis (NSA), le Royaume-Uni (GCHQ), le Canada (CSTC), l’Australie (DSD) et la Nouvelle-Zélande (GCSB) dans le cadre du <a href="https://fr.wikipedia.org/wiki/UKUSA">traité UKUSA</a>.  Pour ne pas rester derrière, la France a rapidement mis en route un projet similaire, surnommé « <em><a href="http://bugbrother.blog.lemonde.fr/2009/06/16/frenchelon-la-carte-des-stations-espion-du-renseignement-francais/">frenchelon</a></em> » (voir aussi l'article <a href="http://bugbrother.blog.lemonde.fr/2010/10/02/frenchelon-la-dgse-est-en-1ere-division/"><em>la DGSE en première division</em></a>). 
+
+Besoin d'un petit résumé ? Voici un rappel de J.M. Manach pour sa conférence « <em><a href="http://jean-marc.manach.net/CQ/echelon.html">Echelon/Frenchelon : mythes et réalités</a></em> » (avril 2005) : 
+
+
+* **1976** : Duncan Campbell est arrêté par le contre-espionnage britannique pour avoir publié dans un journal une enquête sur une installation gouvernementale de surveillance électronique. […]
+* **1988** : […] Campbell, […] révèle l'ampleur du programme […] « <em>Echelon</em> ».
+* **1999** : dans un rapport commandé le Parlement européen, et largement médiatisé, Campbell détaille l'histoire, le fonctionnement et l'évolution d'Echelon, et avance qu'en matière d'espionnage industriel, il rapporterait, chaque année, 25 milliards de dollars de contrats aux firmes américaines. Au détriment, essentiellement, de leurs concurrents européens ou japonais.
+* **2004** : après avoir autorisé la télévision à effectuer un reportage sur sa station d'écoute de Domme, l'armée française médiatise le lancement, en décembre, du satellite de renseignement par l'image Helios 2A -qui permet de différencier « un char d'un tracteur »- et des microsatellites Essaim de renseignement électromagnétique, deux des composantes de ce que l'on surnomme « Frenchelon ».
+
+La surveillance généralisée peut rapporter de l'argent, surtout si on n'est pas trop regardant, comme l'entreprise américaine <a href="http://reflets.info/opsyria-bluecoat-admet-maintenant-la-presence-de-ses-produits-sur-le-sol-syrien/">Bluecoat en Syrie</a> ou l'entreprise Française Amesys en <a href="http://reflets.info/surprise-la-tunisie-utilisait-des-technologies-francaises-pour-espionner-sa-population/">Tunisie</a> ou en <a href="http://reflets.info/amesys-poursuite-dune-enquete-de-la-mise-sur-ecoute-de-5-millions-de-terroristes-pedophiles-libyens/">Libye</a> (en sachant parfaitement que le référent libyen était <a href="https://en.wikipedia.org/wiki/Abdullah_Senussi">Abdallah Al-Senoussi</a>, condamné par contumace en France pour son rôle dans l’attentat du DC10 de 1989 qui avait coûté la vie à 170 personnes).
+
+Nous avons la <a href="http://www.lemonde.fr/societe/article/2013/07/04/revelations-sur-le-big-brother-francais_3441973_3224.html">DGSE</a> qui est au cœur d'un programme de surveillance (lire aussi l'article de reflets.info sur <a href="http://reflets.info/amesys-ecoutes-sauvages-paris-champs-elysees/">les écoutes sauvages</a> en France), et, aux États-unis, ils ont PRISM, qui n'est que la partie d'un ensemble beaucoup, <a href="http://reflets.info/prism-lets-have-a-look-at-the-big-picture">beaucoup plus gros</a> (pour un rapide aperçu, voir les [slides de ma conférence](http://pses2014.libwalk.so/) pour PSES2014). 
+
+En France, ce sont surtout les journalistes <a href="http://bugbrother.blog.lemonde.fr/">Jean-Marc Manach</a> (cf. « <a href="http://bugbrother.blog.lemonde.fr/2012/03/16/au-pays-de-candy-mon-livre-en-ligne/"><em>Au pays de Candy</em></a>) et <a href="http://www.kitetoa.com/">Kitetoa</a> (cf. <a href="http://reflets.info/prism-lets-have-a-look-at-the-big-picture">reflets.info</a>), qui en parlent. En bonus, vous pouvez aussi regarder la conférence de Kitetoa « <em><a href="http://lacantine.ubicast.eu/videos/23-06-2013-141117/">Daisy's underware</a></em> » (<a href="http://www.passageenseine.org">PSES</a> - 2013) pour comprendre l'immensité du système de surveillance US. Vous pouvez aussi jeter un coup d'oeil à « <a href="https://thepiratebay.sx/torrent/7110141/Traques.Enquete.sur.les.marchands.d.armes.numeriques.Doc.FRENCH">Traqués</a> » de Paul Moreira. 
+
+
+Je pense qu'après cette petite introduction, tout le monde aura compris que PRISM n'est pas une surprise, et pourquoi la plupart des <a href="http://reflets.info/prism-and-guests-au-moins-7-pays-europeens-auraient-des-accords-avec-la-nsa/">politiques n'ont rien dit</a>, même si certains (bien trop rares) ont réagi, en particulier au <a href="http://www.europarl.europa.eu/news/fr/headlines/content/20130611STO11522/html/Prism-les-d%C3%A9put%C3%A9s-sont-tr%C3%A8s-critiques-envers-la-surveillance-am%C3%A9ricaine">parlement européen</a> (surtout depuis qu'ils ont appris que eux aussi étaient <a href="http://www.pcinpact.com/news/80924-les-usa-accuses-d-avoir-espionne-leurs-allies-europeens-dont-france.htm">espionnés</a>. 
+
+Alors voilà, que pouvons nous en tirer ? Nous ne <u>pouvons pas</u> faire confiance aux gouvernements et encore moins aux entreprises pour assurer notre sécurité et notre vie privée. Nous pouvons, par contre, nous appuyer sur la <a href="https://fr.wikipedia.org/wiki/Soci%C3%A9t%C3%A9_civile">société civile</a> (comme l'<a href="http://www.pcinpact.com/news/81255-prism-dix-neuf-associations-americaines-portent-plainte-contre-nsa.htm">EFF</a> (<a href="https://www.eff.org/">eff.org</a>) ou <a href="http://laquadrature.fr">La Quadrature du Net</a>), des groupes (comme <a href="http://owni.fr/2011/07/25/telecomix-%C2%AB-hacker-pour-la-liberte-%C2%BB/">Telecomix</a>),
+les lanceurs d'alerte (comme <a href="https://en.wikipedia.org/wiki/Bradley_Manning">Chelsea Manning</a> ou <a href="https://en.wikipedia.org/wiki/Edward_snowden">Edward Snowden</a>) et sur des <a href=""https://prism-break.org/>outils</a> qui ne nous trahiront pas, comme les <a href="https://www.april.org/">logiciels libres</a>. 
+
+> « <em>On sait que les **services décentralisés**, c'est les données qui restent sous contrôle de l'utilisateur. On sait que les **logiciels libres**, c'est la machine qui reste sous contrôle de l'utilisateur, et non la machine qui contrôle l'utilisateur. On sait que le **chiffrement point à point**, c'est la sécurité de nos communications qui est sous notre contrôle et pas externalisée</em> » (Jérémie Zimmermann - <a href="http://lacantine.ubicast.eu/videos/21-06-2013-215359/">PSES 2013</a>).
+
+Les <a href="https://prism-break.org/">outils</a> existent, il y a de plus en plus d' <a href="http://www.cryptoparty.in/">évènements</a> sur la planète pour apprendre à les utiliser. C'est donc possible, c'est même <em>facile</em> de le faire. Mais voilà le plus gros problème : nous avons beau raconter, développer, ré<a href="http://lacantine.ubicast.eu/videos/21-06-2013-125516/">expliquer les problèmes de la surveillance</a> et les <a href="http://bugbrother.blog.lemonde.fr/2013/06/30/pourquoi-la-nsa-espionne-aussi-votre-papa-oupas/">risques kafkaiens</a> qui vont avec, l'immense majorité des gens ne bouge pas, soit pour ne pas bousculer des habitudes, soit parce qu' « <a href="http://lacantine.ubicast.eu/videos/21-06-2013-125516/">ils n'ont rien à cacher</a> ».
+
+Pour approfondir un peu :
+
+* Duncan Campbell, sur <a href="http://www.duncancampbell.org/content/biography">duncancampbell.org</a> (En).
+* la page « <em><a href="https://www.eff.org/nsa-spying/timeline">Timeline of NSA Domestic Spying</a></em> » (En) sur le site de l'EFF.
+* Le site d'informations <a href="http://reflets.info/?s=nsa">reflets.info</a> (Fr).
+* Le site site de Jean-marc Manach (manhack) : <a href="http://bugbrother.blog.lemonde.fr/">bugbrother.blog.lemonde.fr</a> (Fr).
+

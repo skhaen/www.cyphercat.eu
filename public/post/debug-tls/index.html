@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<meta itemprop="name" content="Debug SSL/TLS avec OpenSSL - partie 1">
+<meta itemprop="description" content="Si tu es en pleine session de dé/bug SSL/TLS, cet article peut t&rsquo;éviter quelques désagréments ;-)
+SSL Labs, l&rsquo;incontournable On ne le présente plus, le site de Qualys permet de tester la configuration de son serveur facilement avec une interface web bien faite. Le test permet d&rsquo;avoir un rapport concernant les points suivants :
+ Authentification : validité du certificat (nom du site, période de validité&hellip;), présence et validité de la chaîne de certificat (chain) Protocoles diposnibles (SSLv2, SSLv3, TLS 1.">
+
+
+<meta itemprop="datePublished" content="2015-07-17T12:53:00&#43;00:00" />
+<meta itemprop="dateModified" content="2015-07-17T12:53:00&#43;00:00" />
+<meta itemprop="wordCount" content="1195">
+
+
+
+<meta itemprop="keywords" content="adminsys,ssl,apache2," />
+<meta property="og:title" content="Debug SSL/TLS avec OpenSSL - partie 1" />
+<meta property="og:description" content="Si tu es en pleine session de dé/bug SSL/TLS, cet article peut t&rsquo;éviter quelques désagréments ;-)
+SSL Labs, l&rsquo;incontournable On ne le présente plus, le site de Qualys permet de tester la configuration de son serveur facilement avec une interface web bien faite. Le test permet d&rsquo;avoir un rapport concernant les points suivants :
+ Authentification : validité du certificat (nom du site, période de validité&hellip;), présence et validité de la chaîne de certificat (chain) Protocoles diposnibles (SSLv2, SSLv3, TLS 1." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="cyphercat.eu/post/debug-tls/" />
+<meta property="article:published_time" content="2015-07-17T12:53:00&#43;00:00"/>
+<meta property="article:modified_time" content="2015-07-17T12:53:00&#43;00:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Debug SSL/TLS avec OpenSSL - partie 1"/>
+<meta name="twitter:description" content="Si tu es en pleine session de dé/bug SSL/TLS, cet article peut t&rsquo;éviter quelques désagréments ;-)
+SSL Labs, l&rsquo;incontournable On ne le présente plus, le site de Qualys permet de tester la configuration de son serveur facilement avec une interface web bien faite. Le test permet d&rsquo;avoir un rapport concernant les points suivants :
+ Authentification : validité du certificat (nom du site, période de validité&hellip;), présence et validité de la chaîne de certificat (chain) Protocoles diposnibles (SSLv2, SSLv3, TLS 1."/>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/cyphercat.eu/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/cyphercat.eu/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/cyphercat.eu/favicon-16x16.png">
+	<link rel="manifest" href="/cyphercat.eu/site.webmanifest">
+	<link rel="mask-icon" href="/cyphercat.eu/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/cyphercat.eu/favicon.ico">
+
+	<title>Debug SSL/TLS avec OpenSSL - partie 1</title>
+	<link rel="stylesheet" href="/cyphercat.eu/css/style.min.568c54a56780af2a70c45272522247710b69dbfc080b315211fb98381e3796f8.css" integrity="sha256-VoxUpWeArypwxFJyUiJHcQtp2/wICzFSEfuYOB43lvg=">
+	
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="cyphercat.eu">A cup of tea?</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					
+
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner thin animated fadeIn faster">
+		<h1>Debug SSL/TLS avec OpenSSL - partie 1</h1>
+		<div class="content">
+			
+
+<p>Si tu es en pleine session de dé/bug SSL/TLS, cet article peut t&rsquo;éviter quelques désagréments ;-)</p>
+
+<h3 id="ssl-labs-https-www-ssllabs-com-l-incontournable"><a href="https://www.ssllabs.com/">SSL Labs</a>, l&rsquo;incontournable<a href="#ssl-labs-https-www-ssllabs-com-l-incontournable" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p>On ne le présente plus, le site de Qualys permet de <a href="https://www.ssllabs.com/ssltest/">tester la configuration de son serveur</a> facilement avec une interface web bien faite. Le test permet d&rsquo;avoir un rapport concernant les points suivants :</p>
+
+<ul>
+<li>Authentification : validité du certificat (nom du site, période de validité&hellip;),</li>
+<li>présence et validité de la chaîne de certificat (chain)</li>
+<li>Protocoles diposnibles (SSLv2, SSLv3, TLS 1.0, 1.1 et 1.2),</li>
+<li>Cipher suites disponibles,</li>
+<li>Simulations de connexions avec de nombreux clients (Android, Firefox, IE, Java, Safari, &hellip;),</li>
+<li>détails (Forward Secrecy, HSTS, utilisation du protocole RC4, etc etc&hellip;).</li>
+</ul>
+
+<p>Le tout avec des notes allant de A à F et les pistes à suivre pour améliorer sa connexion. Si vous ne l&rsquo;avez pas encore fait c&rsquo;est la première étape parfaite. À noter que SSL Labs permet aussi de <a href="https://www.ssllabs.com/ssltest/viewMyClient.html">tester son navigateur</a> et fournit de la data sur <a href="https://www.trustworthyinternet.org/ssl-pulse/">l&rsquo;écosystème HTTPS sur Internet</a>.</p>
+
+<h3 id="création-d-un-csr-et-d-un-key">Création d&rsquo;un .csr et d&rsquo;un .key<a href="#création-d-un-csr-et-d-un-key" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p>Pour créer une <em><a href="https://en.wikipedia.org/wiki/Certificate_signing_request">Certificate Signing Request</a></em> (<em>.csr</em>) et une nouvelle <a href="https://fr.wikipedia.org/wiki/Cryptographie_asym%C3%A9trique">clé privée</a> (<em>.key</em>):</p>
+
+<pre><code>openssl req -sha256 -out /etc/ssl/private/exemple.csr -new -newkey rsa:2048 -nodes -keyout /etc/ssl/private/exemple.key
+</code></pre>
+
+<p>Détaillons (il parait que c&rsquo;est mieux pour comprendre) :</p>
+
+<ul>
+<li><code>req</code> : permet de <a href="https://www.openssl.org/docs/apps/req.html">créer et de gérer les CSR</a></li>
+<li><code>-sha256</code> : Vous avez normalement vue <a href="http://googleonlinesecurity.blogspot.fr/2014/09/gradually-sunsetting-sha-1.html">les annonces</a> concernant le passage de SHA1 à SHA2. Pour l&rsquo;inclure dans votre CSR (<em>Certificate Signing Request</em>), il suffit de rajouter l&rsquo;option <code>-sha256</code> à OpenSSL</li>
+<li><code>-out /etc/ssl/private/exemple.csr</code> : indique le fichier où sera enregistrée la CSR</li>
+<li><code>-new</code> : génère une nouvelle CSR et demande à l&rsquo;utilisateur les valeurs qu&rsquo;il souhaite</li>
+<li><code>-newkey rsa:2048</code> : crée une nouvelle clé privée, de type rsa et d&rsquo;une taille de 2048 bits</li>
+<li><code>-nodes</code> : la clé privée n&rsquo;aura pas de mot de passe</li>
+<li><code>-keyout /etc/ssl/private/exemple.key</code> : indique le fichier où sera enregistrée la clé privée</li>
+</ul>
+
+<h3 id="c-est-pourquoi-déjà-ce-certificat">c&rsquo;est pourquoi déjà ce certificat ?<a href="#c-est-pourquoi-déjà-ce-certificat" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p>Quand soudainement (enfin disons quelques temps plus tard), le drame ! Vous ne savez plus quel certificat fait quoi et pour qui, ou jusqu&rsquo;à quand il est valide :</p>
+
+<pre><code>openssl x509 -text -in VotreCertificat.crt -noout
+</code></pre>
+
+<h3 id="et-les-deux-fichiers-là-ils-vont-ensemble">et les deux fichiers, là, ils vont ensemble ?<a href="#et-les-deux-fichiers-là-ils-vont-ensemble" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p>Pour la clé privée :</p>
+
+<pre><code>openssl rsa -noout -modulus -in server.key | md5sum
+</code></pre>
+
+<p>Pour le certificat :</p>
+
+<pre><code>openssl x509 -noout -modulus -in server.crt | md5sum
+</code></pre>
+
+<p>Si le résultat est le même pour les deux commandes, alors votre clé privée et votre certificat sont bien pour le même nom de domaine, avec les mêmes caractéristiques (validité&hellip;)</p>
+
+<h3 id="configuration-ssl-tls-sous-apache2">configuration SSL/TLS sous Apache2 :<a href="#configuration-ssl-tls-sous-apache2" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p>Lors de la présence de plusieurs vhosts différents sur un même serveur Apache2, il arrive que l&rsquo;on puisse avoir des résultats étranges dans les algos de chiffrement, par exemple la présence de SSLv3 alors que l&rsquo;on a bien mis (et vérifié beauc&hellip; trop de fois) que l&rsquo;on a bien <code>SSLProtocol all -SSLv2 -SSLv3</code> dans sa configuration.</p>
+
+<p>Il faut savoir que l&rsquo;on peut mettre sa configuration SSL/TLS dans <strong>deux</strong> fichiers différents :</p>
+
+<p>Le premier (<code>/etc/apache2/mods-enabled/ssl.conf</code>) sera le choix par défaut pour l&rsquo;ensemble des vhosts, alors que le second (<code>/etc/apache2/sites-enabled</code>) concernera seulement le vhost pour lequel la configuration est présente dans son fichier de configuration.  L&rsquo;idée est donc de mettre la configuration générale dans <code>ssl.conf</code> et les points de configuration propre à chaque vhost dans <code>sites-enabled</code> (ou dans <code>sites-enabled</code> selon votre configuration), comme les certificats ou encore HSTS (Strict-Transport-Security) avec lequel je vous conseille de faire TRÈS attention.</p>
+
+<ul>
+<li><p>configuration générale : <code>/etc/apache2/mods-enabled/ssl.conf</code></p>
+
+<pre><code>SSLCipherSuite ALL:!aNULL:!eNULL:!LOW:!EXP:!RC4:!3DES:+HIGH:+MEDIUM
+SSLHonorCipherOrder on
+SSLProtocol all -SSLv2 -SSLv3
+</code></pre></li>
+</ul>
+
+<p><strong>NOTE de non bas de page</strong> : mon extrémiste préféré pour le ssl/tls <a href="https://blog.imirhil.fr/extremiste-oui-et-meme-fier-de-letre.html">aeris</a> vous propose cette configuration un poil extrême (mais ô combien efficace) à la place de la précédente :</p>
+
+<pre><code>SSLCipherSuite EECDH+AES:+AES128:+AES256:+SHA
+</code></pre>
+
+<ul>
+<li><p>configuration propre à un vhost : <code>etc/apache2/sites-enabled/</code> (entre les balises <code>&lt;VirtualHost&gt;</code> et <code>&lt;/VirtualHost&gt;</code>) :</p>
+
+<pre><code>SSLEngine on
+SSLCertificateKeyFile /etc/ssl/private/libwalk.key
+SSLCertificateFile /etc/ssl/private/libwalk.crt
+SSLCertificateChainFile /etc/ssl/private/libwalk.chain
+SSLCompression off
+Header set Strict-Transport-Security &quot;max-age=31622400
+&lt;/VirtualHost&gt;
+</code></pre></li>
+</ul>
+
+<h3 id="chain-késako">.chain ? késako<a href="#chain-késako" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p>La directive <a href="https://httpd.apache.org/docs/2.2/mod/mod_ssl.html#sslcertificatechainfile">SSLCertificateChainFile</a> d&rsquo;Apache2 permet d&rsquo;indiquer l&rsquo;emplacement du fichier comportant les <a href="https://developer.mozilla.org/fr/docs/Introduction_%C3%A0_la_cryptographie_%C3%A0_clef_publique/Certificats_et_authentification#Cha.C3.AEnes_de_certificat">certificats chaînés</a> (merci mozilla pour l&rsquo;explication), c&rsquo;est à dire votre certificat ET les certificats de votre <a href="https://en.wikipedia.org/wiki/Certificate_authority">CA</a> (comme startssl, gandi, comodo).</p>
+
+<p>Quand vous faites une requêtes (CSR) chez une <a href="https://en.wikipedia.org/wiki/Certificate_authority">CA</a>, cette dernière, au moment de vous fournir votre certificat (.crt), vous indique (normalement) où se trouvent ses certificats à prendre dans votre cas.</p>
+
+<p>Nous allons prendre comme exemple ici <a href="https://www.startssl.com">startssl</a> vu qu&rsquo;ils permettent d&rsquo;avoir des certificats gratuits assez facilement. Une fois que j&rsquo;ai fait ma requête via le formulaire en envoyant ma CSR et qu&rsquo;ils m&rsquo;ont fournit ma clé, je peux faire la manipulation suivante :</p>
+
+<p><strong>IMPORTANT</strong> : l&rsquo;ordre dans le fichier <strong>doit</strong> commencer par le certificat le plus bas (nous), puis remonter progressivement vers le plus haut.</p>
+
+<p>Imaginons que nous avons déjà notre clé privée (<code>exemple.tld.key</code>) et notre certificat (<code>exemple.tld.crt</code>)&nbsp;:</p>
+
+<ul>
+<li><p>télécharger le certificat intermédiaire de startssl :</p>
+
+<pre><code>wget https://www.startssl.com/certs/sub.class1.server.ca.pem
+</code></pre></li>
+
+<li><p>puis le certificat root :</p>
+
+<pre><code>wget https://www.startssl.com/certs/ca.pem
+</code></pre></li>
+</ul>
+
+<p>puis on forge le certificat chaîné (ne pas oublier les 2 &gt;&gt;) :</p>
+
+<pre><code>cat exemple.tld.crt &gt;&gt; /etc/ssl/private/exemple.tld.chain
+cat sub.class1.server.ca.pem &gt;&gt; /etc/ssl/private/exemple.tld.chain
+cat ca.pem &gt;&gt; /etc/ssl/private/exemple.tld.chain
+</code></pre>
+
+<p>Et le tour est joué* \o/</p>
+
+<p><small>* si vous n&rsquo;avez pas oublié de rajouter la ligne suivante dans le fichier de configuration de votre vhost :</p>
+
+<pre><code>SSLCertificateChainFile /etc/ssl/private/exemple.tld.chain
+</code></pre>
+
+<p></small></p>
+
+<h3 id="s-client">s_client<a href="#s-client" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p>Permet de faire des tests grâce à un client SSL (cf <a href="https://wiki.openssl.org/index.php/Command_Line_Utilities#s_client">wiki.openssl.org</a>)</p>
+
+<pre><code>openssl s_client -servername www.libwalk.so -connect www.libwalk.so:443
+</code></pre>
+
+<p>Attention à ne pas oublier <code>-servername</code> et le nom du site que vous voulez tester, sinon la commande prendra le certificat présenté par défaut sur le serveur (et donc pas forcément le bon&hellip;).</p>
+
+<p>Exemple :</p>
+
+<ul>
+<li><p><strong>avec</strong> <code>-servername www.libwalk.so</code></p>
+
+<pre><code>openssl s_client -servername www.libwalk.so -connect www.libwalk.so:443
+
+CONNECTED(00000003)
+depth=1 C = IL, O = StartCom Ltd., OU = Secure Digital Certificate Signing, CN = StartCom Class 1 Primary Intermediate Server CA
+[...]
+0 s:/description=clwEqu9Rv2hyAXKy/C=FR/CN=www.libwalk.so/emailAddress=postmaster@libwalk.so
+</code></pre>
+
+<ul>
+<li><p><strong>sans</strong> <code>-servername www.libwalk.so</code></p>
+
+<pre><code>openssl s_client -connect www.libwalk.so:443
+
+CONNECTED(00000003)
+[...]
+0 s:/OU=Domain Control Validated/OU=PositiveSSL Wildcard/CN=*.octopuce.fr
+</code></pre></li>
+</ul></li>
+</ul>
+
+<p>Pour plus de précisions, vous pouvez lire &ldquo;<em><a href="https://major.io/2012/02/07/using-openssls-s_client-command-with-web-servers-using-server-name-indication-sni/">Using OpenSSL’s s_client command with web servers using Server Name Indication (SNI)</a></em>&rdquo; pour faire connaissance avec notre ami le <em>SNI</em> (<em>Server Name Indication</em>).</p>
+
+<h4 id="openssl-sur-mon-système">OpenSSL sur mon système :<a href="#openssl-sur-mon-système" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+
+<pre><code>openssl ciphers -v 'ALL:COMPLEMENTOFFALL'
+</code></pre>
+
+<p>Ce qui est activé par défaut (vous pouvez noter la présence des suites d&rsquo;EXPort) :</p>
+
+<pre><code>openssl ciphers -v 'DEFAULT'
+openssl ciphers -v 'ALL:!aNULL:!eNULL'
+</code></pre>
+
+<pre><code>openssl list-cipher-commands
+openssl list-message-digest-commands
+</code></pre>
+
+<p>Vous pouvez &ldquo;créer&rdquo; votre suite avec <a href="https://www.openssl.org/docs/apps/ciphers.html#CIPHER_STRINGS">les critères suivants</a> (algo de chiffrement, de hashage, d&rsquo;authentification&hellip;), la question que vous allez poser devrait donc être &ldquo;ok, mais on fait comment ?&rdquo;.</p>
+
+<blockquote>
+<p><strong>Note</strong> : vous pouvez à tout moment regarder ce que contient <a href="https://www.openssl.org/docs/apps/ciphers.html#CIPHER_STRINGS">un ensemble d&rsquo;algos</a> avec la commande que l&rsquo;on vient de voir. Si par exempke vous voulez voir ce que <code>EXP</code> contient, vous pouvez le faire avec la commande <code>openssl ciphers -v 'EXP'</code>.</p>
+</blockquote>
+
+<p>On prend tout (<code>ALL</code>), on enlève les algos qui ne permettent pas ni l&rsquo;authentification (<code>!aNULL</code>), ni chiffrement (<code>!eNULL</code>), on continue en enlevant <code>!LOW</code> (chiffrement avec 56 ou 64 bits, la norme est de 128 bits de nos jours), les algos d&rsquo;export (<code>!EXP</code>) et l&rsquo;algo RC4 (<code>!RC4</code>) qui est considéré comme <a href="https://twitter.com/ioerror/status/398059565947699200">dangereux</a>.</p>
+
+<h4 id="pour-aller-plus-loin-mais-vraiment-très-très-loin">pour aller plus loin (mais vraiment très, très loin) :<a href="#pour-aller-plus-loin-mais-vraiment-très-très-loin" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+
+<ul>
+<li>un seul livre à lire : l&rsquo;<a href="http://www.amazon.com/Bulletproof-SSL-TLS-Understanding-Applications/dp/1907117040/ref=asap_bc?ie=UTF8">inégalable</a> &ldquo;<em><a href="https://www.feistyduck.com/books/bulletproof-ssl-and-tls/">Bulletproof SSL and TLS</a></em>&rdquo; d&rsquo;Ivan Ristić.</li>
+<li>mais sinon, en plus court et en gratuit, il y a <a href="https://www.feistyduck.com/books/openssl-cookbook/">openssl cookbook</a> du même auteur, ainsi que &ldquo;<em><a href="https://www.ssllabs.com/downloads/SSL_TLS_Deployment_Best_Practices.pdf">SSL/TLS Deployment Best Practices</a></em>&rdquo; (merci <a href="https://fr.matlink.fr/">matlink</a> pour le rappel).</li>
+</ul>
+
+		</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2019 <a href="cyphercat.eu"></a></p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="cyphercat.eu/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
+
+
+	<script src="/cyphercat.eu/js/main.min.35ccbf1cdceb91e4c64c06b5d009d6e2977fafe56beda7762febd4e67528d2ac.js" integrity="sha256-Ncy/HNzrkeTGTAa10AnW4pd/r+Vr7ad2L+vU5nUo0qw="></script>
+
+</body>
+
+</html>

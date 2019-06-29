@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#494f5c">
+	<meta name="msapplication-TileColor" content="#494f5c">
+
+<meta itemprop="name" content="GPG - Comment générer une paire de clés">
+<meta itemprop="description" content="j&rsquo;avais publié cet article à l&rsquo;origine sur cyphercat.eu il y a quelques temps. Ça servira sans doute plus si ça traine sur ici.
+ La génération d&rsquo;une clé asymétrique GPG sous un système Unix / Gnu/Linux est particulièrement simple (une fois que l&rsquo;on sait le faire ;-)), et c&rsquo;est justement ce que nous allons voir ici. Si les détails vous intéressent, ou si vous avez besoin d&rsquo;explications plus détaillées, vous pouvez aller voir sur gnupg.">
+
+
+<meta itemprop="datePublished" content="2015-05-19T14:30:00&#43;00:00" />
+<meta itemprop="dateModified" content="2015-05-19T14:30:00&#43;00:00" />
+<meta itemprop="wordCount" content="1563">
+
+
+
+<meta itemprop="keywords" content="adminsys,gpg," />
+<meta property="og:title" content="GPG - Comment générer une paire de clés" />
+<meta property="og:description" content="j&rsquo;avais publié cet article à l&rsquo;origine sur cyphercat.eu il y a quelques temps. Ça servira sans doute plus si ça traine sur ici.
+ La génération d&rsquo;une clé asymétrique GPG sous un système Unix / Gnu/Linux est particulièrement simple (une fois que l&rsquo;on sait le faire ;-)), et c&rsquo;est justement ce que nous allons voir ici. Si les détails vous intéressent, ou si vous avez besoin d&rsquo;explications plus détaillées, vous pouvez aller voir sur gnupg." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.cyphercat.eu/posts/gpg-comment-generer-une-paire-de-cles/" />
+<meta property="article:published_time" content="2015-05-19T14:30:00&#43;00:00"/>
+<meta property="article:modified_time" content="2015-05-19T14:30:00&#43;00:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="GPG - Comment générer une paire de clés"/>
+<meta name="twitter:description" content="j&rsquo;avais publié cet article à l&rsquo;origine sur cyphercat.eu il y a quelques temps. Ça servira sans doute plus si ça traine sur ici.
+ La génération d&rsquo;une clé asymétrique GPG sous un système Unix / Gnu/Linux est particulièrement simple (une fois que l&rsquo;on sait le faire ;-)), et c&rsquo;est justement ce que nous allons voir ici. Si les détails vous intéressent, ou si vous avez besoin d&rsquo;explications plus détaillées, vous pouvez aller voir sur gnupg."/>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>GPG - Comment générer une paire de clés</title>
+	<link rel="stylesheet" href="http://www.cyphercat.eu/css/style.min.568c54a56780af2a70c45272522247710b69dbfc080b315211fb98381e3796f8.css" integrity="sha256-VoxUpWeArypwxFJyUiJHcQtp2/wICzFSEfuYOB43lvg=">
+	
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="http://www.cyphercat.eu">Cyphercat</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					
+				<a href="http://www.cyphercat.eu/posts/">Posts</a>
+				<a href="http://www.cyphercat.eu/about">About</a>
+
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<span class="hdr-social hide-in-mobile"><a href="https://framapiaf.org/@skhaen" target="_blank" rel="noopener me" title="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a><a href="https://instagram.com/" target="_blank" rel="noopener me" title="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line></svg></a><a href="https://github.com/skhaen" target="_blank" rel="noopener me" title="Github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="http://www.cyphercat.eu/posts/">Posts</a></li>
+			<li><a href="http://www.cyphercat.eu/about">About</a></li>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner animated fadeIn faster">
+		<article class="thin">
+			<header class="post-header">
+				<div class="post-meta"><span>May 19, 2015</span></div>
+				<h1>GPG - Comment générer une paire de clés</h1>
+			</header>
+			<div class="content">
+				
+
+<blockquote>
+<p>j&rsquo;avais publié cet article à l&rsquo;origine sur <a href="http://www.cyphercat.eu/tuto_gpg.php">cyphercat.eu</a> il y a quelques temps. Ça servira sans doute plus si ça traine sur ici.</p>
+</blockquote>
+
+<p>La génération d&rsquo;une clé asymétrique GPG sous un système Unix / Gnu/Linux est particulièrement simple (une fois que l&rsquo;on sait le faire ;-)), et c&rsquo;est justement ce que nous allons voir ici. Si les détails vous intéressent, ou si vous avez besoin d&rsquo;explications plus détaillées, vous pouvez aller voir sur <a href="http://www.gnupg.org/">gnupg.org</a> (le site officiel), <a href="http://fr.wikipedia.org/wiki/GNU_Privacy_Guard">wikipedia.fr</a> (qu&rsquo;est ce que GPG), ou encore <a href="http://fr.wikibooks.org/wiki/GPG">wikibooks.org</a> (pour quelques détails). La commande <code>man gpg</code> est bien entendu toujours disponible en cas de besoin.</p>
+
+<ul>
+<li>Créer une clé GPG sous Microsoft Windows</li>
+<li>Créer une clé GPG sous GNU/Linux / Unix</li>
+<li>Générer un certificat de révocation</li>
+<li>Exporter (envoyer) sa clé publique sur un serveur</li>
+<li>Chercher quelqu&rsquo;un et importer sa clé</li>
+<li>pour aller plus loin</li>
+</ul>
+
+<h3 id="créer-une-clé-gpg-sous-microsoft-windows">Créer une clé GPG sous Microsoft Windows<a href="#créer-une-clé-gpg-sous-microsoft-windows" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p>Vous pouvez utiliser le logiciel <a href="http://www.gpg4win.org/license.html">GPG4win</a> (sous licence <a href="http://www.gpg4win.org/license.html">GNU GPL</a>).</p>
+
+<h3 id="créer-une-clé-gpg-sous-mac">Créer une clé GPG sous Mac<a href="#créer-une-clé-gpg-sous-mac" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p>Vous pouvez utiliser le logiciel <a href="https://gpgtools.org/index.html">gpgtools</a> (sous un <a href="https://gpgtools.org/opensource.html">mix de licence</a> :/)</p>
+
+<h3 id="créer-une-clé-gpg-sous-gnu-linux-unix">Créer une clé GPG sous GNU/Linux / Unix<a href="#créer-une-clé-gpg-sous-gnu-linux-unix" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p>Pour commencer, ouvrez un <a href="http://fr.wikipedia.org/wiki/Shell_Unix">terminal</a> et écrivez (ou copiez/collez) la commande suivante :</p>
+
+<pre><code>gpg --gen-key
+</code></pre>
+
+<p>Le programme vous demande le type de clé que vous voulez :</p>
+
+<pre><code>Sélectionnez le type de clé désiré:
+   (1) RSA and RSA (default)
+   (2) DSA and Elgamal
+   (3) DSA (signature seule)
+   (4) RSA (signature seule)
+Votre choix ?
+</code></pre>
+
+<p>mettre le choix par défaut, c&rsquo;est à dire <strong>1</strong>.</p>
+
+<blockquote>
+<p>Pourquoi RSA et pas DSA ? Si vous n&rsquo;avez aucune idée de ce que vous faites, vous pouvez soit voir quelques infos ici : <a href="http://fr.wikipedia.org/wiki/Rivest_Shamir_Adleman">RSA</a> / <a href="http://fr.wikipedia.org/wiki/Digital_Signature_Algorithm">DSA</a> / <a href="http://fr.wikipedia.org/wiki/Cryptosyst%C3%A8me_de_ElGamal">Elgamal</a>,</p>
+</blockquote>
+
+<p>Le programme vous demande ensuite la taille de votre clé, le choix par défaut est <a href="http://fr.wikipedia.org/wiki/RSA-2048">2048 bits</a>, mais nous allons mettre <em>4096</em> à la place (pour simplifier à l&rsquo;extrême : plus long = plus de sécurité)</p>
+
+<pre><code>les clés RSA peuvent faire entre 1024 et 4096 bits de longueur.
+Quelle taille de clé désirez-vous ? (2048)
+</code></pre>
+
+<p>Le choix suivant concerne le temps de validité de la clé, sauf si vous avez un besoin spécifique ou des impératifs en terme de sécurité (renouvellement ponctuel obligatoire, …), le choix par défaut (<em>0</em>) sera un bon choix.</p>
+
+<pre><code>Spécifiez combien de temps cette clé devrait être valide.
+ 0 = la clé n'expire pas
+   = la clé expire dans n jours
+ w = la clé expire dans n semaines
+ m = la clé expire dans n mois
+ y = la clé expire dans n années
+La clé** est valide pour ? (0)
+</code></pre>
+
+<p>Le programme vous demande alors &ldquo;<em>La clé n&rsquo;expire pas du tout. Est-ce correct ? (o/N)</em>&rdquo;, la réponse est donc &ldquo;<em>o</em>&rdquo;.</p>
+
+<p>Voici la partie &ldquo;intéressante&rdquo; : le nom, l&rsquo;adresse mail et le commentaire. Voici un exemple :</p>
+
+<pre><code>Vous avez besoin d'un nom d'utilisateur pour identifier votre clé; le 
+programme le construit à partir du nom réel, d'un commentaire et d'une
+adresse e-mail de cette manière:
+Nom réel: Nobody 
+Adresse e-mail: nobody@cyphercat.eu
+Commentaire: it's a trap
+Vous avez sélectionné ce nom d'utilisateur:
+&quot;Nobody (it's a trap) &lt;nobody@cyphercat.eu&gt;&quot;
+
+Changer le (N)om, le (C)ommentaire, l'(E)-mail ou (O)K/(Q)uitter ?
+</code></pre>
+
+<p>Si toutes les infos vous semblent bonnes, vous pouvez valider comme précédemment (avec la touche &ldquo;<em>o</em>&rdquo;, puis valider avec la touche entrée, mais vous avez l&rsquo;habitude maintenant). Vous pouvez bien entendu mettre ce que vous voulez pour &ldquo;<em>nom réel</em>&rdquo; : prénom et/ou nom, pseudo, …, vous n&rsquo;êtes pas obligé de remplir &ldquo;<em>commentaire</em>, et encore une fois, vous pouvez y mettre ce que vous voulez, comme un complément d&rsquo;information, ou une citation (du moment que ce n&rsquo;est pas trop long).</p>
+
+<p>Et là, soudainement, l&rsquo;angoisse ! Le programme vous demande votre <em>phrase de passe</em></p>
+
+<pre><code>Entrez la phrase de passe:
+</code></pre>
+
+<blockquote>
+<p><strong>Attention</strong> : vous avez sans doute noté, on parle ici de <em>phrase de passe</em> et non de <em>mot de passe</em>, je laisse <a href="https://xkcd.com/">XKCD</a> vous l&rsquo;expliquer en dessin, ça sera plus rapide :</p>
+</blockquote>
+
+<p><a href="https://xkcd.com/936/"><img src="http://imgs.xkcd.com/comics/password_strength.png"></a></p>
+
+<p>Après avoir validé votre mot de passe, le système vous indique que vous devez générer de l&rsquo;<a href="http://fr.wiktionary.org/wiki/entropie">entropie</a></p>
+
+<pre><code>Un grand nombre d'octets aléatoires doit être généré. Vous devriez faire 
+autre-chose (taper au clavier, déplacer la souris, utiliser les disques) 
+pendant la génération de nombres premiers; cela donne au générateur de 
+nombres aléatoires une meilleure chance d'avoir assez d'entropie.
+</code></pre>
+
+<p>La solution est simple, mettez en route un film, un ou deux transferts de fichiers sur votre poste, allez vous faire un thé pendant que votre chat joue avec la souris, n&rsquo;importe quoi produisant une activité sur votre système. Si vous n&rsquo;en faites pas assez, vous aurez le message suivant :</p>
+
+<pre><code>Il n'y a pas assez d'octets aléatoires disponibles. Faites autre chose
+pour que l'OS puisse amasser plus d'entropie ! (il faut **** octets de plus)
+</code></pre>
+
+<p>Si, au contraire, vous avez réussi à passer cette étape (ce qui ne demande normalement pas trop d&rsquo;effort tout de même), vous aurez le plaisir de voir un message ressemblant à celui-là :</p>
+
+<pre><code>gpg: clé EBEB2084 marquée comme ayant une confiance ultime.
+les clés publique et secrète ont été créées et signées.
+
+gpg: vérifier la base de confiance
+gpg: 3 marginale(s) nécessaires, 1 complète(s) nécessaires, modèle
+de confiance PGP
+gpg: profondeur: 0  valide:   2  signé:   0
+confiance: 0-. 0g. 0n. 0m. 0f. 2u
+pub   4096R/EBEB2084 2012-07-23
+  Empreinte de la clé = E506 DAEC FE0F 7FD0 A413 C974 C075 0814 EBEB 2084
+uid  John Doe  &lt;exemple@cyphercat.eu&gt;
+sub   4096R/39CCB14A 2012-07-23
+</code></pre>
+
+<p>Il annonce que votre clé GPG est créée. Et nous allons faire une petite pause pour expliquer certaines choses :</p>
+
+<ul>
+<li><strong>pub</strong> : 4096R/EBEB2084 2012-07-23</li>
+</ul>
+
+<p>On apprend ici 3 choses : la taille de la clé (4096 bits), l&rsquo;ID de la clé : EBEB2084 (utile pour la référence et donc pour l&rsquo;<em>exporter</em> ou la <em>télécharger</em>) et pour finir sa date de création.</p>
+
+<ul>
+<li><p><strong>L&rsquo;empreinte</strong> (<em>fingerprint</em>) de la clé</p>
+
+<pre><code>E506 DAEC FE0F 7FD0 A413 C974 C075 0814 EBEB 2084
+</code></pre></li>
+</ul>
+
+<blockquote>
+<p><strong>Attention</strong> : il est préférable de prendre le &ldquo;<em>longID</em>&rdquo; (16 derniers caractères de l&rsquo;empreinte) et non le &ldquo;<em>shortID</em>&rdquo; (8 derniers caractères de l&rsquo;empreinte) pour gérer une clé (ou encore l&rsquo;empreinte elle-même). Pourquoi ? Tout simplement que depuis 2011, une <em>collision</em> est possible avec les <em>shortID</em>. Pour plus de détails, lire <a href="http://www.asheesh.org/note/debian/short-key-ids-are-bad-news.html">asheesh.org</a>, <a href="http://yro.slashdot.org/story/11/12/27/0044242/gnupg-short-id-collision-has-occurred">slashdot</a> ou encore <a href="http://seclists.org/fulldisclosure/2011/Sep/207">seclist</a>.</p>
+</blockquote>
+
+<ul>
+<li>E506 DAEC FE0F 7FD0 A413 C974 C075 0814 EBEB 2084   &ndash;&gt; fingerprint</li>
+<li><strong>E506DAECFE0F7FD0A413C974C0750814EBEB2084</strong> &ndash;&gt; fingerprint (long mais parfait ID)</li>
+<li>E506DAECFE0F7FD0A413C974C0750814<strong>EBEB2084</strong>   &ndash;&gt; short ID</li>
+<li>E506DAECFE0F7FD0A413C974i<strong>C0750814EBEB2084</strong>  &ndash;&gt; long ID</li>
+</ul>
+
+<p>L&rsquo;empreinte sert à vérifier l&rsquo;authenticité de la clé que vous possédez. Vous pouvez la vérifier avec la commande <code>gpg --fingerprint KeyID</code>. C&rsquo;est l&rsquo;empreinte que vous donnez/vérifiez quand vous communiquez votre clé publique ou que l&rsquo;on vous en donne une.</p>
+
+<blockquote>
+<p><strong>NOTE</strong> : le <em>shortID</em> (par habitude l&rsquo;ID, lire l&rsquo;avertissement juste en dessous) de la clé consiste aux 8 derniers caractères de l&rsquo;empreinte ;-)</p>
+</blockquote>
+
+<ul>
+<li><strong>uid</strong> : John Doe  <a href="mailto:exemple@cyphercat.eu">exemple@cyphercat.eu</a></li>
+</ul>
+
+<p>Nom ou pseudo (John Doe), ainsi que le commentaire si il y en a un.</p>
+
+<h3 id="générer-un-certificat-de-révocation">Générer un certificat de révocation<a href="#générer-un-certificat-de-révocation" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p>Le <a href="http://www.gnupg.org/gph/fr/manual.html#REVOCATION">certificat de révocation</a> sert à invalider une clé. Vos correspondants ne pourront alors plus l&rsquo;utiliser. Il doit être utilisé lorsque quelqu&rsquo;un est susceptible d&rsquo;avoir obtenu votre clef privée ou votre mot de passe. Ou si vous avez perdu votre mot de passe par exemple.</p>
+
+<pre><code>gpg --gen-revoke KeyID
+</code></pre>
+
+<p>Par exemple, si ont veut générer un certificat de révocation pour la clé créée précédemment, on utilisera la commande suite :</p>
+
+<pre><code>gpg --gen-revoke EBEB2084
+</code></pre>
+
+<h3 id="exporter-envoyer-sa-clé-publique-sur-un-serveur">Exporter (envoyer) sa clé publique sur un serveur<a href="#exporter-envoyer-sa-clé-publique-sur-un-serveur" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p>L&rsquo;exportation de la clé publique sur un annuaire public permet de trouver la clé via les commandes <code>gpg --search-keys</code> et <code>gpg --recv</code>. Si vous voulez que l&rsquo;on vous &ldquo;trouve&rdquo; facilement, c&rsquo;est indispensable. La commande, sans option, enverra par défaut sur <em>keys.gnupg.net</em></p>
+
+<pre><code>gpg --send-key keyID
+</code></pre>
+
+<p>Exemple :</p>
+
+<pre><code>gpg --send-key EBEB2084
+</code></pre>
+
+<p>Pour envoyer une clé sur un serveur précis (vous pouvez en mettre plusieurs en même temps), il faut utiliser la commande suivante :</p>
+
+<pre><code>gpg --keyserver serv1 [serv2 serv3 …] --send-keys KeyID1 [KeyID2 ...]
+</code></pre>
+
+<p>Exemple :</p>
+
+<pre><code>gpg --keyserver pgp.mit.edu subkeys.pgp.net keys.gnupg.net --send-keys EBEB2084
+</code></pre>
+
+<h3 id="chercher-quelqu-un-et-importer-sa-clé">Chercher quelqu&rsquo;un et importer sa clé<a href="#chercher-quelqu-un-et-importer-sa-clé" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p>La commande pour chercher quelqu&rsquo;un est la suivante : <code>gpg --search-keys</code>, voici un exemple (avec <em>rms</em> pour <a href="http://fr.wikipedia.org/wiki/Richard_Stallman">Richard Stallman</a>) :</p>
+
+<pre><code>gpg --search-keys rms 
+
+(40)Richard Stallman (Chief GNUisance) &lt;rms@gnu.org&gt;
+1024 bit DSA key 135EA668, créé: 2001-03-05
+</code></pre>
+
+<p>À la ~40ème occurence, on trouve donc un Richard Stallman, possédant une adresse rms@gnu.org, ça doit être notre personne. On trouve aussi l&rsquo;identité de sa clé : 135EA668.</p>
+
+<blockquote>
+<p><strong>Attention</strong> : ça <strong>peut</strong> être notre personne, n&rsquo;oubliez pas de vérifier les <a href="http://www.debian.org/events/keysigning.fr.html">signatures</a> de sa clé et la <a href="http://www.debian.org/events/keysigning.fr.html">chaîne de confiance</a> en général.</p>
+</blockquote>
+
+<p>La commande pour importer une clé est tout aussi simple : <code>gpg --recv</code>. Voici un exemple (toujours avec <em><a href="http://fr.wikipedia.org/wiki/Richard_Stallman">rms</a></em>). Nous venons de voir que l&rsquo;identité de sa clé est 135EA668 :</p>
+
+<pre><code>gpg --recv 135EA668
+</code></pre>
+
+<p>ce qui donnera :</p>
+
+<pre><code>gpg: requête de la clé 135EA668 du serveur hkp keys.gnupg.net
+gpg: clé 135EA668: clé publique &quot;Richard Stallman (Chief GNUisance) &lt;rms@gnu.org&gt;&quot; importée
+gpg: 3 marginale(s) nécessaires, 1 complète(s) nécessaires, modèle
+de confiance PGP
+gpg: profondeur: 0  valide:   2  signé:   0
+confiance: 0-. 0g. 0n. 0m. 0f. 2u
+gpg: Quantité totale traitée: 1
+gpg:   importée: 1
+</code></pre>
+
+<p>Et hop, c&rsquo;est bon \0/</p>
+
+<h3 id="moar">MOAR<a href="#moar" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<h4 id="quelques-commandes-utiles">Quelques commandes utiles<a href="#quelques-commandes-utiles" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+
+<ul>
+<li>Générer une paire de clés : <code>gpg --gen-key</code></li>
+<li>Lister les clés présentes : <code>gpg --list-keys</code></li>
+<li>Exporter une clé publique : <code>gpg --armor --export keyID</code></li>
+<li>Calculer l&rsquo;empreinte (<em>fingerprint</em>) d&rsquo;une clé : <code>gpg --fingerprint keyID</code></li>
+<li>Envoyer une clé sur serveur de clés : <code>gpg --send-key keyID</code></li>
+<li>Importer une clé : <code>gpg --import nomFichier</code></li>
+</ul>
+
+<p>Vous en voulez encore plus ? Vous pouvez directement aller voir la <a href="http://www.gnupg.org/documentation/manuals/gnupg-devel/GPG-Commands.html#GPG-Commands">documentation de GPG</a>, ça sera le plus rapide.</p>
+
+			</div>
+			<hr class="post-end">
+			<footer class="post-info">
+				<p>
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="http://www.cyphercat.eu/tags/adminsys">adminsys</a></span><span class="tag"><a href="http://www.cyphercat.eu/tags/gpg">gpg</a></span>
+				</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2015-05-19 16:30 &#43;0200</p>
+			</footer>
+		</article>
+		<div class="post-nav thin">
+			<a class="next-post" href="http://www.cyphercat.eu/posts/debug-tls/">
+				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;</span><br><span>Debug SSL/TLS avec OpenSSL - partie 1</span>
+			</a>
+			<a class="prev-post" href="http://www.cyphercat.eu/posts/remonter-une-attaque-avec-les-logs-dapache2/">
+				<span class="post-nav-label">&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>Remonter une attaque avec les logs d&#39;Apache2</span>
+			</a>
+		</div>
+		<div id="comments" class="thin">
+</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2019 <a href="http://www.cyphercat.eu">Skhaen</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="http://www.cyphercat.eu/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
+
+
+	<script src="http://www.cyphercat.eu/js/main.min.35ccbf1cdceb91e4c64c06b5d009d6e2977fafe56beda7762febd4e67528d2ac.js" integrity="sha256-Ncy/HNzrkeTGTAa10AnW4pd/r+Vr7ad2L+vU5nUo0qw="></script>
+
+</body>
+
+</html>

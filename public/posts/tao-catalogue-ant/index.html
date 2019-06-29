@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#494f5c">
+	<meta name="msapplication-TileColor" content="#494f5c">
+
+<meta itemprop="name" content="NSA - TAO, la voie du renseignement">
+<meta itemprop="description" content="Ne trouvant aucune base de données des différents programmes provenant des fuites de Snowden, nous avons travaillé à la création d&rsquo;une base de données concernant la NSA et le GCHQ. L&rsquo;article qui suit est une synthèse d&rsquo;une partie de nos travaux.
+ It&rsquo;s not as bad as you thought - it&rsquo;s much worseIain Thomson - theregister.co.uk / 2013-12-31
+ Nous allons aborder aujourd&rsquo;hui le &ldquo;catalogue&rdquo; du groupe d&rsquo;élite de la NSA nommé TAO (pour Tailored Access Operations).">
+
+
+<meta itemprop="datePublished" content="2014-09-22T15:55:00&#43;00:00" />
+<meta itemprop="dateModified" content="2014-09-22T15:55:00&#43;00:00" />
+<meta itemprop="wordCount" content="2622">
+
+
+
+<meta itemprop="keywords" content="SIGINT,leaks,adminsys," />
+<meta property="og:title" content="NSA - TAO, la voie du renseignement" />
+<meta property="og:description" content="Ne trouvant aucune base de données des différents programmes provenant des fuites de Snowden, nous avons travaillé à la création d&rsquo;une base de données concernant la NSA et le GCHQ. L&rsquo;article qui suit est une synthèse d&rsquo;une partie de nos travaux.
+ It&rsquo;s not as bad as you thought - it&rsquo;s much worseIain Thomson - theregister.co.uk / 2013-12-31
+ Nous allons aborder aujourd&rsquo;hui le &ldquo;catalogue&rdquo; du groupe d&rsquo;élite de la NSA nommé TAO (pour Tailored Access Operations)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.cyphercat.eu/posts/tao-catalogue-ant/" />
+<meta property="article:published_time" content="2014-09-22T15:55:00&#43;00:00"/>
+<meta property="article:modified_time" content="2014-09-22T15:55:00&#43;00:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="NSA - TAO, la voie du renseignement"/>
+<meta name="twitter:description" content="Ne trouvant aucune base de données des différents programmes provenant des fuites de Snowden, nous avons travaillé à la création d&rsquo;une base de données concernant la NSA et le GCHQ. L&rsquo;article qui suit est une synthèse d&rsquo;une partie de nos travaux.
+ It&rsquo;s not as bad as you thought - it&rsquo;s much worseIain Thomson - theregister.co.uk / 2013-12-31
+ Nous allons aborder aujourd&rsquo;hui le &ldquo;catalogue&rdquo; du groupe d&rsquo;élite de la NSA nommé TAO (pour Tailored Access Operations)."/>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>NSA - TAO, la voie du renseignement</title>
+	<link rel="stylesheet" href="http://www.cyphercat.eu/css/style.min.568c54a56780af2a70c45272522247710b69dbfc080b315211fb98381e3796f8.css" integrity="sha256-VoxUpWeArypwxFJyUiJHcQtp2/wICzFSEfuYOB43lvg=">
+	
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="http://www.cyphercat.eu">Cyphercat</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					
+				<a href="http://www.cyphercat.eu/posts/">Posts</a>
+				<a href="http://www.cyphercat.eu/about">About</a>
+
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<span class="hdr-social hide-in-mobile"><a href="https://framapiaf.org/@skhaen" target="_blank" rel="noopener me" title="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a><a href="https://instagram.com/" target="_blank" rel="noopener me" title="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line></svg></a><a href="https://github.com/skhaen" target="_blank" rel="noopener me" title="Github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="http://www.cyphercat.eu/posts/">Posts</a></li>
+			<li><a href="http://www.cyphercat.eu/about">About</a></li>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner animated fadeIn faster">
+		<article class="thin">
+			<header class="post-header">
+				<div class="post-meta"><span>Sep 22, 2014</span></div>
+				<h1>NSA - TAO, la voie du renseignement</h1>
+			</header>
+			<div class="content">
+				
+
+<p><em>Ne trouvant aucune base de données des différents programmes provenant des fuites de Snowden, <a href="https://github.com/nsa-observer">nous</a> avons travaillé à la création d&rsquo;une <a href="https://www.nsa-observer.net">base de données</a> concernant la NSA et le GCHQ. L&rsquo;article qui suit est une synthèse d&rsquo;une partie de nos travaux.</em></p>
+
+<hr />
+
+<blockquote>
+<p>It&rsquo;s not as bad as you thought - it&rsquo;s much worse<small>Iain Thomson - <a href="http://www.theregister.co.uk/2013/12/31/nsa_weapons_catalogue_promises_pwnage_at_the_speed_of_light/">theregister.co.uk / 2013-12-31</a></small></p>
+</blockquote>
+
+<p>Nous allons aborder aujourd&rsquo;hui le &ldquo;<a href="https://www.nsa-observer.net/tags/ant">catalogue</a>&rdquo; du groupe d&rsquo;élite de la NSA nommé <em>TAO</em> (pour <em><a href="https://en.wikipedia.org/wiki/Tailored_Access_Operations">Tailored Access Operations</a></em>). La mission de ce groupe est, depuis sa création en 1997, d&rsquo;identifier, de monitorer et de <a href="http://fr.wikipedia.org/wiki/Tao">trouver un chemin</a> vers des réseaux ou des systèmes pour collecter des informations. Ce département a gagné la réputation de collecter certains des meilleurs renseignements parmi les services de renseignements US, que ce soit sur la Chine, sur des groupes terroristes, ou sur les activités politiques, militaires et économiques d&rsquo;un pays.</p>
+
+<p><a href="http://www.foreignpolicy.com/articles/2013/06/10/inside_the_nsa_s_ultra_secret_china_hacking_group?page=full">Foreignpolicy.com</a> indique que plus de 1000 personnes, civiles et militaires, y travailleraient  à partir de 5 bases : ROC (pour <em><a href="https://www.nsa-observer.net/category/compartment/family/collect/name/ROC">Remote Operations Center</a></em>), basé à <a href="https://en.wikipedia.org/wiki/Fort_Meade">Fort Meade</a> (Maryland) qui est entre autres le quartier général de la NSA, <a href="https://en.wikipedia.org/wiki/Kunia_Regional_SIGINT_Operations_Center">Hawaii</a> (Wahiawa, Oahu), <a href="https://en.wikipedia.org/wiki/Fort_Gordon">Fort Gordon</a> (Georgie), au <em><a href="https://en.wikipedia.org/wiki/Texas_Cryptologic_Center">Texas Cryptologic Center</a></em> et à la base de l&rsquo;US Air Force <a href="https://en.wikipedia.org/wiki/Buckley_Air_Force_Base">BKF</a> (Denver). TAO est divisé en quatre départements, chacun spécialisé dans un domaine précis, l&rsquo;ensemble des équipes travaillant par roulement <sup>24</sup>&frasl;<sub>7</sub> :
+* <u>Data Network Technologies</u> (DNT) qui s&rsquo;occupe de la conception de malwares,
+* <u>Telecommunications Network Technologies</u> (TNT) cible spécifiquement les méthodes de pénétrations dans les réseaux et les ordinateurs (bien entendu sans se faire détecter),
+* <u>Mission Infrastructure Technologies</u> (MIT) développe et construit les outils de <em>monitoring</em>  hardware ainsi que les infrastructures qui permettent de tout supporter.
+* <u>Access Technologies Operations</u> (ATO) travaille avec la CIA et le FBI. Ces deux derniers mettant en place des modules de surveillance permettant aux opérateurs de TAO de les utiliser à distance.</p>
+
+<h3 id="tao-sort-de-l-ombre">TAO sort de l&rsquo;ombre<a href="#tao-sort-de-l-ombre" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p>Même si les premières informations publiques datent  de  <a href="http://www.foreignpolicy.com/articles/2013/06/10/inside_the_nsa_s_ultra_secret_china_hacking_group">l&rsquo;été 2013</a>, cette branche de la NSA est réellement sortie de l&rsquo;ombre en décembre 2013 avec la conférence &ldquo;<a href="http://media.ccc.de/browse/congress/2013/30C3_-_5713_-_en_-_saal_2_-_201312301130_-_to_protect_and_infect_part_2_-_jacob.html">To protect and infect, part 2: The militarization of the Internet</a>&rdquo; de <a href="https://en.wikipedia.org/wiki/Jacob_Appelbaum">Jacob Appelbaum</a> au <a href="http://media.ccc.de/browse/congress/2013/">30c3</a> où il présente les différents programmes d&rsquo;attaque et de collecte, en coopération avec le Spiegel (<em><a href="http://www.spiegel.de/international/world/the-nsa-uses-powerful-toolbox-in-effort-to-spy-on-global-networks-a-940969.html">Inside TAO: Documents Reveal Top NSA Hacking Unit</a></em>).</p>
+
+<video class='video' controls='controls' poster='http://static.media.ccc.de/media/congress/2013/5713-h264-hq_preview.jpg' width='700'>
+<source src='http://cdn.media.ccc.de/congress/2013/mp4/30c3-5713-en-de-To_Protect_And_Infect_Part_2_h264-hq.mp4' type='video/mp4'></source>
+<source src='http://cdn.media.ccc.de/congress/2013/webm/30c3-5713-en-de-To_Protect_And_Infect_Part_2_webm.webm' type='video/webm'></source>
+<object data='/assets/flashmediaelement.swf' height='360' type='application/x-shockwave-flash' width='640'>
+<param name='allowFullScreen' value='true'></param>
+<param name='flashvars' value='controls=true&amp;file=http://cdn.media.ccc.de/congress/2013/mp4/30c3-5713-en-de-To_Protect_And_Infect_Part_2_h264-hq.mp4'></param>
+</object>
+</video>
+
+<p>En plein milieu des &ldquo;<a href="http://cryptome.org/2013/11/snowden-tally.htm">révélations Snowden</a>&rdquo;, c&rsquo;est un coup de tonnerre.</p>
+
+<p>Les programmes peuvent se classer en différentes catégories : les implants matériels et les implants logiciels, dans lesquels on peut en mettre d&rsquo;autres, comme ceux qui visent les téléphones (aussi bien GSM, smartphone que satellite), les malwares, et les programmes &ldquo;RF&rdquo; (pour radio-fréquences). Comme vous allez le voir, TAO fait plutôt de l&rsquo;ultra-ciblé que de l&rsquo;écoute de masse (au contraire du <a href="https://www.libwalk.so/2014/07/04/gchq-jtrig-part1.html">GCHQ</a>). Ce qui concorde parfaitement avec leur mission : réussir à avoir les infos là où elles sont difficiles d&rsquo;accès.</p>
+
+<h2 id="les-programmes">Les programmes<a href="#les-programmes" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+
+<p>Présenter un tel catalogue implique de sélectionner certains de ses éléments sans s&rsquo;étendre sur son intégralité. Quasiment tous les programmes sont intéressants de par leur méthodes opérationnelles, cependant, dans la mesure du possible, nous parlerons seulement des programmes qui sortent de l&rsquo;ordinaire. On ne parlera par exemple pas trop des variantes d&rsquo;<a href="http://en.wikipedia.org/wiki/IMSI-catcher">IMSI catcher</a> que l&rsquo;on peut trouver <a href="https://twitter.com/pbump/status/417688999101083648">partout</a>.</p>
+
+<h3 id="implants-logiciels">Implants logiciels<a href="#implants-logiciels" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p><a href="https://www.nsa-observer.net/IRATEMONK">IRATEMONK</a> permet de modifier les firmwares des disques durs de différentes marques (Western Digital, Seagate, Maxtor et Samsung) pour exécuter du code lors du boot.</p>
+
+<h4 id="téléphones">Téléphones<a href="#téléphones" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+
+<ul>
+<li><a href="https://www.nsa-observer.net/DROPOUTJEEP">DROPOUTJEEP</a> - implant pour iphone, la NSA indique dans le catalogue que DROPOUTJEEP avait 100% de chances de succès.</li>
+<li><a href="https://www.nsa-observer.net/MONKEYCALENDAR">MONKEYCALENDAR</a> - implant ciblant les cartes SIM (<em>Subscriber Identify Module</em>) et envoi par sms à un numéro défini les appels et la géolocalisation de l&rsquo;utilisateur.</li>
+<li><a href="https://www.nsa-observer.net/TOTEGHOSTLY">TOTEGHOSTLY</a> - malware ciblant les téléphones Windows (mais quelle version ?), utilisant le framework CHIMNEYPOOL et contrôlé par STRAITBIZARRE. Il est utilisé pour mettre en place ou exfiltrer des fichiers, des sms, la liste des contacts ou encore trouver la géolocalisation via sms ou connection GPRS. L&rsquo;attaquant a aussi le contrôle de la caméra et du micro.</li>
+<li><a href="https://www.nsa-observer.net/TOTECHASER">TOTECHASER</a> - malware ciblant le téléphone satellite/GSM <a href="http://www.thuraya.com/userfiles/files/Thuraya%20SG/Brochure/Thuraya%20SG_2520_Jun2010.pdf">Thuraya 2520</a> basé sur <a href="http://fr.wikipedia.org/wiki/Windows_CE">Windows CE</a>. Il est utilisé pour exfiltrer les données de géolocalisation ainsi que les logs des appels et la liste de contacts via des sms cachés. Les sms servent aussi à l&rsquo;attaquant à contrôler le téléphone. Selon les documents, l&rsquo;implémentation de ce malware nécessite de modifier le téléphone lui même.</li>
+</ul>
+
+<blockquote><h4>FinFisher / Gamma International</h4>
+
+<p>Ce genre d'attaque est la spécialité de l'entreprise <a href="http://en.wikipedia.org/wiki/FinFisher">FinFisher</a> (Gamma International) qui est spécialisée dans les malwares "légaux" (lire "pour les forces de l'ordre, que vous soyez une dictature ou non"). Pour plus de détails sur les capacités de leurs malwares, lire "<em><a href="https://netzpolitik.org/2014/gamma-finfisher-hacked-40-gb-of-internal-documents-and-source-code-of-government-malware-published/">Gamma FinFisher hacked: 40 GB of internal documents and source code of government malware published</a></em>" (netzpolitik.org) ainsi que "<em><a href="https://wikileaks.org/spyfiles4/index.html">SpyFiles 4</a>" concernant les malwares eux-mêmes.</p>
+
+<p>Il y n'a normalement aucun lien entre la NSA et FinFisher, mais les URLs vous permettront de mieux appréhender ce que l'on peut faire avec des malwares sur des téléphones.</p>
+</blockquote>
+
+<h4 id="serveurs-et-firewalls">Serveurs et firewalls<a href="#serveurs-et-firewalls" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+
+<ul>
+<li><a href="https://www.nsa-observer.net/SWAP">SWAP</a> exploite le bios de la carte-mère et le <em>Host Protected Area</em> des disques durs pour obtenir des fenêtres d&rsquo;exécution avant que le système ne charge. Cette technique fonctionne sur des systèmes Windows, Linux, FreeBSD, et Solaris,</li>
+<li><a href="https://www.nsa-observer.net/JETPLOW">JETPLOW</a> est un implant persistant (sous la forme d&rsquo;un firmware) ciblant la série des <strong>Cisco</strong> PIX et des firewalls ASA (Adaptive Security Appliance) et permettant la mise en place d&rsquo;une backdoor. À noter que <a href="https://www.nsa-observer.net/BANANAGLEE">BANANAGLEE</a> fonctionne aussi sur ce type de matériel (et pas seulement sur du Juniper),</li>
+<li><a href="https://www.nsa-observer.net/DEITYBOUNCE">DEITYBOUNCE</a> - implant logiciel exploitant le bios de la carte mère des serveurs <strong>Dell</strong> PowerEdge,</li>
+<li>Les programmes se finissant par &ldquo;MONTANA&rdquo; (<a href="https://www.nsa-observer.net/SCHOOLMONTANA">SCHOOLMONTANA</a> / <a href="https://www.nsa-observer.net/SIERRAMONTANA">SIERRAMONTANA</a> / <a href="https://www.nsa-observer.net/STUCCOMONTANA">STUCCOMONTANA</a>) visent les serveurs <strong>Juniper</strong> alors que les programmes finissant par TROUGH (<a href="https://www.nsa-observer.net/GOURMETTROUGH">GOURMETTROUGH</a> / <a href="https://www.nsa-observer.net/SOUFFLETROUGH">SOUFFLETROUGH</a> / <a href="https://www.nsa-observer.net/FEEDTHROUGH">FEEDTHROUGH</a>) visent spécifiquement les firewalls du même constructeur,</li>
+<li><a href="https://www.nsa-observer.net/IRONCHEF">IRONCHEF</a> fournit un accès persistant sur les serveurs <strong>HP</strong> Proliant 380DL G5 en exploitant le bios de la carte-mère et le <em>System Management Mode</em> (SMM) via un implant matériel qui permet une communication via des ondes radio,</li>
+<li>Les programmes se finissant par &ldquo;WATER&rdquo; (<a href="https://www.nsa-observer.net/HALLUXWATER">HALLUXWATER</a> / <a href="https://www.nsa-observer.net/HEADWATER">HEADWATER</a>) visent les firewalls <em>Eudemon</em> du constructeur <strong>Huawei</strong> en installant une backdoor persistante via une &ldquo;mise à jour&rdquo; de la ROM du boot.</li>
+</ul>
+
+<h3 id="implants-matériels">Implants matériels<a href="#implants-matériels" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p><a href="https://www.nsa-observer.net/ANGRYNEIGHBOR">ANGRYNEIGHBOR</a> regroupe différents programmes d&rsquo;écoutes fonctionnant à distance avec des ondes, que ce soit radar ou radio. Ils fonctionnent le plus souvent avec une balise et fonctionne même si l&rsquo;ordinateur n&rsquo;est pas branché à un réseau. Un générateur d&rsquo;ondes (<em><a href="https://www.nsa-observer.net/CW">CW</a></em>) illumine (comprendre &ldquo;envoie des ondes vers&rdquo;) la balise, qui utilise alors ces ondes pour renvoyer ses informations. On parle alors d&rsquo;ondes RF pour les fréquences radios et d&rsquo;ondes radars pour le reste.</p>
+
+<ul>
+<li><a href="https://www.nsa-observer.net/COTTONMOUTH">COTTONMOUTH</a> est un implant USB (matériel) avec un lien RF qui permet l&rsquo;infiltration ou l&rsquo;exfiltration de données. Compatible avec <a href="https://www.nsa-observer.net/GENIE">GENIE</a>,</li>
+<li><a href="https://www.nsa-observer.net/BULLDOZER">BULLDOZER</a> et <a href="https://www.nsa-observer.net/GINSU">GINSU</a> sont des malwares visant le bus PCI, installé via <a href="https://www.nsa-observer.net/INTERDICTION">INTERDICTION</a>, ils peuvent être connectés sur une carte wifi ou sur un routeur pour collecter des métadonnées et du contenu,</li>
+<li><a href="https://www.nsa-observer.net/FIREWALK">FIREWALK</a> est un implant pour l&rsquo;ethernet (rj45/usb ?) permettant un pont RF</li>
+<li><a href="https://www.nsa-observer.net/LOUDAUTO">LOUDAUTO</a> est un rétro-réflecteur utilisant les ondes radar et du post-traitement basique pour récupérer l&rsquo;audio d&rsquo;une pièce.</li>
+<li><a href="https://www.nsa-observer.net/SURLYSPAWN">SURLYSPAWN</a> permet de collecter les frappes au clavier sans devoir avoir un logiciel installé sur le système cible, il faut qu&rsquo;il soit seulement touché une fois.</li>
+<li><a href="https://www.nsa-observer.net/PHOTOANGLO">PHOTOANGLO</a> (comme le <a href="https://www.nsa-observer.net/CTX4000">CTX4000</a>), est un générateur d&rsquo;ondes en continu (CW),</li>
+<li><a href="https://www.nsa-observer.net/RAGEMASTER">RAGEMASTER</a> fournit la &ldquo;balise&rdquo; qui sera illuminée par un générateur d&rsquo;ondes. Il est installé dans un câble VGA standard et permet la récupération du signal vidéo. La description du catalogue rapporte que <a href="https://www.nsa-observer.net/RAGEMASTER">RAGEMASTER</a> ne prend en compte que la &ldquo;sortie&rdquo; <a href="http://fr.wikipedia.org/wiki/Connecteur_VGA">rouge du VGA</a> car c&rsquo;est celui qui fournit le meilleur retour vidéo.</li>
+<li><a href="https://www.nsa-observer.net/TAWDRYYARD">TAWDRYYARD</a> sert de balise permettant de géolocaliser et d&rsquo;identifier un périphérique implémentant RAGEMASTER.</li>
+</ul>
+
+<p>En lisant le catalogue, on peut parfois voir qu&rsquo;un programme est fait de composants &ldquo;COTS&rdquo; (&rdquo;<em><a href="http://en.wikipedia.org/wiki/Commercial_off-the-shelf">Commercial Off-The-Shelf</a></em>), ce qui signifie que l&rsquo;on peut le trouver librement sur le marché et donc que l&rsquo;on ne peut pas remonter à la NSA si quelqu&rsquo;un le trouve. Si vous souhaitez plus de détails, vous pouvez voir les liens suivants : les <a href="https://www.libwalk.so/files/TAO/">48 pages du catalogues</a>, &ldquo;<em><a href="http://www.spiegel.de/international/world/the-nsa-uses-powerful-toolbox-in-effort-to-spy-on-global-networks-a-940969.html">Inside TAO: Documents Reveal Top NSA Hacking Unit</a></em>&rdquo;, &ldquo;<em><a href="http://www.nytimes.com/2014/01/15/us/nsa-effort-pries-open-computers-not-connected-to-internet.html?smid=tw-nytimestech&amp;seid=auto&amp;_r=1">N.S.A. Devises Radio Pathway Into Computers</a></em>&rdquo; ou encore &ldquo;<em><a href="http://www.democracynow.org/2013/12/31/jacob_appelbaum_futuristic_sounding_radar_wave">Jacob Appelbaum: Futuristic-Sounding &ldquo;Radar Wave Devices</a></em>&rdquo;.</p>
+
+<h4 id="et-les-drones">Et les drones ?<a href="#et-les-drones" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+
+<p><a href="https://www.nsa-observer.net/NIGHTSTAND">NIGHTSTAND</a>, permet d&rsquo;injecter des exploits sur une ou plusieurs cibles via  un réseau wifi. Il est typiquement utilisé lorsque la cible n&rsquo;est pas accessible via un réseau câblé, et l&rsquo;attaque est indétectable par l&rsquo;utilisateur. Les documents indiquent que dans un environnement idéal, il est possible d&rsquo;attaquer un réseau wifi à une distance de ~12 kilomètres. NIGHTSTAND est aussi <a href="http://www.dailydot.com/technology/nsa-wifi-hack-eight-miles/">utilisable à partir d&rsquo;un drone</a>.</p>
+
+<p>Sur le même thème, vous pouvez aussi regarder les programmes suivants : <a href="https://www.nsa-observer.net/SPARROW-II">SPARROW-II</a> (ordinateur embarqué sur du Linux, permet d&rsquo;exploiter un réseau wifi à distance), <a href="https://www.nsa-observer.net/SHENANIGANS">SHENANIGANS</a> (permet la captation massive de données, provenant aussi bien de routeurs wifi que de smartphones), <a href="https://www.nsa-observer.net/GILGAMESH">GILGAMESH</a> (localisation d&rsquo;une carte SIM à partir d&rsquo;un drone) et <a href="https://nsa-observer.net/VICTORYDANCE">VICTORYDANCE</a> (coopération NSA/CIA : empreinte des réseaux wifi de quasiment toutes les grandes villes yéménites).</p>
+
+<h2 id="mais-comment-font-ils">Mais comment font-ils ?<a href="#mais-comment-font-ils" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+
+<p>Comment font-ils pour accéder physiquement au serveur s&rsquo;ils doivent mettre en place des implants matériels ? Ou pour casser de la crypto ? Où encore pour accéder aux différentes réseaux ?</p>
+
+<p>Il existe un programme, appelé <a href="https://nsa-observer.net/INTERDICTION">INTERDICTION</a> qui consiste à intercepter un colis pendant son transfert pour y installer ce que vous voulez, le tout est renvoyé rapidement et discrètement (et avec le bon emballage bien entendu) à la cible. Le simple fait de commander du matériel en ligne est donc potentiellement un danger. La parade est plutôt simple, il suffit d&rsquo;aller en magasin. Et comme conclut à juste titre <a href="http://www.theregister.co.uk/2013/12/31/nsa_weapons_catalogue_promises_pwnage_at_the_speed_of_light/?page=">the register</a>, il n&rsquo;y a apparemment aucun &ldquo;programme&rdquo; qui possède une période de validité (à par <a href="https://nsa-observer.net/SEASONEDMOTH">SEASONEDMOTH</a>). Ce qui veut dire une chose : méfiez-vous de qui vous achetez votre matériel d&rsquo;occasion :]</p>
+
+<p>Pour le chiffrement, c&rsquo;est <a href="https://www.nsa-observer.net/BULLRUN">BULLRUN</a> qui rentre en jeu : il vise à supprimer le chiffrement dans un environnement donné : CNE (<em><a href="http://en.wikipedia.org/wiki/Computer_network_operations">Computer Network Exploitation</a></em>), <a href="https://nsa-observer.net/INTERDICTION">INTERDICTION</a> (et donc pose d&rsquo;implants), collecte de données (comme les <a href="http://community.websense.com/blogs/securitylabs/archive/2013/12/29/dr-watson.aspx">rapports d&rsquo;erreurs de Windows</a>) relation avec les entreprises : au hasard <a href="http://www.cnet.com/news/security-firm-rsa-took-millions-from-nsa-report/">RSA</a> ou encore Microsoft (cf. <a href="https://nsa-observer.net/PRISM">PRISM</a>) ,</p>
+
+<p><img src="/content/images/2015/09/Skype_prism_sso.png" alt="Skype_SSO" /></p>
+
+<p>ou avec d&rsquo;autres services (par exemple le FBI pour Microsoft)</p>
+
+<p><img src="/content/images/2015/09/microsoft_FBI.png" alt="microsoft_FBI" /></p>
+
+<blockquote>À ce sujet, je m'interroge sur <a href="http://googleblog.blogspot.fr/2010/05/wifi-data-collection-update.html">Google</a> et les <a href="http://www.wired.com/2012/05/google-wifi-fcc-investigation/">Google cars</a> scannant les <a href"http://www.wired.com/2012/05/google-wifi-fcc-investigation/">réseaux WiFi</a> en 2010. L'information importante n'était pas que Google capte des données sur des réseaux ouverts, mais qu'il a "mappé" TOUS les <a href="http://en.wikipedia.org/wiki/Service_set_%28802.11_network%29#Service_set_identification_.28SSID.29">SSID</a> des réseaux wifi ainsi que leurs localisations : exactement la même chose que ce que la NSA a fait au Yémen avec <a href="https://www.nsa.-observer.net/VICTORYDANCE">VICTORY DANCE</a>. Le fait de savoir où se trouve un réseau wifi permet de géolocaliser une cible en ayant accès à son téléphone ou à son ordinateur sans même qu'il ne soit connecté à un réseau, son wifi doit juste être allumé. S'il est connecté, il devient alors possible de faire un lien entre une adresse IP et un SSID.</blockquote>
+
+<p>Continuons avec <a href="http://www.nytimes.com/interactive/2013/09/05/us/documents-reveal-nsa-campaign-against-encryption.html?_r=1&amp;">BULLRUN</a> : il ne faut pas oublier que la NSA a certains des meilleurs mathématicien-ne-s au monde qui travaillent sur de la cryptographie pour améliorer ou au contraire affaiblir des protocoles (comme <a href="http://en.wikipedia.org/wiki/IPsec#Alleged_NSA_interference">IPsec</a> par exemple), mais aussi pour trouver des failles à exploiter avant les autres. Ainsi, en novembre 2013, <a href="http://en.wikipedia.org/wiki/Jacob_Appelbaum">Jacob Appelbaum</a> (qui a eu accès à des documents classifiés d&rsquo;une autre source que Snowden) disait que &ldquo;<em><a href="https://twitter.com/ioerror/status/398059565947699200">RC4 is broken in real time by the NSA - stop using it</a>.</em>&rdquo; (<strong>RC4 est cassé en temps réel par la NSA, arrêtez de l&rsquo;utiliser</strong>).</p>
+
+<p>Il peut aussi y avoir des attaques plus simples , par exemple sur l&rsquo;utilisation de <a href="http://en.wikipedia.org/wiki/STARTTLS">STARTTLS</a> au lieu de <a href="http://forums.mozillazine.org/viewtopic.php?f=39&amp;t=2730845">SSL/TLS</a> ; son utilisation permet <u>dans certains cas</u> de forcer une connexion en clair au lieu d&rsquo;avoir un chiffrement quelconque (d&rsquo;où l&rsquo;intérêt de mettre <code>ssl = required</code> et non <code>ssl = yes</code>).</p>
+
+<h2 id="oui-et-alors">Oui et alors ?<a href="#oui-et-alors" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+
+<p>La NSA peut alors utiliser des outils comme <a href="https://nsa-observer.net/XKEYSCORE">XKEYSCORE</a> (dont j&rsquo;avais parlé dans le <a href="https://www.libwalk.so/2014/06/28/NSA-temps-de-faire-le-premier-point.html">premier article</a>) qui permet de rechercher en quasi temps réel dans <a href="https://www.nsa-observer.net/category/program/family/database">les différentes bases de données</a> de la NSA et d&rsquo;autres services  : ça peut aller de la nationalité, au sexe, la géolocalisation, l&rsquo;IP, aux résultats de <a href="https://nsa-observer.net/DISCOROUTE">DISCOROUTE</a> (écoute passive et planétaire du protocole <a href="http://en.wikipedia.org/wiki/Telnet">Telnet</a>), en passant par les personnes qui <a href="http://rt.com/news/170208-nsa-spies-tor-users/">téléchargent le logiciel Tor</a> jusqu&rsquo;aux <a href="http://arstechnica.com/tech-policy/2013/08/nsas-internet-taps-can-find-systems-to-hack-track-vpns-and-word-docs/">sessions VPN</a>, <a href="http://en.wikipedia.org/wiki/XKeyscore">etc&hellip;</a>.</p>
+
+<p>Une fois une cible définie (comme un administrateur système et/ou réseau, cf. <a href="https://www.nsa-observer.net/IHUNTSYSADMINS">I Hunt sysadmin</a>), la NSA peut alors rediriger une cible vers un serveur <a href="https://www.nsa-observer.net/category/program/family/target/name/FOXACID">FOXACID</a> (pour injecter du code dans son navigateur en utilisant des <a href="http://fr.wikipedia.org/wiki/Vuln%C3%A9rabilit%C3%A9_jour_z%C3%A9ro">0-day</a>), la NSA réalise un <a href="http://en.wikipedia.org/wiki/Man-in-the-middle_attack">Man-in-the-Middle</a> via des fausses pages web (<a href="http://arstechnica.com/tech-policy/2013/11/uk-spies-continue-quantum-insert-attack-via-linkedin-slashdot-pages/">Linkedin, slashdot</a>, &hellip;) lors de la redirection en utilisant ses serveurs <a href="https://www.nsa-observer.net/QUANTUM">QUANTUM</a> et du <em><a href="http://en.wikipedia.org/wiki/Deep_packet_inspection">Deep Packet Inspection</a></em> (<a href="https://www.nsa-observer.net/TURBINE">TURBINE</a> /<a href="https://www.nsa-observer.net/TURMOIL">TURMOIL</a>).</p>
+
+<p>Pour plus de détails sur cette méthode, vous pouvez lire les articles suivants :</p>
+
+<ul>
+<li>&ldquo;<em><a href="https://firstlook.org/theintercept/2014/03/12/nsa-plans-infect-millions-computers-malware/">How the NSA Plans to Infect ‘Millions’ of Computers with Malware</a></em>&rdquo; par Ryan Gallagher et Glenn Greenwald</li>
+<li>&ldquo;<em><a href="https://www.schneier.com/blog/archives/2013/10/how_the_nsa_att.html">How the NSA Attacks Tor/Firefox Users With QUANTUM and FOXACID</a></em>&rdquo; par <a href="https://www.schneier.com/about.html">Bruce Schneier</a></li>
+<li>&ldquo;<em><a href="http://www.wired.com/2013/11/this-is-how-the-internet-backbone-has-been-turned-into-a-weapon/">Our Government Has Weaponized the Internet. Here’s How They Did It</a></em>&rdquo; par <a href="http://www.wired.com/author/ncweaver/">Nicholas Weaver</a>.</li>
+</ul>
+
+<p>Pour la petite histoire, la société française <a href="http://www.zdnet.com/nsa-purchased-zero-day-exploits-from-french-security-firm-vupen-7000020825/">VUPEN a vendu des 0-day à la NSA</a>, et aussi à <a href="https://netzpolitik.org/2014/gamma-finfisher-hacked-40-gb-of-internal-documents-and-source-code-of-government-malware-published/">FinFisher</a>.</p>
+
+<p>Certains documents rapportent <a href="http://www.washingtonpost.com/world/national-security/us-spy-agencies-mounted-231-offensive-cyber-operations-in-2011-documents-show/2013/08/30/d090a6ae-119e-11e3-b4cb-fd7ce041d814_story.html">231 opérations en 2011</a>, dont les <sup>3</sup>&frasl;<sub>4</sub> étaient en priorité contre l&rsquo;Iran, la Russie, la Chine, la Corée du nord et la prolifération nucléaire. Voici quelques autres cibles :</p>
+
+<ul>
+<li>Le <a href="http://www.spiegel.de/international/world/the-nsa-uses-powerful-toolbox-in-effort-to-spy-on-global-networks-a-940969-2.html"><em>Secretariat of Public Security</em> mexicain</a> qui est responsable de la police nationale, de l&rsquo;anti-terrorisme, des prisons, et de la police aux frontières.</li>
+<li>L&rsquo;entreprise allemande <a href="https://firstlook.org/theintercept/2014/09/14/nsa-stellar/">Stellar PCS</a> de communications satellite (ainsi que Cetel et IABG)</li>
+<li>Le Fournisseur d&rsquo;Accès à Internet belge <a href="http://www.spiegel.de/international/world/ghcq-targets-engineers-with-fake-linkedin-pages-a-932821.html">Belgacom</a> en coopération avec le GCHQ.<br /></li>
+<li>Une tentative sur un routeur en Syrie qui a fait tombé l&rsquo;accès à Internet de tout le pays : <a href="http://arstechnica.com/tech-policy/2014/08/snowden-the-nsa-not-assad-took-syria-off-the-internet-in-2012/">The NSA, not Assad, took Syria off the Internet in 2012</a>,</li>
+<li><a href="http://www.spiegel.de/international/world/the-nsa-uses-powerful-toolbox-in-effort-to-spy-on-global-networks-a-940969-2.html">STUXNET</a>, en coopération avec les services Israëlien, est un ver qui visait les <a href="http://en.wikipedia.org/wiki/Stuxnet">systèmes SCADA des centrales nucléaires en Iran</a>.</li>
+</ul>
+
+<p>Pour finir, <a href="http://www.washingtonpost.com/world/national-security/us-spy-agencies-mounted-231-offensive-cyber-operations-in-2011-documents-show/2013/08/30/d090a6ae-119e-11e3-b4cb-fd7ce041d814_story.html">un document</a> indique que TAO est en train de travailler (en 2011) sur des implants pouvant identifier des &ldquo;conversations intéressantes&rdquo; dans un réseau ciblé et d&rsquo;exfiltrer des morceaux.</p>
+
+<h3 id="sources">Sources<a href="#sources" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<h2 id="tao-catalogue-ant-https-www-nsa-observer-net-tags-ant">TAO - <a href="https://www.nsa-observer.net/tags/ant">catalogue ANT</a><a href="#tao-catalogue-ant-https-www-nsa-observer-net-tags-ant" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+
+<ul>
+<li>les 48 pages du catalogues sont visibles sur <a href="https://www.libwalk.so/files/TAO/">www.libwalk.so/files/TAO/</a> et plus facilement téléchargeables avec ce fichier : <a href="https://www.libwalk.so/files/TAO/NSA-TAO-ANT-48pages.tar.gz">NSA-TAO-ANT-48pages.tar.gz</a>,<br /></li>
+<li>Une vue rapide et bien faite du catalogue ANT sur <a href="http://nsa.gov1.info/dni/nsa-ant-catalog/index.html">http://nsa.gov1.info</a></li>
+<li>spiegel.de - <a href="http://www.spiegel.de/international/world/the-nsa-uses-powerful-toolbox-in-effort-to-spy-on-global-networks-a-940969.html">Inside TAO: Documents Reveal Top NSA Hacking Unit</a>
+
+<ul>
+<li>page 2 -  <a href="http://www.spiegel.de/international/world/the-nsa-uses-powerful-toolbox-in-effort-to-spy-on-global-networks-a-940969-2.html">Targeting Mexico</a></li>
+<li>page 3 -  <a href="http://www.spiegel.de/international/world/the-nsa-uses-powerful-toolbox-in-effort-to-spy-on-global-networks-a-940969-3.html">The NSA&rsquo;s Shadow Network</a></li>
+</ul></li>
+<li>spiegel.de - <a href="http://www.spiegel.de/international/world/nsa-secret-toolbox-ant-unit-offers-spy-gadgets-for-every-need-a-941006.html">NSA&rsquo;s Secret Toolbox: Unit Offers Spy Gadgets for Every Need</a></li>
+<li>spiegel.de - <a href="http://www.spiegel.de/international/world/catalog-reveals-nsa-has-back-doors-for-numerous-devices-a-940994.html">Shopping for Spy Gear: Catalog Advertises NSA Toolbox</a> (slides)</li>
+<li>spiegel.de - <a href="http://www.spiegel.de/fotostrecke/nsa-dokumente-so-knackt-der-geheimdienst-internetkonten-fotostrecke-105326.html">NSA-Dokumente: So knackt der Geheimdienst Internetkonten</a></li>
+
+<li><p>spiegel.de - <a href="http://www.spiegel.de/international/world/a-941262.html">vue interactive des programmes</a> (en anglais)</p></li>
+
+<li><p>washingtonpost.com - <a href="http://www.washingtonpost.com/world/national-security/us-spy-agencies-mounted-231-offensive-cyber-operations-in-2011-documents-show/2013/08/30/d090a6ae-119e-11e3-b4cb-fd7ce041d814_story.html">U.S. spy agencies mounted 231 offensive cyber-operations in 2011, documents show</a> (GENIE)</p></li>
+
+<li><p>washingtonpost.com - <a href="http://www.washingtonpost.com/blogs/the-switch/wp/2013/12/10/nsa-uses-google-cookies-to-pinpoint-targets-for-hacking/">NSA uses Google cookies to pinpoint targets for hacking</a></p></li>
+
+<li><p>cryptome.org - <a href="http://cryptome.org/2014/01/appelbaum-der-spiegel.htm">Jacob Appelbaum on Der Spiegel NSA/GCHQ Reports</a> on liberationtech.</p></li>
+
+<li><p>leaksource.info - <a href="http://leaksource.info/2013/12/30/nsas-ant-division-catalog-of-exploits-for-nearly-every-major-software-hardware-firmware/">NSA’s ANT Division Catalog of Exploits</a></p></li>
+
+<li><p>engadget.com - <a href="http://www.engadget.com/2013/12/30/nsa-can-hack-wifi-devices-from-eight-miles-away/">NSA can hack WiFi devices from eight miles away</a></p></li>
+
+<li><p>iclarified.com - <a href="http://www.iclarified.com/37195/the-nsa-has-a-backdoor-called-dropoutjeep-for-nearly-complete-access-to-the-apple-iphone">The NSA Has a Backdoor Called &lsquo;DROPOUTJEEP&rsquo; for Nearly Complete Access to the Apple Iphone</a></p></li>
+</ul>
+
+<p>blockquote&gt;&rdquo;<strong>encryption works. Properly implemented strong crypto systems are one of the few things that you can rely on</strong>&rdquo;.<small>Edward Snowden</small></blockquote></p>
+
+<h3 id="tag-ant-https-www-nsa-observer-net-tags-ant-nsa-sur-nsa-observer-net">Tag <a href="https://www.nsa-observer.net/tags/ant">ANT</a> (NSA) sur nsa-observer.net<a href="#tag-ant-https-www-nsa-observer-net-tags-ant-nsa-sur-nsa-observer-net" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p><a href="https://www.nsa-observer.net/BULLDOZER">BULLDOZER</a> - <a href="https://www.nsa-observer.net/CANDYGRAM">CANDYGRAM</a> - <a href="https://www.nsa-observer.net/COTTONMOUTH-I">COTTONMOUTH-I</a> - <a href="https://www.nsa-observer.net/COTTONMOUTH-II">COTTONMOUTH-II</a> - <a href="https://www.nsa-observer.net/COTTONMOUTH-III">COTTONMOUTH-III</a> - <a href="https://www.nsa-observer.net/CROSSBEAM">CROSSBEAM</a> - <a href="https://www.nsa-observer.net/CTX4000">CTX4000</a> - <a href="https://www.nsa-observer.net/CYCLONE">CYCLONE</a> - <a href="https://www.nsa-observer.net/DEITYBOUNCE">DEITYBOUNCE</a> - <a href="https://www.nsa-observer.net/DROPOUTJEEP">DROPOUTJEEP</a> - <a href="https://www.nsa-observer.net/ENTOURAGE">ENTOURAGE</a> - <a href="https://www.nsa-observer.net/FEEDTROUGH">FEEDTROUGH</a> - <a href="https://www.nsa-observer.net/FIREWALK">FIREWALK</a> - <a href="https://www.nsa-observer.net/GENESIS">GENESIS</a> - <a href="https://www.nsa-observer.net/GOPHERSET">GOPHERSET</a> - <a href="https://www.nsa-observer.net/GOURMETTROUGH">GOURMETTROUGH</a> - <a href="https://www.nsa-observer.net/HALLUXWATER">HALLUXWATER</a> - <a href="https://www.nsa-observer.net/HEADWATER">HEADWATER</a> - <a href="https://www.nsa-observer.net/HOWLERMONKEY">HOWLERMONKEY</a> - <a href="https://www.nsa-observer.net/IRONCHEF">IRONCHEF</a> - <a href="https://www.nsa-observer.net/JETPLOW">JETPLOW</a> - <a href="https://www.nsa-observer.net/JUNIORMINT">JUNIORMINT</a> - <a href="https://www.nsa-observer.net/LOUDAUTO">LOUDAUTO</a> - <a href="https://www.nsa-observer.net/MAESTRO-II">MAESTRO-II</a> - <a href="https://www.nsa-observer.net/MONKEYCALENDAR">MONKEYCALENDAR</a> - <a href="https://www.nsa-observer.net/NEBULA">NEBULA</a> - <a href="https://www.nsa-observer.net/NIGHTSTAND">NIGHTSTAND</a> - <a href="https://www.nsa-observer.net/NIGHTWATCH">NIGHTWATCH</a> - <a href="https://www.nsa-observer.net/PHOTOANGLO">PHOTOANGLO</a> - <a href="https://www.nsa-observer.net/PICASSO">PICASSO</a> - <a href="https://www.nsa-observer.net/RAGEMASTER">RAGEMASTER</a> - <a href="https://www.nsa-observer.net/SCHOOLMONTANA">SCHOOLMONTANA</a> - <a href="https://www.nsa-observer.net/SIERRAMONTANA">SIERRAMONTANA</a> - <a href="https://www.nsa-observer.net/SOMBERKNAVE">SOMBERKNAVE</a> - <a href="https://www.nsa-observer.net/SOUFFLETROUGH">SOUFFLETROUGH</a> - <a href="https://www.nsa-observer.net/SPARROW-II">SPARROW-II</a> - <a href="https://www.nsa-observer.net/STUCCOMONTANA">STUCCOMONTANA</a> - <a href="https://www.nsa-observer.net/SURLYSPAWN">SURLYSPAWN</a> - <a href="https://www.nsa-observer.net/SWAP">SWAP</a> - <a href="https://www.nsa-observer.net/TAWDRYYARD">TAWDRYYARD</a> - <a href="https://www.nsa-observer.net/TOTECHASER">TOTECHASER</a> - <a href="https://www.nsa-observer.net/TOTEGHOSTLY">TOTEGHOSTLY</a> - <a href="https://www.nsa-observer.net/TRINITY">TRINITY</a> - <a href="https://www.nsa-observer.net/WATERWITCH">WATERWITCH</a> - <a href="https://www.nsa-observer.net/WISTFULTOLL">WISTFULTOLL</a></p>
+
+			</div>
+			<hr class="post-end">
+			<footer class="post-info">
+				<p>
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="http://www.cyphercat.eu/tags/sigint">SIGINT</a></span><span class="tag"><a href="http://www.cyphercat.eu/tags/leaks">leaks</a></span><span class="tag"><a href="http://www.cyphercat.eu/tags/adminsys">adminsys</a></span>
+				</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2014-09-22 17:55 &#43;0200</p>
+			</footer>
+		</article>
+		<div class="post-nav thin">
+			<a class="next-post" href="http://www.cyphercat.eu/posts/die-sslv3-die/">
+				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;</span><br><span>DIE SSLv3, DIE!</span>
+			</a>
+			<a class="prev-post" href="http://www.cyphercat.eu/posts/nsa-prism-nest-pas-une-surprise/">
+				<span class="post-nav-label">&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>NSA - PRISM n&#39;est pas une surprise</span>
+			</a>
+		</div>
+		<div id="comments" class="thin">
+</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2019 <a href="http://www.cyphercat.eu">Skhaen</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="http://www.cyphercat.eu/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
+
+
+	<script src="http://www.cyphercat.eu/js/main.min.35ccbf1cdceb91e4c64c06b5d009d6e2977fafe56beda7762febd4e67528d2ac.js" integrity="sha256-Ncy/HNzrkeTGTAa10AnW4pd/r+Vr7ad2L+vU5nUo0qw="></script>
+
+</body>
+
+</html>

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<meta itemprop="name" content="Serveur ? Du TLS, avec un peu de HSTS et un soupçon de TLSA s&#39;il vous plait !">
+<meta itemprop="description" content="Continuons notre voyage dans la crypto, nous avons vu dernièrement la mise en place d&rsquo;un serveur Prosody avec une sécurité satisfaisante. Aujourd&rsquo;hui, nous allons jouer avec Apache (mais aussi Nginx), en configurant du SSL/TLS avec du HSTS,
+SSL/TLS (Secure Sockets Layer et Transport Layer Security) Pour bien commencer, je vous conseille vivement la conférence de Benjamin Sonntag sur le SSL/TLS. Il y a dedans tout ce que vous avez besoin de savoir, et bien plus encore.">
+
+
+<meta itemprop="datePublished" content="2014-07-27T10:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2014-07-27T10:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1309">
+
+
+
+<meta itemprop="keywords" content="ssl,apache2,nginx,adminsys," />
+<meta property="og:title" content="Serveur ? Du TLS, avec un peu de HSTS et un soupçon de TLSA s&#39;il vous plait !" />
+<meta property="og:description" content="Continuons notre voyage dans la crypto, nous avons vu dernièrement la mise en place d&rsquo;un serveur Prosody avec une sécurité satisfaisante. Aujourd&rsquo;hui, nous allons jouer avec Apache (mais aussi Nginx), en configurant du SSL/TLS avec du HSTS,
+SSL/TLS (Secure Sockets Layer et Transport Layer Security) Pour bien commencer, je vous conseille vivement la conférence de Benjamin Sonntag sur le SSL/TLS. Il y a dedans tout ce que vous avez besoin de savoir, et bien plus encore." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="cyphercat.eu/post/serveur-du-tls-avec-un-peu-de-hsts-et-un-soupcon-de-tlsa-sil-vous-plait/" />
+<meta property="article:published_time" content="2014-07-27T10:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2014-07-27T10:00:00&#43;00:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Serveur ? Du TLS, avec un peu de HSTS et un soupçon de TLSA s&#39;il vous plait !"/>
+<meta name="twitter:description" content="Continuons notre voyage dans la crypto, nous avons vu dernièrement la mise en place d&rsquo;un serveur Prosody avec une sécurité satisfaisante. Aujourd&rsquo;hui, nous allons jouer avec Apache (mais aussi Nginx), en configurant du SSL/TLS avec du HSTS,
+SSL/TLS (Secure Sockets Layer et Transport Layer Security) Pour bien commencer, je vous conseille vivement la conférence de Benjamin Sonntag sur le SSL/TLS. Il y a dedans tout ce que vous avez besoin de savoir, et bien plus encore."/>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/cyphercat.eu/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/cyphercat.eu/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/cyphercat.eu/favicon-16x16.png">
+	<link rel="manifest" href="/cyphercat.eu/site.webmanifest">
+	<link rel="mask-icon" href="/cyphercat.eu/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/cyphercat.eu/favicon.ico">
+
+	<title>Serveur ? Du TLS, avec un peu de HSTS et un soupçon de TLSA s&#39;il vous plait !</title>
+	<link rel="stylesheet" href="/cyphercat.eu/css/style.min.568c54a56780af2a70c45272522247710b69dbfc080b315211fb98381e3796f8.css" integrity="sha256-VoxUpWeArypwxFJyUiJHcQtp2/wICzFSEfuYOB43lvg=">
+	
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="cyphercat.eu">A cup of tea?</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					
+
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner thin animated fadeIn faster">
+		<h1>Serveur ? Du TLS, avec un peu de HSTS et un soupçon de TLSA s&#39;il vous plait !</h1>
+		<div class="content">
+			
+
+<p>Continuons notre voyage dans la crypto, nous avons vu dernièrement la mise en place d&rsquo;un <a href="https://www.libwalk.so/tag/prosody.html">serveur Prosody</a> avec une sécurité satisfaisante. Aujourd&rsquo;hui, nous allons jouer avec Apache (mais aussi Nginx), en configurant du SSL/TLS avec du <a href="https://www.eff.org/deeplinks/2014/02/websites-hsts">HSTS</a>,</p>
+
+<h4 id="ssl-tls-secure-sockets-layer-https-fr-wikipedia-org-wiki-transport-layer-security-et-transport-layer-security-https-fr-wikipedia-org-wiki-transport-layer-security">SSL/TLS (<em><a href="https://fr.wikipedia.org/wiki/Transport_Layer_Security">Secure Sockets Layer</a></em> et <em><a href="https://fr.wikipedia.org/wiki/Transport_Layer_Security">Transport Layer Security</a></em>)<a href="#ssl-tls-secure-sockets-layer-https-fr-wikipedia-org-wiki-transport-layer-security-et-transport-layer-security-https-fr-wikipedia-org-wiki-transport-layer-security" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+
+<p>Pour bien commencer, je vous conseille vivement la conférence de Benjamin Sonntag sur le <a href="http://www.iletaitunefoisinternet.fr/ssltls-benjamin-sonntag/">SSL/TLS</a>. Il y a dedans tout ce que vous avez besoin de savoir, et bien plus encore.</p>
+
+<iframe><video class='video' controls='controls' width='700'>
+<source src='http://data.confs.fr/ssl-tls-sonntag/360p/IEUFI_ssl-tls_Sonntag_360.mp4' type='video/mp4'></source>
+<source src='http://data.confs.fr/ssl-tls-sonntag/360p/IEUFI_ssl-tls_Sonntag_360.webm' type='video/webm'></source>
+<object data='/assets/flashmediaelement.swf' height='360' type='application/x-shockwave-flash' width='640'>
+<param name='allowFullScreen' value='true'></param>
+<param name='flashvars' value='controls=true&amp;file=http://cdn.media.ccc.de/congress/2013/mp4/30c3-5713-en-de-To_Protect_And_Infect_Part_2_h264-hq.mp4'></param>
+</object>
+</video>
+</iframe>
+
+<h4 id="hsts-http-strict-transport-security-https-en-wikipedia-org-wiki-http-strict-transport-security"><strong>HSTS</strong> (<em><a href="https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security">HTTP Strict Transport Security</a></em>)<a href="#hsts-http-strict-transport-security-https-en-wikipedia-org-wiki-http-strict-transport-security" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+
+<blockquote>
+<p><u>RFC 6797, <a href="http://tools.ietf.org/html/rfc6797#section-8.4">psaume 8.4</a></u> :<br />When connecting to a Known HSTS Host, the UA MUST terminate the connection if there are any errors, whether &ldquo;warning&rdquo; or &ldquo;fatal&rdquo; or any other error level, with the underlying secure transport.  For example, this includes any errors found in certificate validity checking that UAs employ, such as via Certificate Revocation Lists (<a href="http://tools.ietf.org/html/rfc5280">CRLs</a>) , or via the Online Certificate Status Protocol (<a href="http://tools.ietf.org/html/rfc2560">OCSP</a>), as well as via <a href="http://tools.ietf.org/html/rfc6125">TLS server identity checking</a>.</p>
+</blockquote>
+
+<p>HSTS permet au serveur d&rsquo;indiquer à votre navigateur que oui, il sait communiquer en http<strong>s</strong>, et que si il revient par la suite, qu&rsquo;il le fasse directement de manière sécurisée pour une période donnée. Ce qui veut dire que le navigateur remplace automatiquement TOUS liens non sécurisés (http) par des liens sécurisés (https) avant d&rsquo;accéder au serveur pour ladite période.</p>
+
+<p>Pour information :</p>
+
+<ul>
+<li>HSTS ne permet pas l&rsquo;utilisation de certificat auto-signé ou périmé.</li>
+<li>HSTS sur une longue durée est obligatoire pour avoir un <a href="https://www.ssllabs.com/ssltest/analyze.html?d=libwalk.so">A+</a> sur le site de <a href="https://www.ssllabs.com">ssllabs</a>.</li>
+</ul>
+
+<h2 id="création-d-un-certificat-ssl-tls">Création d&rsquo;un certificat SSL/TLS<a href="#création-d-un-certificat-ssl-tls" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+
+<h4 id="génération-du-csr-certificate-signing-request">génération du CSR (<em>Certificate Signing Request</em>)<a href="#génération-du-csr-certificate-signing-request" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+
+<p>Nous allons commencer par créer une requête de certificat (<em><a href="https://en.wikipedia.org/wiki/Certificate_signing_request">certificate request</a></em>) avec openssl :</p>
+
+<pre><code>openssl req -sha256 -out /etc/ssl/private/exemple.csr -new -newkey rsa:2048 -nodes -keyout /etc/ssl/private/exemple.key
+</code></pre>
+
+<p>Cette commande génère (<code>openssl req -out</code>) une <a href="https://en.wikipedia.org/wiki/Certificate_signing_request">CSR</a> (<code>-new</code>) ainsi qu&rsquo;une nouvelle <a href="https://fr.wikipedia.org/wiki/Chiffrement_RSA">clé RSA</a> de 2048 bits (<code>-newkey rsa:2048</code>) qui ne sera pas chiffrée (<code>-nodes</code>). Si vous voulez encore plus de détails, c&rsquo;est sur <a href="https://www.openssl.org/docs/apps/req.html#">openssl.org</a>.</p>
+
+<p>Je vous laisse vous inscrire sur <a href="http://www.startssl.com/">startssl.com</a> (bonne chance !), il faut choisir la <strong>première formule</strong> (qui est gratuite). Après la création de votre compte, la validation de votre nom de domaine, etc etc&hellip; nous pouvons passer à la suite.</p>
+
+<ul>
+<li>Après votre authentification sur le site, cherchez l&rsquo;onglet « <em>Certificates Wizard</em> » qui se trouve normalement vers la gauche de votre écran,</li>
+<li>il vous demande alors pourquoi vous voulez un certificat (&rdquo;<em>Select Certificate Purpose</em>&rdquo;), vous choisissez donc <strong>Web Server SSL/TLS certificate</strong>,</li>
+<li>le site vous demande de créer une clé privée (&rdquo;<em>Generate Private Key</em>&rdquo;) : <strong>VOUS NE LE FAITES PAS !</strong>, vous appuyez au contraire sur <strong>skip</strong> (nous avons créé la clé privée juste avant en local),</li>
+
+<li><p>vous arrivez maintenant sur la page de demande de certificat (&rdquo;<em>Submit Certificate Request (CSR)</em>&rdquo;), toujours dans un terminal, vous devez taper la commande suivante :</p>
+
+<pre><code>cat /etc/ssl/private/exemple.csr
+</code></pre></li>
+</ul>
+
+<p>Cette commande vous donnera un résultat qui doit ressembler à ceci (bien entendu sans la même suite de caractères) :</p>
+
+<pre><code>-----BEGIN CERTIFICATE REQUEST-----
+MIIChjCCAW4CAQAwQTELMAkGA1UEBhMCRlIxCzAJBgNVBAgMAkZSMQswCQYDVQQH
+DAJGUjELMAkGA1UECgwCRlIxCzAJBgNVBAsMAkZSMIIBIjANBgkqhkiG9w0BAQEF
+AAOCAQ8AMIIBCgKCAQEAsoJcj6/bwl9naKG9C9seKt4HjBicV5o96zqoO0YxtJAe
+X9k2t4KTp0CrzQ85c9DfggY8oAMq/DX/xRFL0cPxamxSwwW5ttVoBQ04wBWDhjEo
+a2ixpe5UMmfakuY3Q56HsIbhh7Vo4RZS1OtPOv7E2J0CfDVUhrNCpDjZbtM8akTE
+9P86BkXdroJgU8tfwONMFDBF2K8ElhN6mqftb89KGIUpgm1fcDq8woRpnFER7A3H
+OwfCfnlkLrtMWVca1smEWnlutBKw6cgk6uSMK9V9/Y44wMKZHoOrOQE0R26+MGrA
+MLhprqPaANIvhamq+tSsSASYZDeajDS3R1JWX188awIDAQABoAAwDQYJKoZIhvcN
+AQEFBQADggEBAHYSpBxHhRP87qmWNqp9Sf8dYz3oQfJLA2cLpQV2MOIfFW0mmOyz
+JG6TVISKVmiEHZtHqgW4TL3BSKBAWENBM8mjAjmxXCmy2MBSWBVhDVaGz4w+x3hO
+UMtNMubYxkkc/xgX5vwbuReH6y1sbkMUQm1UETb6Fnmm8dyDzwPI0zV+NdzUqqhI
+ARjMM2RrwPH7QZ2lSAOiB/X+fXKhwMSg0qUExYiln20JKBi6f58GdyOu6Hp/Fi+m
+r8xnIcnZ2ZIIyjh4B2bfAfybTOWHHRtOaI9yH8pTP3HnKqgbtxZJYqioTAAAQxjQ
+hFmXThFFrfhTDnqJ0Fc+bjcoiLoy46FtLz8=
+-----END CERTIFICATE REQUEST-----
+</code></pre>
+
+<ul>
+<li>Copier le (de <code>&mdash;&ndash;BEGIN CERTIFICATE</code> à <code>END CERTIFICATE REQUEST&mdash;&ndash;</code> !) dans la fenêtre en bas.</li>
+<li>Il est ensuite nécessaire d&rsquo;indiquer le site,</li>
+<li>puis le sous-domaine visé (si vous ne savez pas vous pouvez mettre <code>www</code> par défaut.</li>
+
+<li><p>vous arrivez alors sur la page « <em>Save Certificate</em> » avec votre nouveau certificat dans une fenêtre :</p>
+
+<pre><code>-----BEGIN CERTIFICATE-----
+MIIGWjCCBUKgAwIBAgIDEm6yMA0GCSqGSIb3DQEBBQUAMIGMMQswCQYDVQQGEwJJ
+TDEWMBQGA1UEChMNU3RhcnRDb20gTHRkLjErMCkGA1UECxMiU2VjdXJlIERpZ2l0
+YWwgQ2VydGlmaWNhdGUgU2lnbmluZzE4MDYGA1UEAxMvU3RhcnRDb20gQ2xhc3Mg
+[...]
+-----END CERTIFICATE-----
+</code></pre>
+
+<ul>
+<li>copiez le dans un nouveau fichier appelé <code>exemple.crt</code> sur votre serveur en faisant bien attention de prendre du début de <code>&mdash;&ndash;BEGIN CERTIFICATE REQUEST</code> à la fin de <code>END CERTIFICATE REQUEST&mdash;&ndash;</code> !</li>
+</ul></li>
+</ul>
+
+<h3 id="création-d-un-certificat-chaîné">Création d&rsquo;un certificat chaîné<a href="#création-d-un-certificat-chaîné" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p>Pour créer un certificat chaîné, faites la manipulation suivante (startssl.com vous donne les liens vers ces deux certificats juste au dessus du bouton <strong>finish »»</strong> de la page <strong>Save Certificate</strong>) :</p>
+
+<ul>
+<li><p>télécharger le certificat intermédiaire de startssl :</p>
+
+<pre><code>wget https://www.startssl.com/certs/sub.class1.server.ca.pem
+</code></pre></li>
+
+<li><p>puis le certificat root :</p>
+
+<pre><code>wget https://www.startssl.com/certs/ca.pem
+</code></pre></li>
+
+<li><p>puis on créé le le certificat chaîné (ne pas oublier les <strong>2</strong> <code>&gt;&gt;</code>) :</p></li>
+</ul>
+
+<pre>cat sub.class1.server.ca.pem > /etc/ssl/private/exemple.chain && cat ca.pem >> /etc/ssl/private/exemple.chain</pre>
+
+<h2 id="installation-et-configuration">Installation et configuration<a href="#installation-et-configuration" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+
+<p>On ne verra pas l&rsquo;installation d&rsquo;Apache et de Nginx ici, si vous êtes en train de lire ces lignes, vous devriez normalement déjà savoir le faire. Si ce n&rsquo;est pas le cas, voici quelques pistes à suivre :</p>
+
+<ul>
+<li><a href="http://fr.openclassrooms.com/informatique/cours/apprenez-a-installer-un-serveur-web-sous-debian">installation d&rsquo;Apache sous Debian</a> (fr.openclassrooms.com),</li>
+<li><a href="http://blog.nicolargo.com/2011/01/installation-automatique-de-nginx-php-fpm-memcached-sous-debian.html">installation de Nginx sous Debian</a> (blog.nicolargo.com),</li>
+</ul>
+
+<h3 id="apache">Apache<a href="#apache" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<h4 id="ssl-tls">SSL/TLS<a href="#ssl-tls" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+
+<p>Ce qui suit est à rajouter à votre <a href="http://httpd.apache.org/docs/2.2/vhosts/examples.html">fichier de configuration</a> dans <code>/etc/apache2/sites-enabled</code> au sein d&rsquo;un bloc <code>VirtualHost *:443</code>. En cas de problème, vous pouvez aller voir la <a href="http://httpd.apache.org/docs/current/ssl/ssl_faq.html">FAQ d&rsquo;Apache en français concernant SSL/TLS</a>.</p>
+
+<pre><code>SSLCertificateFile        /etc/ssl/private/exemple.com.crt
+SSLCertificateChainFile   /etc/ssl/private/exemple.com.chain
+SSLCertificateKeyFile     /etc/ssl/private/exemple.com.key
+
+SSLEngine on
+SSLProtocol +TLSv1.2 +TLSv1.1 +TLSv1
+SSLHonorCipherOrder on
+SSLCipherSuite ALL:!aNULL:!eNULL:!LOW:!EXP:!RC4:!3DES:+HIGH:+MEDIUM 
+SSLCompression off
+</code></pre>
+
+<p>Vous pouvez remplacer l&rsquo;avant dernière ligne par la suivante si le coeur vous en dit (la précédente est mieux sur le long terme si vous maintenez votre machine à jour) :</p>
+
+<pre><code>SSLCipherSuite &quot;EECDH+ECDSA+AESGCM EECDH+aRSA+AESGCM EECDH+ECDSA+SHA384 EECDH+ECDSA+SHA256 EECDH+aRSA+SHA384 EECDH+aRSA+SHA256 EECDH+aRSA+RC4 EECDH EDH+aRSA !RC4 !aNULL !eNULL !LOW !3DES !MD5 !EXP !PSK !SRP !DSS&quot;
+</code></pre>
+
+<p>Pour vérifier que votre configuration est bonne, vous pouvez lancer la commande suivante :</p>
+
+<pre><code>apache2ctl -t
+</code></pre>
+
+<h4 id="dhparam">DHparam<a href="#dhparam" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+
+<p>Apache génère automatiquement un DHparam de 1024 bits, si vous voulez modifier cette configuration, il est préférable de passer en <a href="http://httpd.apache.org/docs/2.4/">version 2.4</a>.</p>
+
+<h4 id="hsts">HSTS<a href="#hsts" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+
+<p>Pour permettre l&rsquo;utilisation du HSTS, il faut commencer par activer le <code>mod_headers</code> d&rsquo;<a href="http://httpd.apache.org/docs/current/mod/mod_headers.html">Apache</a>.</p>
+
+<pre><code>a2enmod headers
+</code></pre>
+
+<p>Puis rajouter dans votre fichier de configuration la ligne suivante :</p>
+
+<blockquote>
+<p>ATTENTION ! 31622400 équivaut à <strong>366 jours</strong> !
+Réfléchissez bien avant de l&rsquo;activer !</blockquote></p>
+</blockquote>
+
+<pre><code>Header set Strict-Transport-Security &quot;max-age=31622400&quot;
+</code></pre>
+
+<p>Si vous voulez aussi inclure vos <strong>sous-domaines</strong> dans le HSTS (ce qui veut dire que vous avez soit un certificat <a href="https://fr.wikipedia.org/wiki/Certificat_%C3%A9lectronique#Certificats_X.509_omnidomaines">wildcard</a>, soit un certificat différent par sous-domaine <strong>mais surtout qu&rsquo;aucun sous-domaine n&rsquo;utilise PAS SEULEMENT HTTP !</strong>), vous pouvez ajouter la ligne suivante :</p>
+
+<pre><code>Header append Strict-Transport-Security includeSubDomains
+</code></pre>
+
+<h3 id="nginx">Nginx<a href="#nginx" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<h4 id="dhparam-1">DHparam<a href="#dhparam-1" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+
+<p>Génération du <a href="https://www.openssl.org/docs/apps/dhparam.html#">dhparam</a> :</p>
+
+<pre><code>openssl dhparam -out /etc/ssl/private/dh2048.pem -outform PEM -2 2048
+</code></pre>
+
+<p>Et si vous vous demandez à quoi consiste les signes qui s&rsquo;affichent lors de la génération, la réponse est ici : <a href="http://ix-notes.blogspot.co.uk/2009/04/legend-for-openssls-dhparam-output.html">Legend for OpenSSL’s dhparam output</a>.</p>
+
+<h4 id="ssl-tls-1">SSL/TLS<a href="#ssl-tls-1" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+
+<p>Ce qui suit est à rajouter à votre fichier de configuration dans <code>/etc/nginx/sites-enabled</code>. Pour plus de détails sur la mise en place du SSL/TLS pour nginx, c&rsquo;est ici : <a href="http://nginx.org/en/docs/http/configuring_https_servers.html">Configuring HTTPS servers</a>.</p>
+
+<pre><code>listen 443 ssl;
+ssl on;
+ssl_session_cache   shared:SSL:10m;
+ssl_session_timeout 10m;
+
+ssl_certificate /etc/ssl/private/exemple.com.crt;
+ssl_certificate_key /etc/ssl/private/exemple.com.key;
+ssl_dhparam /etc/ssl/private/dh2048.pem; 
+ssl_prefer_server_ciphers on;
+ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+ssl_ciphers ALL:!aNULL:!eNULL:!LOW:!EXP:!RC4:!3DES:+HIGH:+MEDIUM;
+</code></pre>
+
+<p>Vous pouvez remplacer la ligne <code>ssl_certificate /etc/ssl/private/exemple.com.crt;</code> par <code>ssl_certificate /etc/ssl/private/exemple.com.+chain;</code> si vous avez un <a href="https://www.startssl.com/?app=42">certificat chaîné</a>.</p>
+
+<h4 id="hsts-1">HSTS<a href="#hsts-1" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+
+<p>Pour activer le HSTS, il faut rajouter la ligne suivante avant la dernière accolade :</p>
+
+<blockquote>
+<p>ATTENTION ! 31622400 équivaut à <strong>366 jours</strong> !
+Réfléchissez bien avant de l&rsquo;activer !</blockquote></p>
+</blockquote>
+
+<pre><code>add_header Strict-Transport-Security max-age=2678400;
+</code></pre>
+
+<h4 id="dane-tlsa">DANE &amp; TLSA<a href="#dane-tlsa" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+
+<blockquote>
+<p>Le système <a href="http://en.wikipedia.org/wiki/DNS-based%20Authentication%20of%20Named%20Entities">DANE</a> (<a href="https://fr.wikipedia.org/wiki/DNS_-_based_Authentication_of_Named_Entities">DNS-based Authentication of Named Entities</a>) permet d&rsquo;augmenter la sécurité des échanges chiffrés avec TLS en permettant au gérant du serveur de publier lui-même le certificat qu&rsquo;il utilise, et en permettant au client de vérifier, par une deuxième voie, le DNS, que le certificat est le bon. <small>Stéphane Bortzmeyer, <a href="http://www.bortzmeyer.org/securite-dane.html">Sécurité de DANE</a></small></p>
+</blockquote>
+
+<p>Nous pouvons faire un premier pas vers <a href="http://en.wikipedia.org/wiki/DNS-based%20Authentication%20of%20Named%20Entities">DANE</a> en publiant l&rsquo;empreinte (hash) de nos certificats dans nos enregistrements DNS avec la méthode suivante :</p>
+
+<ul>
+<li><p>générer l&rsquo;empreinte du certificat :</p>
+
+<pre><code>openssl x509 -in example.com.crt -outform DER | sha256sum | awk '{print $1}'
+</code></pre></li>
+</ul>
+
+<p>Ce qui me donne la chaîne de caractères suivante :</p>
+
+<pre><code>e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+</code></pre>
+
+<ul>
+<li><p>ajouter les 2 lignes suivantes dans vos enregistrements DNS (<strong>avec le hash de VOS certificats</strong> !) :</p>
+
+<pre><code>_443._tcp.www IN TLSA 3 0 1 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+_443._tcp IN TLSA 3 0 1 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+</code></pre></li>
+</ul>
+
+<h5 id="un-peu-de-lecture-en-plus">Un peu de lecture en plus :<a href="#un-peu-de-lecture-en-plus" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h5>
+
+<ul>
+<li>AFNIC : <a href="http://www.afnic.fr/fr/l-afnic-en-bref/actualites/actualites-generales/7444/show/securiser-les-communications-sur-internet-de-bout-en-bout-avec-le-protocole-dane.html#!">Sécuriser les communications sur Internet de bout-en-bout avec le protocole DANE</a></li>
+<li>plugin DNSSEC pour <a href="https://chrome.google.com/webstore/search-extensions/dnssec">Chrome</a></li>
+<li>plugin <a href="https://www.dnssec-validator.cz/">DNSEC/TLSA</a> pour tout le monde.</li>
+</ul>
+
+<h3 id="pagespeed">PageSpeed<a href="#pagespeed" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p>Et pour finir, je vous conseille de faire un tour sur les outils de Google, comme <a href="https://developers.google.com/speed/pagespeed/">PageSpeed</a>, et particulièrement sur <a href="https://developers.google.com/speed/pagespeed/insights/">Analyze your site online</a> qui permet de voir ce qu&rsquo;il y a à optimiser sur son site pour améliorer sa rapidité.</p>
+
+		</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2019 <a href="cyphercat.eu"></a></p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="cyphercat.eu/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
+
+
+	<script src="/cyphercat.eu/js/main.min.35ccbf1cdceb91e4c64c06b5d009d6e2977fafe56beda7762febd4e67528d2ac.js" integrity="sha256-Ncy/HNzrkeTGTAa10AnW4pd/r+Vr7ad2L+vU5nUo0qw="></script>
+
+</body>
+
+</html>

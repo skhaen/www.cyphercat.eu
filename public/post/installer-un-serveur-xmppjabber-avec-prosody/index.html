@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<meta itemprop="name" content="Installer un serveur XMPP/jabber avec Prosody sous Debian">
+<meta itemprop="description" content="Sous-titre : comment installer Prosody 0.9.3 sous Debian et avoir un A sur xmpp.net.
+update  2015-03-19 : comment avoir un certificat autosigné qui fonctionne avec les versions &ldquo;récentes&rdquo; de pidgin (voir EN BAS de cet article) 2015-01-05 : on oublie bettercryto, et l&rsquo;on rajoute une jolie ciphersuite pour avoir seulement du PFS 2014-12-30 : ajout de la section bettercrypto concernant TLS 2014-12-12 : ajout de la ciphersuite dans la partie SSL/TLS 2014-08-22 : refonte du texte, changement du fournisseur du certificat SSL/TLS de CaCert pour starssl">
+
+
+<meta itemprop="datePublished" content="2014-02-14T18:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2014-02-14T18:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="2165">
+
+
+
+<meta itemprop="keywords" content="adminsys,ssl,prosody,xmpp," />
+<meta property="og:title" content="Installer un serveur XMPP/jabber avec Prosody sous Debian" />
+<meta property="og:description" content="Sous-titre : comment installer Prosody 0.9.3 sous Debian et avoir un A sur xmpp.net.
+update  2015-03-19 : comment avoir un certificat autosigné qui fonctionne avec les versions &ldquo;récentes&rdquo; de pidgin (voir EN BAS de cet article) 2015-01-05 : on oublie bettercryto, et l&rsquo;on rajoute une jolie ciphersuite pour avoir seulement du PFS 2014-12-30 : ajout de la section bettercrypto concernant TLS 2014-12-12 : ajout de la ciphersuite dans la partie SSL/TLS 2014-08-22 : refonte du texte, changement du fournisseur du certificat SSL/TLS de CaCert pour starssl" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="cyphercat.eu/post/installer-un-serveur-xmppjabber-avec-prosody/" />
+<meta property="article:published_time" content="2014-02-14T18:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2014-02-14T18:00:00&#43;00:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Installer un serveur XMPP/jabber avec Prosody sous Debian"/>
+<meta name="twitter:description" content="Sous-titre : comment installer Prosody 0.9.3 sous Debian et avoir un A sur xmpp.net.
+update  2015-03-19 : comment avoir un certificat autosigné qui fonctionne avec les versions &ldquo;récentes&rdquo; de pidgin (voir EN BAS de cet article) 2015-01-05 : on oublie bettercryto, et l&rsquo;on rajoute une jolie ciphersuite pour avoir seulement du PFS 2014-12-30 : ajout de la section bettercrypto concernant TLS 2014-12-12 : ajout de la ciphersuite dans la partie SSL/TLS 2014-08-22 : refonte du texte, changement du fournisseur du certificat SSL/TLS de CaCert pour starssl"/>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/cyphercat.eu/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/cyphercat.eu/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/cyphercat.eu/favicon-16x16.png">
+	<link rel="manifest" href="/cyphercat.eu/site.webmanifest">
+	<link rel="mask-icon" href="/cyphercat.eu/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/cyphercat.eu/favicon.ico">
+
+	<title>Installer un serveur XMPP/jabber avec Prosody sous Debian</title>
+	<link rel="stylesheet" href="/cyphercat.eu/css/style.min.568c54a56780af2a70c45272522247710b69dbfc080b315211fb98381e3796f8.css" integrity="sha256-VoxUpWeArypwxFJyUiJHcQtp2/wICzFSEfuYOB43lvg=">
+	
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="cyphercat.eu">A cup of tea?</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					
+
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner thin animated fadeIn faster">
+		<h1>Installer un serveur XMPP/jabber avec Prosody sous Debian</h1>
+		<div class="content">
+			
+
+<p><strong>Sous-titre</strong> : comment installer Prosody 0.9.3 sous Debian et avoir un A sur <a href="https://xmpp.net">xmpp.net</a>.</p>
+
+<h3 id="update">update<a href="#update" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<ul>
+<li>2015-03-19 : comment avoir un certificat autosigné qui fonctionne avec les versions &ldquo;récentes&rdquo; de pidgin (voir EN BAS de cet article)</li>
+<li>2015-01-05 : on oublie bettercryto, et l&rsquo;on rajoute une jolie ciphersuite pour avoir seulement du PFS</li>
+<li>2014-12-30 : ajout de la section <a href="https://bettercrypto.org">bettercrypto</a> concernant TLS</li>
+<li>2014-12-12 : ajout de la <a href="http://prosody.im/doc/advanced_ssl_config#ciphers">ciphersuite</a> dans la partie SSL/TLS</li>
+
+<li><p>2014-08-22 : refonte du texte, changement du fournisseur du certificat SSL/TLS de CaCert pour <a href="https://www.startssl.com/">starssl</a></p></li>
+
+<li><p>Site de <a href="http://prosody.im">Prosody</a>,</p></li>
+
+<li><p>Twitter : <a href="https://twitter.com/prosodyim">@prosodyim</a>.</p></li>
+</ul>
+
+<h1 id="installation">Installation<a href="#installation" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
+
+<p>Pour installer <a href="http://prosody.im">Prosody</a> sous Debian, il suffit de rajouter le dépôt dans son <em><a href="https://wiki.debian.org/SourcesList">sources.list</a></em>, on peut utiliser la ligne suivante pour le faire. Elle permet de simplifier énormement la manipulation (pour les détails, c&rsquo;est <a href="http://prosody.im/download/package_repository">ici</a>) :</p>
+
+<pre><code>echo &quot;deb http://packages.prosody.im/debian $(lsb_release -sc) main&quot; | sudo tee -a /etc/apt/sources.list
+</code></pre>
+
+<p>Puis on ajoute la clé GPG du dépôt :</p>
+
+<pre><code>wget https://prosody.im/files/prosody-debian-packages.key -O- | sudo apt-key add -
+</code></pre>
+
+<p>On met à jour les dépôts, puis on installe Prosody :</p>
+
+<pre><code>aptitude update &amp;&amp; aptitude install prosody
+</code></pre>
+
+<p>Le paquet <a href="https://packages.debian.org/wheezy/lua-sec"><strong>lua-sec</strong></a>  dans debian est légèrement&hellip; ancien, si vous voulez les derniers algos de chiffrement et que le <em><a href="https://en.wikipedia.org/wiki/Forward_secrecy">Perfect Forward Secrecy</a></em> soit pris en compte, il faut le mettre à jour :</p>
+
+<p>sur Debian Wheezy :</p>
+
+<pre><code>echo &quot;deb http://ftp.debian.org/debian wheezy-backports main&quot; &gt;&gt; /etc/apt/sources.list
+aptitude update &amp;&amp; aptitude -t wheezy-backports install lua-sec-prosody
+</code></pre>
+
+<h1 id="configuration">Configuration<a href="#configuration" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
+
+<p>L&rsquo;ensemble de la configuration se fait dans un seul fichier :</p>
+
+<pre><code>/etc/prosody/prosody.cfg.lua
+</code></pre>
+
+<p>La première partie est commune à l&rsquo;ensemble des VirtualHosts que vous allez mettre en place. Ce qui sera écrit sous chaque <em>VirtualHost &ldquo;exemple.com&rdquo;</em> (en bas) sera propre à chaque VirtualHost.</p>
+
+<p>Ce qui veut dire que si vous mettez votre configuration SSL dans la première partie, elle sera commune à <strong>tout</strong> les VirtualHosts. Faites attention aux répercussions que ça peut avoir ;-)</p>
+
+<h2 id="étape-1-la-première-brique">Étape 1 - la première brique<a href="#étape-1-la-première-brique" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+
+<p>Ouvrez le fichier avec votre éditeur préféré (pour moi ça sera <a href="https://fr.wikipedia.org/wiki/Vim">vim</a>)</p>
+
+<pre><code>vim /etc/prosody/prosody.cfg.lua
+</code></pre>
+
+<p>Il faut <a href="http://prosody.im/doc/configure">modifier/compléter les champs suivants</a> (avec évidemment <strong>vos</strong> informations à la place de <em>example.tld</em>) :</p>
+
+<p>Qui est administrateur du serveur (tout en haut du fichier) ?</p>
+
+<pre><code>admins = {&quot;admin@exemple.tld&quot;}
+</code></pre>
+
+<p>Voulez vous autoriser les inscriptions sur votre serveur ? À moins de savoir ce que vous faites, je vous conseille grandement de le mettre sur <code>false</code> afin d&rsquo;éviter de servir aux spammeurs et aux bots.</p>
+
+<pre><code>allow_registration = false;
+</code></pre>
+
+<p>Quel domaine voulez vous utiliser (tout en bas du fichier) ? N&rsquo;oubliez pas de changer <em>example.tld</em> pour votre domaine.</p>
+
+<pre><code>VirtualHost &quot;example.tld&quot;
+enabled = true
+</code></pre>
+
+<h3 id="les-logs">Les logs<a href="#les-logs" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p>c&rsquo;est <strong>très</strong> important (et déjà partiellement configuré). Ils permettent de trouver où est le problème quand ça ne marche pas (pour plus de détails sur la configuration : <a href="http://prosody.im/doc/logging">logging</a>), la modification par rapport au fichier original consiste à mettre le <em><a href="http://prosody.im/doc/logging">prosody.log</a></em> en <em>warn</em> et non plus en <em>info</em> et faire la même manipulation pour le <em><a href="http://prosody.im/doc/advanced_logging">syslog</a></em> :</p>
+
+<pre><code>log = {
+    warn= &quot;/var/log/prosody/prosody.log&quot;;
+    error = &quot;/var/log/prosody/prosody.err&quot;;
+    { levels = { &quot;error&quot; }; to = &quot;syslog&quot;;  };
+
+</code></pre>
+
+<p>Si vous avez un problème à régler, je vous conseille de rechanger le premier <em>warn</em> pour <em>debug</em>, puis de redémarrer prosody (via la commande <code>prosodyctl restart</code>, vous aurez alors toutes les infos qu&rsquo;il vous faut dans <code>/var/log/prosody/prosody.log</code> et bien plus encore pour trouver d&rsquo;où ça vient.</p>
+
+<h3 id="un-minimum-de-sécurité">Un minimum de sécurité<a href="#un-minimum-de-sécurité" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p>De base, Prosody <a href="http://prosody.im/doc/modules/mod_auth_internal_hashed">enregistre les mots de passe des comptes en clair</a> sur le serveur, pour qu&rsquo;ils soient <a href="http://www.cyphercat.eu/expl_hashage.php">hashés</a>, il faut modifier la ligne <code>authentication = &quot;internal_plain&quot;</code> »  pour la ligne suivante :</p>
+
+<pre><code>authentication = &quot;internal_hashed&quot;
+</code></pre>
+
+<h3 id="prosodyctl">prosodyctl<a href="#prosodyctl" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p>Prosody vient avec une commande qui aide à communiquer avec lui facilement : <em><a href="http://prosody.im/doc/prosodyctl">prosodyctl</a></em>, et qui s&rsquo;utilise sous la forme suivante :</p>
+
+<pre><code>prosodyctl COMMAND [OPTIONS]
+</code></pre>
+
+<p>Où <em>COMMAND</em> peut être :</p>
+
+<ul>
+<li><code>adduser</code> - exemple@exemple.tld - crée le compte utilisateur</li>
+<li><code>passwd</code> - exemple@exemple.tld - configure le password de l&rsquo;utilisateur</li>
+<li><code>deluser</code> - exemple@exemple.tld - supprime l&rsquo;utilisateur</li>
+<li><code>start</code> - démarre Prosody</li>
+<li><code>stop</code> - arrête Prosody</li>
+<li><code>restart</code> - redémarre Prosody</li>
+<li><code>reload</code> - recharge la configuration de Prosody</li>
+<li><code>status</code> - indique le status actuel de Prosody</li>
+</ul>
+
+<p>Plutôt utile non ? :]</p>
+
+<p>Nous allons ajouter un utilisateur (il vous demandera un mot de passe), puis nous rechargerons la configuration pour prendre en compte les changements (<code>exemple.tld</code> doit être le même que vous avez mis pour votre <code>VirtualHost</code>)  :</p>
+
+<pre><code>prosodyctl adduser exemple@exemple.tld
+prosodyctl reload
+</code></pre>
+
+<p>Et là, c&rsquo;est l&rsquo;instant de plaisir, si vous essayez de vous connecter avec un client jabber (comme pidgin),  ça devrait se connecter. Si ce n&rsquo;est pas le cas (faire dans l&rsquo;ordre) :</p>
+
+<ul>
+<li>voir les logs de prosody,</li>
+<li>voir les logs de votre client jabber,</li>
+<li>changer les logs de prosody de info à debug,</li>
+<li>boire un thé (ou une bière)</li>
+<li>vérifier votre firewall,</li>
+<li>rebrancher la box,</li>
+<li>reprendre un thé,</li>
+<li>changer de FAI,</li>
+</ul>
+
+<h3 id="les-modules">Les modules<a href="#les-modules" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p>Comme vous pouvez le voir dans le fichier de configuration, il y a déjà un certain nombres de <a href="http://prosody.im/doc/developers/global_modules">modules</a> qui sont <a href="http://prosody.im/doc/modules_enabled">activés par défaut</a> (roster, saslauth, tls, posix&hellip;). ils sont dans la partie <code>modules_enabled = { }</code>.</p>
+
+<p>Si je vous parle de ça, vous vous doutez que ce n&rsquo;est pas pour rien, il existe beaucoup de modules, dont un pour <a href="https://www.torproject.org/">Tor</a> :</p>
+
+<ul>
+<li>liste des modules  : <a href="https://prosody.im/doc/modules">core modules</a>,</li>
+<li>liste des modules tiers : <a href="https://code.google.com/p/prosody-modules/w/list">prosody-modules</a>,</li>
+<li>mod_onions : <a href="https://blog.thijsalkema.de/blog/2013/06/11/xmpp-federation-over-tor-hidden-services/">XMPP Federation Over Tor Hidden Services</a>.</li>
+</ul>
+
+<h2 id="chiffrons-tout-pour-tout-le-monde">Chiffrons tout pour tout le monde<a href="#chiffrons-tout-pour-tout-le-monde" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+
+<blockquote>
+<p>Manifesto - <em><a href="https://github.com/stpeter/manifesto">A public statement about ubiquitous encryption on the XMPP network.</a></em></p>
+</blockquote>
+
+<p>Si vous ne connaissez pas (ou mal) le SSL/TLS, je ne peux que vous conseiller d&rsquo;attaquer le sujet par la conférence de Benjamin Sonntag dans le cadre du cycle de conférence « <em><a href="http://iletaitunefoisinternet.fr">Il était une fois Internet</a></em> ».</p>
+
+<h3 id="création-du-certificat">Création du certificat<a href="#création-du-certificat" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<blockquote>
+<p>Si votre certificat n&rsquo;est pas reconnu « valide » par votre client jabber, par exemple en cas de certificat auto-signé, il demandera autorisation pour l&rsquo;utiliser. Les versions récentes de pidgin (&gt; v2.10.10) <a href="http://pidgin.10357.n7.nabble.com/16412-Unable-to-connect-to-XMPP-servers-using-self-signed-certificates-td130960.html">refusent de se connecter</a> à des serveurs utilisant un certificat autosigné, dans ce cas, voir EN BAS de cet article</p>
+</blockquote>
+
+<h4 id="la-méthode-simple-et-vraiment-rapide">La méthode simple (et vraiment rapide)<a href="#la-méthode-simple-et-vraiment-rapide" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+
+<p>La méthode « <em>simple</em> » consiste à la création d&rsquo;un <a href="http://prosody.im/doc/certificates">certificat auto-signé</a> avec l&rsquo;aide de <strong>prosodyctl</strong> :</p>
+
+<pre><code># exemple.tld étant le domaine que vous avez mis dans prosody.cfg.lua
+prosodyctl cert generate exemple.tld
+</code></pre>
+
+<ul>
+<li>vérifier l&rsquo;emplacement des certificats une fois qu&rsquo;ils sont générés</li>
+<li>vous pouvez les bouger dans <code>/etc/prosody/certs/</code> si vous avez envie (on part du principe que c&rsquo;est le cas pour la suite)</li>
+
+<li><p>N&rsquo;oubliez pas les deux lignes suivantes :</p>
+
+<pre><code>chmod 600 /etc/prosody/certs/exemple.tld.key
+chown prosody:prosody /etc/prosody/certs/exemple.tld.key
+chown prosody:prosody /etc/prosody/certs/exemple.tld.crt
+</code></pre></li>
+</ul>
+
+<p>Pour aller plus loin :</p>
+
+<ul>
+<li>Prosody - <a href="http://prosody.im/doc/certificates">certificats</a>,</li>
+<li>Prosody - <a href="http://prosody.im/doc/advanced_ssl_config">configuration SSL avancé</a>.</li>
+</ul>
+
+<h4 id="la-méthode-un-peu-moins-simple-mais-qui-est-vachement-mieux">La méthode un peu moins simple mais qui est vachement mieux<a href="#la-méthode-un-peu-moins-simple-mais-qui-est-vachement-mieux" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+
+<p>Nous allons créer ce que nous avons besoin en faisant une requête à <a href="hhttp://www.startssl.com/">startssl.com</a> :</p>
+
+<pre><code>openssl req -sha256 -out /etc/prosody/certs/exemple.csr -new -newkey rsa:2048 -nodes -keyout /etc/prosody/certs/exemple.key
+</code></pre>
+
+<p>Cette commande génère (<code>openssl req -out</code>) une <a href="https://en.wikipedia.org/wiki/Certificate_signing_request">CSR</a> (<code>-new</code>) ainsi qu&rsquo;une nouvelle <a href="https://fr.wikipedia.org/wiki/Chiffrement_RSA">clé RSA</a> de 2048 bits (<code>-newkey rsa:2048</code>) qui ne sera pas chiffrée (<code>-nodes</code>). Si vous voulez encore plus de détails, c&rsquo;est sur <a href="https://www.openssl.org/docs/apps/req.html#">openssl.org</a>.</p>
+
+<p>Je vous laisse sur <a href="hhttp://www.startssl.com/">startssl.com</a> et réaliser les différentes étapes pour s&rsquo;inscrire (bonne chance !), il faut choisir la <strong>première formule</strong> (celle qui est gratuite). Après la création de votre compte, la validation de votre nom de domaine, etc etc&hellip; nous pouvons passer à la suite.</p>
+
+<ul>
+<li>Après votre authentification sur le site, cherchez l&rsquo;onglet « <em>Certificates Wizard</em> » qui se trouve normalement vers la gauche de votre écran,</li>
+<li>il vous demande alors pourquoi vous voulez un certificat (&rdquo;<em>Select Certificate Purpose</em>&rdquo;), vous choisissez donc <strong>XMPP (jabber) SSL/TLS certificate</strong>,</li>
+<li>le site vous demande de créer une clé privée (&rdquo;<em>Generate Private Key</em>&rdquo;) : <strong>VOUS NE LE FAITES PAS !</strong>, vous appuyez au contraire sur <strong>skip</strong> (nous avons créé la clé privée quelques lignes au dessus),</li>
+
+<li><p>vous arrivez maintenant sur la page de demande de certificat (&rdquo;<em>Submit Certificate Request (CSR)</em>&rdquo;), toujours dans un terminal, vous devez taper la commande suivante :</p>
+
+<pre><code>cat /etc/prosody/certs/exemple.csr
+</code></pre></li>
+</ul>
+
+<p>Cette commande vous donnera un résultat qui devrait ressembler à</p>
+
+<pre><code>-----BEGIN CERTIFICATE REQUEST-----
+MIIChjCCAW4CAQAwQTELMAkGA1UEBhMCRlIxCzAJBgNVBAgMAkZSMQswCQYDVQQH
+DAJGUjELMAkGA1UECgwCRlIxCzAJBgNVBAsMAkZSMIIBIjANBgkqhkiG9w0BAQEF
+AAOCAQ8AMIIBCgKCAQEAsoJcj6/bwl9naKG9C9seKt4HjBicV5o96zqoO0YxtJAe
+X9k2t4KTp0CrzQ85c9DfggY8oAMq/DX/xRFL0cPxamxSwwW5ttVoBQ04wBWDhjEo
+a2ixpe5UMmfakuY3Q56HsIbhh7Vo4RZS1OtPOv7E2J0CfDVUhrNCpDjZbtM8akTE
+9P86BkXdroJgU8tfwONMFDBF2K8ElhN6mqftb89KGIUpgm1fcDq8woRpnFER7A3H
+OwfCfnlkLrtMWVca1smEWnlutBKw6cgk6uSMK9V9/Y44wMKZHoOrOQE0R26+MGrA
+MLhprqPaANIvhamq+tSsSASYZDeajDS3R1JWX188awIDAQABoAAwDQYJKoZIhvcN
+AQEFBQADggEBAHYSpBxHhRP87qmWNqp9Sf8dYz3oQfJLA2cLpQV2MOIfFW0mmOyz
+JG6TVISKVmiEHZtHqgW4TL3BSKBAWENBM8mjAjmxXCmy2MBSWBVhDVaGz4w+x3hO
+UMtNMubYxkkc/xgX5vwbuReH6y1sbkMUQm1UETb6Fnmm8dyDzwPI0zV+NdzUqqhI
+ARjMM2RrwPH7QZ2lSAOiB/X+fXKhwMSg0qUExYiln20JKBi6f58GdyOu6Hp/Fi+m
+r8xnIcnZ2ZIIyjh4B2bfAfybTOWHHRtOaI9yH8pTP3HnKqgbtxZJYqioTAAAQxjQ
+hFmXThFFrfhTDnqJ0Fc+bjcoiLoy46FtLz8=
+-----END CERTIFICATE REQUEST-----
+</code></pre>
+
+<p>Copier le dans la fenêtre en bas (de <code>-----BEGIN CERTIFICATE REQUEST-----</code> à <code>-----END CERTIFICATE REQUEST-----</code> !).
+Vous aurez alors votre certificat peu de temps après, transférez le sur votre serveur, dans <code>/etc/prosody/certs/</code> avec comme nom exemple.tld.<strong>crt</strong>.</p>
+
+<h3 id="création-d-un-certificat-chaîné">Création d&rsquo;un certificat chaîné<a href="#création-d-un-certificat-chaîné" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p>Pour créer un <a href="http://prosody.im/doc/certificates#certificate_chains">certificat chaîné</a>, faites la manipulation suivante (startssl.com vous donne les liens vers ces deux certificats juste au dessus du bouton <strong>finish »»</strong> de la page <strong>Save Certificate</strong>) :</p>
+
+<ul>
+<li><p>télécharger le certificat intermédiaire de startssl :</p>
+
+<pre><code>wget https://www.startssl.com/certs/sub.class1.server.ca.pem
+</code></pre></li>
+
+<li><p>puis le certificat root :</p>
+
+<pre><code>wget https://www.startssl.com/certs/ca.pem
+</code></pre></li>
+
+<li><p>puis on forge le certificat chaîné (ne pas oublier les <strong>2</strong> <code>&gt;&gt;</code>) :</p>
+
+<pre><code>cat sub.class1.server.ca.pem &gt;&gt; /etc/prosody/certs/exemple.tld.crt
+cat ca.pem &gt;&gt; /etc/prosody/certs/exemple.tld.crt
+</code></pre></li>
+</ul>
+
+<h3 id="génération-du-dhparam">Génération du dhparam<a href="#génération-du-dhparam" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p>Création du <strong>dhparam</strong> (<a href="https://prosody.im/doc/advanced_ssl_config#dhparam">prosody.im/dhparam</a>) :</p>
+
+<pre><code>openssl dhparam -out /etc/prosody/certs/dh-2048.pem 2048
+</code></pre>
+
+<blockquote>Java ne peut pas utiliser un dhparam supérieur à 1024 bits, ce qui empêche d'utiliser par exemple le logiciel [Jitsi](https://jitsi.org). Pour éviter cela (c'est tout de même un client grandement utilisé), on peut générer un dhparam de 1024 bits avec la commande suivante (ne pas oublier de modifier la configuration pour remplacer dh-2048.pem par dh-1024.pem):</p>
+
+```
+openssl dhparam -out /etc/prosody/certs/dh-1024.pem 1024
+```
+
+</blockquote>
+
+<h3 id="configuration-du-ssl-tls">Configuration du SSL/TLS<a href="#configuration-du-ssl-tls" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p>On retourne dans <em>/etc/prosody/prosody.cfg.lua</em> :</p>
+
+<pre><code>ssl = {
+    key = &quot;/etc/prosody/certs/exemple.tld.key&quot;;
+    certificate = &quot;/etc/prosody/certs/exemple.tld.cert&quot;;
+    dhparam = &quot;/etc/prosody/certs/dh-2048.pem&quot;;
+    options = { &quot;no_sslv2&quot;, &quot;no_sslv3&quot;, &quot;no_ticket&quot;, &quot;no_compression&quot;,
+    &quot;cipher_server_preference&quot;, &quot;single_dh_use&quot;,
+    &quot;single_ecdh_use&quot; };
+    ciphers = &quot;EECDH+ECDSA+AESGCM EECDH+aRSA+AESGCM EECDH+ECDSA+SHA384 EECDH+ECDSA+SHA256 EECDH+aRSA+SHA384 EECDH+aRSA+SHA256 EECDH EDH+aRSA !RC4 !aNULL !eNULL !LOW !3DES !MD5 !EXP !PSK !SRP !DSS&quot;;
+    }
+</code></pre>
+
+<ul>
+<li><strong>c2s</strong> signifie « <em>Client TO Server</em> »,</li>
+
+<li><p><strong>s2s</strong> signifie « <em>Server TO Server</em> ».</p>
+
+<pre><code>c2s_ports = { 5222 }
+s2s_ports = { 5269 }
+c2s_require_encryption = true
+s2s_require_encryption = true
+s2s_secure_auth = false
+allow_unencrypted_plain_auth = false;
+</code></pre></li>
+</ul>
+
+<p><strong><em>s2s_secure_auth</em></strong> est sur <em>false</em> pour les <a href="http://prosody.im/doc/s2s#security">raisons suivantes</a> (<a href="http://www.urbandictionary.com/define.php?term=tl%3Bdr">TL;DR</a>: possibilité de certificat auto-signé en face). Peut marcher avec <em>s2s_auth_fingerprint</em> mais c&rsquo;est douloureux.</p>
+
+<p>Les <a href="https://prosody.im/doc/s2s#security">options</a> <em>s2s_secure_domains</em> et <em>s2s_insecure_domains</em>  peuvent aussi vous intéresser, surtout si vous voulez parler avec des personnes qui sont sur gmail (ce qui veut dire que ça ne sera pas chiffré).</p>
+
+<p>Concernant la <strong>ciphersuite</strong>, <a href="http://prosody.im/doc/advanced_ssl_config#ciphers">le choix par défaut</a> de Prosody est déjà pas mal :</p>
+
+<pre><code>ciphers = &quot;HIGH+kEDH:HIGH+kEECDH:HIGH:!PSK:!SRP:!3DES:!aNULL&quot;;
+</code></pre>
+
+<p>Il faut tout de même enlever <code>RC4</code> et <code>eNULL</code>, et tant qu&rsquo;à faire, autant faire une liste de ciphers avec seulement du PFS (<a href="https://fr.wikipedia.org/wiki/Confidentialit%C3%A9_persistante">Perfect Forward Secrecy</a>) (c&rsquo;est à mettre dans le bloc <code>ssl { }</code>) :</p>
+
+<pre><code>ciphers = &quot;EECDH+ECDSA+AESGCM EECDH+aRSA+AESGCM EECDH+ECDSA+SHA384 EECDH+ECDSA+SHA256 EECDH+aRSA+SHA384 EECDH+aRSA+SHA256 EECDH EDH+aRSA !RC4 !aNULL !eNULL !LOW !3DES !MD5 !EXP !PSK !SRP !DSS&quot;;
+</code></pre>
+
+<h4 id="dns">DNS<a href="#dns" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+
+<p>N&rsquo;oubliez pas d&rsquo;ajouter les enregistrements <a href="https://fr.wikipedia.org/wiki/Enregistrement_SRV">SRV dans vos DNS</a> :</p>
+
+<pre><code>_xmpp-client._tcp.jabber        IN      SRV     0 5 5222 host.exemple.com.
+_xmpp-server._tcp.jabber        IN      SRV     0 5 5269 host.exemple.com.
+</code></pre>
+
+<h4 id="firewall">Firewall<a href="#firewall" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+
+<p>En cas de firewall, il faut ouvrir les ports 5269 et 5222 (IN et OUT) en <strong>TCP</strong>. La configuration pour <code>iptables</code> donne ceci :</p>
+
+<pre><code>iptables -I INPUT -p tcp --dport 5269 -j ACCEPT
+iptables -I OUTPUT -p tcp --sport 5269 -j ACCEPT
+iptables -I INPUT -p tcp --dport 5222 -j ACCEPT
+iptables -I OUTPUT -p tcp --sport 5222 -j ACCEPT
+</code></pre>
+
+<p>#### Avoir un certificat autosigné qui passe bien (par exemple pour un hidden service tor)</p>
+
+<p>Les versions récentes de pidgin (&gt; v2.10.10) <a href="http://pidgin.10357.n7.nabble.com/16412-Unable-to-connect-to-XMPP-servers-using-self-signed-certificates-td130960.html">refusent de se connecter</a> à des serveurs utilisant un certificat autosigné. C&rsquo;est dû à une option de <a href="https://fr.wikipedia.org/wiki/X.509">X509</a>, <a href="https://www.openssl.org/docs/apps/x509v3_config.html#Basic-Constraints">basicConstraints</a>, qui ne doit pas contenir <code>CA:false</code></p>
+
+<p>Nous allons faire une copie du fichier <code>/etc/ssl/openssl.cnf</code> sur le poste servant à générer nos clés, afin de pouvoir l&rsquo;éditer et histoire de pouvoir revenir en arrière sans problème  :</p>
+
+<pre><code>cp /etc/ssl/openssl.cnf /var/tmp/openssl2.cnf
+</code></pre>
+
+<p>On édite le fichier avec son éditeur préféré (ici <code>vim</code>) :</p>
+
+<pre><code>vim /etc/ssl/openssl.cnf
+</code></pre>
+
+<p>Et l&rsquo;on modifie certaines lignes pour avoir une bonne configuration par défaut :</p>
+
+<p>Dans la partie <code>[ req ]</code>, vérifiez bien que <code>default_md</code> est présent avec comme valeur (au minimum) <code>sha256</code> :</p>
+
+<pre><code>[ req ]
+default_md              = sha256
+default_bits            = 2048
+default_keyfile         = privkey.pem
+distinguished_name      = req_distinguished_name
+attributes              = req_attributes
+x509_extensions         = v3_ca
+string_mask             = nombstr
+</code></pre>
+
+<p>Dans la partie <code>[ v3_ca ]</code>, vérifiez bien la présence de <code>CA:true</code> :</p>
+
+<pre><code>[ v3_ca ]
+
+# Extensions for a typical CA
+subjectKeyIdentifier=hash
+authorityKeyIdentifier=keyid:always,issuer
+basicConstraints = CA:true
+
+</code></pre>
+
+<p>Pour finir, dans la partie <code>[ req_distinguished_name ]</code>, vous pouvez commenter la plupart des ligne pour éviter les questions chiantes et ne garde que les 2 suivantes :</p>
+
+<blockquote>Vous pouvez bien entendu les garder et les pré-remplir si vous en avez besoin, si vous avez un doute sur la marche à suivre, vous pouvez passer cette partie sans problème</blockquote>
+
+<pre><code>[ req_distinguished_name ]
+
+commonName      = Your FQDN
+commonName_max  = 256
+</code></pre>
+
+<p>Il suffira ensuite de lancer les 3 commandes suivantes pour générer nos clés avec la bonne configuration :</p>
+
+<blockquote>
+<p>Dans cet exemple, nous générons une <strong>clé de 2048 bits</strong> (<code>genrsa [...] 2048</code>) en utilisant notre fichier openssl.cnf (<code>-config openssl.cnf</code>) pour <strong>une durée de 10 ans</strong> (<code>-days 3650</code>) </blockquote></p>
+</blockquote>
+
+<pre><code>openssl genrsa -out server.key 2048
+openssl req -config /var/tmp/openssl2.cnf -new -key server.key -out server.csr
+openssl x509 -req -days 3650 -in server.csr -signkey server.key -out server.crt
+</code></pre>
+
+<h2 id="test">Test<a href="#test" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+
+<p>Comme <a href="https://www.ssllabs.com/">SSLLabs</a> pour tester le SSL/TLS sur les serveurs webs, il existe <a href="https://xmpp.net/">xmpp.net</a> pour les serveurs xmpp. Je vous conseille <strong>vivement</strong> de tester votre site !</p>
+
+<p>Il faut <strong>toujours</strong> vérifier, même quand on pense pouvoir avoir confiance.</p>
+
+<p>Si vous vous demandez comment améliorer votre note, c&rsquo;est là : <a href="https://xmpp.net/about.php">xmpp.net/about</a>.</p>
+
+		</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2019 <a href="cyphercat.eu"></a></p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="cyphercat.eu/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
+
+
+	<script src="/cyphercat.eu/js/main.min.35ccbf1cdceb91e4c64c06b5d009d6e2977fafe56beda7762febd4e67528d2ac.js" integrity="sha256-Ncy/HNzrkeTGTAa10AnW4pd/r+Vr7ad2L+vU5nUo0qw="></script>
+
+</body>
+
+</html>
