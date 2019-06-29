@@ -1,11 +1,11 @@
 +++
 author = "Skhaen"
-categories = ["puppet", "adminsys", "ssl"]
+categories = ["puppet", "adminsys"]
 date = 2017-02-12T19:28:25Z
 description = ""
 draft = false
 slug = "deploiement-et-automatisation-avec-puppet-partie-1"
-tags = ["puppet", "adminsys", "ssl"]
+tags = ["puppet", "adminsys"]
 title = "[Puppet] [1] : Déploiement et automatisation avec Puppet 4.9"
 
 +++

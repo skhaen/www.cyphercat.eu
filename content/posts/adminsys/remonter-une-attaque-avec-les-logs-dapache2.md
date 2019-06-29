@@ -26,11 +26,11 @@ LogFormat "%{LOGIN}e %h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\
 
 Pour la comprendre plus facilement, on peut imaginer la lire comme un journal de bord dans lequel la personne qui s'en chargerait raconterait tout avec le plus de détails possible. Dans l'exemple ci-dessus, les logs nous racontent que :
 
-* <em>J'ai eu une requête provenant de l'adresse IP **93.184.216.34** le **20 avril 2015 à 21h54 et 21 secondes** (**+0200** indiquant la [timezone](https://en.wikipedia.org/wiki/Time_zone) de votre serveur), elle m'a demandé (**GET**) d'accéder à la ressource **/2015/01/25/NSA-bullrun.html** en utilisant le protocole **HTTP/1.1**.</em>
+* *J'ai eu une requête provenant de l'adresse IP **93.184.216.34** le **20 avril 2015 à 21h54 et 21 secondes** (**+0200** indiquant la [timezone](https://en.wikipedia.org/wiki/Time_zone) de votre serveur), elle m'a demandé (**GET**) d'accéder à la ressource **/2015/01/25/NSA-bullrun.html** en utilisant le protocole **HTTP/1.1**.*
 
-* <em>J'indique ensuite le [statut de cette ressource](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) (*200*), ainsi que sa taille (ici le [nombre d'octets envoyés, y compris les en-têtes](https://httpd.apache.org/docs/2.4/fr/mod/mod_log_config.html#formats)) (*8766*).</em>
+* *J'indique ensuite le [statut de cette ressource](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) (*200*), ainsi que sa taille (ici le [nombre d'octets envoyés, y compris les en-têtes](https://httpd.apache.org/docs/2.4/fr/mod/mod_log_config.html#formats)) (*8766*).*
 
-* <em>Elle m'indique venir du site **https://www.libwalk.so** (**referer**) et m'affirme l'avoir fait en utilisant le logiciel **Mozilla/5.0 [...]** (*user-agent*). Et j'ai mis **0** secondes à servir cette ressource.</em>
+* *Elle m'indique venir du site **https://www.libwalk.so** (**referer**) et m'affirme l'avoir fait en utilisant le logiciel **Mozilla/5.0 [...]** (*user-agent*). Et j'ai mis **0** secondes à servir cette ressource.*
 
 
 

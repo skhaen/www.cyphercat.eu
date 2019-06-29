@@ -3,6 +3,7 @@ author = "Skhaen"
 date = 2017-01-20T19:37:30Z
 description = ""
 draft = false
+tags = ["adminsys"]
 slug = "comment-se-debarrasser-de-son-ecran-fantome"
 title = "Comment se débarrasser de son écran fantôme"
 

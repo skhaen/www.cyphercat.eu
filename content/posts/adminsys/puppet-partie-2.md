@@ -5,7 +5,8 @@ description = ""
 draft = false
 slug = "puppet-partie-2"
 title = "[Puppet] [2] : run puppet et cron"
-
+categories = ["puppet", "adminsys"]
+tags = ["puppet", "adminsys"]
 +++
 
 # Lancer un run puppet avec cron

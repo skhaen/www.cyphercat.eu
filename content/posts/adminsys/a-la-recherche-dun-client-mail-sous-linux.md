@@ -5,7 +5,7 @@ date = 2016-08-10T17:06:51Z
 description = ""
 draft = false
 slug = "a-la-recherche-dun-client-mail-sous-linux"
-tags = ["mua", "mails"]
+tags = ["adminsys", "mails"]
 title = "À la recherche d'un client mail sous Linux"
 
 +++

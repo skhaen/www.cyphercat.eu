@@ -5,6 +5,7 @@ description = ""
 draft = false
 slug = "configuration-calibre"
 title = "Et si on parlait de Calibre ?"
+tags = ["misc"]
 
 +++
 

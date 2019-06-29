@@ -1,11 +1,11 @@
 +++
 author = "Skhaen"
-categories = ["puppet", "adminsys", "ssl"]
+categories = ["puppet", "adminsys"]
+tags = ["puppet", "adminsys"]
 date = 2017-02-10T21:43:03Z
 description = ""
 draft = false
 slug = "puppet-troubleshooting"
-tags = ["puppet", "adminsys", "ssl"]
 title = "[Puppet] troubleshooting"
 
 +++
