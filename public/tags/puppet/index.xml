@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>puppet on Skhaen</title>
+    <link>http://www.cyphercat.eu/tags/puppet/</link>
+    <description>Recent content in puppet on Skhaen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Sat, 20 May 2017 12:02:04 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.cyphercat.eu/tags/puppet/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[Puppet] [2] : run puppet et cron</title>
+      <link>http://www.cyphercat.eu/posts/adminsys/puppet-partie-2/</link>
+      <pubDate>Sat, 20 May 2017 12:02:04 +0000</pubDate>
+      
+      <guid>http://www.cyphercat.eu/posts/adminsys/puppet-partie-2/</guid>
+      <description>Lancer un run puppet avec cron Lancement automatique du run puppet sur les nodes avec cron toutes les heures :
+ note : chaque tache cron ajouté nativement par puppet sera mis dans crontab, vous pouvez les lister avec crontab -l sur vos nodes.
+ cron{&amp;#34;puppet&amp;#34;:ensure=&amp;gt;present,command=&amp;gt;&amp;#39;puppet agent -t --http_read_timeout 2m --logdest /var/log/puppetlabs/puppet/puppet`/bin/date +\\%Y\\%m\\%d\\%H\\%M`.log 1&amp;gt;/dev/null 2&amp;gt;&amp;amp;1&amp;#39;,user=&amp;gt;&amp;#39;root&amp;#39;,minute=&amp;gt;fqdn_rand(60),require=&amp;gt;File[&amp;#39;/var/log/puppet&amp;#39;],} Si vous souhaites voir le détail des options, c&amp;rsquo;est sur configuration.html. Le $fqdn_rand(60) (cf. #fqdnrand, permet d&amp;rsquo;indiquer aléatoirement une valeur de 0 à 60 (la valeur max étant non inclus selon la documentation) pour la configuration du cron.</description>
+    </item>
+    
+    <item>
+      <title>[Puppet] [1] : Déploiement et automatisation avec Puppet 4.9</title>
+      <link>http://www.cyphercat.eu/posts/adminsys/deploiement-et-automatisation-avec-puppet-partie-1/</link>
+      <pubDate>Sun, 12 Feb 2017 19:28:25 +0000</pubDate>
+      
+      <guid>http://www.cyphercat.eu/posts/adminsys/deploiement-et-automatisation-avec-puppet-partie-1/</guid>
+      <description>Puppet est l&amp;rsquo;outil de gestion de configuration le plus connu, il a vu le jour en 2005, bien avant ses principaux concurrents (2009 pour Chef, 2011 pour Salt, 2012 pour Ansible). Il propose depuis maintenant longtemps une solution open-source en parallèle de la version entreprise (qui est évidemment payante) et il a eu le temps de grandir pour atteindre une taille plus que respectable.
+Au contraire d&amp;rsquo;Ansible où ça reste plutôt simple pour le moment, les premières recherches que vous allez faire ont toutes les chances de vous laisser quelque part entre &amp;ldquo;mais je commence par quoi bordel ?</description>
+    </item>
+    
+    <item>
+      <title>[Puppet] troubleshooting</title>
+      <link>http://www.cyphercat.eu/posts/adminsys/puppet-troubleshooting/</link>
+      <pubDate>Fri, 10 Feb 2017 21:43:03 +0000</pubDate>
+      
+      <guid>http://www.cyphercat.eu/posts/adminsys/puppet-troubleshooting/</guid>
+      <description>This article is a copy/paste of the conference &amp;ldquo;Puppet troubleshooting&amp;rdquo; by Thomas Uphill at PuppetConf2016. It&amp;rsquo;s a memo for myself, I don&amp;rsquo;t want to reread the 70 slides when I want to find something&amp;hellip;
+FIRST  document current state discover recent changes (commits, &amp;hellip;) change ONE thing at a time. If it doesn&amp;rsquo;t fix the problem, revert it.   When you have eliminated all which is impossible, then whatever remains, however improbable, must be the truth Sir Arthur Conan Doyles</description>
+    </item>
+    
+  </channel>
+</rss>

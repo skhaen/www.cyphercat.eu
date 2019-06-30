@@ -1,7 +1,7 @@
 baseURL = "http://www.cyphercat.eu"
 languageCode = "fr-fr"
 defaultContentLanguage = "fr"
-title = "Cyphercat"
+title = "Skhaen"
 theme = "hermit"
 # enableGitInfo = true
 pygmentsCodefences  = true
@@ -36,7 +36,7 @@ enableEmoji = true  # Shorthand emojis in content files - https://gohugo.io/func
   # images = [""]
   themeColor = "#494f5c"
 
-  homeSubtitle = "A minimal and fast theme for Hugo."
+  homeSubtitle = "Welcome. A cup of tea?"
   footerCopyright = ' &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
   # bgImg = ""  # Homepage background-image URL
 
@@ -57,27 +57,22 @@ enableEmoji = true  # Shorthand emojis in content files - https://gohugo.io/func
     name = "twitter"
     url = "https://framapiaf.org/@skhaen"
 
-  [[params.social]]
-    name = "instagram"
-    url = "https://instagram.com/"
+  #[[params.social]]
+  #  name = "instagram"
+  #  url = "https://instagram.com/"
 
-  [[params.social]]
-    name = "github"
-    url = "https://github.com/skhaen"
+  #[[params.social]]
+  #  name = "github"
+  #  url = "https://github.com/skhaen"
 
 [menu]
 
   [[menu.main]]
-    name = "Posts"
+    name = "posts"
     url = "posts/"
     weight = 10
 
   [[menu.main]]
-    name = "Projets"
+    name = "projets"
     url = "pages/projets"
     weight = 20
-
-  [[menu.main]]
-    name = "About"
-    url = "pages/about"
-    weight = 30

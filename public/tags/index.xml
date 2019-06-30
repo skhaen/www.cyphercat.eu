@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Skhaen</title>
+    <link>http://www.cyphercat.eu/tags/</link>
+    <description>Recent content in Tags on Skhaen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Sat, 20 May 2017 12:02:04 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.cyphercat.eu/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>adminsys</title>
+      <link>http://www.cyphercat.eu/tags/adminsys/</link>
+      <pubDate>Sat, 20 May 2017 12:02:04 +0000</pubDate>
+      
+      <guid>http://www.cyphercat.eu/tags/adminsys/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>puppet</title>
+      <link>http://www.cyphercat.eu/tags/puppet/</link>
+      <pubDate>Sat, 20 May 2017 12:02:04 +0000</pubDate>
+      
+      <guid>http://www.cyphercat.eu/tags/puppet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>traduction</title>
+      <link>http://www.cyphercat.eu/tags/traduction/</link>
+      <pubDate>Thu, 02 Feb 2017 21:07:22 +0000</pubDate>
+      
+      <guid>http://www.cyphercat.eu/tags/traduction/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ansible</title>
+      <link>http://www.cyphercat.eu/tags/ansible/</link>
+      <pubDate>Sun, 01 Jan 2017 18:04:58 +0000</pubDate>
+      
+      <guid>http://www.cyphercat.eu/tags/ansible/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mails</title>
+      <link>http://www.cyphercat.eu/tags/mails/</link>
+      <pubDate>Wed, 10 Aug 2016 17:06:51 +0000</pubDate>
+      
+      <guid>http://www.cyphercat.eu/tags/mails/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>lockpicking</title>
+      <link>http://www.cyphercat.eu/tags/lockpicking/</link>
+      <pubDate>Wed, 27 Jul 2016 21:01:22 +0000</pubDate>
+      
+      <guid>http://www.cyphercat.eu/tags/lockpicking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>snowden</title>
+      <link>http://www.cyphercat.eu/tags/snowden/</link>
+      <pubDate>Thu, 19 May 2016 12:14:57 +0000</pubDate>
+      
+      <guid>http://www.cyphercat.eu/tags/snowden/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>livres</title>
+      <link>http://www.cyphercat.eu/tags/livres/</link>
+      <pubDate>Thu, 31 Mar 2016 17:15:37 +0000</pubDate>
+      
+      <guid>http://www.cyphercat.eu/tags/livres/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>misc</title>
+      <link>http://www.cyphercat.eu/tags/misc/</link>
+      <pubDate>Tue, 01 Dec 2015 17:21:53 +0000</pubDate>
+      
+      <guid>http://www.cyphercat.eu/tags/misc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>postfix</title>
+      <link>http://www.cyphercat.eu/tags/postfix/</link>
+      <pubDate>Tue, 04 Aug 2015 20:11:00 +0000</pubDate>
+      
+      <guid>http://www.cyphercat.eu/tags/postfix/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>spam</title>
+      <link>http://www.cyphercat.eu/tags/spam/</link>
+      <pubDate>Tue, 04 Aug 2015 20:11:00 +0000</pubDate>
+      
+      <guid>http://www.cyphercat.eu/tags/spam/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>apache2</title>
+      <link>http://www.cyphercat.eu/tags/apache2/</link>
+      <pubDate>Fri, 17 Jul 2015 12:53:00 +0000</pubDate>
+      
+      <guid>http://www.cyphercat.eu/tags/apache2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ssl</title>
+      <link>http://www.cyphercat.eu/tags/ssl/</link>
+      <pubDate>Fri, 17 Jul 2015 12:53:00 +0000</pubDate>
+      
+      <guid>http://www.cyphercat.eu/tags/ssl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gpg</title>
+      <link>http://www.cyphercat.eu/tags/gpg/</link>
+      <pubDate>Tue, 19 May 2015 14:30:00 +0000</pubDate>
+      
+      <guid>http://www.cyphercat.eu/tags/gpg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>logs</title>
+      <link>http://www.cyphercat.eu/tags/logs/</link>
+      <pubDate>Wed, 29 Apr 2015 15:08:00 +0000</pubDate>
+      
+      <guid>http://www.cyphercat.eu/tags/logs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nginx</title>
+      <link>http://www.cyphercat.eu/tags/nginx/</link>
+      <pubDate>Sun, 27 Jul 2014 10:00:00 +0000</pubDate>
+      
+      <guid>http://www.cyphercat.eu/tags/nginx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>crypto</title>
+      <link>http://www.cyphercat.eu/tags/crypto/</link>
+      <pubDate>Sat, 19 Apr 2014 10:00:00 +0000</pubDate>
+      
+      <guid>http://www.cyphercat.eu/tags/crypto/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>openwrt</title>
+      <link>http://www.cyphercat.eu/tags/openwrt/</link>
+      <pubDate>Tue, 04 Mar 2014 17:58:00 +0000</pubDate>
+      
+      <guid>http://www.cyphercat.eu/tags/openwrt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>prosody</title>
+      <link>http://www.cyphercat.eu/tags/prosody/</link>
+      <pubDate>Fri, 14 Feb 2014 18:00:00 +0000</pubDate>
+      
+      <guid>http://www.cyphercat.eu/tags/prosody/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>xmpp</title>
+      <link>http://www.cyphercat.eu/tags/xmpp/</link>
+      <pubDate>Fri, 14 Feb 2014 18:00:00 +0000</pubDate>
+      
+      <guid>http://www.cyphercat.eu/tags/xmpp/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

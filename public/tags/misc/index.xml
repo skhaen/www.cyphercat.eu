@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>misc on Skhaen</title>
+    <link>http://www.cyphercat.eu/tags/misc/</link>
+    <description>Recent content in misc on Skhaen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Tue, 01 Dec 2015 17:21:53 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.cyphercat.eu/tags/misc/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Et si on parlait de Calibre ?</title>
+      <link>http://www.cyphercat.eu/posts/adminsys/configuration-calibre/</link>
+      <pubDate>Tue, 01 Dec 2015 17:21:53 +0000</pubDate>
+      
+      <guid>http://www.cyphercat.eu/posts/adminsys/configuration-calibre/</guid>
+      <description>Bon, après (ne pas) avoir utilisé le logiciel libre Calibre pour gérer ma bibliothèque d&amp;rsquo;ebooks, j&amp;rsquo;arrive à un moment où elle commence à être un peu trop grosse pour le faire à la main.
+N&amp;rsquo;attendez pas d&amp;rsquo;avoir une bibliothèque conséquente avant d&amp;rsquo;utiliser Calibre, c&amp;rsquo;est le meilleur moyen de s&amp;rsquo;en mordre les doigts et d&amp;rsquo;y passer quelques heures le temps de modifier des métadonnées de livres incohérentes : mieux vaut le faire au fur et à mesure.</description>
+    </item>
+    
+  </channel>
+</rss>

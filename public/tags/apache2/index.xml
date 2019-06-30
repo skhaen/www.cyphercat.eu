@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>apache2 on Skhaen</title>
+    <link>http://www.cyphercat.eu/tags/apache2/</link>
+    <description>Recent content in apache2 on Skhaen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Fri, 17 Jul 2015 12:53:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.cyphercat.eu/tags/apache2/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Debug SSL/TLS avec OpenSSL - partie 1</title>
+      <link>http://www.cyphercat.eu/posts/adminsys/debug-tls/</link>
+      <pubDate>Fri, 17 Jul 2015 12:53:00 +0000</pubDate>
+      
+      <guid>http://www.cyphercat.eu/posts/adminsys/debug-tls/</guid>
+      <description>Si tu es en pleine session de dé/bug SSL/TLS, cet article peut t&amp;rsquo;éviter quelques désagréments ;-)
+SSL Labs, l&amp;rsquo;incontournable On ne le présente plus, le site de Qualys permet de tester la configuration de son serveur facilement avec une interface web bien faite. Le test permet d&amp;rsquo;avoir un rapport concernant les points suivants :
+ Authentification : validité du certificat (nom du site, période de validité&amp;hellip;), présence et validité de la chaîne de certificat (chain) Protocoles diposnibles (SSLv2, SSLv3, TLS 1.</description>
+    </item>
+    
+    <item>
+      <title>Serveur ? Du TLS, avec un peu de HSTS et un soupçon de TLSA s&#39;il vous plait !</title>
+      <link>http://www.cyphercat.eu/posts/adminsys/serveur-du-tls-avec-un-peu-de-hsts-et-un-soupcon-de-tlsa-sil-vous-plait/</link>
+      <pubDate>Sun, 27 Jul 2014 10:00:00 +0000</pubDate>
+      
+      <guid>http://www.cyphercat.eu/posts/adminsys/serveur-du-tls-avec-un-peu-de-hsts-et-un-soupcon-de-tlsa-sil-vous-plait/</guid>
+      <description>Continuons notre voyage dans la crypto, nous avons vu dernièrement la mise en place d&amp;rsquo;un serveur Prosody avec une sécurité satisfaisante. Aujourd&amp;rsquo;hui, nous allons jouer avec Apache (mais aussi Nginx), en configurant du SSL/TLS avec du HSTS,
+SSL/TLS (Secure Sockets Layer et Transport Layer Security) Pour bien commencer, je vous conseille vivement la conférence de Benjamin Sonntag sur le SSL/TLS. Il y a dedans tout ce que vous avez besoin de savoir, et bien plus encore.</description>
+    </item>
+    
+  </channel>
+</rss>

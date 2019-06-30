@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>openwrt on Skhaen</title>
+    <link>http://www.cyphercat.eu/tags/openwrt/</link>
+    <description>Recent content in openwrt on Skhaen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Tue, 04 Mar 2014 17:58:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.cyphercat.eu/tags/openwrt/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Flasher un modem routeur buffalo WBMR HP g300h avec OpenWRT</title>
+      <link>http://www.cyphercat.eu/posts/adminsys/flasher-un-modem-routeur-buffalo-wbmr-hp-g300h-avec-openwr/</link>
+      <pubDate>Tue, 04 Mar 2014 17:58:00 +0000</pubDate>
+      
+      <guid>http://www.cyphercat.eu/posts/adminsys/flasher-un-modem-routeur-buffalo-wbmr-hp-g300h-avec-openwr/</guid>
+      <description>Petit tuto pour flasher un Buffalo WBMR-HP-G300H sur OpenWRT 12.09 - Attitude Adjustment.
+ EDIT 2014-05-24 : rajout des 2 liens pour régler le bug du switch (tout à la fin de cet article)  Pour cette recette, il vous faudra :
+ un Buffalo WBMR-HP-G300H (disponible par exemple sur monclick.fr pour 72 € ou chez Amazon à partir de ~80 €), un ordinateur avec un OS acceptable, une connexion Internet qui fonctionne, de la (bonne) vodka, du gin, de l&amp;rsquo;amaretto, du triple sec, du schnapps, &amp;hellip; ne vous en faites pas, vous aurez la liste complète un peu plus loin son utilisation aussi.</description>
+    </item>
+    
+  </channel>
+</rss>

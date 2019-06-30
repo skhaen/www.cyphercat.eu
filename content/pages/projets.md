@@ -8,6 +8,19 @@ title = "Projets"
 
 +++
 
+
+Hi, I'm Skhaen, a french sysadmin.
+
+```
+GPG
+4780 86FD 89F8 3064 4BDD A765 F842 7BD0 C99C CF64
+```
+
+* **Mastodon**: <a href="https://https://framapiaf.org/@skhaen">@skhaen</a>
+* **mail**: skhaen@<+this domain name>
+* **XMPP**: skhaen@jabber.lqdn.fr
+
+
 ## Passage-en-Seine / PSES
 
 Organisation de PSES, qui est un évènement regroupant des conférences et des ateliers sur 4 jours à Paris. 

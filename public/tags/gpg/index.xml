@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gpg on Skhaen</title>
+    <link>http://www.cyphercat.eu/tags/gpg/</link>
+    <description>Recent content in gpg on Skhaen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Tue, 19 May 2015 14:30:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.cyphercat.eu/tags/gpg/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GPG - Comment générer une paire de clés</title>
+      <link>http://www.cyphercat.eu/posts/adminsys/gpg-comment-generer-une-paire-de-cles/</link>
+      <pubDate>Tue, 19 May 2015 14:30:00 +0000</pubDate>
+      
+      <guid>http://www.cyphercat.eu/posts/adminsys/gpg-comment-generer-une-paire-de-cles/</guid>
+      <description>j&amp;rsquo;avais publié cet article à l&amp;rsquo;origine sur cyphercat.eu il y a quelques temps. Ça servira sans doute plus si ça traine sur ici.
+ La génération d&amp;rsquo;une clé asymétrique GPG sous un système Unix / Gnu/Linux est particulièrement simple (une fois que l&amp;rsquo;on sait le faire ;-)), et c&amp;rsquo;est justement ce que nous allons voir ici. Si les détails vous intéressent, ou si vous avez besoin d&amp;rsquo;explications plus détaillées, vous pouvez aller voir sur gnupg.</description>
+    </item>
+    
+    <item>
+      <title>Utiliser caff avec postfix</title>
+      <link>http://www.cyphercat.eu/posts/adminsys/utiliser-caff-avec-postfix/</link>
+      <pubDate>Tue, 09 Sep 2014 16:00:00 +0000</pubDate>
+      
+      <guid>http://www.cyphercat.eu/posts/adminsys/utiliser-caff-avec-postfix/</guid>
+      <description>J&amp;rsquo;ai eu il y a peu un problème avec caff qui ne voulait plus utiliser exim pour envoyer ses mails. Voici comment faire pour le remplacer par postfix.
+Configuration de postfix On commence par installer postfix :
+aptitude install postfix  On édite le fichier /etc/postfix/main.cf pour rajouter ce qui suit à la fin :
+relayhost = [IP_DE_VOTRE_SERVEUR]:587 smtp_sasl_auth_enable = yes smtp_sasl_password_maps = hash:/etc/postfix/sasl_auth smtp_sasl_security_options = noplaintext, noanonymous smtp_sasl_tls_security_options = noanonymous smtp_sasl_mechanism_filter = plain, login smtp_use_tls = yes  Puis on crée le fichier /etc/postfix/sasl_auth avec la ligne suivante :</description>
+    </item>
+    
+  </channel>
+</rss>

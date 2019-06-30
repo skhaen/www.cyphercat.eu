@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#494f5c">
+	<meta name="msapplication-TileColor" content="#494f5c">
+
+<meta itemprop="name" content="À la recherche d&#39;un client mail sous Linux">
+<meta itemprop="description" content="Mettons tout de suite les choses au clair : on veut un client mail moderne, avec une jolie interface (qui fait wooosh wooosh, exactement) et orienté grand public. Dans cette optique, on va d&rsquo;abord vouloir quelque chose d&rsquo;ergonomique et d&rsquo;utilisable dès le premier démarrage sans devoir installer un plugin ou aller bidouiller un fichier de config. Et l&rsquo;importance de la gestion de GPG arrivera donc nettement après&hellip;
+Donc, histoire que l&rsquo;on se soit bien compris : on cherche un client mail pour la famille / les ami-e-s / un-e inconnu-e dans la rue, et pas pour un adminsys/dév/agnutollah qui n&rsquo;arrive à pas comprendre que l&rsquo;ergonomie et une jolie interface c&rsquo;est important (et le pire, c&rsquo;est que je sais très bien que même en écrivant ça, je vais avoir des retours me disant que Mutt c&rsquo;est trop bien).">
+
+
+<meta itemprop="datePublished" content="2016-08-10T17:06:51&#43;00:00" />
+<meta itemprop="dateModified" content="2016-08-10T17:06:51&#43;00:00" />
+<meta itemprop="wordCount" content="440">
+
+
+
+<meta itemprop="keywords" content="adminsys,mails," />
+<meta property="og:title" content="À la recherche d&#39;un client mail sous Linux" />
+<meta property="og:description" content="Mettons tout de suite les choses au clair : on veut un client mail moderne, avec une jolie interface (qui fait wooosh wooosh, exactement) et orienté grand public. Dans cette optique, on va d&rsquo;abord vouloir quelque chose d&rsquo;ergonomique et d&rsquo;utilisable dès le premier démarrage sans devoir installer un plugin ou aller bidouiller un fichier de config. Et l&rsquo;importance de la gestion de GPG arrivera donc nettement après&hellip;
+Donc, histoire que l&rsquo;on se soit bien compris : on cherche un client mail pour la famille / les ami-e-s / un-e inconnu-e dans la rue, et pas pour un adminsys/dév/agnutollah qui n&rsquo;arrive à pas comprendre que l&rsquo;ergonomie et une jolie interface c&rsquo;est important (et le pire, c&rsquo;est que je sais très bien que même en écrivant ça, je vais avoir des retours me disant que Mutt c&rsquo;est trop bien)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.cyphercat.eu/posts/adminsys/a-la-recherche-dun-client-mail-sous-linux/" />
+<meta property="article:published_time" content="2016-08-10T17:06:51&#43;00:00"/>
+<meta property="article:modified_time" content="2016-08-10T17:06:51&#43;00:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="À la recherche d&#39;un client mail sous Linux"/>
+<meta name="twitter:description" content="Mettons tout de suite les choses au clair : on veut un client mail moderne, avec une jolie interface (qui fait wooosh wooosh, exactement) et orienté grand public. Dans cette optique, on va d&rsquo;abord vouloir quelque chose d&rsquo;ergonomique et d&rsquo;utilisable dès le premier démarrage sans devoir installer un plugin ou aller bidouiller un fichier de config. Et l&rsquo;importance de la gestion de GPG arrivera donc nettement après&hellip;
+Donc, histoire que l&rsquo;on se soit bien compris : on cherche un client mail pour la famille / les ami-e-s / un-e inconnu-e dans la rue, et pas pour un adminsys/dév/agnutollah qui n&rsquo;arrive à pas comprendre que l&rsquo;ergonomie et une jolie interface c&rsquo;est important (et le pire, c&rsquo;est que je sais très bien que même en écrivant ça, je vais avoir des retours me disant que Mutt c&rsquo;est trop bien)."/>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>À la recherche d&#39;un client mail sous Linux</title>
+	<link rel="stylesheet" href="http://www.cyphercat.eu/css/style.min.568c54a56780af2a70c45272522247710b69dbfc080b315211fb98381e3796f8.css" integrity="sha256-VoxUpWeArypwxFJyUiJHcQtp2/wICzFSEfuYOB43lvg=">
+	
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="http://www.cyphercat.eu">Skhaen</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					
+				<a href="http://www.cyphercat.eu/posts/">posts</a>
+				<a href="http://www.cyphercat.eu/pages/projets">projets</a>
+
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<span class="hdr-social hide-in-mobile"><a href="https://framapiaf.org/@skhaen" target="_blank" rel="noopener me" title="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="http://www.cyphercat.eu/posts/">posts</a></li>
+			<li><a href="http://www.cyphercat.eu/pages/projets">projets</a></li>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner animated fadeIn faster">
+		<article class="thin">
+			<header class="post-header">
+				<div class="post-meta"><span>Aug 10, 2016</span></div>
+				<h1>À la recherche d&#39;un client mail sous Linux</h1>
+			</header>
+			<div class="content">
+				
+
+<p>Mettons tout de suite les choses au clair : on veut un client mail <strong><a href="http://www.rainloop.net/screenshots/">moderne</a></strong>, avec une <strong><a href="http://www.rainloop.net/screenshots/">jolie interface</a></strong> (qui fait <a href="https://twitter.com/Skhaen/status/763371377802043392">wooosh wooosh</a>, exactement) et <strong>orienté grand public</strong>. Dans cette optique, on va d&rsquo;abord vouloir quelque chose d&rsquo;<strong>ergonomique</strong> et d&rsquo;<strong>utilisable dès le premier démarrage</strong> sans devoir installer un plugin ou aller bidouiller un fichier de config. Et l&rsquo;importance de la gestion de <a href="https://xkcd.com/364/">GPG</a> arrivera donc nettement après&hellip;</p>
+
+<p><img src="https://imgs.xkcd.com/comics/manuals.png" alt="XKCD" /></p>
+
+<p>Donc, histoire que l&rsquo;on se soit bien compris : on cherche un client mail pour la famille / les ami-e-s / un-e inconnu-e dans la rue, et pas pour un adminsys/dév/agnutollah qui n&rsquo;arrive à pas comprendre que l&rsquo;ergonomie et une jolie interface c&rsquo;est important (et le pire, c&rsquo;est que je sais très bien que même en écrivant ça, je vais avoir des retours me disant que Mutt c&rsquo;est trop bien).</p>
+
+<p>Et à voir certaines propositions/réactions sur twitter, il y a encore beaucoup trop de personnes qui n&rsquo;arrivent pas à comprendre pourquoi <a href="http://itvision.altervista.org/why.linux.is.not.ready.for.the.desktop.current.html#WorksForMe">Linux est aussi loin derrière sur le marché du <em>desktop</em></a>.</p>
+
+<p>Faisons donc un tour de l&rsquo;existant (si j&rsquo;ai oublié quelque chose d&rsquo;intéressant, n&rsquo;hésitez pas à me contacter par <a href="https://www.cyphercat.eu/about/">mail/twitter</a>) :</p>
+
+<h2 id="logiciels">Logiciels<a href="#logiciels" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+
+<ul>
+<li><strong><a href="https://github.com/astroidmail/astroid">Astroid</a></strong>
+
+<ul>
+<li>Interface pas top (mais GPG)</li>
+</ul></li>
+<li><strong><a href="https://bitmask.net/en">Bitmask</a></strong>
+
+<ul>
+<li>VPN et GPG</li>
+</ul></li>
+<li><strong><a href="http://www.claws-mail.org/">Claws mail</a></strong>
+
+<ul>
+<li>Interface pas top (mais GPG)</li>
+</ul></li>
+<li><strong><a href="https://wiki.gnome.org/Apps/Evolution">Evolution</a></strong>
+
+<ul>
+<li>lourd O_o (mais GPG)</li>
+</ul></li>
+<li><strong><a href="https://wiki.gnome.org/Apps/Geary">Geary</a></strong> (<a href="https://git.gnome.org/browse/geary/">source</a>)
+
+<ul>
+<li>ça à l&rsquo;air pas mal du tout, même si apparemment pas beaucoup de choix de configuration</li>
+</ul></li>
+<li><strong><a href="https://www.kde.org/applications/internet/kmail/">Kontact</a></strong> (Kmail, intégré dans KDE)
+
+<ul>
+<li>pas testé, donc pas de retour</li>
+<li>GPG</li>
+</ul></li>
+<li><strong><a href="http://www.mutt.org/">Mutt</a></strong>
+
+<ul>
+<li>ah pardon, on cherche une interface grand public.</li>
+<li>mais GPG</li>
+</ul></li>
+<li><strong><a href="https://www.nylas.com/">Nylas N1</a></strong> (<a href="https://github.com/nylas/N1">source</a>)
+
+<ul>
+<li>Ça a aussi l&rsquo;air pas mal du tout. Dommage, il faut obligatoirement un <a href="https://support.nylas.com/hc/en-us/articles/220974588-How-is-a-Nylas-ID-different-from-my-email-address-">ID Nylas</a> pour l&rsquo;utiliser, et je ne sais pas vraiment ce qu&rsquo;ils vont faire avec les données.</li>
+</ul></li>
+<li><strong>Pantheon Mail</strong> (fork de Geary - <a href="https://launchpad.net/pantheon-mail">source</a>)</li>
+<li><strong><a href="https://www.mozilla.org/en-US/thunderbird/">Thunderbird</a></strong>
+
+<ul>
+<li><em>sight</em>&hellip; apparemment toujours la référence sur Linux (j&rsquo;avoue que mon expérience avec FirefoxOS pendant un an me donne envie de ###### Mozilla&hellip;)</li>
+</ul></li>
+</ul>
+
+<h2 id="webmail">Webmail<a href="#webmail" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+
+<ul>
+<li><strong><a href="https://mailinabox.email/">Mail-in-a-box</a></strong></li>
+<li><strong><a href="https://www.mailpile.is/">Mailpile</a></strong> :
+
+<ul>
+<li>J&rsquo;ai entendu pas mal de mauvais échos pendant un moment, si vous l&rsquo;avez testé je veux bien des retours.</li>
+</ul></li>
+<li><strong><a href="http://www.rainloop.net">Rainloop</a></strong>
+
+<ul>
+<li>Awwwww &lt;3</li>
+<li>et GPG</li>
+</ul></li>
+<li><strong><a href="https://roundcube.net/">Roundcube</a></strong>
+
+<ul>
+<li>la référence du webmail libre, pas mal de thèmes disponibles, dont des sympas</li>
+</ul></li>
+<li><strong><a href="https://sogo.nu/">SoGo</a></strong>
+
+<ul>
+<li>mails + CalDAV + CardDAV + GroupDAV + Microsoft ActiveSync, plutôt orienté pro.</li>
+</ul></li>
+<li><strong><a href="https://www.zimbra.com">Zimbra</a></strong>
+
+<ul>
+<li>l&rsquo;autre référence du (pas que) webmail libre, mais seulement côté serveur (et beaucoup, beaucoup plus gros)</li>
+</ul></li>
+</ul>
+
+<p>C&rsquo;est intéressant de voir le nombre de logiciels avec une ergonomie poussive ou un design (un peu) vieux mais avec du support pour GPG. C&rsquo;est quoi sa part de marché en dehors de notre petit écosystème déjà ?</p>
+
+<h4 id="edit">Edit<a href="#edit" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+
+<ul>
+<li>2016-08-22 - ajout de Mail-in-a-box</li>
+<li>2016-08-11 - ajout de Bitmask et de SoGo</li>
+</ul>
+
+			</div>
+			<hr class="post-end">
+			<footer class="post-info">
+				<p>
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="http://www.cyphercat.eu/tags/adminsys">adminsys</a></span><span class="tag"><a href="http://www.cyphercat.eu/tags/mails">mails</a></span>
+				</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2016-08-10 19:06 &#43;0200</p>
+			</footer>
+		</article>
+		<div class="post-nav thin">
+			<a class="next-post" href="http://www.cyphercat.eu/posts/adminsys/deploiement-et-automatisation-avec-ansible-partie-1/">
+				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;</span><br><span>[Ansible] Déploiement et automatisation avec Ansible - partie 1</span>
+			</a>
+			<a class="prev-post" href="http://www.cyphercat.eu/posts/medias/m-i-t-guide-to-lock-picking/">
+				<span class="post-nav-label">&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>[M.I.T.] Guide to Lock Picking</span>
+			</a>
+		</div>
+		<div id="comments" class="thin">
+</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2019 <a href="http://www.cyphercat.eu">Skhaen</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="http://www.cyphercat.eu/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
+
+
+	<script src="http://www.cyphercat.eu/js/main.min.35ccbf1cdceb91e4c64c06b5d009d6e2977fafe56beda7762febd4e67528d2ac.js" integrity="sha256-Ncy/HNzrkeTGTAa10AnW4pd/r+Vr7ad2L+vU5nUo0qw="></script>
+
+</body>
+
+</html>

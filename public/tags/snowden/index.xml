@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>snowden on Skhaen</title>
+    <link>http://www.cyphercat.eu/tags/snowden/</link>
+    <description>Recent content in snowden on Skhaen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Thu, 19 May 2016 12:14:57 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.cyphercat.eu/tags/snowden/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[Snowden] NSA-observer - liste des ressources</title>
+      <link>http://www.cyphercat.eu/posts/surveillance/nsa-observer-liste-des-ressources/</link>
+      <pubDate>Thu, 19 May 2016 12:14:57 +0000</pubDate>
+      
+      <guid>http://www.cyphercat.eu/posts/surveillance/nsa-observer-liste-des-ressources/</guid>
+      <description>Entre début 2013 et fin 2014, nous avons collecté et analysé les informations publiques leaké par Edward Snowden concernant la surveillance globale de la NSA et de ses alliés.
+Sites  www.nsa-observer.net Le profil github, vous y retrouverez une partie des documents et surtout la base de données.  Conférence Ma conférence &amp;ldquo;Monde sous surveillance&amp;rdquo; qui faisait un joli point d&amp;rsquo;étape lors de l&amp;rsquo;édition 2014 de Pas Sage En Seine est disponible à plusieurs endroits : youtube, le compte youtube de NUMA ou encore sur Ubicast.</description>
+    </item>
+    
+    <item>
+      <title>[Snowden] NSA - À propos de BULLRUN</title>
+      <link>http://www.cyphercat.eu/posts/surveillance/nsa-a-propos-de-bullrun/</link>
+      <pubDate>Sun, 25 Jan 2015 16:18:00 +0000</pubDate>
+      
+      <guid>http://www.cyphercat.eu/posts/surveillance/nsa-a-propos-de-bullrun/</guid>
+      <description>Dans cet article, nous allons revenir sur les révélations du Spiegel datant de fin décembre lors du 31c3 (Chaos Computer Congress) et du 17 janvier 2015 portant sur les moyens offensifs de la NSA ainsi que d&amp;rsquo;autres agences concernant la cryptographie.
+La conférence &amp;ldquo;Reconstructing narratives&amp;rdquo; de Laura Poitras et Jacob Appelbaum présentant ces documents est visible ci-dessous (mais aussi sur le site du CCC).
+BULLRUN, qu&amp;rsquo;est ce que c&amp;rsquo;est ?</description>
+    </item>
+    
+    <item>
+      <title>[Snowden] NSA - TAO, la voie du renseignement</title>
+      <link>http://www.cyphercat.eu/posts/surveillance/tao-catalogue-ant/</link>
+      <pubDate>Mon, 22 Sep 2014 15:55:00 +0000</pubDate>
+      
+      <guid>http://www.cyphercat.eu/posts/surveillance/tao-catalogue-ant/</guid>
+      <description>Ne trouvant aucune base de données des différents programmes provenant des fuites de Snowden, nous avons travaillé à la création d&amp;rsquo;une base de données concernant la NSA et le GCHQ. L&amp;rsquo;article qui suit est une synthèse d&amp;rsquo;une partie de nos travaux.
+ It&amp;rsquo;s not as bad as you thought - it&amp;rsquo;s much worse
+Iain Thomson - theregister.co.uk / 2013-12-31
+ Nous allons aborder aujourd&amp;rsquo;hui le &amp;ldquo;catalogue&amp;rdquo; du groupe d&amp;rsquo;élite de la NSA nommé TAO (pour Tailored Access Operations).</description>
+    </item>
+    
+    <item>
+      <title>[Snowden] NSA - PRISM n&#39;est pas une surprise</title>
+      <link>http://www.cyphercat.eu/posts/surveillance/nsa-prism-nest-pas-une-surprise/</link>
+      <pubDate>Fri, 12 Sep 2014 15:57:00 +0000</pubDate>
+      
+      <guid>http://www.cyphercat.eu/posts/surveillance/nsa-prism-nest-pas-une-surprise/</guid>
+      <description>NOTE : j&amp;rsquo;avais publié à l&amp;rsquo;origine cet article sur cyphercat.eu après qu&amp;rsquo;un journaliste me demanda ce que je pensais de PRISM. Je le republie (en le modifiant légèrement) ici pour en garder une trace.
+ En 1988, le journaliste Duncan Campbell révèla l&amp;rsquo;existence d&amp;rsquo;un programme de renseignement, Echelon, dans un article pour The New Statesman qui s&amp;rsquo;intitulait « Somebody&amp;rsquo;s listening ». En 1996, c&amp;rsquo;était le journaliste néo-zélandais Nicky Hager qui publiait « Secret power » sur l&amp;rsquo;implication de son pays dans le programme.</description>
+    </item>
+    
+    <item>
+      <title>[Snowden] GCHQ - partie 1 : JTRIG</title>
+      <link>http://www.cyphercat.eu/posts/surveillance/gchq-partie-1-jtrig/</link>
+      <pubDate>Mon, 07 Jul 2014 16:37:00 +0000</pubDate>
+      
+      <guid>http://www.cyphercat.eu/posts/surveillance/gchq-partie-1-jtrig/</guid>
+      <description>Ne trouvant aucune base de données des différents programmes provenant des fuites de Snowden, nous avons travaillé à la création d&amp;rsquo;une base de données concernant la NSA et le GCHQ. L&amp;rsquo;article qui suit est une synthèse d&amp;rsquo;une partie de nos travaux.
+ Une dystopie, également appelée contre-utopie, est un récit de fiction dépeignant une société imaginaire organisée de telle façon qu&amp;rsquo;elle empêche ses membres d&amp;rsquo;atteindre le bonheur. Une dystopie peut également être considérée comme une utopie qui vire au cauchemar et conduit donc à une contre-utopie.</description>
+    </item>
+    
+    <item>
+      <title>[Snowden] NSA - temps de faire le (premier) point.</title>
+      <link>http://www.cyphercat.eu/posts/surveillance/nsa-temps-de-faire-le-premier-point/</link>
+      <pubDate>Fri, 04 Jul 2014 10:00:00 +0000</pubDate>
+      
+      <guid>http://www.cyphercat.eu/posts/surveillance/nsa-temps-de-faire-le-premier-point/</guid>
+      <description>Ne trouvant aucune base de données des différents programmes provenant des fuites de Snowden, nous avons travaillé à la création d&amp;rsquo;une base de données concernant la NSA et le GCHQ. L&amp;rsquo;article qui suit est une synthèse d&amp;rsquo;une partie de nos travaux.
+ (petite) Introduction En 1988, le journaliste Duncan Campbel révèla l&amp;rsquo;existence d&amp;rsquo;un programme de renseignement, Echelon, dans un article pour The New Statesman qui s&amp;rsquo;intitulait &amp;ldquo;Somebody&amp;rsquo;s listening&amp;rdquo;. En 1996, c&amp;rsquo;était le journaliste néo-zélandais Nicky Hager qui publiait &amp;ldquo;Secret power&amp;rdquo; sur l&amp;rsquo;implication de son pays dans le programme.</description>
+    </item>
+    
+  </channel>
+</rss>

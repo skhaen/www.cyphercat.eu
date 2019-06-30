@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#494f5c">
+	<meta name="msapplication-TileColor" content="#494f5c">
+
+<meta itemprop="name" content="Un peu plus de sécurité sous Linux">
+<meta itemprop="description" content="IMPORTANT :     mises à jour : cron-apt    upgrade automatiques   checkrestart (debian-goodies) clamav (antivirus) et maldet (antimalwares)  clamav Linux Malware detector (maldet)  ajouter la base de signatures de MalDet à Clamav :   rkhunter chkrootkit lynis debsums Nettoyer  deborphan  BACKUUUUUUUUUUUUUUUUUUPS Pour aller un peu plus loin    Au programme de cet article (testé sur Debian Wheezy) :">
+
+
+<meta itemprop="datePublished" content="2015-02-15T16:10:00&#43;00:00" />
+<meta itemprop="dateModified" content="2015-02-15T16:10:00&#43;00:00" />
+<meta itemprop="wordCount" content="1879">
+
+
+
+<meta itemprop="keywords" content="adminsys," />
+<meta property="og:title" content="Un peu plus de sécurité sous Linux" />
+<meta property="og:description" content="IMPORTANT :     mises à jour : cron-apt    upgrade automatiques   checkrestart (debian-goodies) clamav (antivirus) et maldet (antimalwares)  clamav Linux Malware detector (maldet)  ajouter la base de signatures de MalDet à Clamav :   rkhunter chkrootkit lynis debsums Nettoyer  deborphan  BACKUUUUUUUUUUUUUUUUUUPS Pour aller un peu plus loin    Au programme de cet article (testé sur Debian Wheezy) :" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.cyphercat.eu/posts/adminsys/un-peu-plus-de-securite-sous-linux/" />
+<meta property="article:published_time" content="2015-02-15T16:10:00&#43;00:00"/>
+<meta property="article:modified_time" content="2015-02-15T16:10:00&#43;00:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Un peu plus de sécurité sous Linux"/>
+<meta name="twitter:description" content="IMPORTANT :     mises à jour : cron-apt    upgrade automatiques   checkrestart (debian-goodies) clamav (antivirus) et maldet (antimalwares)  clamav Linux Malware detector (maldet)  ajouter la base de signatures de MalDet à Clamav :   rkhunter chkrootkit lynis debsums Nettoyer  deborphan  BACKUUUUUUUUUUUUUUUUUUPS Pour aller un peu plus loin    Au programme de cet article (testé sur Debian Wheezy) :"/>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>Un peu plus de sécurité sous Linux</title>
+	<link rel="stylesheet" href="http://www.cyphercat.eu/css/style.min.568c54a56780af2a70c45272522247710b69dbfc080b315211fb98381e3796f8.css" integrity="sha256-VoxUpWeArypwxFJyUiJHcQtp2/wICzFSEfuYOB43lvg=">
+	
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="http://www.cyphercat.eu">Skhaen</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					
+				<a href="http://www.cyphercat.eu/posts/">posts</a>
+				<a href="http://www.cyphercat.eu/pages/projets">projets</a>
+
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<span class="hdr-social hide-in-mobile"><a href="https://framapiaf.org/@skhaen" target="_blank" rel="noopener me" title="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="http://www.cyphercat.eu/posts/">posts</a></li>
+			<li><a href="http://www.cyphercat.eu/pages/projets">projets</a></li>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner animated fadeIn faster">
+		<article class="thin">
+			<header class="post-header">
+				<div class="post-meta"><span>Feb 15, 2015</span></div>
+				<h1>Un peu plus de sécurité sous Linux</h1>
+			</header>
+			<div class="content">
+				<nav>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#important">IMPORTANT :</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="#mises-à-jour-cron-apt-https-packages-debian-org-fr-wheezy-cron-apt">mises à jour : <a href="https://packages.debian.org/fr/wheezy/cron-apt">cron-apt</a></a>
+<ul>
+<li>
+<ul>
+<li><a href="#upgrade-automatiques">upgrade automatiques</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#checkrestart-debian-goodies-https-packages-debian-org-fr-wheezy-debian-goodies">checkrestart (<a href="https://packages.debian.org/fr/wheezy/debian-goodies">debian-goodies</a>)</a></li>
+<li><a href="#clamav-https-packages-debian-org-fr-wheezy-clamav-antivirus-et-maldet-https-www-rfxn-com-projects-linux-malware-detect-antimalwares"><a href="https://packages.debian.org/fr/wheezy/clamav">clamav</a> (antivirus) et <a href="https://www.rfxn.com/projects/linux-malware-detect/">maldet</a> (antimalwares)</a>
+<ul>
+<li><a href="#clamav-https-packages-debian-org-fr-wheezy-clamav"><a href="https://packages.debian.org/fr/wheezy/clamav">clamav</a></a></li>
+<li><a href="#linux-malware-detector-https-www-rfxn-com-projects-linux-malware-detect-maldet"><a href="https://www.rfxn.com/projects/linux-malware-detect/">Linux Malware detector</a> (maldet)</a>
+<ul>
+<li><a href="#ajouter-la-base-de-signatures-de-maldet-à-clamav">ajouter la base de signatures de MalDet à Clamav :</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#rkhunter-https-packages-debian-org-fr-wheezy-rkhunter"><a href="https://packages.debian.org/fr/wheezy/rkhunter">rkhunter</a></a></li>
+<li><a href="#chkrootkit-https-packages-debian-org-fr-wheezy-chkrootkit"><a href="https://packages.debian.org/fr/wheezy/chkrootkit">chkrootkit</a></a></li>
+<li><a href="#lynis-https-packages-debian-org-wheezy-lynis"><a href="https://packages.debian.org/wheezy/lynis">lynis</a></a></li>
+<li><a href="#debsums-https-packages-debian-org-fr-wheezy-debsums"><a href="https://packages.debian.org/fr/wheezy/debsums">debsums</a></a></li>
+<li><a href="#nettoyer">Nettoyer</a>
+<ul>
+<li><a href="#deborphan-https-packages-debian-org-fr-wheezy-deborphan"><a href="https://packages.debian.org/fr/wheezy/deborphan">deborphan</a></a></li>
+</ul></li>
+<li><a href="#backuuuuuuuuuuuuuuuuuups">BACKUUUUUUUUUUUUUUUUUUPS</a></li>
+<li><a href="#pour-aller-un-peu-plus-loin">Pour aller un peu plus loin</a></li>
+</ul></li>
+</ul>
+</nav>
+
+<p>Au programme de cet article (testé sur Debian Wheezy) :</p>
+
+<ul>
+<li>Mises à jour : <code>cron-apt</code> et <code>checkrestart</code></li>
+<li>Sécurité
+
+<ul>
+<li>virus : <code>clamav</code>,</li>
+<li>malwares <code>maldet</code>,</li>
+<li>rootkits <code>rkhunter</code>, <code>chkrootkit</code>, <code>lynis</code></li>
+<li>vérification de l&rsquo;intégrité des paquets : <code>debsums</code></li>
+</ul></li>
+<li>nettoyage : <code>deborphan</code>, &hellip;</li>
+<li>backups</li>
+</ul>
+
+<h6 id="important">IMPORTANT :<a href="#important" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h6>
+
+<ul>
+<li>la plupart des commandes ci-dessous nécessitent d&rsquo;être root ou d&rsquo;utiliser la commande <code>sudo</code>,</li>
+<li>tous ces logiciels ont normalement <a href="https://www.debian-fr.org/consulter-les-logs-quoi-ou-que-rechercher-t27590.html">des logs</a> dans <code>/var/log</code>, et c&rsquo;est TRÈS utile pour trouver <a href="https://www.debian-fr.org/consulter-les-logs-quoi-ou-que-rechercher-t27590.html">pourquoi ça ne marche pas</a>,</li>
+<li>il faut avoir un logiciel de mail configuré (comme <code>postfix</code>) pour pouvoir envoyer des mails,</li>
+<li>n&rsquo;oubliez pas de RELANCER le programme après une modification pour la prendre en comptes?</li>
+</ul>
+
+<h2 id="mises-à-jour-cron-apt-https-packages-debian-org-fr-wheezy-cron-apt">mises à jour : <a href="https://packages.debian.org/fr/wheezy/cron-apt">cron-apt</a><a href="#mises-à-jour-cron-apt-https-packages-debian-org-fr-wheezy-cron-apt" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+
+<p><a href="https://packages.debian.org/fr/wheezy/cron-apt">cron-apt</a> permet d&rsquo;alerter quand une ou plusieurs mises à jour sont disponible pour le serveur mais aussi de les faires automatiquement en envoyant ou non un mail pour prévenir (à noter que <a href="https://packages.debian.org/wheezy/apticron">apticron</a> permet aussi d&rsquo;alerter en cas de mises à jours disponibles).</p>
+
+<p>Pour commencer, le plus important : avoir des sources de mises à jour propres. Pour bien comprendre comment fonctionnent les <a href="https://wiki.debian.org/fr/SourcesList">sources.list</a>, vous pouvez vous référer à la <a href="https://wiki.debian.org/fr/SourcesList">documentation de Debian</a>, vous pouvez aussi vous aider du &ldquo;<a href="http://debgen.simplylinux.ch/">Debian Sources List Generator</a>&rdquo; pour générer votre fichier.</p>
+
+<p>En cas de mises à jour automatiques, il est VITAL d&rsquo;avoir des sources &ldquo;propres&rdquo;, il faut éviter au maximum des conflits éventuels entre des paquets ou une configuration trop exotique. Mieux vaut réfléchir avant de mettre en place un système de MàJ auto sur un système en production, en particulier si il y a une supervision avec une astreinte (et encore plus si c&rsquo;est vous d&rsquo;astreinte).</p>
+
+<ul>
+<li>installer <code>cron-apt</code> :</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-language-bash" data-lang="language-bash">aptitude install cron-apt</code></pre></div>
+<ul>
+<li>éditer le fichier de configuration <code>/etc/cron-apt/config</code> :
+
+<ul>
+<li><code>APTCOMMAND</code> définit le gestionnaire de paquets que vous voulez utilisez (<code>apt-get</code> ou <code>aptitude</code>)</li>
+<li><code>MAILTO</code> l&rsquo;adresse à laquelle le système va envoyer les mails de notifications.</li>
+</ul></li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-language-bash" data-lang="language-bash">APTCOMMAND=/usr/bin/aptitude
+MAILTO=&#34;mail@exemple.org&#34; </code></pre></div>
+<p>Par défaut, <code>cron-apt</code> est lancé chaque jour à 4 heure du mat&rsquo;. Libre à vous de <a href="https://www.debian-administration.org/article/56/Command_scheduling_with_cron">modifier ce comportement</a> dans le fichier <code>/etc/cron.d/cron-apt</code>.</p>
+
+<h4 id="upgrade-automatiques">upgrade automatiques<a href="#upgrade-automatiques" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+
+<p>Pour installer automatiquement les mises à jour disponibles, il est nécessaire de créer un fichier nommé <code>5-install</code> dans le répertoire <code>/etc/cron-apt/action.d/</code> puis d&rsquo;y ajouter la ligne suivante :</p>
+<div class="highlight"><pre class="chroma"><code class="language-language-bash" data-lang="language-bash">dist-upgrade -y -o APT::Get::Show-Upgraded=true</code></pre></div>
+<p>Pour limiter le process aux mises à jour de sécurité, il faut créer un fichier nommé <code>/etc/apt/security.list</code> pour y mettre ceci :</p>
+<div class="highlight"><pre class="chroma"><code class="language-language-bash" data-lang="language-bash">deb http://security.debian.org/ wheezy/updates main contrib non-free
+deb-src http://security.debian.org/ wheezy/updates main contrib non-free</code></pre></div>
+<p>Il suffit alors de décommenter dans le fichier <code>/etc/cron-apt/config</code> la ligne suivante :</p>
+<div class="highlight"><pre class="chroma"><code class="language-language-bash" data-lang="language-bash">OPTIONS=&#34;-o quiet=1 -o Dir::Etc::SourceList=/etc/apt/security.list&#34;</code></pre></div>
+<p>Dorénavant <code>cron-apt</code> utilisera uniquement le fichier <code>security.list</code> pour vérifier la présence de mises à jour, et ignorera donc les mises à jour autres que celles de sécurité.</p>
+
+<h2 id="checkrestart-debian-goodies-https-packages-debian-org-fr-wheezy-debian-goodies">checkrestart (<a href="https://packages.debian.org/fr/wheezy/debian-goodies">debian-goodies</a>)<a href="#checkrestart-debian-goodies-https-packages-debian-org-fr-wheezy-debian-goodies" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+
+<p>Le paquet <a href="https://packages.debian.org/fr/wheezy/debian-goodies">debian-goodies</a> installe sur votre machine quelques scripts dont <code>checkrestart</code>, qui permet de trouver des processus utilisant de vieilles versions de bibliothèques logicielles. Ce genre de vérification est particulièrement importante après un patch sécurité important, comme pour libc6 en Janvier 2015 (<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-0235">CVE-2015-0235</a>).</p>
+
+<p>Pour installer le paquet <code>debian-goodies</code> (la commande <code>checkrestart</code> suffit pour le lancer par la suite) :</p>
+
+<pre><code>aptitude install debian-goodies
+</code></pre>
+
+<p>Le script est donc particulièrement utile, mais comme on peut souvent le voir, il ne sait pas reconnaitre et/ou relancer certains processus,  on peut donc ajouter des fonctionnalités supplémentaires, c&rsquo;est ce qu&rsquo;a fait <a href="https://www.octopuce.fr/checkrestart-outil-pratique-de-debian-goodies-et-version-octopuce/">Octopuce</a> via un script qui utilise <code>checkrestart</code> en y ajoutant des fonctionnalités.</p>
+
+<p>Ce script est disponible sur <a href="https://github.com/octopuce/octopuce-goodies/tree/master/checkrestart">github</a> et l&rsquo;on peut trouver un <a href="https://www.octopuce.fr/checkrestart-outil-pratique-de-debian-goodies-et-version-octopuce/">article introductif</a> sur le site d&rsquo;Octopuce.</p>
+
+<p>Pour le mettre en place :</p>
+
+<pre><code>cd /usr/local/bin/
+wget https://www.octopuce.fr/octopuce-goodies/checkrestart/checkrestart.octopuce
+chmod +x checkrestart.octopuce
+</code></pre>
+
+<p>On peut alors lancer le script de n&rsquo;importe où sur le système (n&rsquo;hésitez pas à <a href="https://github.com/octopuce/octopuce-goodies/issues">remonter des bugs</a> ou à <a href="https://github.com/octopuce/octopuce-goodies/tree/master/checkrestart">modifier le code</a>) :</p>
+
+<pre><code>checkrestart.octopuce
+</code></pre>
+
+<h2 id="clamav-https-packages-debian-org-fr-wheezy-clamav-antivirus-et-maldet-https-www-rfxn-com-projects-linux-malware-detect-antimalwares"><a href="https://packages.debian.org/fr/wheezy/clamav">clamav</a> (antivirus) et <a href="https://www.rfxn.com/projects/linux-malware-detect/">maldet</a> (antimalwares)<a href="#clamav-https-packages-debian-org-fr-wheezy-clamav-antivirus-et-maldet-https-www-rfxn-com-projects-linux-malware-detect-antimalwares" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+
+<p>L&rsquo;antivirus libre <a href="https://packages.debian.org/fr/wheezy/clamav">clamav</a> est connu dans le monde du logiciel libre et son efficacité peut être améliorée en y ajoutant la base de signatures du <a href="https://www.rfxn.com/projects/linux-malware-detect/">Linux Malware Detector</a>.</p>
+
+<h3 id="clamav-https-packages-debian-org-fr-wheezy-clamav"><a href="https://packages.debian.org/fr/wheezy/clamav">clamav</a><a href="#clamav-https-packages-debian-org-fr-wheezy-clamav" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p>Pour l&rsquo;installer :</p>
+
+<pre><code>aptitude install clamav clamav-freshclam
+</code></pre>
+
+<ul>
+<li>mettre à jour <code>clamav</code> :</li>
+</ul>
+
+<p>éditer le fichier de configuration <code>/etc/clamav/freshclam.conf</code> selon votre choix (vous pouvez d&rsquo;ailleurs voir <a href="http://linux.die.net/man/5/freshclam.conf">une description rapide des options sur ce site</a>) :</p>
+
+<pre><code>DatabaseOwner clamav
+UpdateLogFile /var/log/clamav/freshclam.log
+LogVerbose false
+LogSyslog false
+LogFacility LOG_LOCAL6
+LogFileMaxSize 0
+LogTime true
+Foreground false
+Debug false
+MaxAttempts 5
+DatabaseDirectory /var/lib/clamav
+DNSDatabaseInfo current.cvd.clamav.net
+AllowSupplementaryGroups false
+PidFile /var/run/clamav/freshclam.pid
+ConnectTimeout 30
+ReceiveTimeout 30
+TestDatabases yes
+ScriptedUpdates yes
+CompressLocalDatabase no
+Bytecode true
+# Check for new database 12 times a day
+Checks 12
+DatabaseMirror database.clamav.net
+</code></pre>
+
+<p>Vous pouvez ensuite lancer la mise à jour avec la commande <code>freshclam</code>.</p>
+
+<ul>
+<li>lancer un scan</li>
+</ul>
+
+<p>Vous pouvez créer un second fichier de configuration pour <code>clamav</code> sous le nom de <code>/etc/clamav/clamd.conf</code>. Ce fichier sert à donner une configuration par défaut pour les scans. Vous trouverez ci-dessous un EXEMPLE de configuration, vous pouvez le modifier selon vos désirs :</p>
+
+<pre><code>LogVerbose false
+PidFile /var/run/clamav/clamd.pid
+DatabaseDirectory /var/lib/clamav
+#OfficialDatabaseOnly true
+SelfCheck 3600
+Foreground false
+Debug false
+ScanPE true
+MaxEmbeddedPE 10M
+ScanOLE2 true
+ScanPDF true
+ScanHTML true
+MaxHTMLNormalize 10M
+MaxHTMLNoTags 2M
+MaxScriptNormalize 5M
+MaxZipTypeRcg 1M
+ScanSWF true
+DetectBrokenExecutables false
+ExitOnOOM false
+LeaveTemporaryFiles false
+AlgorithmicDetection true
+ScanELF true
+IdleTimeout 30
+CrossFilesystems true
+PhishingSignatures true
+PhishingScanURLs true
+PhishingAlwaysBlockSSLMismatch false
+PhishingAlwaysBlockCloak false
+PartitionIntersection false
+DetectPUA false
+ScanPartialMessages false
+HeuristicScanPrecedence false
+StructuredDataDetection false
+CommandReadTimeout 5
+SendBufTimeout 200
+MaxQueue 100
+ExtendedDetectionInfo true
+OLE2BlockMacros false
+ScanOnAccess false
+AllowAllMatchScan true
+ForceToDisk false
+DisableCertCheck false
+DisableCache false
+MaxScanSize 100M
+MaxFileSize 25M
+MaxRecursion 10
+MaxFiles 10000
+MaxPartitions 50
+MaxIconsPE 100
+StatsEnabled false
+StatsPEDisabled true
+StatsHostID auto
+StatsTimeout 10
+StreamMaxLength 25M
+LogFile /var/log/clamav/clamav.log
+LogTime true
+LogFileUnlock false
+LogFileMaxSize 0
+Bytecode true
+BytecodeSecurity TrustSigned
+BytecodeTimeout 60000
+</code></pre>
+
+<h3 id="linux-malware-detector-https-www-rfxn-com-projects-linux-malware-detect-maldet"><a href="https://www.rfxn.com/projects/linux-malware-detect/">Linux Malware detector</a> (maldet)<a href="#linux-malware-detector-https-www-rfxn-com-projects-linux-malware-detect-maldet" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p>Installer maldet :</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">wget http://www.rfxn.com/downloads/maldetect-current.tar.gz
+tar xfz maldetect-current.tar.gz
+<span class="nb">cd</span> maldetect-*
+./install.sh</code></pre></div>
+<p>Pour mettre la base de signatures à jour :</p>
+
+<pre><code>maldet -u
+</code></pre>
+
+<p>Pour affiner vos réglages, avoir des informations par mail, configurer la mise en quarantaine, le fichier de configuration se trouve dans <code>/usr/local/maldetect/conf.maldet</code></p>
+
+<h4 id="ajouter-la-base-de-signatures-de-maldet-à-clamav">ajouter la base de signatures de MalDet à Clamav :<a href="#ajouter-la-base-de-signatures-de-maldet-à-clamav" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+
+<p>Il est possible de rajouter la base de signatures de <code>maldet</code> à <code>clamav</code>, ce qui permet de scanner une seule fois avec les deux bases de signatures. Après avoir installé <code>maldet</code>, vous pouvez faire la manipulation suivante :</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> /var/lib/clamav
+ln -s /usr/local/maldetect/sigs/rfxn.hdb rfxn.hdb
+ln -s  /usr/local/maldetect/sigs/rfxn.ndb rfxn.ndb
+/etc/init.d/clamd restart</code></pre></div>
+<p>Vous pouvez utiliser la commande suivante pour lancer un scan, <code>--recursive</code> permet de descendre dans l&rsquo;arborescence, <code>--infected</code> permet de n&rsquo;afficher que les résultats positifs lors du scan pour éviter une sortie particulièrement verbeuse, et <code>--log</code> permet de définir un fichier ou le résultat du scan sera écrit  :</p>
+
+<pre><code>clamscan --recursive --infected --log=&quot;/var/log/clamscan&quot;
+</code></pre>
+
+<h2 id="rkhunter-https-packages-debian-org-fr-wheezy-rkhunter"><a href="https://packages.debian.org/fr/wheezy/rkhunter">rkhunter</a><a href="#rkhunter-https-packages-debian-org-fr-wheezy-rkhunter" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+
+<p>Pour l&rsquo;installer puis le mettre à jour :</p>
+
+<pre><code>aptitude install rkhunter
+rkhunter --update
+</code></pre>
+
+<p>Pour dire à <code>rkhunter</code> de regarder l&rsquo;état de certains fichiers de configurations et de les stocker pour détecter des altérations par la suite (à faire idéalement sur un système neuf) :</p>
+
+<pre><code>rkhunter --propupd
+</code></pre>
+
+<p>Pour lancer un test (n&rsquo;oubliez pas que le résultat sera aussi dans <code>/var/log/rkhunter.log</code>) :</p>
+
+<pre><code>rkhunter --check --skip-keypress --report-warnings-only
+</code></pre>
+
+<p>Le fichier de configuration se trouve dans <code>/etc/rkhunter.conf</code>, vous pouvez y configurer, entre autre, votre adresse mail pour recevoir les alertes. <code>rkhunter</code> peut générer des faux positifs, vous pouvez trouver dans la <a href="http://doc.ubuntu-fr.org/rkhunter">documentation d&rsquo;Ubuntu </a> comment l&rsquo;éviter.</p>
+
+<p>Plus de détails dans <a href="http://www.sublimigeek.fr/installer-paquet-rkhunter-debian">cet article très complet sur sublimigeek.com</a>.</p>
+
+<h2 id="chkrootkit-https-packages-debian-org-fr-wheezy-chkrootkit"><a href="https://packages.debian.org/fr/wheezy/chkrootkit">chkrootkit</a><a href="#chkrootkit-https-packages-debian-org-fr-wheezy-chkrootkit" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+
+<p>chkrootkit est un anti-rootkit connu sous Linux, mais il faut noter que la version disponible dans wheezy est la <a href="https://packages.debian.org/fr/wheezy/chkrootkit">0.49</a> qui date de 2008, la <a href="https://packages.debian.org/fr/jessie/chkrootkit">0.50</a>, sorti en 2014 est disponible dans Jessie.</p>
+
+<pre><code>aptitude install chkrootkit
+</code></pre>
+
+<p>Le fichier de configuration <code>/etc/chkrootkit/chkrootkit.conf</code> :</p>
+
+<pre><code>RUN_DAILY=&quot;true&quot;
+RUN_DAILY_OPTS=&quot;-q&quot; # -q=quiet mode
+DIFF_MODE=&quot;true&quot; # garde un /var/cache/chkrootkit/log.old pour comparer la prochaine fois
+REPORT_MAIL=mail@example.net
+</code></pre>
+
+<p>Pour le lancer :</p>
+
+<pre><code>chkrootkit -q
+</code></pre>
+
+<h2 id="lynis-https-packages-debian-org-wheezy-lynis"><a href="https://packages.debian.org/wheezy/lynis">lynis</a><a href="#lynis-https-packages-debian-org-wheezy-lynis" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+
+<p>Développé par le créateur de <a href="http://www.sublimigeek.fr/installer-paquet-rkhunter-debian">rkhunter</a>, Lynis est un outil d&rsquo;audit pour Unix. Il parcourt la configuration du système et crée un résumé des informations système et des problèmes de sécurité, utilisable par des auditeurs professionnels. Il peut aider à des audits automatisés.</p>
+
+<pre><code>aptitude install lynis
+</code></pre>
+
+<p>Pour lancer une vérification du système avec seulement l&rsquo;affichage des warnings :</p>
+
+<pre><code>lynis --check-all --quick
+</code></pre>
+
+<p>Vous trouverez le rapport dans <code>/var/log/lynis-report.dat</code> et sa <a href="https://cisofy.com/documentation/lynis/">documentation</a> pour aller plus loin sur le site officiel.</p>
+
+<h2 id="debsums-https-packages-debian-org-fr-wheezy-debsums"><a href="https://packages.debian.org/fr/wheezy/debsums">debsums</a><a href="#debsums-https-packages-debian-org-fr-wheezy-debsums" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+
+<p>Debsums permet de vérifier l&rsquo;intégrité des fichiers des paquets installés avec les sommes de contrôle MD5 installées par le paquet ou générées à partir d&rsquo;une archive &ldquo;.deb&rdquo;.</p>
+
+<p>Pour l&rsquo;installer :</p>
+
+<pre><code>aptitude install debsums
+
+</code></pre>
+
+<p>Pour le lancer (vérifie les fichiers de configurations <code>--all</code> et n&rsquo;affiche que les erreurs : <code>--silent</code>) :</p>
+
+<pre><code>debsums --all --silent
+</code></pre>
+
+<p>Vous avez bien entendu différentes options que vous pouvez voir dans les pages man (<code>man debsums</code>). Pour génèrer les sommes de contrôle MD5 à partir des fichiers .deb  pour  les  paquets qui n&rsquo;en fournissent pas : <code>debsums --generate=missing</code> (équivalent de <code>-g</code>). Cette commande est bien entendu à utiliser sur un système neuf.</p>
+
+<h2 id="nettoyer">Nettoyer<a href="#nettoyer" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+
+<p>Quand vous désinstallez un paquet de votre machine, <a href="http://www.fernandoike.com/2014/09/12/purge-debian-packages-marked-with-rc-status/">il arrive qu&rsquo;il soit enlevé mais que les fichiers de configurations restent</a>, il est alors marqué &ldquo;<a href="http://www.fernandoike.com/2014/09/12/purge-debian-packages-marked-with-rc-status/">rc</a>&rdquo; dans <code>dpkg</code>, pour supprimer définitivement ces paquets, vous pouvez lancer les commandes suivantes :</p>
+
+<ul>
+<li><p>Afficher les paquets étant dans un état &ldquo;rc&rdquo; :</p>
+
+<pre><code>dpkg -l |grep ^rc | awk '{print $2}'
+</code></pre></li>
+
+<li><p>Supprimer ces paquets :</p>
+
+<pre><code>dpkg -l | grep ^rc | awk '{print $2}' | xargs dpkg -P
+</code></pre></li>
+</ul>
+
+<p>À noter que cette commande peut éteindre MySQL pour effacer d&rsquo;anciens fichiers de configuration, n&rsquo;oubliez pas de de le relancer par la suite.</p>
+
+<h3 id="deborphan-https-packages-debian-org-fr-wheezy-deborphan"><a href="https://packages.debian.org/fr/wheezy/deborphan">deborphan</a><a href="#deborphan-https-packages-debian-org-fr-wheezy-deborphan" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p><a href="https://packages.debian.org/fr/wheezy/deborphan">Deborphan</a> recherche les paquets orphelins sur votre système en déterminant quels paquets n&rsquo;ont aucune dépendance sur eux et vous affiche la liste de ces paquets.</p>
+
+<pre><code>aptitude install deborphan
+</code></pre>
+
+<p>Je vous conseille grandement de vérifier ce qu&rsquo;il propose d&rsquo;enlever avant de supprimer les paquets :</p>
+
+<pre><code>deborphan
+</code></pre>
+
+<p>Et si ça vous semble correct, vous pouvez supprimer les paquets avec la commande <code>dpkg</code> :</p>
+
+<pre><code>deborphan| xargs dpkg -P
+</code></pre>
+
+<p>Il peut être nécessaire de le relancer plusieurs fois (en vérifiant ou non ce qu&rsquo;il veut effacer à chaque fois).</p>
+
+<h2 id="backuuuuuuuuuuuuuuuuuups">BACKUUUUUUUUUUUUUUUUUUPS<a href="#backuuuuuuuuuuuuuuuuuups" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+
+<p>C&rsquo;est sans aucun doute la partie la plus importante de cet article :</p>
+
+<p>FAITES DES SAUVEGARDES !</p>
+
+<p><a href="https://www.octopuce.fr">Octopuce</a> a mis en ligne un petit script qui vous aidera à faire rapidement et simplement des backups sur un disque dur externe (ou une clé USB avec assez de place) : <a href="https://www.octopuce.fr/faire-des-backups-facilement/">faire des backups facilement</a>.</p>
+
+<p>Plus d&rsquo;excuses, au boulot !</p>
+
+<h2 id="pour-aller-un-peu-plus-loin">Pour aller un peu plus loin<a href="#pour-aller-un-peu-plus-loin" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+
+<p>faire écouter vos programmes en local s&rsquo;ils n&rsquo;ont pas besoin d&rsquo;être atteint de l&rsquo;extérieur. C&rsquo;est normalement la configuration par défaut dans Debian, mais si vous installez des paquets externes, vous pouvez le vérifier facilement avec la commande <code>netstat -lptn</code>.</p>
+
+<p>Pour continuer cet article, n&rsquo;oubliez surtout pas de vérifier et d&rsquo;<a href="http://www.alsacreations.com/tuto/lire/622-Securite-firewall-iptables.html">améliorer vos configurations</a> régulièrement.</p>
+
+<p>N&rsquo;oubliez pas non plus de vous tenir au courant :</p>
+
+<ul>
+<li><a href="http://oss-security.openwall.org/subscribe">oss-security Mailing List</a> (attention, c&rsquo;est verbeux)</li>
+<li><a href="https://www.debian.org/security/">Informations de sécurité</a> concernant Debian</li>
+</ul>
+
+<p>La configuration de ces différents utilitaires dépends évidemmment de vos besoins et de votre modèle de menaces. Envoyer des informations par mail ou télécharger des paquets sur un canal non sécurisé peut donner des informations sur l&rsquo;état de votre système. N&rsquo;hésitez jamais à utiliser un outil comme <a href="https://torproject.org/">Tor</a>.</p>
+
+<p>Idéalement, les différents processus devraient être lancé automatiquement, régulièrement et envoyer un email immédiatement en cas de problème pour vous alerter.</p>
+
+<p>Cet article vise à donner des idées de pistes à suivre pour la maintenance d&rsquo;un poste personnel ou d&rsquo;un serveur, rien de plus.</p>
+
+			</div>
+			<hr class="post-end">
+			<footer class="post-info">
+				<p>
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="http://www.cyphercat.eu/tags/adminsys">adminsys</a></span>
+				</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2015-02-15 17:10 &#43;0100</p>
+			</footer>
+		</article>
+		<div class="post-nav thin">
+			<a class="next-post" href="http://www.cyphercat.eu/posts/adminsys/remonter-une-attaque-avec-les-logs-dapache2/">
+				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;</span><br><span>Remonter une attaque avec les logs d&#39;Apache2</span>
+			</a>
+			<a class="prev-post" href="http://www.cyphercat.eu/posts/surveillance/nsa-a-propos-de-bullrun/">
+				<span class="post-nav-label">&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>[Snowden] NSA - À propos de BULLRUN</span>
+			</a>
+		</div>
+		<div id="comments" class="thin">
+</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2019 <a href="http://www.cyphercat.eu">Skhaen</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="http://www.cyphercat.eu/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
+
+
+	<script src="http://www.cyphercat.eu/js/main.min.35ccbf1cdceb91e4c64c06b5d009d6e2977fafe56beda7762febd4e67528d2ac.js" integrity="sha256-Ncy/HNzrkeTGTAa10AnW4pd/r+Vr7ad2L+vU5nUo0qw="></script>
+
+</body>
+
+</html>

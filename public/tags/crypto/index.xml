@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>crypto on Skhaen</title>
+    <link>http://www.cyphercat.eu/tags/crypto/</link>
+    <description>Recent content in crypto on Skhaen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Sat, 19 Apr 2014 10:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.cyphercat.eu/tags/crypto/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Pond en bref</title>
+      <link>http://www.cyphercat.eu/posts/adminsys/pond-en-bref/</link>
+      <pubDate>Sat, 19 Apr 2014 10:00:00 +0000</pubDate>
+      
+      <guid>http://www.cyphercat.eu/posts/adminsys/pond-en-bref/</guid>
+      <description>Après avoir relu les différentes raisons de ne pas utiliser PGP (« 15 reasons not to start using PGP »), et accepter que ce n&amp;rsquo;est pas faux, voir même plutôt vrai, je suis retombé en fin d&amp;rsquo;article sur le projet Pond. Et il faut le dire : ça donne envie, même si la peinture n&amp;rsquo;est pas sèche.
+Quelques fonctionnalités en vrac :
+ obligation de passer par le réseau Tor OTR (Off-the-Record Messaging), pas de spam (seules les personnes identifiées peuvent communiquer avec vous) les messages sont effacés au bout d&amp;rsquo;une semaine après la réception les messages sont effacés au bout de deux semaines sur les serveurs si vous ne les avez pas reçus.</description>
+    </item>
+    
+  </channel>
+</rss>

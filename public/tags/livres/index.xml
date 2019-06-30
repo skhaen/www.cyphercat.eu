@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>livres on Skhaen</title>
+    <link>http://www.cyphercat.eu/tags/livres/</link>
+    <description>Recent content in livres on Skhaen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-fr</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Thu, 31 Mar 2016 17:15:37 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.cyphercat.eu/tags/livres/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[livres] mes lectures de 2015</title>
+      <link>http://www.cyphercat.eu/posts/divers/braindump-1/</link>
+      <pubDate>Thu, 31 Mar 2016 17:15:37 +0000</pubDate>
+      
+      <guid>http://www.cyphercat.eu/posts/divers/braindump-1/</guid>
+      <description>Braindump rapide de mes lectures de 2015, on sait jamais, ça pourrait intéresser d&amp;rsquo;autres personnes.
+J&amp;rsquo;ai tenté de mettre en place une notation avec différentes catégories : personnages (profondeur, charisme,&amp;hellip;), scénario, etc&amp;hellip; Les notes sont sur 5. Et vous pouvez voir rapidement les résumés en cliquant sur les liens vers goodreads.com :)
+Honor Harrington, de David Weber (13 tomes, série terminée) Harrington, the heroine of the eponymous &#34;Honorverse&#34;, is an officer in the Royal Manticoran Navy (RMN), the space navy of the Star Kingdom of Manticore.</description>
+    </item>
+    
+    <item>
+      <title>Livres</title>
+      <link>http://www.cyphercat.eu/posts/medias/livres/</link>
+      <pubDate>Sat, 17 May 2014 10:00:00 +0000</pubDate>
+      
+      <guid>http://www.cyphercat.eu/posts/medias/livres/</guid>
+      <description>Alain Damasio - La Zone du dehors Christian Araud - Préludes à la transition : Pourquoi changer le monde ? Masanobu Fukuoka - La révolution d&amp;rsquo;un seul brin de paille Marie-Monique Robin Le monde selon Monsanto Jean Ziegler  Destruction massive - Géopolitique de la faim La haine de l&amp;rsquo;Occident L&amp;rsquo;Empire de la honte   La zone du dehors (Alain Damasio) La Zone du Dehors est un roman d&amp;rsquo;anticipation écrit par l&amp;rsquo;écrivain français Alain Damasio.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#494f5c">
+	<meta name="msapplication-TileColor" content="#494f5c">
+
+<meta itemprop="name" content="Flasher un modem routeur buffalo WBMR HP g300h avec OpenWRT">
+<meta itemprop="description" content="Petit tuto pour flasher un Buffalo WBMR-HP-G300H sur OpenWRT 12.09 - Attitude Adjustment.
+ EDIT 2014-05-24 : rajout des 2 liens pour régler le bug du switch (tout à la fin de cet article)  Pour cette recette, il vous faudra :
+ un Buffalo WBMR-HP-G300H (disponible par exemple sur monclick.fr pour 72 € ou chez Amazon à partir de ~80 €), un ordinateur avec un OS acceptable, une connexion Internet qui fonctionne, de la (bonne) vodka, du gin, de l&rsquo;amaretto, du triple sec, du schnapps, &hellip; ne vous en faites pas, vous aurez la liste complète un peu plus loin son utilisation aussi.">
+
+
+<meta itemprop="datePublished" content="2014-03-04T17:58:00&#43;00:00" />
+<meta itemprop="dateModified" content="2014-03-04T17:58:00&#43;00:00" />
+<meta itemprop="wordCount" content="1439">
+
+
+
+<meta itemprop="keywords" content="adminsys,openwrt," />
+<meta property="og:title" content="Flasher un modem routeur buffalo WBMR HP g300h avec OpenWRT" />
+<meta property="og:description" content="Petit tuto pour flasher un Buffalo WBMR-HP-G300H sur OpenWRT 12.09 - Attitude Adjustment.
+ EDIT 2014-05-24 : rajout des 2 liens pour régler le bug du switch (tout à la fin de cet article)  Pour cette recette, il vous faudra :
+ un Buffalo WBMR-HP-G300H (disponible par exemple sur monclick.fr pour 72 € ou chez Amazon à partir de ~80 €), un ordinateur avec un OS acceptable, une connexion Internet qui fonctionne, de la (bonne) vodka, du gin, de l&rsquo;amaretto, du triple sec, du schnapps, &hellip; ne vous en faites pas, vous aurez la liste complète un peu plus loin son utilisation aussi." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.cyphercat.eu/posts/adminsys/flasher-un-modem-routeur-buffalo-wbmr-hp-g300h-avec-openwr/" />
+<meta property="article:published_time" content="2014-03-04T17:58:00&#43;00:00"/>
+<meta property="article:modified_time" content="2014-03-04T17:58:00&#43;00:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Flasher un modem routeur buffalo WBMR HP g300h avec OpenWRT"/>
+<meta name="twitter:description" content="Petit tuto pour flasher un Buffalo WBMR-HP-G300H sur OpenWRT 12.09 - Attitude Adjustment.
+ EDIT 2014-05-24 : rajout des 2 liens pour régler le bug du switch (tout à la fin de cet article)  Pour cette recette, il vous faudra :
+ un Buffalo WBMR-HP-G300H (disponible par exemple sur monclick.fr pour 72 € ou chez Amazon à partir de ~80 €), un ordinateur avec un OS acceptable, une connexion Internet qui fonctionne, de la (bonne) vodka, du gin, de l&rsquo;amaretto, du triple sec, du schnapps, &hellip; ne vous en faites pas, vous aurez la liste complète un peu plus loin son utilisation aussi."/>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>Flasher un modem routeur buffalo WBMR HP g300h avec OpenWRT</title>
+	<link rel="stylesheet" href="http://www.cyphercat.eu/css/style.min.568c54a56780af2a70c45272522247710b69dbfc080b315211fb98381e3796f8.css" integrity="sha256-VoxUpWeArypwxFJyUiJHcQtp2/wICzFSEfuYOB43lvg=">
+	
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="http://www.cyphercat.eu">Skhaen</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					
+				<a href="http://www.cyphercat.eu/posts/">posts</a>
+				<a href="http://www.cyphercat.eu/pages/projets">projets</a>
+
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<span class="hdr-social hide-in-mobile"><a href="https://framapiaf.org/@skhaen" target="_blank" rel="noopener me" title="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="http://www.cyphercat.eu/posts/">posts</a></li>
+			<li><a href="http://www.cyphercat.eu/pages/projets">projets</a></li>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner animated fadeIn faster">
+		<article class="thin">
+			<header class="post-header">
+				<div class="post-meta"><span>Mar 4, 2014</span></div>
+				<h1>Flasher un modem routeur buffalo WBMR HP g300h avec OpenWRT</h1>
+			</header>
+			<div class="content">
+				
+
+<p>Petit tuto pour flasher un Buffalo WBMR-HP-G300H sur OpenWRT 12.09 - Attitude Adjustment.</p>
+
+<ul>
+<li>EDIT 2014-05-24 : rajout des 2 liens pour régler le bug du switch (tout à la fin de cet article)</li>
+</ul>
+
+<p>Pour cette recette, il vous faudra :</p>
+
+<ul>
+<li>un <strong>Buffalo WBMR-HP-G300H</strong> (disponible par exemple sur <a href="http://www.monclick.fr/product.aspx?codice=WBMR-HP-G300H">monclick.fr</a> pour 72 € ou chez <a href="http://www.amazon.fr/Buffalo-AirStation-Nfiniti-HighPower-Broadband/dp/B005584W2E/ref=sr_1_1?ie=UTF8&amp;qid=1327222358&amp;sr=8-1#productDetails">Amazon</a> à partir de ~80 €),</li>
+<li>un ordinateur avec un <a href="http://debian.org/">OS acceptable</a>,</li>
+<li>une connexion <a href="http://www.ffdn.org/">Internet qui fonctionne</a>,</li>
+<li>de la (bonne) vodka, du gin, de l&rsquo;amaretto, du triple sec, du schnapps, &hellip; ne vous en faites pas, vous aurez la liste complète un peu plus loin son utilisation aussi.</li>
+<li>un switch ainsi que les câbles ethernet qui vont avec.</li>
+</ul>
+
+<h3 id="au-commencement-était-le-tftp">Au commencement était le TFTP<a href="#au-commencement-était-le-tftp" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p>On part du <a href="http://wiki.openwrt.org/toh/buffalo/wbmr-hp-g300h#how.to.recover.from.bricking">wiki de OpenWRT</a> avec les explications qui vont bien avec :</p>
+
+<p>Commencons par installer le serveur TFTP, sur Debian ça donne ceci :</p>
+
+<pre><code>aptitude update &amp;&amp; aptitude install tftpd-hpa
+</code></pre>
+
+<p>On télécharge l&rsquo;image (<em>ramdisk</em>) d&rsquo;openWRT qui va bien (vous pouvez le compiler vous même si le coeur vous en dit) :</p>
+
+<pre><code>wget http://wiki.openwrt.org/_media/toh/buffalo/openwrt-lantiq-ar9-wbmr-uimage.tar00.zip &amp;&amp; wget http://wiki.openwrt.org/_media/toh/buffalo/openwrt-lantiq-ar9-wbmr-uimage.tar01.zip
+</code></pre>
+
+<p>On réassemble le ramdisk (ce qui nous donne <strong>openwrt-lantiq-ar9-WBMR-uImage</strong>)</p>
+
+<pre><code>cat openwrt-lantiq-ar9-wbmr-uimage.tar* | tar xzpvf -
+</code></pre>
+
+<p>On le renomme en <strong>firmware.ram</strong>, puis on le déplace dans <strong>/srv/tftp</strong> qui est normalement le répertoire par défaut pour le TFTP (vous pouvez le vérifier dans <em>/etc/default/tftpd-hpa</em>).</p>
+
+<pre><code>mv openwrt-lantiq-ar9-WBMR-uImage firmware.ram
+mv firmware.ram /srv/tftp/
+</code></pre>
+
+<p>Il faut que notre ordinateur (où se situe le TFTP) possède l&rsquo;IP <strong>192.168.11.2</strong> car le routeur s&rsquo;y connecte par défaut dans ce genre de situation, si vous le faite de manière graphique, ça donne quelque chose comme ceci :</p>
+
+<p><img src="/images/2015/09/ip_tftp_openwrt.png" alt="ip_tftp_openwrt" /></p>
+
+<p><strong>flashopenwrt</strong> est ici le nom de ma configuration avec cette adresse, vous pouvez mettre ce que vous voulez.</p>
+
+<h2 id="et-maintenant-le-flash">Et maintenant, le flash !<a href="#et-maintenant-le-flash" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+
+<p>Non, je ne ferais pas la blague sur le héros de comics.</p>
+
+<p><strong>IMPORTANT</strong> : en suivant <a href="http://wiki.openwrt.org/toh/buffalo/wbmr-hp-g300h#how.to.recover.from.bricking">cette procédure</a>, nous allons commencer par charger une image en <strong>RAM</strong>, puis nous allons « écrire » cette image.</p>
+
+<p>Si vous redémarrez le routeur avant la fin de la seconde étape, il faudra donc recommencer à partir d&rsquo;ici.</p>
+
+<h3 id="étape-1-charger-une-image-en-ram-disk-http-wiki-openwrt-org-toh-buffalo-wbmr-hp-g300h-how-to-recover-from-bricking">Étape 1 - <a href="http://wiki.openwrt.org/toh/buffalo/wbmr-hp-g300h#how.to.recover.from.bricking">charger une image en ram(disk)</a><a href="#étape-1-charger-une-image-en-ram-disk-http-wiki-openwrt-org-toh-buffalo-wbmr-hp-g300h-how-to-recover-from-bricking" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<h4 id="facultatif">[facultatif]<a href="#facultatif" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+
+<p>Histoire de vérifier que le routeur tente bien d&rsquo;avoir le firmware, nous allons installer <a href="https://www.wireshark.org/">wireshark</a> :</p>
+
+<pre><code>aptitude install wireshark
+sudo wireshark
+</code></pre>
+
+<p>Après son ouverture, il faut cliquer sur la première icône de la barre des tâches, son étiquette est « <em>list the available capture interfaces</em> », une fenêtre s&rsquo;ouvre, on sélectionne la ligne avec l&rsquo;ip 192.168.1.2 (sans doute <em>eth0</em>), puis on clique sur <em>start</em>.</p>
+
+<p>Vous pouvez alors voir tout ce qui passe sur ce port, écrivez <em>tftp</em> dans « <em>filtrer</em> » en haut à gauche (puis entrée), ça permettra de filtrer les informations :</p>
+
+<p><img src="/images/2015/09/selection_tftp_wireshark.png" alt="selection tftp wireshark" /></p>
+
+<h4 id="facultatif-1">[/facultatif]<a href="#facultatif-1" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+
+<p>Reprenons.</p>
+
+<p>On débranche électriquement le routeur, on appuie sur le bouton AOSS (au dessus des LEDs, c&rsquo;est marqué à côté), puis on rebranche en le gardant appuyé.</p>
+
+<p>Vous devriez alors voir quelque chose comme ce qui suit sur votre wireshark :</p>
+
+<p><img src="/images/2015/09/wireshark_tftp-1.png" alt="wireshark tftp" /></p>
+
+<p>Si c&rsquo;est le cas : Bravo ! vous ne vous êtes pas foiré ! :D</p>
+
+<p>C&rsquo;est un peu compliqué de savoir quand c&rsquo;est « bon » car les LEDs ne fonctionnent plus (c&rsquo;est normal, il faut les configurer par la suite), un moyen de savoir quand c&rsquo;est bon et de pinguer le routeur :</p>
+
+<pre><code>ping 192.168.1.1
+</code></pre>
+
+<p>Quand il commence à répondre, c&rsquo;est que c&rsquo;est fini ;-)</p>
+
+<h3 id="première-connexion-en-telnet-ssh-http-wiki-openwrt-org-doc-howto-firstlogin">Première connexion en <a href="http://wiki.openwrt.org/doc/howto/firstlogin">telnet/ssh</a><a href="#première-connexion-en-telnet-ssh-http-wiki-openwrt-org-doc-howto-firstlogin" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<pre><code>telnet 192.168.1.1
+</code></pre>
+
+<p>Vous avez maintenant le reste de la liste, ainsi que le pourquoi (ne buvez pas trop, on est encore loin de la fin ;-))</p>
+
+<p>Vous allez alors voir apparaitre :</p>
+
+<pre><code>Trying 192.168.1.1...
+Connected to 192.168.1.1.
+Escape character is '^]'.
+=== IMPORTANT ============================
+Use 'passwd' to set your login password
+this will disable telnet and enable SSH
+</code></pre>
+
+<p>On met en place un mot de passe :</p>
+
+<pre><code>passwd
+</code></pre>
+
+<p>Le telnet est maintenant désactivé et il faut utiliser ssh pour se connecter.</p>
+
+<h3 id="étape-2-persistance-je-crie-ton-nom">Étape 2 - persistance, je crie ton nom !<a href="#étape-2-persistance-je-crie-ton-nom" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p>On télécharge l&rsquo;image que l&rsquo;on veut écrire « en dur » sur le routeur (attention, ce n&rsquo;est pas le même fichier que le précédent) :</p>
+
+<pre><code>wget http://downloads.openwrt.org/attitude_adjustment/12.09/lantiq/ar9/openwrt-lantiq-ar9-WBMR-squashfs.image
+</code></pre>
+
+<p>On transfère le fichier sur le routeur :</p>
+
+<pre><code>scp openwrt-lantiq-ar9-WBMR-squashfs.image 192.168.1.1:/tmp/
+</code></pre>
+
+<p>Puis à partir du routeur (il faut donc s&rsquo;y connecter avant) :</p>
+
+<pre><code>sysupgrade -v /tmp/openwrt-lantiq-ar9-WBMR-squashfs.image
+</code></pre>
+
+<p>Et voilà !</p>
+
+<p><strong>Note</strong> : il peut être nécessaire de redémarrer électriquement le routeur <strong>après</strong> pour que ce soit pris en compte.</p>
+
+<h3 id="et-maintenant-configurons">Et maintenant, configurons !<a href="#et-maintenant-configurons" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p>Lors de la réinstallation, openssh regénère des nouvelles clés, il est donc parfaitement normal d&rsquo;avoir ce message lors de sa connexion :</p>
+
+<pre><code>skhaen@tech:~$ ssh root@192.168.1.1
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    
+Add correct host key in /home/skhaen/.ssh/known_hosts to get rid of this message.
+Offending RSA key in /home/skhaen/.ssh/known_hosts:755
+    
+Host key verification failed.
+</code></pre>
+
+<p>Il faut alors éditer son fichier <strong>/home/skhaen/.ssh/known_hosts</strong> et effacer la ligne correspondante. Dans mon cas, c&rsquo;est la ligne numéro 755, je peux donc faire :</p>
+
+<pre><code>vim /home/skhaen/.ssh/known_hosts +755
+</code></pre>
+
+<ul>
+<li>pour effacer une ligne sous vim : <strong>dd</strong></li>
+<li>pour sauvegarder et quitter : <strong>:wq</strong></li>
+<li>pour <a href="http://formation-debian.via.ecp.fr/vim.html">apprendre le reste</a>.</li>
+</ul>
+
+<h2 id="we-need-internet">WE NEED INTERNET!<a href="#we-need-internet" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+
+<p>C&rsquo;est le bon moment pour brancher votre routeur à Internet d&rsquo;une facon ou d&rsquo;une autre (sauf avec une tronçonneuse), nous allons avoir besoin d&rsquo;une connexion pour installer des paquets. Il suffit de la brancher en ethernet sur votre box, sur un switch&hellip;</p>
+
+<p>Un test rapide pour savoir si c&rsquo;est bon, c&rsquo;est de lancer la commande <strong>opkg update</strong> sur le routeur, si ça marche, c&rsquo;est que vous pouvez continuer.</p>
+
+<h3 id="du-réseauuuuuuuu-o">Du réseauuuuuuuu /o/<a href="#du-réseauuuuuuuu-o" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p>Voici un exemple de configuration à mettre dans <strong>/etc/config/network</strong> (pour une ligne <a href="http://www.fdn.fr/">FDN</a> en <a href="https://en.wikipedia.org/wiki/Point-to-point_protocol_over_Ethernet">PPPoE</a>)</p>
+
+<pre><code>config interface 'loopback'
+   option ifname 'lo'
+   option proto 'static'
+   option ipaddr '127.0.0.1'
+   option netmask '255.0.0.0'
+    
+config interface 'lan'
+   option ifname 'eth0'
+   option proto 'static'
+   option ipaddr '192.168.1.254'
+   option netmask '255.255.255.0'
+    
+config adsl-device 'adsl'
+   option fwannex 'a'
+   option annex 'a2p'
+    
+config atm-bridge 'atm'
+   option unit '0'
+   option vpi '8'
+   option vci '35'
+   option encaps 'llc'
+   option payload 'bridged'
+    
+config interface 'wan'
+   option ifname 'nas0'
+   option _orig_bridge 'false'
+   option encaps 'llc'
+   option proto 'pppoe'
+   option username 'skhaen@fdn.nerim'
+   option password 'azerty123456'
+   option vpi '8'
+   option vci '35'
+   option atmdev '0'
+</code></pre>
+
+<h3 id="l-adsl-http-wiki-openwrt-org-toh-buffalo-wbmr-hp-g300h-turn-on-adsl-nas0-interface">l&rsquo;<a href="http://wiki.openwrt.org/toh/buffalo/wbmr-hp-g300h#turn.on.adsl.nas0.interface">ADSL</a><a href="#l-adsl-http-wiki-openwrt-org-toh-buffalo-wbmr-hp-g300h-turn-on-adsl-nas0-interface" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p>On vérifie quelle version du firmware ADSL est installé :</p>
+
+<pre><code>opkg list-installed | grep kmod-ltq-dsl-firmware
+</code></pre>
+
+<p>Si le résultat est *kmod-ltq-dsl-firmware-<strong>b</strong>-ar9*, c&rsquo;est pas de bol, ce n&rsquo;est pas le bon, il faut donc l&rsquo;enlever et installer le bon (<a href="https://en.wikipedia.org/wiki/G.992.3">annex &ldquo;a&rdquo; pour la France</a>) :</p>
+
+<pre><code>opkg remove kmod-ltq-dsl-firmware-b-ar9
+opkg install kmod-ltq-dsl-firmware-a-ar9
+</code></pre>
+
+<p>Ensuite il faut juste s&rsquo;assurer que le module <em>br2684ctl</em> est activé :</p>
+
+<pre><code>/etc/init.d/dsl_control start
+/etc/init.d/br2684ctl enable
+/etc/init.d/br2684ctl start
+</code></pre>
+
+<p>on vérifie l&rsquo;état de l&rsquo;ADSL :</p>
+
+<pre><code>/etc/init.d/dsl_control status
+</code></pre>
+
+<p>ce qui donne (si ça marche) quelque chose comme :</p>
+
+<pre><code>Chipset:			Ifx-AR9 1.2
+Line State:			UP [0x801: showtime_tc_sync]
+Data Rate:			14.807 Mb/s / 962 Kb/s
+Line Attenuation:	21.3dB / 10.6dB
+Noise Margin:		10.0dB / 10.6dB
+Line Uptime:		0h 2m 24s
+</code></pre>
+
+<p>et si ça ne marche pas :</p>
+
+<pre><code>Chipset:                Ifx-AR9 1.2
+Line State:             DOWN [0x200: silent]
+Data Rate:              0 b/s / 0 b/s
+Line Attenuation:       0.0dB / 0.0dB
+Noise Margin:           0.0dB / 0.0dB
+Line Uptime:            down
+</code></pre>
+
+<p>Si vous avez la chance d&rsquo;être dans une association de la <a href="http://ffdn.org/">Fédération FDN</a>, vous pouvez essayer de demander à un adminsys de jeter un coup d&rsquo;oeil à vos logs de connexions (côté FAI), vous pouvez ainsi mieux définir le (ou l&rsquo;absence de) problème.</p>
+
+<h3 id="et-le-wifi-http-wiki-openwrt-org-toh-buffalo-wbmr-hp-g300h-configure-wifi">et le <a href="http://wiki.openwrt.org/toh/buffalo/wbmr-hp-g300h#configure.wifi">wifi</a><a href="#et-le-wifi-http-wiki-openwrt-org-toh-buffalo-wbmr-hp-g300h-configure-wifi" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p>On installe le paquet nécessaire :</p>
+
+<pre><code>opkg install kmod-ath9k
+</code></pre>
+
+<p>Puis on rajoute la ligne qu&rsquo;il faut dans le bon fichier :</p>
+
+<pre><code>wifi detect &gt;&gt; /etc/config/wireless
+</code></pre>
+
+<h3 id="rallumons-les-lumières">Rallumons les Lumières<a href="#rallumons-les-lumières" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p>Nous allons <a href="http://wiki.openwrt.org/toh/buffalo/wbmr-hp-g300h#leds">configurer les LEDs</a> tout de suite, ça peut être pratique pour la suite. L&rsquo;exemple de configuration suivant doit être mis dans  <strong>/etc/config/system</strong>.</p>
+
+<pre><code>config led
+    option default '0'
+    option name 'power'
+    option sysfs 'soc:green:power'
+    option trigger 'default-on'
+    
+config led
+    option default '0'
+    option name 'power2'
+    option sysfs 'soc:red:power'
+    option trigger 'none'
+    
+config led
+    option default '0'
+    option name 'wifi'
+    option sysfs 'soc:green:wlan'
+    option trigger 'phy0tpt'
+    
+config led
+    option default '0'
+    option name 'security'
+    option sysfs 'soc:red:security'
+    option trigger 'phy0tpt'
+    
+config led
+    option default '0'
+    option name 'dsl'
+    option sysfs 'soc:green:adsl'
+    option trigger 'netdev'
+    option dev 'nas0'
+    option mode 'link tx rx'
+    
+config led
+    option default '0'
+    option name 'online'
+    option sysfs 'soc:green:internet'
+    option trigger 'none'
+    
+config led
+    option default '0'
+    option name 'online2'
+    option sysfs 'soc:red:internet'
+    option trigger 'netdev'
+    option dev 'nas0'
+    option mode 'tx rx'
+    
+config led
+    option default '0'
+    option name 'usb'
+    option sysfs 'soc:green:usb'
+    option trigger 'default-on'
+    
+config led
+    option default '0'
+    option name 'movie'
+    option sysfs 'soc:blue:movie'
+    option trigger 'timer'
+    option delayon '1000'
+    option delayoff '1000'
+</code></pre>
+
+<p>Il peut être nécessaire de redémarrer le routeur pour que ce soit pris en compte.</p>
+
+<h3 id="moar">MOAR<a href="#moar" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<ul>
+<li>La <a href="http://wiki.openwrt.org/toh/buffalo/wbmr-hp-g300h">page dediée</a> sur le site d&rsquo;OpenWRT.</li>
+<li>si vous avez un bug sur le switch (les machines ne peuvent pas communiquer entre elle, voir <a href="http://wiki.openwrt.org/toh/buffalo/wbmr-hp-g300h#wired.stations.cannot.ping.each.other">ici</a> et <a href="https://forum.openwrt.org/viewtopic.php?pid=184969#p184969">là</a>.</li>
+</ul>
+
+			</div>
+			<hr class="post-end">
+			<footer class="post-info">
+				<p>
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="http://www.cyphercat.eu/tags/adminsys">adminsys</a></span><span class="tag"><a href="http://www.cyphercat.eu/tags/openwrt">openwrt</a></span>
+				</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2014-03-04 18:58 &#43;0100</p>
+			</footer>
+		</article>
+		<div class="post-nav thin">
+			<a class="next-post" href="http://www.cyphercat.eu/posts/adminsys/pond-en-bref/">
+				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;</span><br><span>Pond en bref</span>
+			</a>
+			<a class="prev-post" href="http://www.cyphercat.eu/posts/adminsys/installer-un-serveur-xmppjabber-avec-prosody/">
+				<span class="post-nav-label">&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>Installer un serveur XMPP/jabber avec Prosody sous Debian</span>
+			</a>
+		</div>
+		<div id="comments" class="thin">
+</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2019 <a href="http://www.cyphercat.eu">Skhaen</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="http://www.cyphercat.eu/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
+
+
+	<script src="http://www.cyphercat.eu/js/main.min.35ccbf1cdceb91e4c64c06b5d009d6e2977fafe56beda7762febd4e67528d2ac.js" integrity="sha256-Ncy/HNzrkeTGTAa10AnW4pd/r+Vr7ad2L+vU5nUo0qw="></script>
+
+</body>
+
+</html>
