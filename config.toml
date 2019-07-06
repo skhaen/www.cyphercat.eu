@@ -2,7 +2,7 @@ baseURL = "https://www.cyphercat.eu"
 languageCode = "fr-fr"
 defaultContentLanguage = "fr"
 title = "Skhaen"
-theme = "hermit"
+theme = ["hermit","matomo"]
 # enableGitInfo = true
 pygmentsCodefences  = true
 pygmentsUseClasses  = true
@@ -12,6 +12,10 @@ copyright = "This work is licensed under a Creative Commons Attribution-NonComme
 enableEmoji = true  # Shorthand emojis in content files - https://gohugo.io/functions/emojify/
 # googleAnalytics = "UA-123-45"
 # disqusShortname = "yourdiscussshortname"
+
+[params.matomo]
+url = "http://mtm.cyphercat.eu"
+id = 1
 
 [author]
   name = "Skhaen"
