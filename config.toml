@@ -1,4 +1,4 @@
-baseURL = "http://www.cyphercat.eu"
+baseURL = "https://www.cyphercat.eu"
 languageCode = "fr-fr"
 defaultContentLanguage = "fr"
 title = "Skhaen"
@@ -15,6 +15,16 @@ enableEmoji = true  # Shorthand emojis in content files - https://gohugo.io/func
 
 [author]
   name = "Skhaen"
+
+#[privacy]
+#  # Google Analytics privacy settings - https://gohugo.io/about/hugo-and-gdpr/index.html#googleanalytics
+#  [privacy.googleAnalytics]
+#    # set to true to disable service 
+#    disable = false
+#    # set to true to meet General Data Protection Regulation (GDPR)
+#    anonymizeIP = true
+#    respectDoNotTrack = true
+#    useSessionStorage = true
 
 [blackfriday]
   # hrefTargetBlank = true

@@ -3,382 +3,393 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://www.cyphercat.eu/posts/marotte/les-buttes-dans-la-permaculture/</loc>
+    <loc>https://www.cyphercat.eu/posts/</loc>
+    <lastmod>2019-07-06T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.cyphercat.eu/</loc>
+    <lastmod>2019-07-06T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.cyphercat.eu/tags/</loc>
+    <lastmod>2019-07-06T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.cyphercat.eu/posts/artisanat/trousse-cuir-et-bois-prototype-1/</loc>
+    <lastmod>2019-07-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.cyphercat.eu/tags/artisanat/</loc>
+    <lastmod>2019-07-06T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.cyphercat.eu/posts/marotte/les-buttes-dans-la-permaculture/</loc>
     <lastmod>2018-09-18T19:42:59+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/posts/</loc>
-    <lastmod>2018-09-18T19:42:59+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://www.cyphercat.eu/posts/adminsys/puppet-partie-2/</loc>
+    <lastmod>2017-05-20T12:02:04+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/</loc>
-    <lastmod>2018-09-18T19:42:59+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.cyphercat.eu/tags/</loc>
+    <loc>https://www.cyphercat.eu/tags/adminsys/</loc>
     <lastmod>2017-05-20T12:02:04+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/posts/adminsys/puppet-partie-2/</loc>
-    <lastmod>2017-05-20T12:02:04+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.cyphercat.eu/tags/adminsys/</loc>
+    <loc>https://www.cyphercat.eu/tags/puppet/</loc>
     <lastmod>2017-05-20T12:02:04+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/tags/puppet/</loc>
-    <lastmod>2017-05-20T12:02:04+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.cyphercat.eu/posts/adminsys/deploiement-et-automatisation-avec-puppet-partie-1/</loc>
+    <loc>https://www.cyphercat.eu/posts/adminsys/deploiement-et-automatisation-avec-puppet-partie-1/</loc>
     <lastmod>2017-02-12T19:28:25+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/posts/adminsys/puppet-troubleshooting/</loc>
+    <loc>https://www.cyphercat.eu/posts/adminsys/puppet-troubleshooting/</loc>
     <lastmod>2017-02-10T21:43:03+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/posts/divers/comment-le-fascisme-sinstalle-par-sandra-schwab/</loc>
+    <loc>https://www.cyphercat.eu/posts/divers/comment-le-fascisme-sinstalle-par-sandra-schwab/</loc>
     <lastmod>2017-02-02T21:07:22+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/tags/traduction/</loc>
+    <loc>https://www.cyphercat.eu/tags/traduction/</loc>
     <lastmod>2017-02-02T21:07:22+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/posts/divers/how-does-fascism-take-hold-by-sandra-schwab/</loc>
+    <loc>https://www.cyphercat.eu/posts/divers/how-does-fascism-take-hold-by-sandra-schwab/</loc>
     <lastmod>2017-02-02T21:07:17+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/posts/adminsys/comment-se-debarrasser-de-son-ecran-fantome/</loc>
+    <loc>https://www.cyphercat.eu/posts/adminsys/comment-se-debarrasser-de-son-ecran-fantome/</loc>
     <lastmod>2017-01-20T19:37:30+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/posts/adminsys/deploiement-et-automatisation-avec-ansible-partie-1/</loc>
+    <loc>https://www.cyphercat.eu/posts/adminsys/deploiement-et-automatisation-avec-ansible-partie-1/</loc>
     <lastmod>2017-01-01T18:04:58+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/tags/ansible/</loc>
+    <loc>https://www.cyphercat.eu/tags/ansible/</loc>
     <lastmod>2017-01-01T18:04:58+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/tags/mails/</loc>
+    <loc>https://www.cyphercat.eu/tags/mails/</loc>
     <lastmod>2016-08-10T17:06:51+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/posts/adminsys/a-la-recherche-dun-client-mail-sous-linux/</loc>
+    <loc>https://www.cyphercat.eu/posts/adminsys/a-la-recherche-dun-client-mail-sous-linux/</loc>
     <lastmod>2016-08-10T17:06:51+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/posts/medias/m-i-t-guide-to-lock-picking/</loc>
+    <loc>https://www.cyphercat.eu/posts/medias/m-i-t-guide-to-lock-picking/</loc>
     <lastmod>2016-07-27T21:01:22+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/tags/lockpicking/</loc>
+    <loc>https://www.cyphercat.eu/tags/lockpicking/</loc>
     <lastmod>2016-07-27T21:01:22+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/posts/divers/about-jacob-appelbaum/</loc>
+    <loc>https://www.cyphercat.eu/posts/divers/about-jacob-appelbaum/</loc>
     <lastmod>2016-06-17T16:26:21+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/posts/surveillance/nsa-observer-liste-des-ressources/</loc>
+    <loc>https://www.cyphercat.eu/posts/surveillance/nsa-observer-liste-des-ressources/</loc>
     <lastmod>2016-05-19T12:14:57+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/tags/snowden/</loc>
+    <loc>https://www.cyphercat.eu/tags/snowden/</loc>
     <lastmod>2016-05-19T12:14:57+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/posts/divers/braindump-1/</loc>
+    <loc>https://www.cyphercat.eu/posts/divers/braindump-1/</loc>
     <lastmod>2016-03-31T17:15:37+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/tags/livres/</loc>
+    <loc>https://www.cyphercat.eu/tags/livres/</loc>
     <lastmod>2016-03-31T17:15:37+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/posts/adminsys/configuration-calibre/</loc>
+    <loc>https://www.cyphercat.eu/posts/adminsys/configuration-calibre/</loc>
     <lastmod>2015-12-01T17:21:53+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/tags/misc/</loc>
+    <loc>https://www.cyphercat.eu/tags/misc/</loc>
     <lastmod>2015-12-01T17:21:53+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/posts/medias/internet-ou-comment-se-forger-un-esprit-critique/</loc>
+    <loc>https://www.cyphercat.eu/posts/medias/internet-ou-comment-se-forger-un-esprit-critique/</loc>
     <lastmod>2015-10-09T20:32:07+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/pages/</loc>
+    <loc>https://www.cyphercat.eu/pages/</loc>
     <lastmod>2015-09-11T14:14:59+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/pages/projets/</loc>
+    <loc>https://www.cyphercat.eu/pages/projets/</loc>
     <lastmod>2015-09-11T14:14:59+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/pages/about/</loc>
+    <loc>https://www.cyphercat.eu/pages/about/</loc>
     <lastmod>2015-09-11T14:03:15+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/posts/adminsys/envoi-de-spam-a-partir-dun-serveur-comment-faire/</loc>
+    <loc>https://www.cyphercat.eu/posts/adminsys/envoi-de-spam-a-partir-dun-serveur-comment-faire/</loc>
     <lastmod>2015-08-04T20:11:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/tags/postfix/</loc>
-    <lastmod>2015-08-04T20:11:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.cyphercat.eu/tags/spam/</loc>
+    <loc>https://www.cyphercat.eu/tags/postfix/</loc>
     <lastmod>2015-08-04T20:11:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/posts/adminsys/debug-tls/</loc>
+    <loc>https://www.cyphercat.eu/tags/spam/</loc>
+    <lastmod>2015-08-04T20:11:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.cyphercat.eu/posts/adminsys/debug-tls/</loc>
     <lastmod>2015-07-17T12:53:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/tags/apache2/</loc>
+    <loc>https://www.cyphercat.eu/tags/apache2/</loc>
     <lastmod>2015-07-17T12:53:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/tags/ssl/</loc>
+    <loc>https://www.cyphercat.eu/tags/ssl/</loc>
     <lastmod>2015-07-17T12:53:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/posts/adminsys/gpg-comment-generer-une-paire-de-cles/</loc>
+    <loc>https://www.cyphercat.eu/posts/adminsys/gpg-comment-generer-une-paire-de-cles/</loc>
     <lastmod>2015-05-19T14:30:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/tags/gpg/</loc>
+    <loc>https://www.cyphercat.eu/tags/gpg/</loc>
     <lastmod>2015-05-19T14:30:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/posts/adminsys/remonter-une-attaque-avec-les-logs-dapache2/</loc>
+    <loc>https://www.cyphercat.eu/posts/adminsys/remonter-une-attaque-avec-les-logs-dapache2/</loc>
     <lastmod>2015-04-29T15:08:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/tags/logs/</loc>
+    <loc>https://www.cyphercat.eu/tags/logs/</loc>
     <lastmod>2015-04-29T15:08:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/posts/adminsys/un-peu-plus-de-securite-sous-linux/</loc>
+    <loc>https://www.cyphercat.eu/posts/adminsys/un-peu-plus-de-securite-sous-linux/</loc>
     <lastmod>2015-02-15T16:10:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/posts/surveillance/nsa-a-propos-de-bullrun/</loc>
+    <loc>https://www.cyphercat.eu/posts/surveillance/nsa-a-propos-de-bullrun/</loc>
     <lastmod>2015-01-25T16:18:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/posts/divers/alec-empire-keynote-douverture-du-31c/</loc>
+    <loc>https://www.cyphercat.eu/posts/divers/alec-empire-keynote-douverture-du-31c/</loc>
     <lastmod>2015-01-05T16:20:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/posts/adminsys/die-sslv3-die/</loc>
+    <loc>https://www.cyphercat.eu/posts/adminsys/die-sslv3-die/</loc>
     <lastmod>2014-10-15T15:35:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/posts/surveillance/tao-catalogue-ant/</loc>
+    <loc>https://www.cyphercat.eu/posts/surveillance/tao-catalogue-ant/</loc>
     <lastmod>2014-09-22T15:55:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/posts/surveillance/nsa-prism-nest-pas-une-surprise/</loc>
+    <loc>https://www.cyphercat.eu/posts/surveillance/nsa-prism-nest-pas-une-surprise/</loc>
     <lastmod>2014-09-12T15:57:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/posts/adminsys/utiliser-caff-avec-postfix/</loc>
+    <loc>https://www.cyphercat.eu/posts/adminsys/utiliser-caff-avec-postfix/</loc>
     <lastmod>2014-09-09T16:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/posts/adminsys/serveur-du-tls-avec-un-peu-de-hsts-et-un-soupcon-de-tlsa-sil-vous-plait/</loc>
+    <loc>https://www.cyphercat.eu/posts/adminsys/serveur-du-tls-avec-un-peu-de-hsts-et-un-soupcon-de-tlsa-sil-vous-plait/</loc>
     <lastmod>2014-07-27T10:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/tags/nginx/</loc>
+    <loc>https://www.cyphercat.eu/tags/nginx/</loc>
     <lastmod>2014-07-27T10:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/posts/surveillance/gchq-partie-1-jtrig/</loc>
+    <loc>https://www.cyphercat.eu/posts/surveillance/gchq-partie-1-jtrig/</loc>
     <lastmod>2014-07-07T16:37:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/posts/surveillance/nsa-temps-de-faire-le-premier-point/</loc>
+    <loc>https://www.cyphercat.eu/posts/surveillance/nsa-temps-de-faire-le-premier-point/</loc>
     <lastmod>2014-07-04T10:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/posts/medias/livres/</loc>
+    <loc>https://www.cyphercat.eu/posts/medias/livres/</loc>
     <lastmod>2014-05-17T10:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/posts/adminsys/pond-en-bref/</loc>
+    <loc>https://www.cyphercat.eu/posts/adminsys/pond-en-bref/</loc>
     <lastmod>2014-04-19T10:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/tags/crypto/</loc>
+    <loc>https://www.cyphercat.eu/tags/crypto/</loc>
     <lastmod>2014-04-19T10:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/posts/adminsys/flasher-un-modem-routeur-buffalo-wbmr-hp-g300h-avec-openwr/</loc>
+    <loc>https://www.cyphercat.eu/posts/adminsys/flasher-un-modem-routeur-buffalo-wbmr-hp-g300h-avec-openwr/</loc>
     <lastmod>2014-03-04T17:58:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/tags/openwrt/</loc>
+    <loc>https://www.cyphercat.eu/tags/openwrt/</loc>
     <lastmod>2014-03-04T17:58:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/posts/adminsys/installer-un-serveur-xmppjabber-avec-prosody/</loc>
+    <loc>https://www.cyphercat.eu/posts/adminsys/installer-un-serveur-xmppjabber-avec-prosody/</loc>
     <lastmod>2014-02-14T18:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/tags/prosody/</loc>
-    <lastmod>2014-02-14T18:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.cyphercat.eu/tags/xmpp/</loc>
+    <loc>https://www.cyphercat.eu/tags/prosody/</loc>
     <lastmod>2014-02-14T18:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/posts/compostelle/compostelle-plan-densemble/</loc>
+    <loc>https://www.cyphercat.eu/tags/xmpp/</loc>
+    <lastmod>2014-02-14T18:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.cyphercat.eu/posts/compostelle/compostelle-plan-densemble/</loc>
     <lastmod>2013-12-27T19:09:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/tags/compostelle/</loc>
+    <loc>https://www.cyphercat.eu/tags/compostelle/</loc>
     <lastmod>2013-12-27T19:09:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/posts/compostelle/compostelle-larrivee-jour-63-a-68/</loc>
+    <loc>https://www.cyphercat.eu/posts/compostelle/compostelle-larrivee-jour-63-a-68/</loc>
     <lastmod>2013-11-28T19:40:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/posts/compostelle/leon-anniv-spa-jour-48-a-62/</loc>
+    <loc>https://www.cyphercat.eu/posts/compostelle/leon-anniv-spa-jour-48-a-62/</loc>
     <lastmod>2013-11-06T19:48:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/posts/compostelle/los-arcos-a-burgos-jour-41-a-47/</loc>
+    <loc>https://www.cyphercat.eu/posts/compostelle/los-arcos-a-burgos-jour-41-a-47/</loc>
     <lastmod>2013-11-05T19:42:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/posts/compostelle/de-st-jean-pied-de-port-a-estella-jour-35-a-40/</loc>
+    <loc>https://www.cyphercat.eu/posts/compostelle/de-st-jean-pied-de-port-a-estella-jour-35-a-40/</loc>
     <lastmod>2013-11-04T19:44:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/posts/compostelle/moissac-a-st-jean-pied-de-port-jour-21-a-34/</loc>
+    <loc>https://www.cyphercat.eu/posts/compostelle/moissac-a-st-jean-pied-de-port-jour-21-a-34/</loc>
     <lastmod>2013-11-03T19:43:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/posts/compostelle/compostelle-celee-cahors-moissac-jour-12-a-20/</loc>
+    <loc>https://www.cyphercat.eu/posts/compostelle/compostelle-celee-cahors-moissac-jour-12-a-20/</loc>
     <lastmod>2013-10-24T10:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/posts/compostelle/compostelle-conques-jour-7-a-11/</loc>
+    <loc>https://www.cyphercat.eu/posts/compostelle/compostelle-conques-jour-7-a-11/</loc>
     <lastmod>2013-10-23T10:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/posts/compostelle/compostelle-laubrac-jour-4-a-6/</loc>
+    <loc>https://www.cyphercat.eu/posts/compostelle/compostelle-laubrac-jour-4-a-6/</loc>
     <lastmod>2013-10-22T18:45:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/posts/compostelle/compostelle-depart-jour-1-a-3/</loc>
+    <loc>https://www.cyphercat.eu/posts/compostelle/compostelle-depart-jour-1-a-3/</loc>
     <lastmod>2013-10-12T19:53:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.cyphercat.eu/posts/compostelle/compostelle-preparation/</loc>
+    <loc>https://www.cyphercat.eu/posts/compostelle/compostelle-preparation/</loc>
     <lastmod>2013-09-11T19:27:00+00:00</lastmod>
   </url>
   

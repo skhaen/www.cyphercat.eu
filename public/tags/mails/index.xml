@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>mails on Skhaen</title>
-    <link>http://www.cyphercat.eu/tags/mails/</link>
+    <link>https://www.cyphercat.eu/tags/mails/</link>
     <description>Recent content in mails on Skhaen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-fr</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Wed, 10 Aug 2016 17:06:51 +0000</lastBuildDate>
     
-	<atom:link href="http://www.cyphercat.eu/tags/mails/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.cyphercat.eu/tags/mails/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>À la recherche d&#39;un client mail sous Linux</title>
-      <link>http://www.cyphercat.eu/posts/adminsys/a-la-recherche-dun-client-mail-sous-linux/</link>
+      <link>https://www.cyphercat.eu/posts/adminsys/a-la-recherche-dun-client-mail-sous-linux/</link>
       <pubDate>Wed, 10 Aug 2016 17:06:51 +0000</pubDate>
       
-      <guid>http://www.cyphercat.eu/posts/adminsys/a-la-recherche-dun-client-mail-sous-linux/</guid>
+      <guid>https://www.cyphercat.eu/posts/adminsys/a-la-recherche-dun-client-mail-sous-linux/</guid>
       <description>Mettons tout de suite les choses au clair : on veut un client mail moderne, avec une jolie interface (qui fait wooosh wooosh, exactement) et orienté grand public. Dans cette optique, on va d&amp;rsquo;abord vouloir quelque chose d&amp;rsquo;ergonomique et d&amp;rsquo;utilisable dès le premier démarrage sans devoir installer un plugin ou aller bidouiller un fichier de config. Et l&amp;rsquo;importance de la gestion de GPG arrivera donc nettement après&amp;hellip;
 Donc, histoire que l&amp;rsquo;on se soit bien compris : on cherche un client mail pour la famille / les ami-e-s / un-e inconnu-e dans la rue, et pas pour un adminsys/dév/agnutollah qui n&amp;rsquo;arrive à pas comprendre que l&amp;rsquo;ergonomie et une jolie interface c&amp;rsquo;est important (et le pire, c&amp;rsquo;est que je sais très bien que même en écrivant ça, je vais avoir des retours me disant que Mutt c&amp;rsquo;est trop bien).</description>
     </item>
