@@ -14,7 +14,7 @@ enableEmoji = true  # Shorthand emojis in content files - https://gohugo.io/func
 # disqusShortname = "yourdiscussshortname"
 
 [params.matomo]
-url = "http://mtm.cyphercat.eu"
+url = "https://mtm.cyphercat.eu"
 id = 1
 
 [author]

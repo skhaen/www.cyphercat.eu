@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-fr</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sat, 06 Jul 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 06 Jul 2019 22:16:45 +0200</lastBuildDate>
     
 	<atom:link href="https://www.cyphercat.eu/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>De retour !</title>
+      <link>https://www.cyphercat.eu/posts/divers/2019-07-update-cyphercat/</link>
+      <pubDate>Sat, 06 Jul 2019 22:16:45 +0200</pubDate>
+      
+      <guid>https://www.cyphercat.eu/posts/divers/2019-07-update-cyphercat/</guid>
+      <description>Comme vous devriez l&amp;rsquo;avoir remarqué en arrivant ici, le thème de ce blog a beaucoup changé.
+Après une bonne période d&amp;rsquo;inactivé (un peu plus de un an), cyphercat est maintenant généré via hugo après avoir été sous ghost pendant un petit moment. La migration a été particulièrement rapide vu qu&amp;rsquo;il existe déjà des outils pour s&amp;rsquo;en occuper &amp;lt;3
+J&amp;rsquo;en ai profité pour faire un peu de nettoyage en archivant les articles suivants :</description>
+    </item>
     
     <item>
       <title>[cuir] trousse cuir et bois - prototype 1</title>
@@ -211,17 +222,6 @@ GPG 4780 86FD 89F8 3064 4BDD A765 F842 7BD0 C99C CF64   Mastodon: @skhaen mail: 
       <guid>https://www.cyphercat.eu/posts/adminsys/envoi-de-spam-a-partir-dun-serveur-comment-faire/</guid>
       <description>Au menu aujourd&amp;rsquo;hui, accueillir comme il se doit sur votre serveur un envoi de spam. Pour changer, on partira du principe que l&amp;rsquo;on est sur une Debian avec un postfix. Notre serveur s&amp;rsquo;appelle exemple.octopuce.fr, et notre site de référence installé sur ce serveur s&amp;rsquo;appelle exemple.com.
 On partira aussi du principe que l&amp;rsquo;on n&amp;rsquo;aime pas beaucoup le spam&amp;hellip; voir même qu&amp;rsquo;on lui mettrait bien un bon coup de clavier en pleine gueule.</description>
-    </item>
-    
-    <item>
-      <title>Debug SSL/TLS avec OpenSSL - partie 1</title>
-      <link>https://www.cyphercat.eu/posts/adminsys/debug-tls/</link>
-      <pubDate>Fri, 17 Jul 2015 12:53:00 +0000</pubDate>
-      
-      <guid>https://www.cyphercat.eu/posts/adminsys/debug-tls/</guid>
-      <description>Si tu es en pleine session de dé/bug SSL/TLS, cet article peut t&amp;rsquo;éviter quelques désagréments ;-)
-SSL Labs, l&amp;rsquo;incontournable On ne le présente plus, le site de Qualys permet de tester la configuration de son serveur facilement avec une interface web bien faite. Le test permet d&amp;rsquo;avoir un rapport concernant les points suivants :
- Authentification : validité du certificat (nom du site, période de validité&amp;hellip;), présence et validité de la chaîne de certificat (chain) Protocoles diposnibles (SSLv2, SSLv3, TLS 1.</description>
     </item>
     
   </channel>

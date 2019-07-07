@@ -6,8 +6,34 @@
 		<generator>Hugo -- gohugo.io</generator>
 		<language>fr-fr</language>
 		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-		<lastBuildDate>Sat, 06 Jul 2019 00:00:00 +0000</lastBuildDate>
+		<lastBuildDate>Sat, 06 Jul 2019 22:16:45 +0200</lastBuildDate>
 		<atom:link href="https://www.cyphercat.eu/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>De retour !</title>
+			<link>https://www.cyphercat.eu/posts/divers/2019-07-update-cyphercat/</link>
+			<pubDate>Sat, 06 Jul 2019 22:16:45 +0200</pubDate>
+			
+			<guid>https://www.cyphercat.eu/posts/divers/2019-07-update-cyphercat/</guid>
+			<description>Comme vous devriez l&amp;rsquo;avoir remarqué en arrivant ici, le thème de ce blog a beaucoup changé.
+Après une bonne période d&amp;rsquo;inactivé (un peu plus de un an), cyphercat est maintenant généré via hugo après avoir été sous ghost pendant un petit moment. La migration a été particulièrement rapide vu qu&amp;rsquo;il existe déjà des outils pour s&amp;rsquo;en occuper &amp;lt;3
+J&amp;rsquo;en ai profité pour faire un peu de nettoyage en archivant les articles suivants :</description>
+			<content type="html"><![CDATA[<p>Comme vous devriez l&rsquo;avoir remarqué en arrivant ici, le thème de ce blog a beaucoup changé.</p>
+
+<p>Après une bonne période d&rsquo;inactivé (un peu plus de un an), cyphercat est maintenant généré via <a href="https://gohugo.io/">hugo</a> après avoir été sous <a href="https://ghost.org/">ghost</a> pendant un petit moment. La migration a été particulièrement rapide vu qu&rsquo;il existe déjà des <a href="https://gohugo.io/tools/migrations/">outils</a> pour s&rsquo;en occuper &lt;3</p>
+
+<p>J&rsquo;en ai profité pour faire un peu de nettoyage en archivant les articles suivants :</p>
+
+<ul>
+<li>&ldquo;Vidéos&rdquo; (2014-05-18)</li>
+<li>&ldquo;Mangas et arts martiaux&rdquo; (2014-10-18)</li>
+<li>&ldquo;Films et arts martiaux&rdquo; (2016-05-22)</li>
+<li>&ldquo;Quelques chaines youtube à suivre&rdquo; (2016-05-22)</li>
+<li>&ldquo;[RSS] Et vous, que fait votre entreprise ?&rdquo; (2016-10-15)</li>
+<li>&ldquo;Woodworking channels&rdquo; (2018-08-21)</li>
+</ul>
+]]></content>
+		</item>
 		
 		<item>
 			<title>[cuir] trousse cuir et bois - prototype 1</title>

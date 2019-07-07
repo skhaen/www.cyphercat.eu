@@ -3,20 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.cyphercat.eu/posts/divers/2019-07-update-cyphercat/</loc>
+    <lastmod>2019-07-06T22:16:45+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.cyphercat.eu/posts/</loc>
-    <lastmod>2019-07-06T00:00:00+00:00</lastmod>
+    <lastmod>2019-07-06T22:16:45+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.cyphercat.eu/</loc>
-    <lastmod>2019-07-06T00:00:00+00:00</lastmod>
+    <lastmod>2019-07-06T22:16:45+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.cyphercat.eu/tags/</loc>
-    <lastmod>2019-07-06T00:00:00+00:00</lastmod>
+    <lastmod>2019-07-06T22:16:45+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.cyphercat.eu/tags/divers/</loc>
+    <lastmod>2019-07-06T22:16:45+02:00</lastmod>
     <priority>0</priority>
   </url>
   
