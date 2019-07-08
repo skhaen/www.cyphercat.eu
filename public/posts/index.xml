@@ -6,8 +6,35 @@
 		<generator>Hugo -- gohugo.io</generator>
 		<language>fr-fr</language>
 		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-		<lastBuildDate>Sat, 06 Jul 2019 22:16:45 +0200</lastBuildDate>
+		<lastBuildDate>Mon, 08 Jul 2019 20:10:00 +0200</lastBuildDate>
 		<atom:link href="https://www.cyphercat.eu/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>iletaitunefoisinternet.fr est à jour !</title>
+			<link>https://www.cyphercat.eu/posts/divers/ieufi-update/</link>
+			<pubDate>Mon, 08 Jul 2019 20:10:00 +0200</pubDate>
+			
+			<guid>https://www.cyphercat.eu/posts/divers/ieufi-update/</guid>
+			<description>Plus personne ne l&amp;rsquo;attendait, et là, soudainement, juillet 2019 : PAF !
+Le site www.iletaitunefoisinternet.fr vient de subir une mise à jour. La dernière devait dater de novembre 2014 !
+Et juste pour se souvenir, IEUFI avant juillet 2019, c&amp;rsquo;était ça :
+Et maintenant :
+Et (on peut toujours espérer) que l&amp;rsquo;on reverra des mises à jour dessus avant 2024&amp;hellip;</description>
+			<content type="html"><![CDATA[<p>Plus personne ne l&rsquo;attendait, et là, soudainement, juillet 2019 : PAF !</p>
+
+<p>Le site <a href="https://www.iletaitunefoisinternet.fr/">www.iletaitunefoisinternet.fr</a> vient de subir une mise à jour. La dernière devait dater de novembre 2014 !</p>
+
+<p>Et juste pour se souvenir, IEUFI avant juillet 2019, c&rsquo;était ça :</p>
+
+<p><img src="/images/2019/2919-07-IEUFI_old.png" alt="IEUFI old" /></p>
+
+<p>Et maintenant :</p>
+
+<p><img src="/images/2019/2019-07-IEUFI_new.png" alt="IEUFI new" /></p>
+
+<p>Et (on peut toujours espérer) que l&rsquo;on reverra des mises à jour dessus avant 2024&hellip;</p>
+]]></content>
+		</item>
 		
 		<item>
 			<title>De retour !</title>
@@ -16,11 +43,12 @@
 			
 			<guid>https://www.cyphercat.eu/posts/divers/2019-07-update-cyphercat/</guid>
 			<description>Comme vous devriez l&amp;rsquo;avoir remarqué en arrivant ici, le thème de ce blog a beaucoup changé.
-Après une bonne période d&amp;rsquo;inactivé (un peu plus de un an), cyphercat est maintenant généré via hugo après avoir été sous ghost pendant un petit moment. La migration a été particulièrement rapide vu qu&amp;rsquo;il existe déjà des outils pour s&amp;rsquo;en occuper &amp;lt;3
-J&amp;rsquo;en ai profité pour faire un peu de nettoyage en archivant les articles suivants :</description>
+Après un peu plus d&amp;rsquo;un an d&amp;rsquo;inactivé, cyphercat est maintenant généré via hugo après avoir été sous ghost pendant un petit moment. La migration a été particulièrement rapide vu qu&amp;rsquo;il existe déjà des outils pour s&amp;rsquo;en occuper &amp;lt;3
+J&amp;rsquo;en ai profité pour faire un peu de nettoyage en archivant les articles suivants :
+ &amp;ldquo;Vidéos&amp;rdquo; (2014-05-18) &amp;ldquo;Mangas et arts martiaux&amp;rdquo; (2014-10-18) &amp;ldquo;Films et arts martiaux&amp;rdquo; (2016-05-22) &amp;ldquo;Quelques chaines youtube à suivre&amp;rdquo; (2016-05-22) &amp;ldquo;[RSS] Et vous, que fait votre entreprise ?</description>
 			<content type="html"><![CDATA[<p>Comme vous devriez l&rsquo;avoir remarqué en arrivant ici, le thème de ce blog a beaucoup changé.</p>
 
-<p>Après une bonne période d&rsquo;inactivé (un peu plus de un an), cyphercat est maintenant généré via <a href="https://gohugo.io/">hugo</a> après avoir été sous <a href="https://ghost.org/">ghost</a> pendant un petit moment. La migration a été particulièrement rapide vu qu&rsquo;il existe déjà des <a href="https://gohugo.io/tools/migrations/">outils</a> pour s&rsquo;en occuper &lt;3</p>
+<p>Après un peu plus d&rsquo;un an d&rsquo;inactivé, cyphercat est maintenant généré via <a href="https://gohugo.io/">hugo</a> après avoir été sous <a href="https://ghost.org/">ghost</a> pendant un petit moment. La migration a été particulièrement rapide vu qu&rsquo;il existe déjà des <a href="https://gohugo.io/tools/migrations/">outils</a> pour s&rsquo;en occuper &lt;3</p>
 
 <p>J&rsquo;en ai profité pour faire un peu de nettoyage en archivant les articles suivants :</p>
 
@@ -32,6 +60,8 @@ J&amp;rsquo;en ai profité pour faire un peu de nettoyage en archivant les artic
 <li>&ldquo;[RSS] Et vous, que fait votre entreprise ?&rdquo; (2016-10-15)</li>
 <li>&ldquo;Woodworking channels&rdquo; (2018-08-21)</li>
 </ul>
+
+<p>Si par le plus grand des hasards il y a des choses qui vous intéressent dedans, n&rsquo;hésitez pas à me contacter.</p>
 ]]></content>
 		</item>
 		

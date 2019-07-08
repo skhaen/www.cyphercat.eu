@@ -7,10 +7,23 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-fr</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sat, 06 Jul 2019 22:16:45 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 08 Jul 2019 20:10:00 +0200</lastBuildDate>
     
 	<atom:link href="https://www.cyphercat.eu/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>iletaitunefoisinternet.fr est à jour !</title>
+      <link>https://www.cyphercat.eu/posts/divers/ieufi-update/</link>
+      <pubDate>Mon, 08 Jul 2019 20:10:00 +0200</pubDate>
+      
+      <guid>https://www.cyphercat.eu/posts/divers/ieufi-update/</guid>
+      <description>Plus personne ne l&amp;rsquo;attendait, et là, soudainement, juillet 2019 : PAF !
+Le site www.iletaitunefoisinternet.fr vient de subir une mise à jour. La dernière devait dater de novembre 2014 !
+Et juste pour se souvenir, IEUFI avant juillet 2019, c&amp;rsquo;était ça :
+Et maintenant :
+Et (on peut toujours espérer) que l&amp;rsquo;on reverra des mises à jour dessus avant 2024&amp;hellip;</description>
+    </item>
     
     <item>
       <title>De retour !</title>
@@ -19,8 +32,9 @@
       
       <guid>https://www.cyphercat.eu/posts/divers/2019-07-update-cyphercat/</guid>
       <description>Comme vous devriez l&amp;rsquo;avoir remarqué en arrivant ici, le thème de ce blog a beaucoup changé.
-Après une bonne période d&amp;rsquo;inactivé (un peu plus de un an), cyphercat est maintenant généré via hugo après avoir été sous ghost pendant un petit moment. La migration a été particulièrement rapide vu qu&amp;rsquo;il existe déjà des outils pour s&amp;rsquo;en occuper &amp;lt;3
-J&amp;rsquo;en ai profité pour faire un peu de nettoyage en archivant les articles suivants :</description>
+Après un peu plus d&amp;rsquo;un an d&amp;rsquo;inactivé, cyphercat est maintenant généré via hugo après avoir été sous ghost pendant un petit moment. La migration a été particulièrement rapide vu qu&amp;rsquo;il existe déjà des outils pour s&amp;rsquo;en occuper &amp;lt;3
+J&amp;rsquo;en ai profité pour faire un peu de nettoyage en archivant les articles suivants :
+ &amp;ldquo;Vidéos&amp;rdquo; (2014-05-18) &amp;ldquo;Mangas et arts martiaux&amp;rdquo; (2014-10-18) &amp;ldquo;Films et arts martiaux&amp;rdquo; (2016-05-22) &amp;ldquo;Quelques chaines youtube à suivre&amp;rdquo; (2016-05-22) &amp;ldquo;[RSS] Et vous, que fait votre entreprise ?</description>
     </item>
     
     <item>
@@ -212,16 +226,6 @@ GPG 4780 86FD 89F8 3064 4BDD A765 F842 7BD0 C99C CF64   Mastodon: @skhaen mail: 
       <guid>https://www.cyphercat.eu/pages/about/</guid>
       <description>Hi, I&amp;rsquo;m Skhaen, a french sysadmin.
 GPG 4780 86FD 89F8 3064 4BDD A765 F842 7BD0 C99C CF64   Mastodon: @skhaen mail: skhaen@cyphercat.eu XMPP: skhaen@jabber.lqdn.fr  </description>
-    </item>
-    
-    <item>
-      <title>Envoi de spam à partir d&#39;un serveur, comment faire ?</title>
-      <link>https://www.cyphercat.eu/posts/adminsys/envoi-de-spam-a-partir-dun-serveur-comment-faire/</link>
-      <pubDate>Tue, 04 Aug 2015 20:11:00 +0000</pubDate>
-      
-      <guid>https://www.cyphercat.eu/posts/adminsys/envoi-de-spam-a-partir-dun-serveur-comment-faire/</guid>
-      <description>Au menu aujourd&amp;rsquo;hui, accueillir comme il se doit sur votre serveur un envoi de spam. Pour changer, on partira du principe que l&amp;rsquo;on est sur une Debian avec un postfix. Notre serveur s&amp;rsquo;appelle exemple.octopuce.fr, et notre site de référence installé sur ce serveur s&amp;rsquo;appelle exemple.com.
-On partira aussi du principe que l&amp;rsquo;on n&amp;rsquo;aime pas beaucoup le spam&amp;hellip; voir même qu&amp;rsquo;on lui mettrait bien un bon coup de clavier en pleine gueule.</description>
     </item>
     
   </channel>
