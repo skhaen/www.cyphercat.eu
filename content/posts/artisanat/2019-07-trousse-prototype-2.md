@@ -33,8 +33,8 @@ Pour cette version, j'ai utilisé :
 * un [fermoir magnétique](https://www.decocuir.com/top-fermoir-magnetique-fermeture-sac-cuir-maroquinerie-c2x9259899)
 * un concho ([noeud ovale celtique](https://www.decocuir.com/top-fermoir-magnetique-fermeture-sac-cuir-maroquinerie-c2x9259899))
 
-> sans oublier évidémment le matériel "de base" : une règle, des pinces, une scie, de quoi poncer...
-> Je vous conseille de lister les outils dont vous allez avoir besoins pour chaque étape, c'est toujours plus agréable de ne pas devoir s'arrêter en plein milieu parce qu'il manque quelque chose.
+> sans oublier évidemment le matériel de base : une règle, des pinces, une scie, de quoi poncer...
+> Je vous conseille de lister les outils dont vous allez avoir besoin pour chaque étape, c'est toujours plus agréable de ne pas devoir s'arrêter en plein milieu parce qu'il manque quelque chose.
 
 > avant toute chose, réfléchissez bien à la couleur/motifs de votre cuir, à la couleur/motifs de votre bois (mais aussi à l'orientation des pièces) et au rendu de votre burnishing. Mieux vaut prévoir les couleurs et les effets avant de se lancer ;-)
 
@@ -50,7 +50,7 @@ Une fois le morceau de cuir coupé, utilisez une [rainette](https://www.decocuir
 
 ## Teinture et mise en forme
 
-Mettez votre tablier, protégez votre table, sortez vos gants, il est maintenant temps de teindre votre cuir. Sur les photos que j'ai utilisé dans cet article, c'est de la teinture [Eco-flo n°3 - brun bison](https://www.decocuir.com/teinture-brun-bison-a-base-d-eau-eco-flo-n3-c2x10155202) (si vous souhaitez quelque chose de plus clair, je trouve la teinture [Eco-flo n°5 - brun boisé](https://www.decocuir.com/teinture-brun-boise-eco-flo-tandy-leather-c2x12543362) magnifique).
+Mettez votre tablier, protégez votre table, sortez vos gants, il est maintenant temps de teindre votre cuir. Sur les photos que j'ai utilisées dans cet article, c'est de la teinture [Eco-flo n°3 - brun bison](https://www.decocuir.com/teinture-brun-bison-a-base-d-eau-eco-flo-n3-c2x10155202) (si vous souhaitez quelque chose de plus clair, je trouve la teinture [Eco-flo n°5 - brun boisé](https://www.decocuir.com/teinture-brun-boise-eco-flo-tandy-leather-c2x12543362) magnifique).
 
 Une fois la teinture faite des deux côtés et le cuir encore humide, vous pouvez faire un prémoulage de votre trousse (voir photo ci-dessous), ça vous aidera grandement pour placer les trous par la suite. N'hésitez pas à la laisser sécher dans cette position pendant **24h**.
 
@@ -62,7 +62,7 @@ Une fois la teinture faite des deux côtés et le cuir encore humide, vous pouve
 
 ## Des trous, des p'tits trous
 
-Maintenant que la mise en forme est faite, vous devriez avoir une meilleure visualisation de là où vont être les trous. Vous pouvez prendre une règle et faire une marque sur le trait fait avec la rainette tout les 5mm en dessous, à gauche et à droite (en évitant les deux angles inférieures). Vous pouvez ensuite utilisez un emporte-pièces ou une pince pour réaliser vos trous de 2mm de diamètre.
+Maintenant que la mise en forme est faite, vous devriez avoir une meilleure visualisation de là où vont être les trous. Vous pouvez prendre une règle et faire une marque sur le trait fait avec la rainette tout les 5mm en dessous, à gauche et à droite (en évitant les deux angles inférieures). Vous pouvez ensuite utiliser un emporte-pièces ou une pince pour réaliser vos trous de 2mm de diamètre.
 
 ## Polissage /  Burnishing
 
@@ -91,13 +91,11 @@ Une fois que vous avez vos deux morceaux, il va falloir percer les trous. Je vou
 
 ## Ponçage et finitions
 
-Après les trous, il faut poncer, poncer et encore poncer et finir avec un grain ultra-fin ([grain 180](https://www.leroymerlin.fr/v3/p/produits/rouleau-abrasif-norton-93x5-mm-grains-180-e80348) par exemple) : **il faut poncer les faces, mais aussi les arêtes et les angles pour les arrondir**. 
+Après les trous, il faut poncer, poncer et encore poncer et finir avec un grain ultra-fin ([grains 180](https://www.leroymerlin.fr/v3/p/produits/rouleau-abrasif-norton-93x5-mm-grains-180-e80348) par exemple) : **il faut poncer les faces, mais aussi les arêtes et les angles pour les arrondir**. 
 
 Une fois cette partie terminée, on va pouvoir attaquer la meilleure partie : huiler le bois ! \o/
 
-Ici, l'olivier après 3 couches d'huile de camélia (il faut toujours que je trouve quelque chose qui protège bien le bois sur la durée tout en le nourrissant) :
-
-> pour cette partie c'est vraiment à vous de voir ce que vous voulez : huile, vernis, danish oil...
+Ici, les deux morceaux d'olivier après 3 couches d'huile de camélia (pour cette partie c'est vraiment à vous de voir ce que vous voulez : huile, vernis, danish oil...) :
 
 ![trousse](/images/cuir/2019-07-trousse-prototype-2/trousse-2-oil.jpg)
 
@@ -106,7 +104,7 @@ Ici, l'olivier après 3 couches d'huile de camélia (il faut toujours que je tro
 
 ## Couture
 
-Après avoir terminé toutes les étapes précédentes, on va pouvoir passer à la couture : recourbez une aiguille avec une pince après l'avoir chauffé avec un briquet, puis enfilez le fil et commencez à coudre par le fond. 
+Après avoir terminé toutes les étapes précédentes, on va pouvoir passer à la couture : recourbez une aiguille avec une pince après l'avoir chauffée avec un briquet, puis enfilez le fil et commencez à coudre par le fond. 
 
 > Concernant la couture en elle-même, tout dépend du style que vous voulez. N'hésitez pas à faire des tests avant de faire toute la longueur.
 
@@ -134,9 +132,9 @@ Une fois la couture terminée, le résultat devrait ressembler à ceci :
 
 # Finition et décoration
 
-Pour la mise en place du système de fermeture avec un [fermoir magnétique](https://www.decocuir.com/top-fermoir-magnetique-fermeture-sac-cuir-maroquinerie-c2x9259899), il faut marquer 2 trous au milieu du rabat (quand il fermé pour être sûr de l'emplacement). Une fois l'emplacement choisi, vous pouvez faire les 2 trous à la pince ou à l'emporte-pièces.
+Pour la mise en place du système de fermeture avec un [fermoir magnétique](https://www.decocuir.com/top-fermoir-magnetique-fermeture-sac-cuir-maroquinerie-c2x9259899), il faut marquer 2 trous au milieu du rabat (quand il est fermé pour être sûr de l'emplacement). Une fois l'emplacement choisi, vous pouvez faire les 2 trous à la pince ou à l'emporte-pièces.
 
-Une fois le fermoir en place, vous pouvez ensuite installer la décoration par dessus pour décorer et cacher les deux pattes du fermoir qui se trouve à l'extérieur.
+Une fois le fermoir en place, vous pouvez ensuite installer la décoration par dessus pour décorer et surtout cacher les deux pattes du fermoir qui se trouve à l'extérieur.
 
 Sur cette trousse c'est un [noeud ovale celtique](https://www.decocuir.com/top-fermoir-magnetique-fermeture-sac-cuir-maroquinerie-c2x9259899). L'installation est plutôt simple : il suffit de définir son emplacement, marquer les trous à faire pour les rivets, faire les trous, placer le concho puis mettre en place les rivets.
 
