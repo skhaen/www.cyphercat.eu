@@ -4,19 +4,30 @@
   
   <url>
     <loc>https://www.cyphercat.eu/posts/</loc>
-    <lastmod>2019-07-08T20:10:00+02:00</lastmod>
+    <lastmod>2019-07-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.cyphercat.eu/</loc>
-    <lastmod>2019-07-08T20:10:00+02:00</lastmod>
+    <lastmod>2019-07-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.cyphercat.eu/tags/</loc>
-    <lastmod>2019-07-08T20:10:00+02:00</lastmod>
+    <lastmod>2019-07-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.cyphercat.eu/posts/artisanat/trousse-cuir-et-bois-prototype-2/</loc>
+    <lastmod>2019-07-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.cyphercat.eu/tags/artisanat/</loc>
+    <lastmod>2019-07-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -39,12 +50,6 @@
   <url>
     <loc>https://www.cyphercat.eu/posts/artisanat/trousse-cuir-et-bois-prototype-1/</loc>
     <lastmod>2019-07-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.cyphercat.eu/tags/artisanat/</loc>
-    <lastmod>2019-07-06T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
