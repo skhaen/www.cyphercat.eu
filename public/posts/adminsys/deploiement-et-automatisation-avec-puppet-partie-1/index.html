@@ -7,7 +7,6 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta name="theme-color" content="#494f5c">
 	<meta name="msapplication-TileColor" content="#494f5c">
-
 <meta itemprop="name" content="[Puppet] [1] : Déploiement et automatisation avec Puppet 4.9">
 <meta itemprop="description" content="Puppet est l&rsquo;outil de gestion de configuration le plus connu, il a vu le jour en 2005, bien avant ses principaux concurrents (2009 pour Chef, 2011 pour Salt, 2012 pour Ansible). Il propose depuis maintenant longtemps une solution open-source en parallèle de la version entreprise (qui est évidemment payante) et il a eu le temps de grandir pour atteindre une taille plus que respectable.
 Au contraire d&rsquo;Ansible où ça reste plutôt simple pour le moment, les premières recherches que vous allez faire ont toutes les chances de vous laisser quelque part entre &ldquo;mais je commence par quoi bordel ?">
@@ -25,8 +24,8 @@ Au contraire d&rsquo;Ansible où ça reste plutôt simple pour le moment, les pr
 Au contraire d&rsquo;Ansible où ça reste plutôt simple pour le moment, les premières recherches que vous allez faire ont toutes les chances de vous laisser quelque part entre &ldquo;mais je commence par quoi bordel ?" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.cyphercat.eu/posts/adminsys/deploiement-et-automatisation-avec-puppet-partie-1/" />
-<meta property="article:published_time" content="2017-02-12T19:28:25&#43;00:00"/>
-<meta property="article:modified_time" content="2017-02-12T19:28:25&#43;00:00"/>
+<meta property="article:published_time" content="2017-02-12T19:28:25+00:00" />
+<meta property="article:modified_time" content="2017-02-12T19:28:25+00:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="[Puppet] [1] : Déploiement et automatisation avec Puppet 4.9"/>
 <meta name="twitter:description" content="Puppet est l&rsquo;outil de gestion de configuration le plus connu, il a vu le jour en 2005, bien avant ses principaux concurrents (2009 pour Chef, 2011 pour Salt, 2012 pour Ansible). Il propose depuis maintenant longtemps une solution open-source en parallèle de la version entreprise (qui est évidemment payante) et il a eu le temps de grandir pour atteindre une taille plus que respectable.
@@ -143,8 +142,7 @@ root@slave1:# apt-get install puppet-agent</code></pre></div>
 <p>Par <a href="https://docs.puppet.com/puppet/4.8/config_important_settings.html#settings-for-agents-all-nodes">défaut</a>, un node recherche son master sur un serveur qui s’appelle &ldquo;puppet&rdquo;. Nous allons donc ajouter deux lignes pour spécifier notre configuration dans <code>/etc/puppetlabs/puppet/puppet.conf</code>sur le slave pour y ajouter ces deux lignes :</p>
 
 <ul>
-<li><strong>sur le MASTER</strong></li>
-</ul>
+<li><p><strong>sur le MASTER</strong></p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>main<span class="o">]</span>
 <span class="nv">certname</span> <span class="o">=</span> master.cyphercat.eu
 <span class="nv">server</span>   <span class="o">=</span> puppetmaster
@@ -156,14 +154,15 @@ root@slave1:# apt-get install puppet-agent</code></pre></div>
 <span class="nv">logdir</span>        <span class="o">=</span> /var/log/puppetlabs/puppetserver
 <span class="nv">rundir</span>        <span class="o">=</span> /var/run/puppetlabs/puppetserver
 <span class="nv">pidfile</span>       <span class="o">=</span> /var/run/puppetlabs/puppetserver/puppetserver.pid
-<span class="nv">codedir</span>       <span class="o">=</span> /etc/puppetlabs/code</code></pre></div>
-<ul>
-<li><strong>sur le SLAVE</strong></li>
-</ul>
+<span class="nv">codedir</span>       <span class="o">=</span> /etc/puppetlabs/code</code></pre></div></li>
+
+<li><p><strong>sur le SLAVE</strong></p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>main<span class="o">]</span>
 <span class="nv">certname</span>     <span class="o">=</span> slave1.cyphercat.eu
 <span class="nv">server</span>       <span class="o">=</span> master.cyphercat.eu
-<span class="nv">environment</span>  <span class="o">=</span> production</code></pre></div>
+<span class="nv">environment</span>  <span class="o">=</span> production</code></pre></div></li>
+</ul>
+
 <h1 id="ajouter-un-node-au-master">Ajouter un node au master<a href="#ajouter-un-node-au-master" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
 
 <p>Vous êtes prêt-e-s ? Il existe <a href="https://docs.puppet.com/puppet/4.8/install_linux.html#start-the-puppet-service">2 méthodes</a> pour dire à un node de se connecter au master, la première en &ldquo;tâche de fond&rdquo;, et la seconde &ldquo;à la main&rdquo; que l&rsquo;on peut mettre en <a href="https://fr.wikipedia.org/wiki/Cron">cron</a>.</p>
@@ -229,46 +228,46 @@ Notice: Applied catalog in <span class="m">0</span>.07 seconds</code></pre></div
 <h2 id="sur-le-master-1">sur le MASTER<a href="#sur-le-master-1" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> /etc/puppetlabs/code/environments/production/manifests</code></pre></div>
 <ul>
-<li>Nous créons le fichier <code>site.pp</code> pour <a href="https://docs.puppet.com/puppet/4.8/lang_node_definitions.html">déclarer notre node</a> et ce qu&rsquo;il devra utiliser :</li>
-</ul>
+<li><p>Nous créons le fichier <code>site.pp</code> pour <a href="https://docs.puppet.com/puppet/4.8/lang_node_definitions.html">déclarer notre node</a> et ce qu&rsquo;il devra utiliser :</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># /etc/puppetlabs/puppet/manifests/site.pp</span>
 node <span class="s1">&#39;slave1.cyphercat.eu&#39;</span> <span class="o">{</span>
-  include common
-<span class="o">}</span></code></pre></div>
-<ul>
-<li>et nous allons faire notre premier manifest pour installer des paquets dans le fichier <code>common.pp</code> que nous créons aussi :</li>
-</ul>
+include common
+<span class="o">}</span></code></pre></div></li>
+
+<li><p>et nous allons faire notre premier manifest pour installer des paquets dans le fichier <code>common.pp</code> que nous créons aussi :</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">class common <span class="o">{</span>
 
-    <span class="nv">$packages_list</span> <span class="o">=</span> <span class="o">[</span>
-      <span class="s1">&#39;apt-transport-https&#39;</span>,
-      <span class="s1">&#39;bzip2&#39;</span>,
-      <span class="s1">&#39;curl&#39;</span>,
-      <span class="s1">&#39;deborphan&#39;</span>,
-      <span class="s1">&#39;htop&#39;</span>,
-      <span class="s1">&#39;less&#39;</span>,
-      <span class="s1">&#39;lsof&#39;</span>,
-      <span class="s1">&#39;ncdu&#39;</span>,
-      <span class="s1">&#39;pbzip2&#39;</span>,
-      <span class="s1">&#39;pigz&#39;</span>,
-      <span class="s1">&#39;pwgen&#39;</span>,
-      <span class="s1">&#39;rpl&#39;</span>,
-      <span class="s1">&#39;screen&#39;</span>,
-      <span class="s1">&#39;strace&#39;</span>,
-      <span class="s1">&#39;sudo&#39;</span>,
-      <span class="s1">&#39;tar&#39;</span>,
-      <span class="s1">&#39;unzip&#39;</span>,
-      <span class="s1">&#39;vim&#39;</span>,
-      <span class="s1">&#39;wget&#39;</span>,
-      <span class="s1">&#39;whois&#39;</span>,
-      <span class="s1">&#39;zip&#39;</span>
-    <span class="o">]</span>
+<span class="nv">$packages_list</span> <span class="o">=</span> <span class="o">[</span>
+  <span class="s1">&#39;apt-transport-https&#39;</span>,
+  <span class="s1">&#39;bzip2&#39;</span>,
+  <span class="s1">&#39;curl&#39;</span>,
+  <span class="s1">&#39;deborphan&#39;</span>,
+  <span class="s1">&#39;htop&#39;</span>,
+  <span class="s1">&#39;less&#39;</span>,
+  <span class="s1">&#39;lsof&#39;</span>,
+  <span class="s1">&#39;ncdu&#39;</span>,
+  <span class="s1">&#39;pbzip2&#39;</span>,
+  <span class="s1">&#39;pigz&#39;</span>,
+  <span class="s1">&#39;pwgen&#39;</span>,
+  <span class="s1">&#39;rpl&#39;</span>,
+  <span class="s1">&#39;screen&#39;</span>,
+  <span class="s1">&#39;strace&#39;</span>,
+  <span class="s1">&#39;sudo&#39;</span>,
+  <span class="s1">&#39;tar&#39;</span>,
+  <span class="s1">&#39;unzip&#39;</span>,
+  <span class="s1">&#39;vim&#39;</span>,
+  <span class="s1">&#39;wget&#39;</span>,
+  <span class="s1">&#39;whois&#39;</span>,
+  <span class="s1">&#39;zip&#39;</span>
+<span class="o">]</span>
 
-    package <span class="o">{</span>
-      <span class="nv">$packages_list</span>:
-        <span class="nv">ensure</span> <span class="o">=</span>&gt; <span class="s1">&#39;installed&#39;</span>
-    <span class="o">}</span>
-<span class="o">}</span></code></pre></div>
+package <span class="o">{</span>
+  <span class="nv">$packages_list</span>:
+    <span class="nv">ensure</span> <span class="o">=</span>&gt; <span class="s1">&#39;installed&#39;</span>
+<span class="o">}</span>
+<span class="o">}</span></code></pre></div></li>
+</ul>
+
 <p>Puis nous relançons notre commande <code>/opt/puppetlabs/bin/puppet agent -t</code> sur notre slave1. Si vous n&rsquo;avez pas d&rsquo;erreurs, vous devriez voir quelque comme ceci qui s&rsquo;affiche :</p>
 
 <pre><code>Info: Using configured environment 'production'

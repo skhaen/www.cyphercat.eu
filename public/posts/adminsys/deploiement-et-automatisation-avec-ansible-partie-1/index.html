@@ -7,7 +7,6 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta name="theme-color" content="#494f5c">
 	<meta name="msapplication-TileColor" content="#494f5c">
-
 <meta itemprop="name" content="[Ansible] Déploiement et automatisation avec Ansible - partie 1">
 <meta itemprop="description" content="Au programme de cette année : l&rsquo;automatisation ! Il existe plusieurs outils connus pour ça, vous en avez sans aucun doute entendu parler si vous êtes adminsys : Puppet, Chef, Salt et le petit dernier : Ansible.
 Ansible a la réputation d&rsquo;être le plus &ldquo;accessible&rdquo; avec une courbe d&rsquo;apprentissage assez basse. Il peut être pertinent de l&rsquo;utiliser à partir d&rsquo;un seul serveur pour faciliter des déploiements selon les besoins (configuration des outils basique, serveur web, BDD&hellip;).">
@@ -25,8 +24,8 @@ Ansible a la réputation d&rsquo;être le plus &ldquo;accessible&rdquo; avec une
 Ansible a la réputation d&rsquo;être le plus &ldquo;accessible&rdquo; avec une courbe d&rsquo;apprentissage assez basse. Il peut être pertinent de l&rsquo;utiliser à partir d&rsquo;un seul serveur pour faciliter des déploiements selon les besoins (configuration des outils basique, serveur web, BDD&hellip;)." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.cyphercat.eu/posts/adminsys/deploiement-et-automatisation-avec-ansible-partie-1/" />
-<meta property="article:published_time" content="2017-01-01T18:04:58&#43;00:00"/>
-<meta property="article:modified_time" content="2017-01-01T18:04:58&#43;00:00"/>
+<meta property="article:published_time" content="2017-01-01T18:04:58+00:00" />
+<meta property="article:modified_time" content="2017-01-01T18:04:58+00:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="[Ansible] Déploiement et automatisation avec Ansible - partie 1"/>
 <meta name="twitter:description" content="Au programme de cette année : l&rsquo;automatisation ! Il existe plusieurs outils connus pour ça, vous en avez sans aucun doute entendu parler si vous êtes adminsys : Puppet, Chef, Salt et le petit dernier : Ansible.
@@ -171,9 +170,10 @@ sb
 <h3 id="ping">ping<a href="#ping" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 
 <ul>
-<li>Avant toute chose, est ce que l&rsquo;on arrive bien à joindre les serveurs :</li>
+<li><p>Avant toute chose, est ce que l&rsquo;on arrive bien à joindre les serveurs :</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml">ansible<span class="w"> </span>-m<span class="w"> </span>ping<span class="w"> </span>all<span class="w"> </span>--one-line</code></pre></div></li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml">ansible<span class="w"> </span>-m<span class="w"> </span>ping<span class="w"> </span>all<span class="w"> </span>--one-line</code></pre></div>
+
 <p>Ce qui me donne :</p>
 
 <pre><code>skhn-002 | SUCCESS =&gt; {&quot;changed&quot;: false, &quot;ping&quot;: &quot;pong&quot;}

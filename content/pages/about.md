@@ -17,7 +17,6 @@ GPG
 ```
 
 * **Mastodon**: <a href="https://https://framapiaf.org/@skhaen">@skhaen</a>
-* **mail**: skhaen@cyphercat.eu
-* **XMPP**: skhaen@jabber.lqdn.fr
+* **mail**: skhaen {a] cyphercat.eu
 
 

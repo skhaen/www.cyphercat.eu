@@ -7,7 +7,6 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta name="theme-color" content="#494f5c">
 	<meta name="msapplication-TileColor" content="#494f5c">
-
 <meta itemprop="name" content="Utiliser caff avec postfix">
 <meta itemprop="description" content="J&rsquo;ai eu il y a peu un problème avec caff qui ne voulait plus utiliser exim pour envoyer ses mails. Voici comment faire pour le remplacer par postfix.
 Configuration de postfix On commence par installer postfix :
@@ -29,8 +28,8 @@ aptitude install postfix  On édite le fichier /etc/postfix/main.cf pour rajoute
 relayhost = [IP_DE_VOTRE_SERVEUR]:587 smtp_sasl_auth_enable = yes smtp_sasl_password_maps = hash:/etc/postfix/sasl_auth smtp_sasl_security_options = noplaintext, noanonymous smtp_sasl_tls_security_options = noanonymous smtp_sasl_mechanism_filter = plain, login smtp_use_tls = yes  Puis on crée le fichier /etc/postfix/sasl_auth avec la ligne suivante :" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.cyphercat.eu/posts/adminsys/utiliser-caff-avec-postfix/" />
-<meta property="article:published_time" content="2014-09-09T16:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2014-09-09T16:00:00&#43;00:00"/>
+<meta property="article:published_time" content="2014-09-09T16:00:00+00:00" />
+<meta property="article:modified_time" content="2014-09-09T16:00:00+00:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Utiliser caff avec postfix"/>
 <meta name="twitter:description" content="J&rsquo;ai eu il y a peu un problème avec caff qui ne voulait plus utiliser exim pour envoyer ses mails. Voici comment faire pour le remplacer par postfix.

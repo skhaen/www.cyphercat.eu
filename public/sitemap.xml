@@ -3,21 +3,33 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.cyphercat.eu/posts/artisanat/artisanat-par-ou-commencer/</loc>
+    <lastmod>2019-09-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.cyphercat.eu/tags/artisanat/</loc>
+    <lastmod>2019-09-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.cyphercat.eu/posts/</loc>
-    <lastmod>2019-07-14T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <lastmod>2019-09-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.cyphercat.eu/</loc>
-    <lastmod>2019-07-14T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <lastmod>2019-09-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.cyphercat.eu/tags/</loc>
-    <lastmod>2019-07-14T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <lastmod>2019-09-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.cyphercat.eu/posts/artisanat/sac-gm-01/</loc>
+    <lastmod>2019-09-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -26,15 +38,8 @@
   </url>
   
   <url>
-    <loc>https://www.cyphercat.eu/tags/artisanat/</loc>
-    <lastmod>2019-07-14T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://www.cyphercat.eu/tags/divers/</loc>
     <lastmod>2019-07-08T20:10:00+02:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -65,13 +70,11 @@
   <url>
     <loc>https://www.cyphercat.eu/tags/adminsys/</loc>
     <lastmod>2017-05-20T12:02:04+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.cyphercat.eu/tags/puppet/</loc>
     <lastmod>2017-05-20T12:02:04+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -92,7 +95,6 @@
   <url>
     <loc>https://www.cyphercat.eu/tags/traduction/</loc>
     <lastmod>2017-02-02T21:07:22+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -113,13 +115,11 @@
   <url>
     <loc>https://www.cyphercat.eu/tags/ansible/</loc>
     <lastmod>2017-01-01T18:04:58+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.cyphercat.eu/tags/mails/</loc>
     <lastmod>2016-08-10T17:06:51+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -135,7 +135,6 @@
   <url>
     <loc>https://www.cyphercat.eu/tags/lockpicking/</loc>
     <lastmod>2016-07-27T21:01:22+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -151,7 +150,6 @@
   <url>
     <loc>https://www.cyphercat.eu/tags/snowden/</loc>
     <lastmod>2016-05-19T12:14:57+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -162,7 +160,6 @@
   <url>
     <loc>https://www.cyphercat.eu/tags/livres/</loc>
     <lastmod>2016-03-31T17:15:37+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -173,7 +170,6 @@
   <url>
     <loc>https://www.cyphercat.eu/tags/misc/</loc>
     <lastmod>2015-12-01T17:21:53+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -184,7 +180,6 @@
   <url>
     <loc>https://www.cyphercat.eu/pages/</loc>
     <lastmod>2015-09-11T14:14:59+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -205,13 +200,16 @@
   <url>
     <loc>https://www.cyphercat.eu/tags/postfix/</loc>
     <lastmod>2015-08-04T20:11:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.cyphercat.eu/tags/spam/</loc>
     <lastmod>2015-08-04T20:11:00+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.cyphercat.eu/tags/apache2/</loc>
+    <lastmod>2015-07-17T12:53:00+00:00</lastmod>
   </url>
   
   <url>
@@ -220,15 +218,13 @@
   </url>
   
   <url>
-    <loc>https://www.cyphercat.eu/tags/apache2/</loc>
+    <loc>https://www.cyphercat.eu/tags/ssl/</loc>
     <lastmod>2015-07-17T12:53:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.cyphercat.eu/tags/ssl/</loc>
-    <lastmod>2015-07-17T12:53:00+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://www.cyphercat.eu/tags/gpg/</loc>
+    <lastmod>2015-05-19T14:30:00+00:00</lastmod>
   </url>
   
   <url>
@@ -237,20 +233,13 @@
   </url>
   
   <url>
-    <loc>https://www.cyphercat.eu/tags/gpg/</loc>
-    <lastmod>2015-05-19T14:30:00+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://www.cyphercat.eu/tags/logs/</loc>
+    <lastmod>2015-04-29T15:08:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.cyphercat.eu/posts/adminsys/remonter-une-attaque-avec-les-logs-dapache2/</loc>
     <lastmod>2015-04-29T15:08:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.cyphercat.eu/tags/logs/</loc>
-    <lastmod>2015-04-29T15:08:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -289,14 +278,13 @@
   </url>
   
   <url>
-    <loc>https://www.cyphercat.eu/posts/adminsys/serveur-du-tls-avec-un-peu-de-hsts-et-un-soupcon-de-tlsa-sil-vous-plait/</loc>
+    <loc>https://www.cyphercat.eu/tags/nginx/</loc>
     <lastmod>2014-07-27T10:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.cyphercat.eu/tags/nginx/</loc>
+    <loc>https://www.cyphercat.eu/posts/adminsys/serveur-du-tls-avec-un-peu-de-hsts-et-un-soupcon-de-tlsa-sil-vous-plait/</loc>
     <lastmod>2014-07-27T10:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -315,14 +303,13 @@
   </url>
   
   <url>
-    <loc>https://www.cyphercat.eu/posts/adminsys/pond-en-bref/</loc>
+    <loc>https://www.cyphercat.eu/tags/crypto/</loc>
     <lastmod>2014-04-19T10:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.cyphercat.eu/tags/crypto/</loc>
+    <loc>https://www.cyphercat.eu/posts/adminsys/pond-en-bref/</loc>
     <lastmod>2014-04-19T10:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -333,7 +320,6 @@
   <url>
     <loc>https://www.cyphercat.eu/tags/openwrt/</loc>
     <lastmod>2014-03-04T17:58:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -344,24 +330,21 @@
   <url>
     <loc>https://www.cyphercat.eu/tags/prosody/</loc>
     <lastmod>2014-02-14T18:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.cyphercat.eu/tags/xmpp/</loc>
     <lastmod>2014-02-14T18:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.cyphercat.eu/posts/compostelle/compostelle-plan-densemble/</loc>
-    <lastmod>2013-12-27T19:09:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.cyphercat.eu/tags/compostelle/</loc>
     <lastmod>2013-12-27T19:09:00+00:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.cyphercat.eu/posts/compostelle/compostelle-plan-densemble/</loc>
+    <lastmod>2013-12-27T19:09:00+00:00</lastmod>
   </url>
   
   <url>

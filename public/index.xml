@@ -7,10 +7,29 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-fr</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sun, 14 Jul 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 25 Sep 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.cyphercat.eu/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[cuir] Par où commencer ?</title>
+      <link>https://www.cyphercat.eu/posts/artisanat/artisanat-par-ou-commencer/</link>
+      <pubDate>Wed, 25 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.cyphercat.eu/posts/artisanat/artisanat-par-ou-commencer/</guid>
+      <description>&amp;hellip;quand on veut travailler le cuir ? C&amp;rsquo;est une très bonne question (merci de l&amp;rsquo;avoir posé), et donc, histoire de vous faciliter la vie, vous trouverez ci-dessous quelques pistes qui devraient normalement vous aider.
+Avant toute chose, faites vous un thé, puis réfléchissez quelques minutes à ce que vous voulez faire pour le moment : porte-cartes, portefeuilles, sacs, ceintures), chaussures, du repoussage, accessoires pour jeux de rôle grandeur nature, sellerie, reconstitution historique, vestes, accessoires BDSM&amp;hellip;), le choix est très, très vaste.</description>
+    </item>
+    
+    <item>
+      <title>[cuir] Sac à main 01</title>
+      <link>https://www.cyphercat.eu/posts/artisanat/sac-gm-01/</link>
+      <pubDate>Wed, 18 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.cyphercat.eu/posts/artisanat/sac-gm-01/</guid>
+      <description>Matériel  du cuir tannage végétal de la teinture (eco-flo n°5 - brun boisé) une rainette griffes à frapper (ici en 2.9mm) fil de lin poissé blanc (diam 0,50 mm) (peut-être un peu trop fin pour le résultat que je voulais) un coupe lanière pour la sangle (mais il est possible d&amp;rsquo;en acheter des déjà faites). des rivets pour accrocher la sangle de quoi protéger le cuir : eco-flo Satin Shene (je suis pas super fan du résultat, le cuir fait un peu plastique).</description>
+    </item>
     
     <item>
       <title>[cuir] trousse cuir et bois - prototype 2</title>
@@ -207,27 +226,6 @@ Honor Harrington, de David Weber (13 tomes, série terminée) Harrington, the he
       <guid>https://www.cyphercat.eu/posts/adminsys/configuration-calibre/</guid>
       <description>Bon, après (ne pas) avoir utilisé le logiciel libre Calibre pour gérer ma bibliothèque d&amp;rsquo;ebooks, j&amp;rsquo;arrive à un moment où elle commence à être un peu trop grosse pour le faire à la main.
 N&amp;rsquo;attendez pas d&amp;rsquo;avoir une bibliothèque conséquente avant d&amp;rsquo;utiliser Calibre, c&amp;rsquo;est le meilleur moyen de s&amp;rsquo;en mordre les doigts et d&amp;rsquo;y passer quelques heures le temps de modifier des métadonnées de livres incohérentes : mieux vaut le faire au fur et à mesure.</description>
-    </item>
-    
-    <item>
-      <title>Internet, ou comment se forger un esprit critique</title>
-      <link>https://www.cyphercat.eu/posts/medias/internet-ou-comment-se-forger-un-esprit-critique/</link>
-      <pubDate>Fri, 09 Oct 2015 20:32:07 +0000</pubDate>
-      
-      <guid>https://www.cyphercat.eu/posts/medias/internet-ou-comment-se-forger-un-esprit-critique/</guid>
-      <description>Qui n&amp;rsquo;a jamais entendu &amp;ldquo;Mais c&amp;rsquo;est vrai, je l&amp;rsquo;ai vu sur Internet !&amp;rdquo; ? Voici quelques vidéos, peut-être vrai, peut-être fausse&amp;hellip; à vous de réfléchir et de vous forger un esprit critique&amp;hellip; vous allez en avoir besoin :)
-Walk on water (Liquid Mountaineering)  USB Wine  Archery Trick Shots  Robbie Maddison&amp;rsquo;s &amp;ldquo;Pipe Dream&amp;rdquo;  Trick Shots  Miss Ping (Tumba Ping Pong Show)  La liste peut encore être longue, si vous avez une (très) bonne vidéo à rajouter, n&amp;rsquo;hésitez pas à faire signe.</description>
-    </item>
-    
-    <item>
-      <title>Projets</title>
-      <link>https://www.cyphercat.eu/pages/projets/</link>
-      <pubDate>Fri, 11 Sep 2015 14:14:59 +0000</pubDate>
-      
-      <guid>https://www.cyphercat.eu/pages/projets/</guid>
-      <description>Hi, I&amp;rsquo;m Skhaen, a french sysadmin.
-GPG 4780 86FD 89F8 3064 4BDD A765 F842 7BD0 C99C CF64   Mastodon: @skhaen mail: skhaen@&amp;lt;+this domain name&amp;gt; XMPP: skhaen@jabber.lqdn.fr  Passage-en-Seine / PSES Organisation de PSES, qui est un évènement regroupant des conférences et des ateliers sur 4 jours à Paris.
- website : Passage en Seine twitter : @passageenseine.org édition 2014 édition 2013  NSA-observer (En) We have been gathering and processing public information about the NSA global surveillance which has resulted in a huge collection.</description>
     </item>
     
   </channel>

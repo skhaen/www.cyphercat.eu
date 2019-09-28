@@ -17,8 +17,7 @@ GPG
 ```
 
 * **Mastodon**: <a href="https://https://framapiaf.org/@skhaen">@skhaen</a>
-* **mail**: skhaen@<+this domain name>
-* **XMPP**: skhaen@jabber.lqdn.fr
+* **mail**: skhaen {a} cyphercat.eu
 
 
 ## Passage-en-Seine / PSES

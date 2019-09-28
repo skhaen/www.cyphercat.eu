@@ -7,7 +7,6 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta name="theme-color" content="#494f5c">
 	<meta name="msapplication-TileColor" content="#494f5c">
-
 <meta itemprop="name" content="[Puppet] [2] : run puppet et cron">
 <meta itemprop="description" content="Lancer un run puppet avec cron Lancement automatique du run puppet sur les nodes avec cron toutes les heures :
  note : chaque tache cron ajouté nativement par puppet sera mis dans crontab, vous pouvez les lister avec crontab -l sur vos nodes.
@@ -27,8 +26,8 @@
  cron{&#34;puppet&#34;:ensure=&gt;present,command=&gt;&#39;puppet agent -t --http_read_timeout 2m --logdest /var/log/puppetlabs/puppet/puppet`/bin/date &#43;\\%Y\\%m\\%d\\%H\\%M`.log 1&gt;/dev/null 2&gt;&amp;1&#39;,user=&gt;&#39;root&#39;,minute=&gt;fqdn_rand(60),require=&gt;File[&#39;/var/log/puppet&#39;],} Si vous souhaites voir le détail des options, c&rsquo;est sur configuration.html. Le $fqdn_rand(60) (cf. #fqdnrand, permet d&rsquo;indiquer aléatoirement une valeur de 0 à 60 (la valeur max étant non inclus selon la documentation) pour la configuration du cron." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.cyphercat.eu/posts/adminsys/puppet-partie-2/" />
-<meta property="article:published_time" content="2017-05-20T12:02:04&#43;00:00"/>
-<meta property="article:modified_time" content="2017-05-20T12:02:04&#43;00:00"/>
+<meta property="article:published_time" content="2017-05-20T12:02:04+00:00" />
+<meta property="article:modified_time" content="2017-05-20T12:02:04+00:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="[Puppet] [2] : run puppet et cron"/>
 <meta name="twitter:description" content="Lancer un run puppet avec cron Lancement automatique du run puppet sur les nodes avec cron toutes les heures :
