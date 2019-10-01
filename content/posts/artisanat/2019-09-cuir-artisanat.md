@@ -48,15 +48,37 @@ Pour le moment, j'ai fait quasiment tout mes achats chez [decocuir.com](https://
 Vous pouvez souvent trouver des packs vendus dans les magasins. Dans l'absolu, si vous n'êtes pas sûr d'avoir besoin de tout, je vous conseille d'éviter et de choisir vous même ce dont vous avez besoin. Plusieurs chaînes ont fait des vidéos sur ce qu'ils conseillent comme outils "par défaut", ça peut vous aider à vous faire une idée (garder juste en tête que pour la plupart ce sont des professionnels et qu'ils n'ont pas forcément les mêmes besoins que nous ;-)).
 
 * [Getting started in Leathercraft: Tools you will need!](https://www.youtube.com/watch?v=71ZEFw2tbKk) (Little King Goods)
-* [Getting Started with Leather Craft - Basic Tools](https://www.youtube.com/watch?v=8IuUPBLOmIw&t=304s) (chartermade)
+* [Getting Started with Leather Craft - Basic Tools](https://www.youtube.com/watch?v=8IuUPBLOmIw&t) (chartermade)
 * [10 leather craft tools for beginners](https://www.youtube.com/watch?v=uq4dj2dQZjY) (HAHNS atelier)
 * [10 Basic Tools Every Beginner Leather Craftsman Should Have](https://www.youtube.com/watch?v=zhVTEqYowmI) (Stock & Barrel Co)
 
 Pour ce qui est de couper, un (petit) cutter sera parfait pour commencer, pas la peine d'investir dans de la grosse lame pour le moment.
 
+## Ma liste
+
+J'ai repris mes différentes factures depuis que j'ai commencé et j'ai listé les outils que j'utilise absolument tout le temps. J'ai ajouté des liens quand c'est possible, mais n'oubliez pas qu'il existe d'autres magasins en ligne, ainsi que des alternatives.
+
+* un cutter (idéalement pas trop gros pour du travail de précision si nécessaire)
+* une [règle en métal](https://www.decocuir.com/crayon-regle-gabarit-tracer-cuir-patron-argent-effacable-c102x3697659) (si c'est en plastique la lame risque de mordre dedans)
+* une [rainette](https://www.decocuir.com/rainette-gouge-cuir-dessin-ligne-parallele-rainure-c102x3697672) pour marquer les contours et/ou les coutures (je prendrais sans doute un [compas](https://www.decocuir.com/compas-dessin-travail-cuir-reglable-pointe-seche-outil-c102x3697646) si c'était à refaire)
+* une [alêne ronde](https://www.decocuir.com/alene-ronde-lame-cuir-outil-travail-creation-artisanat-c102x3697689), parce que c'est pratique pour tout : tracer vos templates, marquer des emplacements, etc...
+* une [lissette](https://www.decocuir.com/lissette-bois-polyvalente-lisser-cuir-tranche-brunissoir-c2x12869903) pour "brunir" (lustrer) les tranches, c'est con, mais on peut plus s'en passer rapidement.
+* un [abat-carré](https://www.decocuir.com/abat-carre-bissonnette-cuir-outil-c102x3697666) (vous pouvez commencer avec outil qui permet de faire plusieurs format pour essayer différentes tailles).
+* fil
+* j'ai commencé avec [ce lot d'aiguilles](https://www.decocuir.com/lot-de-10-aiguilles-a-coudre-le-cuir-a-gros-chas-k12-c2x8897361) pour essayer, j'ai cassé les deux seules que j'aimais trop rapidement... je vous conseille de prendre plutôt [un pack d'aiguilles à bout rond](https://www.decocuir.com/25-aiguilles-sellier-bout-rond-lg54mm-d10mm-taille-002-c2x12306210), elles sont nettement plus solide.
+* concernant les griffes, j'ai commencé avec un pack de griffe [acheté sur amazon pour environ 10€](https://www.amazon.fr/gp/product/B01DZV3LII/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1). C'est presque passable pour essayer, mais elles peuvent **vraiment** casser à n'importe quel moment. Partez directement sur [un minimum de qualité](https://www.decocuir.com/griffes-frapper-points-couture-main-cuir-c102x2258466) pour éviter les mauvaises surprises (perso, j'ai ensuite pris du craftool dont je suis plutôt satisfait. Si vous ne savez pas quoi  prendre : prenez 2 griffes pour commencer (1 dent + 4 dents).
+* un [maillet](https://www.decocuir.com/marteau-maillet-maul-c102x3756006) en bois ou en plastique (SURTOUT PAS en métal), entre autre pour taper sur les griffes
+* un [decouvit](https://www.decocuir.com/decouvit-decouseur-enlever-couture-cuir-c2x19020842). Alors oui, c'est pas indispensable, mais vous allez en avoir besoin au début, et quand ça sera le cas vous allez être teeeeeellement content de l'avoir !
+* [un tapis de coupe](https://www.decocuir.com/billot-plaque-decoupe-tapis-coupe-cuir-c102x2818063) au moins format A3 (ça évite entre autre de faire des traces sur la table avec le cutter ;-))
+
+Bonus (pas spécialement nécessaire pour commencer)
+
+* [alêne aux pinces](https://www.decocuir.com/alene-pinces-lame-cuir-outil-travail-creation-artisanat-c102x3697676) (selon ce que vous souhaitez faire et le type de couture que vous voulez), personnellement j'utilise des griffes à frapper à la place, mais vu que c'est une tradition française, je vais sans doute m'y mettre à un moment ou un autre.
+* un [billot de découpe](https://www.decocuir.com/billot-plaque-decoupe-tapis-coupe-cuir-c102x2229381) pour quand vous faites des trous avec les griffes (perso j'ai juste une planche de pin, c'est parfait)
+
 # Et le cuir alors ?
 
-Pour vos premiers tests, achetez du cuir bas de gamme (mais pas trop) ou moyen de gamme le temps de vous faire la main. Vous pouvez en trouver par exemple sur decocuir. Personnellement, j'ai commencé avec du [cuir tannage végétal](https://www.decocuir.com/morceau-cuir-tannage-vegetal-c102x2677112) parce que je voulais pouvoir testé du repoussage, et pour l'environnement, évidémment. 
+Pour vos premiers tests, achetez du cuir bas de gamme (mais pas trop) ou moyen de gamme le temps de vous faire la main. Vous pouvez en trouver par exemple sur decocuir. Personnellement, j'ai commencé avec du [cuir tannage végétal](https://www.decocuir.com/morceau-cuir-tannage-vegetal-c102x2677112) parce que je voulais pouvoir tester du repoussage, et pour l'environnement, évidémment. 
 
 Vous trouverez ci-dessous plusieurs liens pour comprendre le process de tannage du cuir ainsi que les différentes possibilités :
 
