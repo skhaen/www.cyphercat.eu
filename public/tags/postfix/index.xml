@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>postfix on Skhaen</title>
@@ -28,10 +28,10 @@ On partira aussi du principe que l&amp;rsquo;on n&amp;rsquo;aime pas beaucoup le
       <pubDate>Tue, 09 Sep 2014 16:00:00 +0000</pubDate>
       
       <guid>https://www.cyphercat.eu/posts/adminsys/utiliser-caff-avec-postfix/</guid>
-      <description>J&amp;rsquo;ai eu il y a peu un problème avec caff qui ne voulait plus utiliser exim pour envoyer ses mails. Voici comment faire pour le remplacer par postfix.
-Configuration de postfix On commence par installer postfix :
-aptitude install postfix  On édite le fichier /etc/postfix/main.cf pour rajouter ce qui suit à la fin :
-relayhost = [IP_DE_VOTRE_SERVEUR]:587 smtp_sasl_auth_enable = yes smtp_sasl_password_maps = hash:/etc/postfix/sasl_auth smtp_sasl_security_options = noplaintext, noanonymous smtp_sasl_tls_security_options = noanonymous smtp_sasl_mechanism_filter = plain, login smtp_use_tls = yes  Puis on crée le fichier /etc/postfix/sasl_auth avec la ligne suivante :</description>
+      <description>J&amp;rsquo;ai eu il y a peu un problème avec caffqui ne voulait plus utiliser eximpour envoyer ses mails. Voici comment faire pour le remplacer par postfix.
+Configuration de postfix On commence par installer postfix:
+aptitude install postfix On édite le fichier /etc/postfix/main.cfpour rajouter ce qui suit à la fin :
+relayhost = [IP_DE_VOTRE_SERVEUR]:587 smtp_sasl_auth_enable = yes smtp_sasl_password_maps = hash:/etc/postfix/sasl_auth smtp_sasl_security_options = noplaintext, noanonymous smtp_sasl_tls_security_options = noanonymous smtp_sasl_mechanism_filter = plain, login smtp_use_tls = yes Puis on crée le fichier /etc/postfix/sasl_authavec la ligne suivante :</description>
     </item>
     
   </channel>

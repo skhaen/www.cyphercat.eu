@@ -10,16 +10,13 @@
 <meta itemprop="name" content="DIE SSLv3, DIE!">
 <meta itemprop="description" content="Vous avez sans doute vu passer la faille concernant le protocole SSLv3 trouvée par une équipe de Google et annoncée dans la nuit du 14 octobre 2014 (POODLE, pour Padding Oracle On Downgraded Legacy Encryption). Cette faille concerne directement le protocole et ne peut pas être corrigée simplement. La solution la plus saine est de désactiver SSLv3 en vérifiant bien que TLSv1.0, TLSv1.1 et TLSv1.2 fonctionnent.
  Annonce de Google sur : googleonlinesecurity.">
-
-
 <meta itemprop="datePublished" content="2014-10-15T15:35:00&#43;00:00" />
 <meta itemprop="dateModified" content="2014-10-15T15:35:00&#43;00:00" />
-<meta itemprop="wordCount" content="707">
+<meta itemprop="wordCount" content="663">
 
 
 
-<meta itemprop="keywords" content="ssl,adminsys," />
-<meta property="og:title" content="DIE SSLv3, DIE!" />
+<meta itemprop="keywords" content="ssl,adminsys," /><meta property="og:title" content="DIE SSLv3, DIE!" />
 <meta property="og:description" content="Vous avez sans doute vu passer la faille concernant le protocole SSLv3 trouvée par une équipe de Google et annoncée dans la nuit du 14 octobre 2014 (POODLE, pour Padding Oracle On Downgraded Legacy Encryption). Cette faille concerne directement le protocole et ne peut pas être corrigée simplement. La solution la plus saine est de désactiver SSLv3 en vérifiant bien que TLSv1.0, TLSv1.1 et TLSv1.2 fonctionnent.
  Annonce de Google sur : googleonlinesecurity." />
 <meta property="og:type" content="article" />
@@ -78,116 +75,61 @@
 				<h1>DIE SSLv3, DIE!</h1>
 			</header>
 			<div class="content">
-				
-
-<p>Vous avez sans doute vu passer la faille concernant le protocole SSLv3 trouvée par une équipe de Google et annoncée dans la nuit du 14 octobre 2014 (<em>POODLE</em>, pour <em><a href="https://www.openssl.org/~bodo/ssl-poodle.pdf">Padding Oracle On Downgraded Legacy Encryption</a></em>). Cette faille concerne directement le protocole et ne peut pas être corrigée simplement. La solution la plus saine est de désactiver SSLv3 en vérifiant bien que TLSv1.0, TLSv1.1 et TLSv1.2 fonctionnent.</p>
-
+				<p>Vous avez sans doute vu passer la faille concernant le protocole SSLv3 trouvée par une équipe de Google et annoncée dans la nuit du 14 octobre 2014 (<!-- raw HTML omitted -->POODLE<!-- raw HTML omitted -->, pour <!-- raw HTML omitted --><a href="https://www.openssl.org/~bodo/ssl-poodle.pdf">Padding Oracle On Downgraded Legacy Encryption</a><!-- raw HTML omitted -->). Cette faille concerne directement le protocole et ne peut pas être corrigée simplement. La solution la plus saine est de désactiver SSLv3 en vérifiant bien que TLSv1.0, TLSv1.1 et TLSv1.2 fonctionnent.</p>
 <ul>
-<li>Annonce de Google sur  : <a href="http://googleonlinesecurity.blogspot.de/2014/10/this-poodle-bites-exploiting-ssl-30.html">googleonlinesecurity.blogspot.de</a> ou <a href="https://www.openssl.org/~bodo/ssl-poodle.pdf">là en pdf</a> (security advisory),</li>
-<li>Explication technique de la faille par Adam Langley : <a href="https://www.imperialviolet.org/2014/10/14/poodle.html">POODLE attacks on SSLv3</a></li>
-<li>Explication en français sur nextinpact.com : <a href="http://www.nextinpact.com/news/90427-la-faille-poodle-sslv3-permet-decrypter-donnees-sur-connexion.htm">La faille POODLE de SSLv3 permet de décrypter les données sur une connexion</a>.</li>
-<li>Mozilla : <a href="https://blog.mozilla.org/security/2014/10/14/the-poodle-attack-and-the-end-of-ssl-3-0/">The POODLE Attack and the End of SSL 3.0</a></li>
+<li>Annonce de Google sur  : <!-- raw HTML omitted -->googleonlinesecurity.blogspot.de<!-- raw HTML omitted --> ou <!-- raw HTML omitted -->là en pdf<!-- raw HTML omitted --> (security advisory),</li>
+<li>Explication technique de la faille par Adam Langley : <!-- raw HTML omitted -->POODLE attacks on SSLv3<!-- raw HTML omitted --></li>
+<li>Explication en français sur nextinpact.com : <!-- raw HTML omitted -->La faille POODLE de SSLv3 permet de décrypter les données sur une connexion<!-- raw HTML omitted -->.</li>
+<li>Mozilla : <!-- raw HTML omitted -->The POODLE Attack and the End of SSL 3.0<!-- raw HTML omitted --></li>
 </ul>
-
-<p>Il faut par contre noter que <a href="http://fr.wikipedia.org/wiki/Internet_Explorer_6">Internet Explorer 6</a> sous Windows XP ne pourra plus se connecter de manière &ldquo;sécurisée&rdquo;. Pour rappel, IE6 n&rsquo;est plus maintenu par Microsoft depuis 2010, le bleu sur la carte ci-dessous signifie que <a href="https://www.modern.ie/en-us/ie6countdown">IE6 est à moins de 1% de parts de marché des navigateurs dans cette zone</a> et moins de 0.8% des navigateurs en France :</p>
-
-<p><img src="/images/2015/09/ie6world.png" alt="IE6" /></p>
-
-<p><center><strong><a href="https://www.modern.ie/en-us/ie6countdown">IE6 représente largement moins de 1% des navigateurs</a> en Europe et en Amérique du nord</strong>.</center></p>
-
+<p>Il faut par contre noter que <!-- raw HTML omitted -->Internet Explorer 6<!-- raw HTML omitted --> sous Windows XP ne pourra plus se connecter de manière &ldquo;sécurisée&rdquo;. Pour rappel, IE6 n&rsquo;est plus maintenu par Microsoft depuis 2010, le bleu sur la carte ci-dessous signifie que <!-- raw HTML omitted -->IE6 est à moins de 1% de parts de marché des navigateurs dans cette zone<!-- raw HTML omitted --> et moins de 0.8% des navigateurs en France :</p>
+<p><img src="/images/2015/09/ie6world.png" alt="IE6"></p>
+<!-- raw HTML omitted -->
 <h2 id="dans-les-navigateurs">Dans les navigateurs<a href="#dans-les-navigateurs" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
-
-<h4 id="pour-mozilla-firefox-https-wiki-mozilla-org-security-server-side-tls">Pour <a href="https://wiki.mozilla.org/Security/Server_Side_TLS">Mozilla Firefox</a><a href="#pour-mozilla-firefox-https-wiki-mozilla-org-security-server-side-tls" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
-
-<p>Après avoir ouvert votre navigateur, tapez <code>about:config</code> dans votre barre d&rsquo;adresse, après avoir cliqué sur <em>&ldquo;je ferai attention, promis&rdquo;</em>, vous arrivez dans la configuration de votre navigateur. Vous pouvez alors rechercher <code>security.tls.version.min</code> dans la barre de recherche. Le but ici est de modifier la valeur minimum pour la version de TLS, il suffit donc de mettre <code>security.tls.version.min</code> à 1 pour dire à Firefox d&rsquo;utiliser TLSv1.0 au minimum (et non SSLv3). Il faut redémarrer son navigateur pour prendre en compte cette modification.</p>
-
-<p><img src="/images/2015/09/firefoxssl.png" alt="" /></p>
-
-<p>À noter que <a href="https://blog.mozilla.org/security/2014/10/14/the-poodle-attack-and-the-end-of-ssl-3-0/">SSLv3 sera désactivé par défaut à partir de Mozilla Firefox 34</a>.</p>
-
-<h4 id="pour-google-chrome-chromium">Pour Google Chrome/Chromium<a href="#pour-google-chrome-chromium" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
-
-<p>Selon Adam Langley (Senior Staff Software Engineer, Google), Google Chrome implémente depuis Février <code>TLS_FALLBACK_SCSV</code> qui empêche  les protocoles de descendre en SSLv3. Si vous voulez vous passer définitivement de SSLv3, il faut lancer Chrome (et Chromium) avec l&rsquo;option <code>&ndash;ssl-version-min=tls1</code> (cf. &ldquo;<a href="http://www.chromium.org/for-testers/command-line-flags">How to specify command line flags</a>&rdquo; sur chromium.org)</p>
-
+<h4 id="pour-mozilla-firefoxhttpswikimozillaorgsecurityserver_side_tls">Pour <a href="https://wiki.mozilla.org/Security/Server_Side_TLS">Mozilla Firefox</a><a href="#pour-mozilla-firefoxhttpswikimozillaorgsecurityserver_side_tls" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+<p>Après avoir ouvert votre navigateur, tapez <!-- raw HTML omitted -->about:config<!-- raw HTML omitted --> dans votre barre d&rsquo;adresse, après avoir cliqué sur <!-- raw HTML omitted -->&quot;je ferai attention, promis&quot;<!-- raw HTML omitted -->, vous arrivez dans la configuration de votre navigateur. Vous pouvez alors rechercher <!-- raw HTML omitted -->security.tls.version.min<!-- raw HTML omitted --> dans la barre de recherche. Le but ici est de modifier la valeur minimum pour la version de TLS, il suffit donc de mettre <!-- raw HTML omitted -->security.tls.version.min<!-- raw HTML omitted --> à 1 pour dire à Firefox d&rsquo;utiliser TLSv1.0 au minimum (et non SSLv3). Il faut redémarrer son navigateur pour prendre en compte cette modification.</p>
+<p><img src="/images/2015/09/firefoxssl.png" alt=""></p>
+<p>À noter que <!-- raw HTML omitted -->SSLv3 sera désactivé par défaut à partir de Mozilla Firefox 34<!-- raw HTML omitted -->.</p>
+<h4 id="pour-google-chromechromium">Pour Google Chrome/Chromium<a href="#pour-google-chromechromium" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+<p>Selon Adam Langley (Senior Staff Software Engineer, Google), Google Chrome implémente depuis Février <!-- raw HTML omitted -->TLS_FALLBACK_SCSV<!-- raw HTML omitted --> qui empêche  les protocoles de descendre en SSLv3. Si vous voulez vous passer définitivement de SSLv3, il faut lancer Chrome (et Chromium) avec l&rsquo;option <!-- raw HTML omitted -->&ndash;ssl-version-min=tls1<!-- raw HTML omitted --> (cf. &ldquo;<!-- raw HTML omitted -->How to specify command line flags<!-- raw HTML omitted -->&rdquo; sur chromium.org)</p>
 <h4 id="pour-internet-explorer">Pour Internet Explorer<a href="#pour-internet-explorer" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
-
-<p>Pour IE6, la méthode est très simple : arrêtez de l&rsquo;utiliser, passez à <a href="https://www.mozilla.org/fr/">Mozilla Firefox</a> ! Pour les autres versions, vous pouvez activer/désactiver les protocoles dans <em>outils &gt; options Internet &gt; avancé</em>. Vous pouvez désactiver tout en bas SSLv3 et activer TLSv1.1 et TLSv1.2 si ce n&rsquo;est pas le cas (et vérifiez bien que SSLv2 est AUSSI désactivé, on ne sait jamais).</p>
-
-<p><img src="/images/2015/09/ie8ssl.png" alt="" /></p>
-
-<p><center>Capture d&rsquo;écran d&rsquo;un IE8 sous Microsoft Windows (oui, c&rsquo;est vieux).</center></p>
-
+<p>Pour IE6, la méthode est très simple : arrêtez de l&rsquo;utiliser, passez à <!-- raw HTML omitted -->Mozilla Firefox<!-- raw HTML omitted --> ! Pour les autres versions, vous pouvez activer/désactiver les protocoles dans <!-- raw HTML omitted -->outils &gt; options Internet &gt; avancé<!-- raw HTML omitted -->. Vous pouvez désactiver tout en bas SSLv3 et activer TLSv1.1 et TLSv1.2 si ce n&rsquo;est pas le cas (et vérifiez bien que SSLv2 est AUSSI désactivé, on ne sait jamais).</p>
+<p><img src="/images/2015/09/ie8ssl.png" alt=""></p>
+<!-- raw HTML omitted -->
 <h2 id="sur-les-serveurs">Sur les serveurs<a href="#sur-les-serveurs" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
-
-<p>N&rsquo;oubliez pas de recharger la configuration de vos logiciels en cas de modification (<code>apache2ctl -t</code> pour tester votre configuration puis <code>service apache2 reload</code> pour prendre en compte la nouvelle conf pour Apache2).</p>
-
-<h4 id="configuration-a-href-https-httpd-apache-org-docs-2-2-mod-mod-ssl-html-sslprotocol-apache-a-avec-openssl">Configuration <a href="https://httpd.apache.org/docs/2.2/mod/mod_ssl.html#sslprotocol">Apache</a> avec OpenSSL<a href="#configuration-a-href-https-httpd-apache-org-docs-2-2-mod-mod-ssl-html-sslprotocol-apache-a-avec-openssl" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
-
+<p>N&rsquo;oubliez pas de recharger la configuration de vos logiciels en cas de modification (<!-- raw HTML omitted -->apache2ctl -t<!-- raw HTML omitted --> pour tester votre configuration puis <!-- raw HTML omitted -->service apache2 reload<!-- raw HTML omitted --> pour prendre en compte la nouvelle conf pour Apache2).</p>
+<h4 id="configuration-a-hrefhttpshttpdapacheorgdocs22modmod_sslhtmlsslprotocolapachea-avec-openssl">Configuration <!-- raw HTML omitted -->Apache<!-- raw HTML omitted --> avec OpenSSL<a href="#configuration-a-hrefhttpshttpdapacheorgdocs22modmod_sslhtmlsslprotocolapachea-avec-openssl" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
 <pre><code>SSLProtocol All -SSLv2 -SSLv3
 </code></pre>
-
-<p>Nous vous conseillons grandement d&rsquo;éditer le fichier <code>/etc/apache2/mods-enabled/ssl.conf</code> pour améliorer la configuration par défaut du serveur en modifiant au minimum la ligne <code>SSLProtocol</code> pour la suivante : <code>SSLProtocol -SSLv2 -SSLv3</code>.</p>
-
-<h4 id="configuration-a-href-http-nginx-org-en-docs-http-configuring-https-servers-html-nginx-a-avec-openssl">Configuration <a href="http://nginx.org/en/docs/http/configuring_https_servers.html">Nginx</a> avec OpenSSL<a href="#configuration-a-href-http-nginx-org-en-docs-http-configuring-https-servers-html-nginx-a-avec-openssl" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
-
+<p>Nous vous conseillons grandement d'éditer le fichier <!-- raw HTML omitted -->/etc/apache2/mods-enabled/ssl.conf<!-- raw HTML omitted --> pour améliorer la configuration par défaut du serveur en modifiant au minimum la ligne <!-- raw HTML omitted -->SSLProtocol<!-- raw HTML omitted --> pour la suivante : <code>SSLProtocol -SSLv2 -SSLv3</code>.</p>
+<h4 id="configuration-a-hrefhttpnginxorgendocshttpconfiguring_https_servershtmlnginxa-avec-openssl">Configuration <!-- raw HTML omitted -->Nginx<!-- raw HTML omitted --> avec OpenSSL<a href="#configuration-a-hrefhttpnginxorgendocshttpconfiguring_https_servershtmlnginxa-avec-openssl" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
 <pre><code>ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
-</code></pre>
-
-<h4 id="configuration-a-href-http-wiki2-dovecot-org-ssl-dovecot-a">Configuration <a href="http://wiki2.dovecot.org/SSL">Dovecot</a><a href="#configuration-a-href-http-wiki2-dovecot-org-ssl-dovecot-a" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
-
+</code></pre><h4 id="configuration-a-hrefhttpwiki2dovecotorgssldovecota">Configuration <!-- raw HTML omitted -->Dovecot<!-- raw HTML omitted --><a href="#configuration-a-hrefhttpwiki2dovecotorgssldovecota" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
 <pre><code>ssl_cipher_list = ALL:!LOW:!SSLv2:!SSLv3:!EXP:!aNULL:!RC4:!3DES
-</code></pre>
-
-<h4 id="configuration-a-href-http-www-courier-mta-org-courier-a-pop-amp-imap">Configuration <a href="http://www.courier-mta.org">Courier </a>pop &amp; imap<a href="#configuration-a-href-http-www-courier-mta-org-courier-a-pop-amp-imap" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
-
+</code></pre><h4 id="configuration-a-hrefhttpwwwcourier-mtaorgcourier-apop-amp-imap">Configuration <!-- raw HTML omitted -->Courier <!-- raw HTML omitted -->pop &amp; imap<a href="#configuration-a-hrefhttpwwwcourier-mtaorgcourier-apop-amp-imap" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
 <p>Mieux vaut utiliser Dovecot, vous ne voulez pas jouer avec imapd-ssl et pop3d-ssl.
-Sinon, dans imapd-ssl et pop3d-ssl, remplacez (ou ajoutez-là si besoin) la ligne <code>TLS_PROTOCOL</code> comme ceci :</p>
-
+Sinon, dans imapd-ssl et pop3d-ssl, remplacez (ou ajoutez-là si besoin) la ligne <!-- raw HTML omitted -->TLS_PROTOCOL<!-- raw HTML omitted --> comme ceci :</p>
 <pre><code>TLS_PROTOCOL=&quot;TLS1_2:TLS1_1:TLS1&quot;
-</code></pre>
-
-<p>Attention, les anciennes versions de Courier ne prennent pas en compte <code>TLS1_2</code>.</p>
-
-<h4 id="configuration-a-href-http-www-postfix-org-tls-readme-html-server-cipher-postfix-a-smtp">Configuration <a href="http://www.postfix.org/TLS_README.html#server_cipher">Postfix</a> smtp<a href="#configuration-a-href-http-www-postfix-org-tls-readme-html-server-cipher-postfix-a-smtp" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
-
+</code></pre><p>Attention, les anciennes versions de Courier ne prennent pas en compte <!-- raw HTML omitted -->TLS1_2<!-- raw HTML omitted -->.</p>
+<h4 id="configuration-a-hrefhttpwwwpostfixorgtls_readmehtmlserver_cipherpostfixa-smtp">Configuration <!-- raw HTML omitted -->Postfix<!-- raw HTML omitted --> smtp<a href="#configuration-a-hrefhttpwwwpostfixorgtls_readmehtmlserver_cipherpostfixa-smtp" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
 <pre><code>smtpd_tls_mandatory_protocols = !SSLv2, !SSLv3
 smtpd_tls_mandatory_ciphers=high
-</code></pre>
-
-<h4 id="configuration-a-href-http-prosody-im-doc-advanced-ssl-config-prosody-a">Configuration <a href="http://prosody.im/doc/advanced_ssl_config">Prosody</a><a href="#configuration-a-href-http-prosody-im-doc-advanced-ssl-config-prosody-a" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
-
+</code></pre><h4 id="configuration-a-hrefhttpprosodyimdocadvanced_ssl_configprosodya">Configuration <!-- raw HTML omitted -->Prosody<!-- raw HTML omitted --><a href="#configuration-a-hrefhttpprosodyimdocadvanced_ssl_configprosodya" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
 <pre><code>options = { &quot;no_sslv2&quot;, &quot;no_sslv3&quot;, &quot;no_ticket&quot;, &quot;no_compression&quot;,&quot;cipher_server_preference&quot;, &quot;single_dh_use&quot;,&quot;single_ecdh_use&quot; };
-</code></pre>
-
-<h4 id="configuration-a-href-https-www-ejabberd-im-ejabberd-a">Configuration <a href="https://www.ejabberd.im/">eJabberd</a><a href="#configuration-a-href-https-www-ejabberd-im-ejabberd-a" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
-
+</code></pre><h4 id="configuration-a-hrefhttpswwwejabberdimejabberda">Configuration <!-- raw HTML omitted -->eJabberd<!-- raw HTML omitted --><a href="#configuration-a-hrefhttpswwwejabberdimejabberda" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
 <p>Ce n&rsquo;est apparemment pas possible pour le moment.</p>
-
-<h4 id="configuration-a-href-https-community-openvpn-net-openvpn-wiki-hardening-version-6-useof-tls-cipher-openvpn-a">Configuration <a href="https://community.openvpn.net/openvpn/wiki/Hardening?version=6#Useof--tls-cipher">OpenVPN</a><a href="#configuration-a-href-https-community-openvpn-net-openvpn-wiki-hardening-version-6-useof-tls-cipher-openvpn-a" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
-
-<p>Pour améliorer la sécurité d&rsquo;OpenVPN, se référer à l&rsquo;article <a href="https://community.openvpn.net/openvpn/wiki/Hardening?version=6#Useof--tls-cipher">Hardening OpenVPN</a></p>
-
+<h4 id="configuration-a-hrefhttpscommunityopenvpnnetopenvpnwikihardeningversion6useof--tls-cipheropenvpna">Configuration <!-- raw HTML omitted -->OpenVPN<!-- raw HTML omitted --><a href="#configuration-a-hrefhttpscommunityopenvpnnetopenvpnwikihardeningversion6useof--tls-cipheropenvpna" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+<p>Pour améliorer la sécurité d&rsquo;OpenVPN, se référer à l&rsquo;article <!-- raw HTML omitted -->Hardening OpenVPN<!-- raw HTML omitted --></p>
 <p>###Comment je peux tester ma configuration ?</p>
-
-<p>Sur le plan général, je vous conseille aussi le très bon &ldquo;<a href="https://bettercrypto.org/static/applied-crypto-hardening.pdf">Applied crypto hardening</a>&rdquo; qui ne demande qu&rsquo;à être améliorer. Tout comme <a href="http://jeveuxhttps.fr/">JeveuxHTTPS.fr</a>. Vous pouvez tester votre configuration avec le très, très bon <a href="http://ssllabs.com/">SSLLabs.com</a>, ou encore avec les commandes suivantes dans un terminal :</p>
-
+<p>Sur le plan général, je vous conseille aussi le très bon &ldquo;<!-- raw HTML omitted -->Applied crypto hardening<!-- raw HTML omitted -->&rdquo; qui ne demande qu'à être améliorer. Tout comme <a href="http://jeveuxhttps.fr/">JeveuxHTTPS.fr</a>. Vous pouvez tester votre configuration avec le très, très bon <!-- raw HTML omitted -->SSLLabs.com<!-- raw HTML omitted -->, ou encore avec les commandes suivantes dans un terminal :</p>
 <h4 id="avec-openssl">Avec OpenSSL<a href="#avec-openssl" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
-
-<p>Avec la commande <code>OpenSSL s_client</code>:</p>
-
+<p>Avec la commande <!-- raw HTML omitted -->OpenSSL s_client<!-- raw HTML omitted -->:</p>
 <pre><code>openssl s_client -connect HOST:PORT OPTION
-</code></pre>
-
-<p>Par exemple avec la commande suivante pour voir si j&rsquo;ai du SSLv3 sur www.libwalk.so (les options qui peuvent vous intéresser ici sont les suivantes : <code>-ssl2</code>, <code>-ssl3</code>, <code>-tls1</code>, <code>-no_ssl2</code>, <code>-no_ssl3</code>, <code>-no_tls1</code>).</p>
-
+</code></pre><p>Par exemple avec la commande suivante pour voir si j&rsquo;ai du SSLv3 sur <a href="http://www.libwalk.so">www.libwalk.so</a> (les options qui peuvent vous intéresser ici sont les suivantes : <!-- raw HTML omitted -->-ssl2<!-- raw HTML omitted -->, <!-- raw HTML omitted -->-ssl3<!-- raw HTML omitted -->, <!-- raw HTML omitted -->-tls1<!-- raw HTML omitted -->, <!-- raw HTML omitted -->-no_ssl2<!-- raw HTML omitted -->, <!-- raw HTML omitted -->-no_ssl3<!-- raw HTML omitted -->, <!-- raw HTML omitted -->-no_tls1<!-- raw HTML omitted -->).</p>
 <pre><code>openssl s_client -connect www.libwalk.so:443 -ssl3
-</code></pre>
-
-<h4 id="avec-nmap">Avec nmap<a href="#avec-nmap" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
-
+</code></pre><h4 id="avec-nmap">Avec nmap<a href="#avec-nmap" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
 <pre><code>nmap --script ssl-enum-ciphers -p 443 exemple.org
 </code></pre>
-
 			</div>
 			<hr class="post-end">
 			<footer class="post-info">
@@ -211,7 +153,7 @@ smtpd_tls_mandatory_ciphers=high
 	</main>
 
 	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
-		<p>&copy; 2019 <a href="https://www.cyphercat.eu">Skhaen</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
+		<p>&copy; 2020 <a href="https://www.cyphercat.eu">Skhaen</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
 		<p>
 			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://www.cyphercat.eu/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
 		</p>

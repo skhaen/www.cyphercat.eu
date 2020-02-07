@@ -9,19 +9,16 @@
 	<meta name="msapplication-TileColor" content="#494f5c">
 <meta itemprop="name" content="[Ansible] Déploiement et automatisation avec Ansible - partie 1">
 <meta itemprop="description" content="Au programme de cette année : l&rsquo;automatisation ! Il existe plusieurs outils connus pour ça, vous en avez sans aucun doute entendu parler si vous êtes adminsys : Puppet, Chef, Salt et le petit dernier : Ansible.
-Ansible a la réputation d&rsquo;être le plus &ldquo;accessible&rdquo; avec une courbe d&rsquo;apprentissage assez basse. Il peut être pertinent de l&rsquo;utiliser à partir d&rsquo;un seul serveur pour faciliter des déploiements selon les besoins (configuration des outils basique, serveur web, BDD&hellip;).">
-
-
+Ansible a la réputation d&#39;être le plus &ldquo;accessible&rdquo; avec une courbe d&rsquo;apprentissage assez basse. Il peut être pertinent de l&rsquo;utiliser à partir d&rsquo;un seul serveur pour faciliter des déploiements selon les besoins (configuration des outils basique, serveur web, BDD&hellip;).">
 <meta itemprop="datePublished" content="2017-01-01T18:04:58&#43;00:00" />
 <meta itemprop="dateModified" content="2017-01-01T18:04:58&#43;00:00" />
-<meta itemprop="wordCount" content="1135">
+<meta itemprop="wordCount" content="1147">
 
 
 
-<meta itemprop="keywords" content="adminsys,ansible," />
-<meta property="og:title" content="[Ansible] Déploiement et automatisation avec Ansible - partie 1" />
+<meta itemprop="keywords" content="adminsys,ansible," /><meta property="og:title" content="[Ansible] Déploiement et automatisation avec Ansible - partie 1" />
 <meta property="og:description" content="Au programme de cette année : l&rsquo;automatisation ! Il existe plusieurs outils connus pour ça, vous en avez sans aucun doute entendu parler si vous êtes adminsys : Puppet, Chef, Salt et le petit dernier : Ansible.
-Ansible a la réputation d&rsquo;être le plus &ldquo;accessible&rdquo; avec une courbe d&rsquo;apprentissage assez basse. Il peut être pertinent de l&rsquo;utiliser à partir d&rsquo;un seul serveur pour faciliter des déploiements selon les besoins (configuration des outils basique, serveur web, BDD&hellip;)." />
+Ansible a la réputation d&#39;être le plus &ldquo;accessible&rdquo; avec une courbe d&rsquo;apprentissage assez basse. Il peut être pertinent de l&rsquo;utiliser à partir d&rsquo;un seul serveur pour faciliter des déploiements selon les besoins (configuration des outils basique, serveur web, BDD&hellip;)." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.cyphercat.eu/posts/adminsys/deploiement-et-automatisation-avec-ansible-partie-1/" />
 <meta property="article:published_time" content="2017-01-01T18:04:58+00:00" />
@@ -29,7 +26,7 @@ Ansible a la réputation d&rsquo;être le plus &ldquo;accessible&rdquo; avec une
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="[Ansible] Déploiement et automatisation avec Ansible - partie 1"/>
 <meta name="twitter:description" content="Au programme de cette année : l&rsquo;automatisation ! Il existe plusieurs outils connus pour ça, vous en avez sans aucun doute entendu parler si vous êtes adminsys : Puppet, Chef, Salt et le petit dernier : Ansible.
-Ansible a la réputation d&rsquo;être le plus &ldquo;accessible&rdquo; avec une courbe d&rsquo;apprentissage assez basse. Il peut être pertinent de l&rsquo;utiliser à partir d&rsquo;un seul serveur pour faciliter des déploiements selon les besoins (configuration des outils basique, serveur web, BDD&hellip;)."/>
+Ansible a la réputation d&#39;être le plus &ldquo;accessible&rdquo; avec une courbe d&rsquo;apprentissage assez basse. Il peut être pertinent de l&rsquo;utiliser à partir d&rsquo;un seul serveur pour faciliter des déploiements selon les besoins (configuration des outils basique, serveur web, BDD&hellip;)."/>
 
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -78,69 +75,41 @@ Ansible a la réputation d&rsquo;être le plus &ldquo;accessible&rdquo; avec une
 				<h1>[Ansible] Déploiement et automatisation avec Ansible - partie 1</h1>
 			</header>
 			<div class="content">
-				
-
-<p>Au programme de cette année : l&rsquo;automatisation ! Il existe plusieurs outils connus pour ça, vous en avez sans aucun doute entendu parler si vous êtes adminsys : <a href="https://puppet.com">Puppet</a>, <a href="https://www.chef.io/chef/">Chef</a>, <a href="https://saltstack.com/">Salt</a> et le petit dernier : <a href="https://www.ansible.com/">Ansible</a>.</p>
-
-<p>Ansible a la réputation d&rsquo;être le plus &ldquo;accessible&rdquo; avec une courbe d&rsquo;apprentissage assez basse. Il peut être pertinent de l&rsquo;utiliser à partir d&rsquo;un seul serveur pour faciliter des déploiements selon les besoins (configuration des outils basique, serveur web, BDD&hellip;).</p>
-
+				<p>Au programme de cette année : l&rsquo;automatisation ! Il existe plusieurs outils connus pour ça, vous en avez sans aucun doute entendu parler si vous êtes adminsys : <a href="https://puppet.com">Puppet</a>, <a href="https://www.chef.io/chef/">Chef</a>, <a href="https://saltstack.com/">Salt</a> et le petit dernier : <a href="https://www.ansible.com/">Ansible</a>.</p>
+<p>Ansible a la réputation d'être le plus &ldquo;accessible&rdquo; avec une courbe d&rsquo;apprentissage assez basse. Il peut être pertinent de l&rsquo;utiliser à partir d&rsquo;un seul serveur pour faciliter des déploiements selon les besoins (configuration des outils basique, serveur web, BDD&hellip;).</p>
 <p>Au contraire des trois autres, il n&rsquo;utilise pas d&rsquo;agents (<em><a href="https://www.ansible.com/benefits-of-agentless-architecture">agentless</a></em>), c&rsquo;est à dire que rien n&rsquo;a besoin de tourner côté serveur pour le faire fonctionner, ce qui le rend <em>de facto</em> plus facile à mettre en place. <strong>Il requiert seulement un accès SSH et python sur les serveur</strong>.</p>
-
 <p>Toujours concernant Ansible (bien entendu), on parle souvent d&rsquo;<strong><a href="https://fr.wikipedia.org/wiki/Idempotence">idempotance</a></strong>, ce qui signifie qu&rsquo;une opération a le même effet qu&rsquo;on l&rsquo;applique une ou plusieurs fois.</p>
-
 <p>Les recettes utilisent du <a href="https://docs.ansible.com/ansible/YAMLSyntax.html">YAML</a> et <a href="https://docs.ansible.com/ansible/playbooks_filters.html">Jinja2</a> pour les templates. L&rsquo;utilisation de YAML permet d&rsquo;avoir des recettes normalement facile à lire et à comprendre. À noter aussi que grâce au (ou à cause du) YAML, l&rsquo;indentation est primordiale et source de bug si elle n&rsquo;est pas respecté comme on le verra plus tard.</p>
-
 <p>Au programme aujourd&rsquo;hui :</p>
-
 <ul>
 <li>installation d&rsquo;Ansible (<strong>v2.2.0.0</strong>)</li>
 <li>tests de connexions aux serveurs</li>
 <li>installation de quelques paquets</li>
 <li>debug et tests</li>
 </ul>
-
 <h2 id="installation">Installation<a href="#installation" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
-
 <p>Si vous avez besoin d&rsquo;autre chose, ça devrait être dans <a href="https://docs.ansible.com/ansible/intro_installation.html">la documentation</a>.</p>
-
-<h3 id="sur-debian-https-docs-ansible-com-ansible-intro-installation-html-latest-releases-via-apt-debian">sur <a href="https://docs.ansible.com/ansible/intro_installation.html#latest-releases-via-apt-debian">Debian</a><a href="#sur-debian-https-docs-ansible-com-ansible-intro-installation-html-latest-releases-via-apt-debian" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
-
+<h3 id="sur-debianhttpsdocsansiblecomansibleintro_installationhtmllatest-releases-via-apt-debian">sur <a href="https://docs.ansible.com/ansible/intro_installation.html#latest-releases-via-apt-debian">Debian</a><a href="#sur-debianhttpsdocsansiblecomansibleintro_installationhtmllatest-releases-via-apt-debian" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 <p>Vous pouvez l&rsquo;installer directement via les dépôts, mais ce sont évidemment des versions anciennes (cf. <a href="https://packages.debian.org/search?keywords=ansible">packages.debian.org</a>), pour avoir une version plus récente, ajouter la ligne suivante à <code>/etc/apt/sources.list.d/ansible.list</code> :</p>
-
 <pre><code>deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main
-</code></pre>
-
-<p>Puis il suffira de lancer les commandes suivantes :</p>
-
+</code></pre><p>Puis il suffira de lancer les commandes suivantes :</p>
 <pre><code>sudo apt-get update
 sudo apt-get install ansible
-</code></pre>
-
-<h3 id="sur-ubuntu-https-docs-ansible-com-ansible-intro-installation-html-latest-releases-via-apt-ubuntu">sur<a href="https://docs.ansible.com/ansible/intro_installation.html#latest-releases-via-apt-ubuntu"> Ubuntu</a><a href="#sur-ubuntu-https-docs-ansible-com-ansible-intro-installation-html-latest-releases-via-apt-ubuntu" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
-
+</code></pre><h3 id="sur-ubuntuhttpsdocsansiblecomansibleintro_installationhtmllatest-releases-via-apt-ubuntu">sur<a href="https://docs.ansible.com/ansible/intro_installation.html#latest-releases-via-apt-ubuntu"> Ubuntu</a><a href="#sur-ubuntuhttpsdocsansiblecomansibleintro_installationhtmllatest-releases-via-apt-ubuntu" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 <pre><code>sudo apt-get install software-properties-common
 sudo apt-add-repository ppa:ansible/ansible
 sudo apt-get update
 sudo apt-get install ansible
-</code></pre>
-
-<p>Il suffit ensuite d&rsquo;aller dans <code>/etc/ansible/</code> pour la suite :</p>
-
+</code></pre><p>Il suffit ensuite d&rsquo;aller dans <code>/etc/ansible/</code> pour la suite :</p>
 <pre><code>cd /etc/ansible/
-</code></pre>
-
-<p>nous avons normalement 2 fichiers et un dossier :</p>
-
+</code></pre><p>nous avons normalement 2 fichiers et un dossier :</p>
 <ul>
 <li><strong><a href="https://docs.ansible.com/ansible/intro_configuration.html">ansible.cfg</a></strong> : la configuration d&rsquo;ansible, celle par défaut nous convient parfaitement bien pour le moment, mais ça peut valoir le coup d&rsquo;y jeter un coup d&rsquo;oeil pour voir ce que l&rsquo;on peut faire.</li>
 <li><strong><a href="https://docs.ansible.com/ansible/intro_inventory.html">hosts</a></strong> : c&rsquo;est dans ce fichier que nous allons indiquer nos serveurs, étape obligatoire pour la suite.</li>
 <li><strong><a href="https://docs.ansible.com/ansible/playbooks_roles.html">roles</a></strong> : ce dossier nous servira surtout par la suite quand on commencera à avoir plusieurs rôles à nos <em><a href="https://docs.ansible.com/ansible/playbooks_roles.html">playbooks</a></em>.</li>
 </ul>
-
-<h2 id="inventory-hosts">Inventory / hosts<a href="#inventory-hosts" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
-
+<h2 id="inventory--hosts">Inventory / hosts<a href="#inventory--hosts" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
 <p>Dans <code>/etc/ansible/</code>, donc, éditons notre fichier <code>hosts</code>. Nous pouvons y déclarer nos serveurs individuellement ou par groupe, par exemple :</p>
-
 <pre><code>serveur1.exemple.org
 serveur2.exemple.org
 preprod.elysee.org
@@ -153,92 +122,64 @@ skhn-web-nginx-02
 [seedbox]
 skhn-seedbox-01
 
-</code></pre>
-
-<p>Voici ma configuration actuelle, à noter que j&rsquo;ai modifié mon <code>/etc/hosts</code> et mon <code>.ssh/config</code> pour que ça pointe vers les bons serveurs <strong>avec les bonnes clés SSH</strong> :</p>
-
+</code></pre><p>Voici ma configuration actuelle, à noter que j&rsquo;ai modifié mon <code>/etc/hosts</code> et mon <code>.ssh/config</code> pour que ça pointe vers les bons serveurs <strong>avec les bonnes clés SSH</strong> :</p>
 <pre><code>[scaleway]
 skhn-001
 skhn-002
 
 [seedbox]
 sb
-</code></pre>
-
-<p>Par la suite, je pourrai ainsi lancer des tâches sur tout les serveurs avec l&rsquo;option générique <code>all</code> ou par groupe selon vos besoins (web, bdd, wordpress, etc&hellip;). Si vous vous posez la question, le premier groupe s&rsquo;appelle <a href="https://www.scaleway.com/">scaleway</a> car j&rsquo;ai pris 2 serveurs chez eux pour tester Ansible ^^).</p>
-
+</code></pre><p>Par la suite, je pourrai ainsi lancer des tâches sur tout les serveurs avec l&rsquo;option générique <code>all</code> ou par groupe selon vos besoins (web, bdd, wordpress, etc&hellip;). Si vous vous posez la question, le premier groupe s&rsquo;appelle <a href="https://www.scaleway.com/">scaleway</a> car j&rsquo;ai pris 2 serveurs chez eux pour tester Ansible ^^).</p>
 <h3 id="ping">ping<a href="#ping" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
-
 <ul>
-<li><p>Avant toute chose, est ce que l&rsquo;on arrive bien à joindre les serveurs :</p>
-<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml">ansible<span class="w"> </span>-m<span class="w"> </span>ping<span class="w"> </span>all<span class="w"> </span>--one-line</code></pre></div></li>
+<li>Avant toute chose, est ce que l&rsquo;on arrive bien à joindre les serveurs :</li>
 </ul>
-
-<p>Ce qui me donne :</p>
-
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml">ansible<span class="w"> </span>-m<span class="w"> </span>ping<span class="w"> </span>all<span class="w"> </span>--one-line<span class="w">
+</span></code></pre></div><p>Ce qui me donne :</p>
 <pre><code>skhn-002 | SUCCESS =&gt; {&quot;changed&quot;: false, &quot;ping&quot;: &quot;pong&quot;}
 skhn-001 | SUCCESS =&gt; {&quot;changed&quot;: false, &quot;ping&quot;: &quot;pong&quot;}
 sb | SUCCESS =&gt; {&quot;changed&quot;: false, &quot;ping&quot;: &quot;pong&quot;}
-</code></pre>
-
-<h3 id="test-ssh">test SSH<a href="#test-ssh" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
-
+</code></pre><h3 id="test-ssh">test SSH<a href="#test-ssh" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 <p>Mais est ce que l&rsquo;on arrive à se connecter au groupe <code>scaleway</code> ? On va en profiter pour récupérer quelques infos :</p>
-
 <pre><code>ansible scaleway -m setup --tree /tmp/facts_servers/
-</code></pre>
-
-<p>La sortie de cette commande sera recopiée pour chaque serveur dans <code>/tmp/facts_servers/</code>, vous devriez avoir toutes les informations que vous souhaitez avoir sur vos serveurs ;-)</p>
-
-<h3 id="et-mon-uptime">et mon uptime ?<a href="#et-mon-uptime" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
-
+</code></pre><p>La sortie de cette commande sera recopiée pour chaque serveur dans <code>/tmp/facts_servers/</code>, vous devriez avoir toutes les informations que vous souhaitez avoir sur vos serveurs ;-)</p>
+<h3 id="et-mon-uptime-">et mon uptime ?<a href="#et-mon-uptime-" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 <pre><code>ansible all -m command -u root --args &quot;uptime&quot; --one-line
 
-</code></pre>
-
-<p>résultat :</p>
-
+</code></pre><p>résultat :</p>
 <pre><code>sb | SUCCESS | rc=0 | (stdout)  17:33:14 up 410 days, 21:59,  1 user,  load average: 0.21, 0.16, 0.14
 skhn-001 | SUCCESS | rc=0 | (stdout)  16:33:14 up 1 day,  2:05,  1 user,  load average: 0.00, 0.00, 0.00
 skhn-002 | SUCCESS | rc=0 | (stdout)  16:33:14 up 1 day,  2:05,  1 user,  load average: 0.00, 0.00, 0.00
 
-</code></pre>
-
-<h2 id="installation-d-une-liste-de-paquets">Installation d&rsquo;une liste de paquets<a href="#installation-d-une-liste-de-paquets" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
-
+</code></pre><h2 id="installation-dune-liste-de-paquets">Installation d&rsquo;une liste de paquets<a href="#installation-dune-liste-de-paquets" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
 <p>J&rsquo;aime bien avoir certains paquets installé sur tout mes serveurs, Ansible me permet de l&rsquo;automatiser facilement. On commence par éditer notre nouveau fichier <code>/etc/ansible/roles/skhn_common.yml</code> pour y mettre le bloc suivant :</p>
 <div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml">---<span class="w">
-</span><span class="w"></span>-<span class="w"> </span>hosts<span class="p">:</span><span class="w"> </span>all<span class="w">
-</span><span class="w">  </span>remote_user<span class="p">:</span><span class="w"> </span>root<span class="w">
+</span><span class="w"></span>- <span class="k">hosts</span><span class="p">:</span><span class="w"> </span>all<span class="w">
+</span><span class="w">  </span><span class="k">remote_user</span><span class="p">:</span><span class="w"> </span>root<span class="w">
 </span><span class="w">
-</span><span class="w">  </span>tasks<span class="p">:</span><span class="w">
-</span><span class="w">  </span>-<span class="w"> </span>name<span class="p">:</span><span class="w"> </span>install<span class="w"> </span>common<span class="w"> </span>packages<span class="w"> </span>for<span class="w"> </span>all<span class="w"> </span>servers<span class="w">
-</span><span class="w">    </span>apt<span class="p">:</span><span class="w"> 
+</span><span class="w">  </span><span class="k">tasks</span><span class="p">:</span><span class="w">
+</span><span class="w"></span><span class="w">  </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span>install<span class="w"> </span>common<span class="w"> </span>packages<span class="w"> </span>for<span class="w"> </span>all<span class="w"> </span>servers<span class="w">
+</span><span class="w">    </span><span class="k">apt</span><span class="p">:</span><span class="w"> </span><span class="w">
 </span><span class="w">      </span>update_cache=yes<span class="w">
 </span><span class="w">      </span>state=latest<span class="w">
 </span><span class="w">      </span>name={{item}}<span class="w">
-</span><span class="w">    </span>with_items<span class="p">:</span><span class="w"> 
-</span><span class="w">    </span>-<span class="w"> </span>curl<span class="w">
-</span><span class="w">    </span>-<span class="w"> </span>htop<span class="w">
-</span><span class="w">    </span>-<span class="w"> </span>ncdu<span class="w">
-</span><span class="w">    </span>-<span class="w"> </span>pwgen<span class="w">
-</span><span class="w">    </span>-<span class="w"> </span>strace<span class="w">
-</span><span class="w">    </span>-<span class="w"> </span>sudo<span class="w">
-</span><span class="w">    </span>-<span class="w"> </span>tar<span class="w">
-</span><span class="w">    </span>-<span class="w"> </span>unzip<span class="w">
-</span><span class="w">    </span>-<span class="w"> </span>vim<span class="w">
-</span><span class="w">    </span>-<span class="w"> </span>wget<span class="w">
-</span><span class="w">    </span>-<span class="w"> </span>whois<span class="w">
-</span><span class="w">    </span>-<span class="w"> </span>screen</code></pre></div>
-<p>Après l&rsquo;avoir enregistré, il suffira de lancer la commande suivante pour installer cette liste de paquets sur tout les serveurs :</p>
-
+</span><span class="w">    </span><span class="k">with_items</span><span class="p">:</span><span class="w"> </span><span class="w">
+</span><span class="w">    </span>- curl<span class="w">
+</span><span class="w">    </span>- htop<span class="w">
+</span><span class="w">    </span>- ncdu<span class="w">
+</span><span class="w">    </span>- pwgen<span class="w">
+</span><span class="w">    </span>- strace<span class="w">
+</span><span class="w">    </span>- sudo<span class="w">
+</span><span class="w">    </span>- tar<span class="w">
+</span><span class="w">    </span>- unzip<span class="w">
+</span><span class="w">    </span>- vim<span class="w">
+</span><span class="w">    </span>- wget<span class="w">
+</span><span class="w">    </span>- whois<span class="w">
+</span><span class="w">    </span>- screen<span class="w">
+</span></code></pre></div><p>Après l&rsquo;avoir enregistré, il suffira de lancer la commande suivante pour installer cette liste de paquets sur tout les serveurs :</p>
 <pre><code>ansible-playbook -i hosts /etc/ansible/roles/skhn_common.yml
-</code></pre>
-
-<p>Et c&rsquo;était donc notre premier rôle, yay \o/</p>
-
-<p>Vous avez peut être remarqué <sup>2</sup>&frasl;<sub>3</sub> trucs :</p>
-
+</code></pre><p>Et c'était donc notre premier rôle, yay \o/</p>
+<p>Vous avez peut être remarqué 2/3 trucs :</p>
 <ul>
 <li>un rôle commence toujours par <code>---</code>,</li>
 <li><code>hosts: all</code> est ici directement dans le fichier et non dans la commande,</li>
@@ -246,81 +187,65 @@ skhn-002 | SUCCESS | rc=0 | (stdout)  16:33:14 up 1 day,  2:05,  1 user,  load a
 <li><code>update_cache=yes</code> permet de faire un <code>apt-get update</code></li>
 <li>j&rsquo;ai choisi de mettre <code>state=latest</code> et non <code>state=present</code>, j&rsquo;ai envie que ce genre de paquet soit à jour sans que j&rsquo;ai besoin de m&rsquo;en occuper.</li>
 </ul>
-
 <h2 id="debug">Debug<a href="#debug" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
-
 <p>Le plus gros problème que j&rsquo;ai eu pour le moment concerne l&rsquo;indentation qui est vicieuse et la syntaxe YAML.</p>
-
-<h3 id="l-indentation">L&rsquo;indentation<a href="#l-indentation" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
-
+<h3 id="lindentation">L&rsquo;indentation<a href="#lindentation" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 <p>Si vous voulez vous éviter des prises de têtes qui vous font perdre quelques heures facilement, <strong>faites des indentations de DEUX espaces</strong> ! Pourquoi ? Parce que :</p>
-
 <ul>
-<li><p>ça, c&rsquo;est <strong>VALIDE</strong> (DEUX espaces) :</p>
-
+<li>ça, c&rsquo;est <strong>VALIDE</strong> (DEUX espaces) :</li>
+</ul>
 <pre><code>---
 - hosts: all
-remote_user: root
+  remote_user: root
 
-tasks:
-- name: install common packages for all servers
-apt: 
-  update_cache=yes
-  state=latest
-  name={{item}} 
-with_items: 
-- curl
-- htop
-</code></pre></li>
-
-<li><p>ça, c&rsquo;est <strong>INVALIDE</strong> (QUATRE espaces) :</p>
-
+  tasks:
+  - name: install common packages for all servers
+    apt: 
+      update_cache=yes
+      state=latest
+      name={{item}} 
+    with_items: 
+    - curl
+    - htop
+</code></pre><ul>
+<li>ça, c&rsquo;est <strong>INVALIDE</strong> (QUATRE espaces) :</li>
+</ul>
 <pre><code>---
 - hosts: all
-remote_user: root
+    remote_user: root
 
-tasks:
-- name: install common packages for all servers
-  apt: 
-    update_cache=yes
-    state=latest
-    name={{item}} 
-  with_items: 
-  - curl
-  - htop
-</code></pre></li>
-
-<li><p>et ça, c&rsquo;est <strong>VALIDE</strong> (QUATRE espaces) :</p>
-
+    tasks:
+    - name: install common packages for all servers
+      apt: 
+        update_cache=yes
+        state=latest
+        name={{item}} 
+      with_items: 
+      - curl
+      - htop
+</code></pre><ul>
+<li>et ça, c&rsquo;est <strong>VALIDE</strong> (QUATRE espaces) :</li>
+</ul>
 <pre><code>---
 -   hosts: all
-remote_user: root
+    remote_user: root
 
-tasks:
-- name: install common packages for all servers
-  apt: 
-    update_cache=yes
-    state=latest
-    name={{item}} 
-  with_items: 
-  - curl
-  - htop
-</code></pre></li>
-</ul>
-
-<p>VOUS LA VOYEZ LA DIFFÉRENCE ? C&rsquo;EST CE #### D&rsquo;ESPACEMENT ET D&rsquo;ALIGNEMENT AVEC LE RESTE DE <code>hosts: all</code> ! Bon, une fois qu&rsquo;on le sait, pourquoi pas, mais à cause de ça j&rsquo;ai perdu plus d&rsquo;une heure hier après-midi, merci le message <code>ERROR! Syntax Error while loading YAML.</code> absolument pas parlant&hellip;</p>
-
+    tasks:
+    - name: install common packages for all servers
+      apt: 
+        update_cache=yes
+        state=latest
+        name={{item}} 
+      with_items: 
+      - curl
+      - htop
+</code></pre><p>VOUS LA VOYEZ LA DIFFÉRENCE ? C&rsquo;EST CE #### D&rsquo;ESPACEMENT ET D&rsquo;ALIGNEMENT AVEC LE RESTE DE <code>hosts: all</code> ! Bon, une fois qu&rsquo;on le sait, pourquoi pas, mais à cause de ça j&rsquo;ai perdu plus d&rsquo;une heure hier après-midi, merci le message <code>ERROR! Syntax Error while loading YAML.</code> absolument pas parlant&hellip;</p>
 <h3 id="la-syntaxe-yaml">La syntaxe YAML<a href="#la-syntaxe-yaml" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
-
 <p>Si vous avez un doute sur ce que vous avez fait, ou si vos collègues sont des adeptes de la fameuse méthode &ldquo;gruiiiiiik et je me casse en vacances sans vérifier si ça marche en prod&rdquo;, l&rsquo;utilisation de <a href="https://yamllint.readthedocs.io/en/latest/">yamllint</a> est recommandée (ça, et le non moins fameux <a href="https://www.youtube.com/watch?v=7mmuQteX1qA">coup-de-clavier-dans-la-gueule</a>). Idéal en pré-commit (yamllint, pas le clavier).</p>
-
 <p>Ansible propose aussi un check : <code>--syntax-check</code>, que l&rsquo;on peut utiliser de cette manière là :</p>
-
 <pre><code>ansible-playbook  --syntax-check example-playbook.yml
 ansible-playbook  --syntax-check roles/*
-</code></pre>
-
-<p>Oh, et évidemment, je vous conseille beaucoup de lire les <strong><a href="https://docs.ansible.com/ansible/playbooks_best_practices.html">best practices</a></strong>.</p>
+</code></pre><p>Oh, et évidemment, je vous conseille beaucoup de lire les <strong><a href="https://docs.ansible.com/ansible/playbooks_best_practices.html">best practices</a></strong>.</p>
 
 			</div>
 			<hr class="post-end">
@@ -345,7 +270,7 @@ ansible-playbook  --syntax-check roles/*
 	</main>
 
 	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
-		<p>&copy; 2019 <a href="https://www.cyphercat.eu">Skhaen</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
+		<p>&copy; 2020 <a href="https://www.cyphercat.eu">Skhaen</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
 		<p>
 			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://www.cyphercat.eu/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
 		</p>

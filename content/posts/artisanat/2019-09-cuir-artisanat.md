@@ -12,7 +12,7 @@ title = "[cuir] Par où commencer ?"
 
 ...quand on veut travailler le cuir ? C'est une très bonne question (merci de l'avoir posé), et donc, histoire de vous faciliter la vie, vous trouverez ci-dessous quelques pistes qui devraient normalement vous aider.
 
-Avant toute chose, faites vous un thé, puis réfléchissez quelques minutes à ce que vous voulez faire pour le moment : [porte-cartes, portefeuilles, sacs, ceintures](https://fr.wikipedia.org/wiki/Maroquinerie)), chaussures, du [repoussage](https://www.youtube.com/watch?v=rfv3iQYDUgs), [accessoires pour jeux de rôle grandeur nature](https://fr.wikipedia.org/wiki/Jeu_de_r%C3%B4le_grandeur_nature), sellerie, reconstitution historique, vestes, accessoires BDSM...), le choix est très, très vaste.
+Avant toute chose, faites vous un thé, puis réfléchissez quelques minutes à ce que vous voulez faire pour le moment : [porte-cartes, portefeuilles, sacs, ceintures](https://fr.wikipedia.org/wiki/Maroquinerie)), chaussures, [Bourrellerie](https://www.youtube.com/watch?v=8Qwily1ZTh8), [repoussage](https://www.youtube.com/watch?v=rfv3iQYDUgs), [accessoires pour jeux de rôle grandeur nature](https://fr.wikipedia.org/wiki/Jeu_de_r%C3%B4le_grandeur_nature), sellerie, reconstitution historique, vestes, accessoires BDSM...), le choix est très, très vaste.
 
 # Vidéos
 
@@ -22,13 +22,14 @@ Voici une petite liste de mes préférés :
 
 * [Dark Horse Workshop](https://www.youtube.com/channel/UCZDVOD2cC4twP3TjuIQCbPQ) (maroquinerie, viking, repoussage)
 * [Corter Leather](https://www.youtube.com/channel/UCoYR1doityX-Cac-3lP4MLA) (maroquinerie)
-* [Little King Goods](https://www.youtube.com/channel/UCKSql-GFCO400w7xNFbYeug) (maroquinerie -- mon préféré de très loin)
+* [Little King Goods](https://www.youtube.com/channel/UCKSql-GFCO400w7xNFbYeug) (maroquinerie)
 * [Equus Leather](https://www.youtube.com/channel/UCiJZG7AeyFTvykBpx3W88GQ/videos) (maroquinerie)
 * [HAHNS Atelier](https://www.youtube.com/channel/UCJYSHaxWbDhYgh-PH0nashw) (maroquinerie)
 * [Brian the bootmaker](https://www.youtube.com/channel/UCPjoWhob1Mhi0MtOHCzMKZA) (cordonnerie, comme le nom l'indique)
 * [makesupply](https://www.youtube.com/channel/UCaegWtm_7zJU-dWG0StCupQ/videos) (maroquinerie)
 * [chartermade](https://www.youtube.com/channel/UC1xBgBntZv4mCtKtskU8i_Q) (maroquinerie)
 * [Prince Armory](https://www.youtube.com/channel/UCmtnq4rV4X8ri1-4hq2fJlg) (des armures ! en cuirs !)
+* [Studio Hael](https://www.youtube.com/channel/UCi5rRT9m6p3EoYCcgLR4WZA) (maroquinerie)
 
 Bonus :
 
@@ -37,11 +38,12 @@ Bonus :
 
 Si vous connaissez d'autres chaînes de qualité, et en particulier des chaines françaises, dites le moi, j'en cherche toujours !
 
-> Astuce : si vous vous demandez si il nécessaire d'acheter quelque chose mais que vous le voyez dans absolument aucune vidéo, c'est que la réponse est sans doute non ;-) 
 
 # Achats
 
 Pour le moment, j'ai fait quasiment tout mes achats chez [decocuir.com](https://www.decocuir.com), mais vous avez aussi tout les sites de ventes en ligne que vous pouvez trouver (comme [crea-cuir.com](https://crea-cuir.com/)). Concernant ce qu'il faut acheter, c'est nettement plus compliqué. Ça va dépendre de ce que vous voulez faire et bien entendu de votre budget. C'est pour ça que à mon avis, il est primordial de passer un peu de temps à regarder des vidéos avant de se lancer.
+
+> Astuce : si vous vous demandez si il nécessaire d'acheter quelque chose mais que vous le voyez dans absolument aucune vidéo, c'est que la réponse est sans doute non (le contraire n'est par contre pas forcément vrai) ;-) 
 
 ## "kit" de base
 
@@ -60,16 +62,15 @@ J'ai repris mes différentes factures depuis que j'ai commencé et j'ai listé l
 
 * un cutter (idéalement pas trop gros pour du travail de précision si nécessaire)
 * une [règle en métal](https://www.decocuir.com/crayon-regle-gabarit-tracer-cuir-patron-argent-effacable-c102x3697659) (si c'est en plastique la lame risque de mordre dedans)
-* une [rainette](https://www.decocuir.com/rainette-gouge-cuir-dessin-ligne-parallele-rainure-c102x3697672) pour marquer les contours et/ou les coutures (je prendrais sans doute un [compas](https://www.decocuir.com/compas-dessin-travail-cuir-reglable-pointe-seche-outil-c102x3697646) si c'était à refaire)
+* une [rainette](https://www.decocuir.com/rainette-gouge-cuir-dessin-ligne-parallele-rainure-c102x3697672) ou un [compas](https://www.decocuir.com/compas-dessin-travail-cuir-reglable-pointe-seche-outil-c102x3697646) pour marquer les contours et/ou les coutures
 * une [alêne ronde](https://www.decocuir.com/alene-ronde-lame-cuir-outil-travail-creation-artisanat-c102x3697689), parce que c'est pratique pour tout : tracer vos templates, marquer des emplacements, etc...
 * une [lissette](https://www.decocuir.com/lissette-bois-polyvalente-lisser-cuir-tranche-brunissoir-c2x12869903) pour "brunir" (lustrer) les tranches, c'est con, mais on peut plus s'en passer rapidement.
-* un [abat-carré](https://www.decocuir.com/abat-carre-bissonnette-cuir-outil-c102x3697666) (vous pouvez commencer avec outil qui permet de faire plusieurs format pour essayer différentes tailles).
-* fil
+* un [abat-carre](https://www.decocuir.com/abat-carre-bissonnette-cuir-outil-c102x3697666) (vous pouvez commencer avec outil qui permet de faire plusieurs format pour essayer différentes tailles).
 * j'ai commencé avec [ce lot d'aiguilles](https://www.decocuir.com/lot-de-10-aiguilles-a-coudre-le-cuir-a-gros-chas-k12-c2x8897361) pour essayer, j'ai cassé les deux seules que j'aimais trop rapidement... je vous conseille de prendre plutôt [un pack d'aiguilles à bout rond](https://www.decocuir.com/25-aiguilles-sellier-bout-rond-lg54mm-d10mm-taille-002-c2x12306210), elles sont nettement plus solide.
-* concernant les griffes, j'ai commencé avec un pack de griffe [acheté sur amazon pour environ 10€](https://www.amazon.fr/gp/product/B01DZV3LII/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1). C'est presque passable pour essayer, mais elles peuvent **vraiment** casser à n'importe quel moment. Partez directement sur [un minimum de qualité](https://www.decocuir.com/griffes-frapper-points-couture-main-cuir-c102x2258466) pour éviter les mauvaises surprises (perso, j'ai ensuite pris du craftool dont je suis plutôt satisfait. Si vous ne savez pas quoi  prendre : prenez 2 griffes pour commencer (1 dent + 4 dents).
+* concernant les griffes, j'ai commencé avec un pack de griffe [acheté sur amazon pour environ 10€](https://www.amazon.fr/gp/product/B01DZV3LII/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1). C'est presque passable pour essayer, mais elles peuvent **vraiment** casser à n'importe quel moment. Partez directement sur [un minimum de qualité](https://www.decocuir.com/griffes-frapper-points-couture-main-cuir-c102x2258466) pour éviter les mauvaises surprises (perso, j'ai ensuite pris du craftool dont je suis plutôt satisfait (ajout 2020-02, je suis passé à du KS Blades, c'est magique !). Si vous ne savez pas quoi  prendre : prenez 2 griffes pour commencer (2 dent + 4 dents (ou plus)).
 * un [maillet](https://www.decocuir.com/marteau-maillet-maul-c102x3756006) en bois ou en plastique (SURTOUT PAS en métal), entre autre pour taper sur les griffes
-* un [decouvit](https://www.decocuir.com/decouvit-decouseur-enlever-couture-cuir-c2x19020842). Alors oui, c'est pas indispensable, mais vous allez en avoir besoin au début, et quand ça sera le cas vous allez être teeeeeellement content de l'avoir !
 * [un tapis de coupe](https://www.decocuir.com/billot-plaque-decoupe-tapis-coupe-cuir-c102x2818063) au moins format A3 (ça évite entre autre de faire des traces sur la table avec le cutter ;-))
+* et bien entendu, du fil !
 
 Bonus (pas spécialement nécessaire pour commencer)
 
@@ -78,7 +79,7 @@ Bonus (pas spécialement nécessaire pour commencer)
 
 # Et le cuir alors ?
 
-Pour vos premiers tests, achetez du cuir bas de gamme (mais pas trop) ou moyen de gamme le temps de vous faire la main. Vous pouvez en trouver par exemple sur decocuir. Personnellement, j'ai commencé avec du [cuir tannage végétal](https://www.decocuir.com/morceau-cuir-tannage-vegetal-c102x2677112) parce que je voulais pouvoir tester du repoussage, et pour l'environnement, évidémment. 
+Pour vos premiers tests, achetez du cuir bas de gamme (mais pas trop) ou moyen de gamme le temps de vous faire la main. Vous pouvez en trouver par exemple sur decocuir. Si vous ne savez pas quoi prendre, vous pouvez partir sur du [cuir tannage végétal](https://www.decocuir.com/morceau-cuir-tannage-vegetal-c102x2677112).
 
 Vous trouverez ci-dessous plusieurs liens pour comprendre le process de tannage du cuir ainsi que les différentes possibilités :
 
@@ -92,7 +93,7 @@ Vous devriez maintenant mieux visualiser comment le cuir est fait, vous trouvere
 * [Comment choisir son cuir](http://blog.laruedesartisans.com/comment-choisir-son-cuir/) (laruedesartisans.com)
 * [Getting started in LEATHERCRAFT - Choosing Leather](https://www.youtube.com/watch?v=dBV_gDfgL1Y) (Little King Goods)
 
-# Templates
+# Patrons / Templates
 
 Pour vos aider dans vos premières réalisations, vous pouvez trouver et/ou acheter des patrons sur le net. Je vous conseille grandement de commencer par [faire des porte-cartes](http://www.leathercove.com/make-slim-leather-card-holder/) : c'est relativement rapide à faire, ça n'use pas trop de cuir, et c'est parfait pour apprendre les base. Ne commencez pas par un portefeuille ou un sac tout de suite, ça viendra par la suite.
 
@@ -100,15 +101,28 @@ Si vous allez sur les sites des chaines de la partie "Vidéos", ils en vendent q
 
 Bien entendu, vous pouvez aussi en faire vous même si vous le souhaitez (voir par exemple "*[Making Leather Patterns](https://www.instructables.com/lesson/Making-Leather-Patterns/)* sur instructables.com).
 
+# Et des cours en ligne, c'est possible ?
+
+* [Armitage Leather](https://vimeo.com/ondemand/armitageleather) - Secrets from the Workshop sur vimeo (+ [youtube](https://www.youtube.com/user/Nordicbadger))
+* [Leathercraft masterclass](https://www.leathercraftmasterclass.com/)
 
 # FAQ
 
 Les liens ci-dessous devraient vous servir après vos premiers projets, quand vous allez vouloir vous améliorer :)
 
+## Comment choisir des griffes ?
+
+Graaaande question, surtout au moment de comprendre les différences entre "griffe à frapper" (pricking irons) ou "griffe à percer" :
+
+* Pricking Iron Reviews : [résumé texte]](https://bd4a19d1-2fe8-40b7-89f8-9a3f92d4106d.filesusr.com/ugd/725555_c557a9825e664398bbff455c2a18d0cf.pdf), ou en [vidéo](https://www.youtube.com/watch?v=rjNOWo5076s&list=PLu5txPOIXtG1WRnPzzpxACppYwf_inmYh) (Armitage, que l'on ne remerciera jamais assez !)
+* "[Pricking Irons. Vintage vs Modern. What's The Difference?](https://www.leathercraftmasterclass.com/post/pricking-irons-vintage-vs-modern-what-s-the-difference)" (leathercraftmasterclass)
+
+
 ## Couture
 
 point sellier / saddle stitching
 
+* [en suivant les cours d'Armitage](https://vimeo.com/ondemand/armitageleather) et en recherchant "stitching", il y a plusieurs vidéos sur le sujet, c'est le top !
 * [How to: Hand stitching leather with traditional saddle stitch](https://www.youtube.com/watch?v=QaSMBVXY9CM&t=687s) (chartermade)
 * [Saddle Stitching leather goods](https://www.youtube.com/watch?v=hFo79rW68Dk) (Little King Goods)
 

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Skhaen</title>
@@ -19,7 +19,7 @@
       
       <guid>https://www.cyphercat.eu/posts/artisanat/artisanat-par-ou-commencer/</guid>
       <description>&amp;hellip;quand on veut travailler le cuir ? C&amp;rsquo;est une très bonne question (merci de l&amp;rsquo;avoir posé), et donc, histoire de vous faciliter la vie, vous trouverez ci-dessous quelques pistes qui devraient normalement vous aider.
-Avant toute chose, faites vous un thé, puis réfléchissez quelques minutes à ce que vous voulez faire pour le moment : porte-cartes, portefeuilles, sacs, ceintures), chaussures, du repoussage, accessoires pour jeux de rôle grandeur nature, sellerie, reconstitution historique, vestes, accessoires BDSM&amp;hellip;), le choix est très, très vaste.</description>
+Avant toute chose, faites vous un thé, puis réfléchissez quelques minutes à ce que vous voulez faire pour le moment : porte-cartes, portefeuilles, sacs, ceintures), chaussures, Bourrellerie, repoussage, accessoires pour jeux de rôle grandeur nature, sellerie, reconstitution historique, vestes, accessoires BDSM&amp;hellip;), le choix est très, très vaste.</description>
     </item>
     
     <item>
@@ -51,7 +51,7 @@ Avant toute chose, faites vous un thé, puis réfléchissez quelques minutes à 
       <guid>https://www.cyphercat.eu/posts/divers/ieufi-update/</guid>
       <description>Plus personne ne l&amp;rsquo;attendait, et là, soudainement, juillet 2019 : PAF !
 Le site www.iletaitunefoisinternet.fr vient de subir une mise à jour. La dernière devait dater de novembre 2014 !
-Et juste pour se souvenir, IEUFI avant juillet 2019, c&amp;rsquo;était ça :
+Et juste pour se souvenir, IEUFI avant juillet 2019, c&#39;était ça :
 Et maintenant :
 Et (on peut toujours espérer) que l&amp;rsquo;on reverra des mises à jour dessus avant 2024&amp;hellip;</description>
     </item>
@@ -75,7 +75,7 @@ J&amp;rsquo;en ai profité pour faire un peu de nettoyage en archivant les artic
       
       <guid>https://www.cyphercat.eu/posts/artisanat/trousse-cuir-et-bois-prototype-1/</guid>
       <description>Matériel (english below) :
- Cuir: collet végétal naturel - épaisseur ~2.2mm Teinture : mélange entre tandy leather eco-flo &amp;ldquo;scarlet red&amp;rdquo; (N°11, plutôt rose) et &amp;ldquo;acajou foncé / dark mahogany&amp;rdquo; (N°8, rouge très, très sombre) Finition de tranche : noir mat de Deco Cuir Bois (côté) : noyer Fil: fil de lin poissé noir - 18&amp;frasl;2 - diam 0,50 mm aimant pour la fermeture + concho &amp;ldquo;noeud ovale celtique&amp;rdquo; pour cacher l&amp;rsquo;aimant  Un autre angle :</description>
+ Cuir: collet végétal naturel - épaisseur ~2.2mm Teinture : mélange entre tandy leather eco-flo &amp;ldquo;scarlet red&amp;rdquo; (N°11, plutôt rose) et &amp;ldquo;acajou foncé / dark mahogany&amp;rdquo; (N°8, rouge très, très sombre) Finition de tranche : noir mat de Deco Cuir Bois (côté) : noyer Fil: fil de lin poissé noir - 18/2 - diam 0,50 mm aimant pour la fermeture + concho &amp;ldquo;noeud ovale celtique&amp;rdquo; pour cacher l&amp;rsquo;aimant  Un autre angle :</description>
     </item>
     
     <item>
@@ -84,7 +84,7 @@ J&amp;rsquo;en ai profité pour faire un peu de nettoyage en archivant les artic
       <pubDate>Tue, 18 Sep 2018 19:42:59 +0000</pubDate>
       
       <guid>https://www.cyphercat.eu/posts/marotte/les-buttes-dans-la-permaculture/</guid>
-      <description>j&amp;rsquo;ai commencé cet article il y a nettement trop longtemps, je le publie &amp;ldquo;en l&amp;rsquo;état&amp;rdquo;, ça peut toujours servir. Je le terminerai peut-être un jour si ça intéresse du monde.
+      <description>j&amp;rsquo;ai commencé cet article il y a nettement trop longtemps, je le publie &amp;ldquo;en l&#39;état&amp;rdquo;, ça peut toujours servir. Je le terminerai peut-être un jour si ça intéresse du monde.
  Si vous vous intéressez à l&amp;rsquo;agroécologie ou à la permaculture, vous avez dû voir passer quelque chose concernant la culture sur butte. Pourquoi ? Parce que c&amp;rsquo;est sans doute la partie la plus accessible et la plus compréhensible par le &amp;ldquo;grand public&amp;rdquo;.</description>
     </item>
     
@@ -96,7 +96,7 @@ J&amp;rsquo;en ai profité pour faire un peu de nettoyage en archivant les artic
       <guid>https://www.cyphercat.eu/posts/adminsys/puppet-partie-2/</guid>
       <description>Lancer un run puppet avec cron Lancement automatique du run puppet sur les nodes avec cron toutes les heures :
  note : chaque tache cron ajouté nativement par puppet sera mis dans crontab, vous pouvez les lister avec crontab -l sur vos nodes.
- cron{&amp;#34;puppet&amp;#34;:ensure=&amp;gt;present,command=&amp;gt;&amp;#39;puppet agent -t --http_read_timeout 2m --logdest /var/log/puppetlabs/puppet/puppet`/bin/date +\\%Y\\%m\\%d\\%H\\%M`.log 1&amp;gt;/dev/null 2&amp;gt;&amp;amp;1&amp;#39;,user=&amp;gt;&amp;#39;root&amp;#39;,minute=&amp;gt;fqdn_rand(60),require=&amp;gt;File[&amp;#39;/var/log/puppet&amp;#39;],} Si vous souhaites voir le détail des options, c&amp;rsquo;est sur configuration.html. Le $fqdn_rand(60) (cf. #fqdnrand, permet d&amp;rsquo;indiquer aléatoirement une valeur de 0 à 60 (la valeur max étant non inclus selon la documentation) pour la configuration du cron.</description>
+ cron{&amp;#34;puppet&amp;#34;:ensure=&amp;gt;present,command=&amp;gt;&amp;#39;puppet agent -t --http_read_timeout 2m --logdest /var/log/puppetlabs/puppet/puppet`/bin/date +\\%Y\\%m\\%d\\%H\\%M`.log 1&amp;gt;/dev/null 2&amp;gt;&amp;amp;1&amp;#39;,user=&amp;gt;&amp;#39;root&amp;#39;,minute=&amp;gt;fqdn_rand(60),require=&amp;gt;File[&amp;#39;/var/log/puppet&amp;#39;],}Si vous souhaites voir le détail des options, c&amp;rsquo;est sur configuration.html. Le $fqdn_rand(60) (cf. #fqdnrand, permet d&amp;rsquo;indiquer aléatoirement une valeur de 0 à 60 (la valeur max étant non inclus selon la documentation) pour la configuration du cron.</description>
     </item>
     
     <item>
@@ -116,7 +116,7 @@ Au contraire d&amp;rsquo;Ansible où ça reste plutôt simple pour le moment, le
       
       <guid>https://www.cyphercat.eu/posts/adminsys/puppet-troubleshooting/</guid>
       <description>This article is a copy/paste of the conference &amp;ldquo;Puppet troubleshooting&amp;rdquo; by Thomas Uphill at PuppetConf2016. It&amp;rsquo;s a memo for myself, I don&amp;rsquo;t want to reread the 70 slides when I want to find something&amp;hellip;
-FIRST  document current state discover recent changes (commits, &amp;hellip;) change ONE thing at a time. If it doesn&amp;rsquo;t fix the problem, revert it.   When you have eliminated all which is impossible, then whatever remains, however improbable, must be the truth Sir Arthur Conan Doyles</description>
+FIRST  document current state discover recent changes (commits, &amp;hellip;) change ONE thing at a time. If it doesn&amp;rsquo;t fix the problem, revert it.   When you have eliminated all which is impossible, then whatever remains, however improbable, must be the truth Sir Arthur Conan Doyles Can&amp;rsquo;t find puppet # puppet config print server # puppet config print ca_server # puppet config print confdir # host puppet # nslookup puppet # dig puppet # getent hosts puppet # ping puppet Can&amp;rsquo;t connect # nc -v puppet.</description>
     </item>
     
     <item>
@@ -126,9 +126,9 @@ FIRST  document current state discover recent changes (commits, &amp;hellip;) ch
       
       <guid>https://www.cyphercat.eu/posts/divers/comment-le-fascisme-sinstalle-par-sandra-schwab/</guid>
       <description>Nos remerciements à Sandra Schwab pour cette histoire. Vous pouvez lire l&amp;rsquo;original sur twitter: @ScribblingSandy.
-Transcription (English) et traduction : Anonyme(s), Cryptie, Shiv, Skhaen.
-FEEL FREE TO COPY AND/OR SHARE!
- Comment le fascisme s&amp;rsquo;installe ? Quand vous grandissez et que vous allez à l&amp;rsquo;école en Allemagne, vous allez couvrir le troisième Reich plusieurs fois.
+  Transcription (English) et traduction : Anonyme(s), Cryptie, Shiv, Skhaen.
+  FEEL FREE TO COPY AND/OR SHARE!
+ Comment le fascisme s&amp;rsquo;installe ? Quand vous grandissez et que vous allez à l&#39;école en Allemagne, vous allez couvrir le troisième Reich plusieurs fois.
 En Histoire, nous le voyons au moins deux fois. En allemand, nous en parlons quand nous lisons des nouvelles ou des poêmes.</description>
     </item>
     
@@ -139,8 +139,8 @@ En Histoire, nous le voyons au moins deux fois. En allemand, nous en parlons qua
       
       <guid>https://www.cyphercat.eu/posts/divers/how-does-fascism-take-hold-by-sandra-schwab/</guid>
       <description>Our thanks to Sandra Schwab for this story. You can read the original on twitter: @ScribblingSandy.
-Transcription and traduction (French) by : Anonyme(s), Cryptie, Shiv, Skhaen.
-FEEL FREE TO COPY AND/OR SHARE!
+  Transcription and traduction (French) by : Anonyme(s), Cryptie, Shiv, Skhaen.
+  FEEL FREE TO COPY AND/OR SHARE!
  How does fascism take hold? (by Sandra Schwab) When you grow up in Germany and go through the school system in Germany, you will cover the Third Reich several times.
 In history, we went throught it at least twice; in German we talked about it when we read short stories and poetry.</description>
     </item>
@@ -152,10 +152,10 @@ In history, we went throught it at least twice; in German we talked about it whe
       
       <guid>https://www.cyphercat.eu/posts/adminsys/comment-se-debarrasser-de-son-ecran-fantome/</guid>
       <description>Note à moi même pour ne pas perdre une heure à cause de cette saloperie si ça recommence :
-Pour une Debian / Ubuntu et un #### d&amp;rsquo;écran VGA fantôme :
+Pour une Debian / Ubuntu et un #### d&#39;écran VGA fantôme :
 Éditer /etc/default/grub pour y ajouter video=VGA-1:d entre les quotes de GRUB_CMDLINE_LINUX.
-GRUB_CMDLINE_LINUX=&amp;quot;video=VGA-1:d&amp;quot;  Si vous avez un doute, se référer à xrandr -q ou à ls /sys/class/drm pour la liste de vos périphériques. Exemple sur mon ordi :
-ls /sys/class/drm -1 card0 card0-DP-1 card0-eDP-1 card0-HDMI-A-1 card0-VGA-1 controlD64 renderD128  On retrouve donc cette $$$##$$ de VGA fantôme (card0-VGA-1), on enlève le début, on garde la partie qui nous intéresse (VGA-1) et on sait quoi rajouter à sa config.</description>
+GRUB_CMDLINE_LINUX=&amp;quot;video=VGA-1:d&amp;quot; Si vous avez un doute, se référer à xrandr -q ou à ls /sys/class/drm pour la liste de vos périphériques. Exemple sur mon ordi :
+ls /sys/class/drm -1 card0 card0-DP-1 card0-eDP-1 card0-HDMI-A-1 card0-VGA-1 controlD64 renderD128 On retrouve donc cette $$$##$$ de VGA fantôme (card0-VGA-1), on enlève le début, on garde la partie qui nous intéresse (VGA-1) et on sait quoi rajouter à sa config.</description>
     </item>
     
     <item>
@@ -165,7 +165,7 @@ ls /sys/class/drm -1 card0 card0-DP-1 card0-eDP-1 card0-HDMI-A-1 card0-VGA-1 con
       
       <guid>https://www.cyphercat.eu/posts/adminsys/deploiement-et-automatisation-avec-ansible-partie-1/</guid>
       <description>Au programme de cette année : l&amp;rsquo;automatisation ! Il existe plusieurs outils connus pour ça, vous en avez sans aucun doute entendu parler si vous êtes adminsys : Puppet, Chef, Salt et le petit dernier : Ansible.
-Ansible a la réputation d&amp;rsquo;être le plus &amp;ldquo;accessible&amp;rdquo; avec une courbe d&amp;rsquo;apprentissage assez basse. Il peut être pertinent de l&amp;rsquo;utiliser à partir d&amp;rsquo;un seul serveur pour faciliter des déploiements selon les besoins (configuration des outils basique, serveur web, BDD&amp;hellip;).</description>
+Ansible a la réputation d&#39;être le plus &amp;ldquo;accessible&amp;rdquo; avec une courbe d&amp;rsquo;apprentissage assez basse. Il peut être pertinent de l&amp;rsquo;utiliser à partir d&amp;rsquo;un seul serveur pour faciliter des déploiements selon les besoins (configuration des outils basique, serveur web, BDD&amp;hellip;).</description>
     </item>
     
     <item>
@@ -184,7 +184,7 @@ Donc, histoire que l&amp;rsquo;on se soit bien compris : on cherche un client ma
       <pubDate>Wed, 27 Jul 2016 21:01:22 +0000</pubDate>
       
       <guid>https://www.cyphercat.eu/posts/medias/m-i-t-guide-to-lock-picking/</guid>
-      <description>Chaos Communication Camp 2011 - 02/01/12 Copyrights 1987-1991 Theodore T. TOOL Tous droits réservés. Version Française L’autorisation de reproduire ce document est libre de tout droit tant que les reproductions par quelque moyen que ce soit sont distribuées gratuitement et qu’elles comportent, de plus, la mention complète des copyrights.  AVERTISSEMENT Le contenu de ce manuel est diffusé uniquement à titre documentaire. En aucun cas, l’auteur et/ou les traducteurs ne pourraient être tenus pour responsable de l’emploi illégal des méthodes d’ouverture décrites dans ce manuel.</description>
+      <description>Chaos Communication Camp 2011 - 02/01/12 Copyrights 1987-1991 Theodore T. TOOL Tous droits réservés. Version Française L’autorisation de reproduire ce document est libre de tout droit tant que les reproductions par quelque moyen que ce soit sont distribuées gratuitement et qu’elles comportent, de plus, la mention complète des copyrights. AVERTISSEMENT Le contenu de ce manuel est diffusé uniquement à titre documentaire. En aucun cas, l’auteur et/ou les traducteurs ne pourraient être tenus pour responsable de l’emploi illégal des méthodes d’ouverture décrites dans ce manuel.</description>
     </item>
     
     <item>
@@ -194,7 +194,7 @@ Donc, histoire que l&amp;rsquo;on se soit bien compris : on cherche un client ma
       
       <guid>https://www.cyphercat.eu/posts/divers/about-jacob-appelbaum/</guid>
       <description>When harassment, sexual or otherwise, requires a cost-benefit analysis, you have failed.
- Jacob Appelbaum &amp;amp; others  Jacob Appelbaum on twitlonger (2016-06-06) ourresponse.org - &amp;ldquo;In solidarity with Jacob Appelbaum against the way this is being handled and on the side of justice for all&amp;rdquo;. (2016-06-11)  Violet Blue  “But he does good work.” with many sources/links (2016-06-15)  Nick Farr  Hi. I’m Nick Farr. (2016-06-05)  Isis Agora Lovecruft  &amp;ldquo;Forest&amp;rdquo; on jacobappelbaum.</description>
+ Jacob Appelbaum &amp;amp; others  Jacob Appelbaum on twitlonger (2016-06-06) ourresponse.org - &amp;ldquo;In solidarity with Jacob Appelbaum against the way this is being handled and on the side of justice for all&amp;quot;. (2016-06-11)  Violet Blue  “But he does good work.” with many sources/links (2016-06-15)  Nick Farr  Hi. I’m Nick Farr. (2016-06-05)  Isis Agora Lovecruft  &amp;ldquo;Forest&amp;rdquo; on jacobappelbaum.</description>
     </item>
     
     <item>
@@ -204,7 +204,7 @@ Donc, histoire que l&amp;rsquo;on se soit bien compris : on cherche un client ma
       
       <guid>https://www.cyphercat.eu/posts/surveillance/nsa-observer-liste-des-ressources/</guid>
       <description>Entre début 2013 et fin 2014, nous avons collecté et analysé les informations publiques leaké par Edward Snowden concernant la surveillance globale de la NSA et de ses alliés.
-Sites  www.nsa-observer.net Le profil github, vous y retrouverez une partie des documents et surtout la base de données.  Conférence Ma conférence &amp;ldquo;Monde sous surveillance&amp;rdquo; qui faisait un joli point d&amp;rsquo;étape lors de l&amp;rsquo;édition 2014 de Pas Sage En Seine est disponible à plusieurs endroits : youtube, le compte youtube de NUMA ou encore sur Ubicast.</description>
+Sites  www.nsa-observer.net Le profil github, vous y retrouverez une partie des documents et surtout la base de données.  Conférence Ma conférence &amp;ldquo;Monde sous surveillance&amp;rdquo; qui faisait un joli point d&#39;étape lors de l&#39;édition 2014 de Pas Sage En Seine est disponible à plusieurs endroits : youtube, le compte youtube de NUMA ou encore sur Ubicast.</description>
     </item>
     
     <item>
@@ -215,7 +215,7 @@ Sites  www.nsa-observer.net Le profil github, vous y retrouverez une partie des 
       <guid>https://www.cyphercat.eu/posts/divers/braindump-1/</guid>
       <description>Braindump rapide de mes lectures de 2015, on sait jamais, ça pourrait intéresser d&amp;rsquo;autres personnes.
 J&amp;rsquo;ai tenté de mettre en place une notation avec différentes catégories : personnages (profondeur, charisme,&amp;hellip;), scénario, etc&amp;hellip; Les notes sont sur 5. Et vous pouvez voir rapidement les résumés en cliquant sur les liens vers goodreads.com :)
-Honor Harrington, de David Weber (13 tomes, série terminée) Harrington, the heroine of the eponymous &#34;Honorverse&#34;, is an officer in the Royal Manticoran Navy (RMN), the space navy of the Star Kingdom of Manticore.</description>
+Honor Harrington, de David Weber (13 tomes, série terminée) Mon gros coup de cœur de l&amp;rsquo;année, j&amp;rsquo;ai lu les 13 tomes en ~3 mois&amp;hellip; De la SF comme j&amp;rsquo;aime, impossible de prévoir ce qui va se passer, l&amp;rsquo;héroine est parfaite, les différents protagonistes ont tous une vrai personnalité et le scénario est loin d&#39;être superficiel.</description>
     </item>
     
     <item>

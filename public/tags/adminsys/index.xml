@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>adminsys on Skhaen</title>
@@ -20,7 +20,7 @@
       <guid>https://www.cyphercat.eu/posts/adminsys/puppet-partie-2/</guid>
       <description>Lancer un run puppet avec cron Lancement automatique du run puppet sur les nodes avec cron toutes les heures :
  note : chaque tache cron ajouté nativement par puppet sera mis dans crontab, vous pouvez les lister avec crontab -l sur vos nodes.
- cron{&amp;#34;puppet&amp;#34;:ensure=&amp;gt;present,command=&amp;gt;&amp;#39;puppet agent -t --http_read_timeout 2m --logdest /var/log/puppetlabs/puppet/puppet`/bin/date +\\%Y\\%m\\%d\\%H\\%M`.log 1&amp;gt;/dev/null 2&amp;gt;&amp;amp;1&amp;#39;,user=&amp;gt;&amp;#39;root&amp;#39;,minute=&amp;gt;fqdn_rand(60),require=&amp;gt;File[&amp;#39;/var/log/puppet&amp;#39;],} Si vous souhaites voir le détail des options, c&amp;rsquo;est sur configuration.html. Le $fqdn_rand(60) (cf. #fqdnrand, permet d&amp;rsquo;indiquer aléatoirement une valeur de 0 à 60 (la valeur max étant non inclus selon la documentation) pour la configuration du cron.</description>
+ cron{&amp;#34;puppet&amp;#34;:ensure=&amp;gt;present,command=&amp;gt;&amp;#39;puppet agent -t --http_read_timeout 2m --logdest /var/log/puppetlabs/puppet/puppet`/bin/date +\\%Y\\%m\\%d\\%H\\%M`.log 1&amp;gt;/dev/null 2&amp;gt;&amp;amp;1&amp;#39;,user=&amp;gt;&amp;#39;root&amp;#39;,minute=&amp;gt;fqdn_rand(60),require=&amp;gt;File[&amp;#39;/var/log/puppet&amp;#39;],}Si vous souhaites voir le détail des options, c&amp;rsquo;est sur configuration.html. Le $fqdn_rand(60) (cf. #fqdnrand, permet d&amp;rsquo;indiquer aléatoirement une valeur de 0 à 60 (la valeur max étant non inclus selon la documentation) pour la configuration du cron.</description>
     </item>
     
     <item>
@@ -40,7 +40,7 @@ Au contraire d&amp;rsquo;Ansible où ça reste plutôt simple pour le moment, le
       
       <guid>https://www.cyphercat.eu/posts/adminsys/puppet-troubleshooting/</guid>
       <description>This article is a copy/paste of the conference &amp;ldquo;Puppet troubleshooting&amp;rdquo; by Thomas Uphill at PuppetConf2016. It&amp;rsquo;s a memo for myself, I don&amp;rsquo;t want to reread the 70 slides when I want to find something&amp;hellip;
-FIRST  document current state discover recent changes (commits, &amp;hellip;) change ONE thing at a time. If it doesn&amp;rsquo;t fix the problem, revert it.   When you have eliminated all which is impossible, then whatever remains, however improbable, must be the truth Sir Arthur Conan Doyles</description>
+FIRST  document current state discover recent changes (commits, &amp;hellip;) change ONE thing at a time. If it doesn&amp;rsquo;t fix the problem, revert it.   When you have eliminated all which is impossible, then whatever remains, however improbable, must be the truth Sir Arthur Conan Doyles Can&amp;rsquo;t find puppet # puppet config print server # puppet config print ca_server # puppet config print confdir # host puppet # nslookup puppet # dig puppet # getent hosts puppet # ping puppet Can&amp;rsquo;t connect # nc -v puppet.</description>
     </item>
     
     <item>
@@ -50,10 +50,10 @@ FIRST  document current state discover recent changes (commits, &amp;hellip;) ch
       
       <guid>https://www.cyphercat.eu/posts/adminsys/comment-se-debarrasser-de-son-ecran-fantome/</guid>
       <description>Note à moi même pour ne pas perdre une heure à cause de cette saloperie si ça recommence :
-Pour une Debian / Ubuntu et un #### d&amp;rsquo;écran VGA fantôme :
+Pour une Debian / Ubuntu et un #### d&#39;écran VGA fantôme :
 Éditer /etc/default/grub pour y ajouter video=VGA-1:d entre les quotes de GRUB_CMDLINE_LINUX.
-GRUB_CMDLINE_LINUX=&amp;quot;video=VGA-1:d&amp;quot;  Si vous avez un doute, se référer à xrandr -q ou à ls /sys/class/drm pour la liste de vos périphériques. Exemple sur mon ordi :
-ls /sys/class/drm -1 card0 card0-DP-1 card0-eDP-1 card0-HDMI-A-1 card0-VGA-1 controlD64 renderD128  On retrouve donc cette $$$##$$ de VGA fantôme (card0-VGA-1), on enlève le début, on garde la partie qui nous intéresse (VGA-1) et on sait quoi rajouter à sa config.</description>
+GRUB_CMDLINE_LINUX=&amp;quot;video=VGA-1:d&amp;quot; Si vous avez un doute, se référer à xrandr -q ou à ls /sys/class/drm pour la liste de vos périphériques. Exemple sur mon ordi :
+ls /sys/class/drm -1 card0 card0-DP-1 card0-eDP-1 card0-HDMI-A-1 card0-VGA-1 controlD64 renderD128 On retrouve donc cette $$$##$$ de VGA fantôme (card0-VGA-1), on enlève le début, on garde la partie qui nous intéresse (VGA-1) et on sait quoi rajouter à sa config.</description>
     </item>
     
     <item>
@@ -63,7 +63,7 @@ ls /sys/class/drm -1 card0 card0-DP-1 card0-eDP-1 card0-HDMI-A-1 card0-VGA-1 con
       
       <guid>https://www.cyphercat.eu/posts/adminsys/deploiement-et-automatisation-avec-ansible-partie-1/</guid>
       <description>Au programme de cette année : l&amp;rsquo;automatisation ! Il existe plusieurs outils connus pour ça, vous en avez sans aucun doute entendu parler si vous êtes adminsys : Puppet, Chef, Salt et le petit dernier : Ansible.
-Ansible a la réputation d&amp;rsquo;être le plus &amp;ldquo;accessible&amp;rdquo; avec une courbe d&amp;rsquo;apprentissage assez basse. Il peut être pertinent de l&amp;rsquo;utiliser à partir d&amp;rsquo;un seul serveur pour faciliter des déploiements selon les besoins (configuration des outils basique, serveur web, BDD&amp;hellip;).</description>
+Ansible a la réputation d&#39;être le plus &amp;ldquo;accessible&amp;rdquo; avec une courbe d&amp;rsquo;apprentissage assez basse. Il peut être pertinent de l&amp;rsquo;utiliser à partir d&amp;rsquo;un seul serveur pour faciliter des déploiements selon les besoins (configuration des outils basique, serveur web, BDD&amp;hellip;).</description>
     </item>
     
     <item>
@@ -92,7 +92,7 @@ On partira aussi du principe que l&amp;rsquo;on n&amp;rsquo;aime pas beaucoup le
       <pubDate>Fri, 17 Jul 2015 12:53:00 +0000</pubDate>
       
       <guid>https://www.cyphercat.eu/posts/adminsys/debug-tls/</guid>
-      <description>Si tu es en pleine session de dé/bug SSL/TLS, cet article peut t&amp;rsquo;éviter quelques désagréments ;-)
+      <description>Si tu es en pleine session de dé/bug SSL/TLS, cet article peut t&#39;éviter quelques désagréments ;-)
 SSL Labs, l&amp;rsquo;incontournable On ne le présente plus, le site de Qualys permet de tester la configuration de son serveur facilement avec une interface web bien faite. Le test permet d&amp;rsquo;avoir un rapport concernant les points suivants :
  Authentification : validité du certificat (nom du site, période de validité&amp;hellip;), présence et validité de la chaîne de certificat (chain) Protocoles diposnibles (SSLv2, SSLv3, TLS 1.</description>
     </item>
@@ -123,7 +123,8 @@ La documentation d&amp;rsquo;apache explique très bien comment est formé une l
       <pubDate>Sun, 15 Feb 2015 16:10:00 +0000</pubDate>
       
       <guid>https://www.cyphercat.eu/posts/adminsys/un-peu-plus-de-securite-sous-linux/</guid>
-      <description>IMPORTANT :     mises à jour : cron-apt    upgrade automatiques   checkrestart (debian-goodies) clamav (antivirus) et maldet (antimalwares)  clamav Linux Malware detector (maldet)  ajouter la base de signatures de MalDet à Clamav :   rkhunter chkrootkit lynis debsums Nettoyer  deborphan  BACKUUUUUUUUUUUUUUUUUUPS Pour aller un peu plus loin    Au programme de cet article (testé sur Debian Wheezy) :</description>
+      <description>Au programme de cet article (testé sur Debian Wheezy) :
+ Mises à jour : cron-apt et checkrestart Sécurité virus : clamav, malwares maldet, rootkits rkhunter, chkrootkit, lynis vérification de l&amp;rsquo;intégrité des paquets : debsums nettoyage : deborphan, &amp;hellip; backups  IMPORTANT :  la plupart des commandes ci-dessous nécessitent d&#39;être root ou d&amp;rsquo;utiliser la commande sudo, tous ces logiciels ont normalement des logs dans /var/log, et c&amp;rsquo;est TRÈS utile pour trouver pourquoi ça ne marche pas, il faut avoir un logiciel de mail configuré (comme postfix) pour pouvoir envoyer des mails, n&amp;rsquo;oubliez pas de RELANCER le programme après une modification pour la prendre en comptes?</description>
     </item>
     
     <item>
@@ -142,10 +143,10 @@ La documentation d&amp;rsquo;apache explique très bien comment est formé une l
       <pubDate>Tue, 09 Sep 2014 16:00:00 +0000</pubDate>
       
       <guid>https://www.cyphercat.eu/posts/adminsys/utiliser-caff-avec-postfix/</guid>
-      <description>J&amp;rsquo;ai eu il y a peu un problème avec caff qui ne voulait plus utiliser exim pour envoyer ses mails. Voici comment faire pour le remplacer par postfix.
-Configuration de postfix On commence par installer postfix :
-aptitude install postfix  On édite le fichier /etc/postfix/main.cf pour rajouter ce qui suit à la fin :
-relayhost = [IP_DE_VOTRE_SERVEUR]:587 smtp_sasl_auth_enable = yes smtp_sasl_password_maps = hash:/etc/postfix/sasl_auth smtp_sasl_security_options = noplaintext, noanonymous smtp_sasl_tls_security_options = noanonymous smtp_sasl_mechanism_filter = plain, login smtp_use_tls = yes  Puis on crée le fichier /etc/postfix/sasl_auth avec la ligne suivante :</description>
+      <description>J&amp;rsquo;ai eu il y a peu un problème avec caffqui ne voulait plus utiliser eximpour envoyer ses mails. Voici comment faire pour le remplacer par postfix.
+Configuration de postfix On commence par installer postfix:
+aptitude install postfix On édite le fichier /etc/postfix/main.cfpour rajouter ce qui suit à la fin :
+relayhost = [IP_DE_VOTRE_SERVEUR]:587 smtp_sasl_auth_enable = yes smtp_sasl_password_maps = hash:/etc/postfix/sasl_auth smtp_sasl_security_options = noplaintext, noanonymous smtp_sasl_tls_security_options = noanonymous smtp_sasl_mechanism_filter = plain, login smtp_use_tls = yes Puis on crée le fichier /etc/postfix/sasl_authavec la ligne suivante :</description>
     </item>
     
     <item>
@@ -164,7 +165,7 @@ SSL/TLS (Secure Sockets Layer et Transport Layer Security) Pour bien commencer, 
       <pubDate>Sat, 19 Apr 2014 10:00:00 +0000</pubDate>
       
       <guid>https://www.cyphercat.eu/posts/adminsys/pond-en-bref/</guid>
-      <description>Après avoir relu les différentes raisons de ne pas utiliser PGP (« 15 reasons not to start using PGP »), et accepter que ce n&amp;rsquo;est pas faux, voir même plutôt vrai, je suis retombé en fin d&amp;rsquo;article sur le projet Pond. Et il faut le dire : ça donne envie, même si la peinture n&amp;rsquo;est pas sèche.
+      <description>Après avoir relu les différentes raisons de ne pas utiliser PGP (« [15 reasons not to start using PGP](15 reasons not to start using PGP) »), et accepter que ce n&amp;rsquo;est pas faux, voir même plutôt vrai, je suis retombé en fin d&amp;rsquo;article sur le projet Pond. Et il faut le dire : ça donne envie, même si la peinture n&amp;rsquo;est pas sèche.
 Quelques fonctionnalités en vrac :
  obligation de passer par le réseau Tor OTR (Off-the-Record Messaging), pas de spam (seules les personnes identifiées peuvent communiquer avec vous) les messages sont effacés au bout d&amp;rsquo;une semaine après la réception les messages sont effacés au bout de deux semaines sur les serveurs si vous ne les avez pas reçus.</description>
     </item>
@@ -187,7 +188,10 @@ Quelques fonctionnalités en vrac :
       
       <guid>https://www.cyphercat.eu/posts/adminsys/installer-un-serveur-xmppjabber-avec-prosody/</guid>
       <description>Sous-titre : comment installer Prosody 0.9.3 sous Debian et avoir un A sur xmpp.net.
-update  2015-03-19 : comment avoir un certificat autosigné qui fonctionne avec les versions &amp;ldquo;récentes&amp;rdquo; de pidgin (voir EN BAS de cet article) 2015-01-05 : on oublie bettercryto, et l&amp;rsquo;on rajoute une jolie ciphersuite pour avoir seulement du PFS 2014-12-30 : ajout de la section bettercrypto concernant TLS 2014-12-12 : ajout de la ciphersuite dans la partie SSL/TLS 2014-08-22 : refonte du texte, changement du fournisseur du certificat SSL/TLS de CaCert pour starssl</description>
+update   2015-03-19 : comment avoir un certificat autosigné qui fonctionne avec les versions &amp;ldquo;récentes&amp;rdquo; de pidgin (voir EN BAS de cet article)
+  2015-01-05 : on oublie bettercryto, et l&amp;rsquo;on rajoute une jolie ciphersuite pour avoir seulement du PFS
+  2014-12-30 : ajout de la section bettercrypto concernant TLS
+  2014-12-12 : ajout de la ciphersuite dans la partie SSL/TLS</description>
     </item>
     
   </channel>

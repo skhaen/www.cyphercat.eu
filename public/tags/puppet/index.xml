@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>puppet on Skhaen</title>
@@ -20,7 +20,7 @@
       <guid>https://www.cyphercat.eu/posts/adminsys/puppet-partie-2/</guid>
       <description>Lancer un run puppet avec cron Lancement automatique du run puppet sur les nodes avec cron toutes les heures :
  note : chaque tache cron ajouté nativement par puppet sera mis dans crontab, vous pouvez les lister avec crontab -l sur vos nodes.
- cron{&amp;#34;puppet&amp;#34;:ensure=&amp;gt;present,command=&amp;gt;&amp;#39;puppet agent -t --http_read_timeout 2m --logdest /var/log/puppetlabs/puppet/puppet`/bin/date +\\%Y\\%m\\%d\\%H\\%M`.log 1&amp;gt;/dev/null 2&amp;gt;&amp;amp;1&amp;#39;,user=&amp;gt;&amp;#39;root&amp;#39;,minute=&amp;gt;fqdn_rand(60),require=&amp;gt;File[&amp;#39;/var/log/puppet&amp;#39;],} Si vous souhaites voir le détail des options, c&amp;rsquo;est sur configuration.html. Le $fqdn_rand(60) (cf. #fqdnrand, permet d&amp;rsquo;indiquer aléatoirement une valeur de 0 à 60 (la valeur max étant non inclus selon la documentation) pour la configuration du cron.</description>
+ cron{&amp;#34;puppet&amp;#34;:ensure=&amp;gt;present,command=&amp;gt;&amp;#39;puppet agent -t --http_read_timeout 2m --logdest /var/log/puppetlabs/puppet/puppet`/bin/date +\\%Y\\%m\\%d\\%H\\%M`.log 1&amp;gt;/dev/null 2&amp;gt;&amp;amp;1&amp;#39;,user=&amp;gt;&amp;#39;root&amp;#39;,minute=&amp;gt;fqdn_rand(60),require=&amp;gt;File[&amp;#39;/var/log/puppet&amp;#39;],}Si vous souhaites voir le détail des options, c&amp;rsquo;est sur configuration.html. Le $fqdn_rand(60) (cf. #fqdnrand, permet d&amp;rsquo;indiquer aléatoirement une valeur de 0 à 60 (la valeur max étant non inclus selon la documentation) pour la configuration du cron.</description>
     </item>
     
     <item>
@@ -40,7 +40,7 @@ Au contraire d&amp;rsquo;Ansible où ça reste plutôt simple pour le moment, le
       
       <guid>https://www.cyphercat.eu/posts/adminsys/puppet-troubleshooting/</guid>
       <description>This article is a copy/paste of the conference &amp;ldquo;Puppet troubleshooting&amp;rdquo; by Thomas Uphill at PuppetConf2016. It&amp;rsquo;s a memo for myself, I don&amp;rsquo;t want to reread the 70 slides when I want to find something&amp;hellip;
-FIRST  document current state discover recent changes (commits, &amp;hellip;) change ONE thing at a time. If it doesn&amp;rsquo;t fix the problem, revert it.   When you have eliminated all which is impossible, then whatever remains, however improbable, must be the truth Sir Arthur Conan Doyles</description>
+FIRST  document current state discover recent changes (commits, &amp;hellip;) change ONE thing at a time. If it doesn&amp;rsquo;t fix the problem, revert it.   When you have eliminated all which is impossible, then whatever remains, however improbable, must be the truth Sir Arthur Conan Doyles Can&amp;rsquo;t find puppet # puppet config print server # puppet config print ca_server # puppet config print confdir # host puppet # nslookup puppet # dig puppet # getent hosts puppet # ping puppet Can&amp;rsquo;t connect # nc -v puppet.</description>
     </item>
     
   </channel>

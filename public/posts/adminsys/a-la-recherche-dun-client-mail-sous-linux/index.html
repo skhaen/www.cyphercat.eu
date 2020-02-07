@@ -10,16 +10,13 @@
 <meta itemprop="name" content="À la recherche d&#39;un client mail sous Linux">
 <meta itemprop="description" content="Mettons tout de suite les choses au clair : on veut un client mail moderne, avec une jolie interface (qui fait wooosh wooosh, exactement) et orienté grand public. Dans cette optique, on va d&rsquo;abord vouloir quelque chose d&rsquo;ergonomique et d&rsquo;utilisable dès le premier démarrage sans devoir installer un plugin ou aller bidouiller un fichier de config. Et l&rsquo;importance de la gestion de GPG arrivera donc nettement après&hellip;
 Donc, histoire que l&rsquo;on se soit bien compris : on cherche un client mail pour la famille / les ami-e-s / un-e inconnu-e dans la rue, et pas pour un adminsys/dév/agnutollah qui n&rsquo;arrive à pas comprendre que l&rsquo;ergonomie et une jolie interface c&rsquo;est important (et le pire, c&rsquo;est que je sais très bien que même en écrivant ça, je vais avoir des retours me disant que Mutt c&rsquo;est trop bien).">
-
-
 <meta itemprop="datePublished" content="2016-08-10T17:06:51&#43;00:00" />
 <meta itemprop="dateModified" content="2016-08-10T17:06:51&#43;00:00" />
 <meta itemprop="wordCount" content="440">
 
 
 
-<meta itemprop="keywords" content="adminsys,mails," />
-<meta property="og:title" content="À la recherche d&#39;un client mail sous Linux" />
+<meta itemprop="keywords" content="adminsys,mails," /><meta property="og:title" content="À la recherche d&#39;un client mail sous Linux" />
 <meta property="og:description" content="Mettons tout de suite les choses au clair : on veut un client mail moderne, avec une jolie interface (qui fait wooosh wooosh, exactement) et orienté grand public. Dans cette optique, on va d&rsquo;abord vouloir quelque chose d&rsquo;ergonomique et d&rsquo;utilisable dès le premier démarrage sans devoir installer un plugin ou aller bidouiller un fichier de config. Et l&rsquo;importance de la gestion de GPG arrivera donc nettement après&hellip;
 Donc, histoire que l&rsquo;on se soit bien compris : on cherche un client mail pour la famille / les ami-e-s / un-e inconnu-e dans la rue, et pas pour un adminsys/dév/agnutollah qui n&rsquo;arrive à pas comprendre que l&rsquo;ergonomie et une jolie interface c&rsquo;est important (et le pire, c&rsquo;est que je sais très bien que même en écrivant ça, je vais avoir des retours me disant que Mutt c&rsquo;est trop bien)." />
 <meta property="og:type" content="article" />
@@ -78,107 +75,52 @@ Donc, histoire que l&rsquo;on se soit bien compris : on cherche un client mail p
 				<h1>À la recherche d&#39;un client mail sous Linux</h1>
 			</header>
 			<div class="content">
-				
-
-<p>Mettons tout de suite les choses au clair : on veut un client mail <strong><a href="http://www.rainloop.net/screenshots/">moderne</a></strong>, avec une <strong><a href="http://www.rainloop.net/screenshots/">jolie interface</a></strong> (qui fait <a href="https://twitter.com/Skhaen/status/763371377802043392">wooosh wooosh</a>, exactement) et <strong>orienté grand public</strong>. Dans cette optique, on va d&rsquo;abord vouloir quelque chose d&rsquo;<strong>ergonomique</strong> et d&rsquo;<strong>utilisable dès le premier démarrage</strong> sans devoir installer un plugin ou aller bidouiller un fichier de config. Et l&rsquo;importance de la gestion de <a href="https://xkcd.com/364/">GPG</a> arrivera donc nettement après&hellip;</p>
-
-<p><img src="https://imgs.xkcd.com/comics/manuals.png" alt="XKCD" /></p>
-
+				<p>Mettons tout de suite les choses au clair : on veut un client mail <strong><a href="http://www.rainloop.net/screenshots/">moderne</a></strong>, avec une <strong><a href="http://www.rainloop.net/screenshots/">jolie interface</a></strong> (qui fait <a href="https://twitter.com/Skhaen/status/763371377802043392">wooosh wooosh</a>, exactement) et <strong>orienté grand public</strong>. Dans cette optique, on va d&rsquo;abord vouloir quelque chose d&rsquo;<strong>ergonomique</strong> et d&rsquo;<strong>utilisable dès le premier démarrage</strong> sans devoir installer un plugin ou aller bidouiller un fichier de config. Et l&rsquo;importance de la gestion de <a href="https://xkcd.com/364/">GPG</a> arrivera donc nettement après&hellip;</p>
+<p><img src="https://imgs.xkcd.com/comics/manuals.png" alt="XKCD"></p>
 <p>Donc, histoire que l&rsquo;on se soit bien compris : on cherche un client mail pour la famille / les ami-e-s / un-e inconnu-e dans la rue, et pas pour un adminsys/dév/agnutollah qui n&rsquo;arrive à pas comprendre que l&rsquo;ergonomie et une jolie interface c&rsquo;est important (et le pire, c&rsquo;est que je sais très bien que même en écrivant ça, je vais avoir des retours me disant que Mutt c&rsquo;est trop bien).</p>
-
 <p>Et à voir certaines propositions/réactions sur twitter, il y a encore beaucoup trop de personnes qui n&rsquo;arrivent pas à comprendre pourquoi <a href="http://itvision.altervista.org/why.linux.is.not.ready.for.the.desktop.current.html#WorksForMe">Linux est aussi loin derrière sur le marché du <em>desktop</em></a>.</p>
-
 <p>Faisons donc un tour de l&rsquo;existant (si j&rsquo;ai oublié quelque chose d&rsquo;intéressant, n&rsquo;hésitez pas à me contacter par <a href="https://www.cyphercat.eu/about/">mail/twitter</a>) :</p>
-
 <h2 id="logiciels">Logiciels<a href="#logiciels" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
-
 <ul>
-<li><strong><a href="https://github.com/astroidmail/astroid">Astroid</a></strong>
-
-<ul>
+<li><strong><a href="https://github.com/astroidmail/astroid">Astroid</a></strong></li>
 <li>Interface pas top (mais GPG)</li>
-</ul></li>
-<li><strong><a href="https://bitmask.net/en">Bitmask</a></strong>
-
-<ul>
+<li><strong><a href="https://bitmask.net/en">Bitmask</a></strong></li>
 <li>VPN et GPG</li>
-</ul></li>
-<li><strong><a href="http://www.claws-mail.org/">Claws mail</a></strong>
-
-<ul>
+<li><strong><a href="http://www.claws-mail.org/">Claws mail</a></strong></li>
 <li>Interface pas top (mais GPG)</li>
-</ul></li>
-<li><strong><a href="https://wiki.gnome.org/Apps/Evolution">Evolution</a></strong>
-
-<ul>
+<li><strong><a href="https://wiki.gnome.org/Apps/Evolution">Evolution</a></strong></li>
 <li>lourd O_o (mais GPG)</li>
-</ul></li>
-<li><strong><a href="https://wiki.gnome.org/Apps/Geary">Geary</a></strong> (<a href="https://git.gnome.org/browse/geary/">source</a>)
-
-<ul>
+<li><strong><a href="https://wiki.gnome.org/Apps/Geary">Geary</a></strong> (<a href="https://git.gnome.org/browse/geary/">source</a>)</li>
 <li>ça à l&rsquo;air pas mal du tout, même si apparemment pas beaucoup de choix de configuration</li>
-</ul></li>
-<li><strong><a href="https://www.kde.org/applications/internet/kmail/">Kontact</a></strong> (Kmail, intégré dans KDE)
-
-<ul>
+<li><strong><a href="https://www.kde.org/applications/internet/kmail/">Kontact</a></strong> (Kmail, intégré dans KDE)</li>
 <li>pas testé, donc pas de retour</li>
 <li>GPG</li>
-</ul></li>
-<li><strong><a href="http://www.mutt.org/">Mutt</a></strong>
-
-<ul>
+<li><strong><a href="http://www.mutt.org/">Mutt</a></strong></li>
 <li>ah pardon, on cherche une interface grand public.</li>
 <li>mais GPG</li>
-</ul></li>
-<li><strong><a href="https://www.nylas.com/">Nylas N1</a></strong> (<a href="https://github.com/nylas/N1">source</a>)
-
-<ul>
+<li><strong><a href="https://www.nylas.com/">Nylas N1</a></strong> (<a href="https://github.com/nylas/N1">source</a>)</li>
 <li>Ça a aussi l&rsquo;air pas mal du tout. Dommage, il faut obligatoirement un <a href="https://support.nylas.com/hc/en-us/articles/220974588-How-is-a-Nylas-ID-different-from-my-email-address-">ID Nylas</a> pour l&rsquo;utiliser, et je ne sais pas vraiment ce qu&rsquo;ils vont faire avec les données.</li>
-</ul></li>
 <li><strong>Pantheon Mail</strong> (fork de Geary - <a href="https://launchpad.net/pantheon-mail">source</a>)</li>
-<li><strong><a href="https://www.mozilla.org/en-US/thunderbird/">Thunderbird</a></strong>
-
-<ul>
+<li><strong><a href="https://www.mozilla.org/en-US/thunderbird/">Thunderbird</a></strong></li>
 <li><em>sight</em>&hellip; apparemment toujours la référence sur Linux (j&rsquo;avoue que mon expérience avec FirefoxOS pendant un an me donne envie de ###### Mozilla&hellip;)</li>
-</ul></li>
 </ul>
-
 <h2 id="webmail">Webmail<a href="#webmail" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
-
 <ul>
 <li><strong><a href="https://mailinabox.email/">Mail-in-a-box</a></strong></li>
-<li><strong><a href="https://www.mailpile.is/">Mailpile</a></strong> :
-
-<ul>
+<li><strong><a href="https://www.mailpile.is/">Mailpile</a></strong> :</li>
 <li>J&rsquo;ai entendu pas mal de mauvais échos pendant un moment, si vous l&rsquo;avez testé je veux bien des retours.</li>
-</ul></li>
-<li><strong><a href="http://www.rainloop.net">Rainloop</a></strong>
-
-<ul>
+<li><strong><a href="http://www.rainloop.net">Rainloop</a></strong></li>
 <li>Awwwww &lt;3</li>
 <li>et GPG</li>
-</ul></li>
-<li><strong><a href="https://roundcube.net/">Roundcube</a></strong>
-
-<ul>
+<li><strong><a href="https://roundcube.net/">Roundcube</a></strong></li>
 <li>la référence du webmail libre, pas mal de thèmes disponibles, dont des sympas</li>
-</ul></li>
-<li><strong><a href="https://sogo.nu/">SoGo</a></strong>
-
-<ul>
+<li><strong><a href="https://sogo.nu/">SoGo</a></strong></li>
 <li>mails + CalDAV + CardDAV + GroupDAV + Microsoft ActiveSync, plutôt orienté pro.</li>
-</ul></li>
-<li><strong><a href="https://www.zimbra.com">Zimbra</a></strong>
-
-<ul>
+<li><strong><a href="https://www.zimbra.com">Zimbra</a></strong></li>
 <li>l&rsquo;autre référence du (pas que) webmail libre, mais seulement côté serveur (et beaucoup, beaucoup plus gros)</li>
-</ul></li>
 </ul>
-
 <p>C&rsquo;est intéressant de voir le nombre de logiciels avec une ergonomie poussive ou un design (un peu) vieux mais avec du support pour GPG. C&rsquo;est quoi sa part de marché en dehors de notre petit écosystème déjà ?</p>
-
 <h4 id="edit">Edit<a href="#edit" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
-
 <ul>
 <li>2016-08-22 - ajout de Mail-in-a-box</li>
 <li>2016-08-11 - ajout de Bitmask et de SoGo</li>
@@ -207,7 +149,7 @@ Donc, histoire que l&rsquo;on se soit bien compris : on cherche un client mail p
 	</main>
 
 	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
-		<p>&copy; 2019 <a href="https://www.cyphercat.eu">Skhaen</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
+		<p>&copy; 2020 <a href="https://www.cyphercat.eu">Skhaen</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
 		<p>
 			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://www.cyphercat.eu/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
 		</p>

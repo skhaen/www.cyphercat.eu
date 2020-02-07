@@ -8,34 +8,31 @@
 	<meta name="theme-color" content="#494f5c">
 	<meta name="msapplication-TileColor" content="#494f5c">
 <meta itemprop="name" content="Utiliser caff avec postfix">
-<meta itemprop="description" content="J&rsquo;ai eu il y a peu un problème avec caff qui ne voulait plus utiliser exim pour envoyer ses mails. Voici comment faire pour le remplacer par postfix.
-Configuration de postfix On commence par installer postfix :
-aptitude install postfix  On édite le fichier /etc/postfix/main.cf pour rajouter ce qui suit à la fin :
-relayhost = [IP_DE_VOTRE_SERVEUR]:587 smtp_sasl_auth_enable = yes smtp_sasl_password_maps = hash:/etc/postfix/sasl_auth smtp_sasl_security_options = noplaintext, noanonymous smtp_sasl_tls_security_options = noanonymous smtp_sasl_mechanism_filter = plain, login smtp_use_tls = yes  Puis on crée le fichier /etc/postfix/sasl_auth avec la ligne suivante :">
-
-
+<meta itemprop="description" content="J&rsquo;ai eu il y a peu un problème avec caffqui ne voulait plus utiliser eximpour envoyer ses mails. Voici comment faire pour le remplacer par postfix.
+Configuration de postfix On commence par installer postfix:
+aptitude install postfix On édite le fichier /etc/postfix/main.cfpour rajouter ce qui suit à la fin :
+relayhost = [IP_DE_VOTRE_SERVEUR]:587 smtp_sasl_auth_enable = yes smtp_sasl_password_maps = hash:/etc/postfix/sasl_auth smtp_sasl_security_options = noplaintext, noanonymous smtp_sasl_tls_security_options = noanonymous smtp_sasl_mechanism_filter = plain, login smtp_use_tls = yes Puis on crée le fichier /etc/postfix/sasl_authavec la ligne suivante :">
 <meta itemprop="datePublished" content="2014-09-09T16:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2014-09-09T16:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="152">
+<meta itemprop="wordCount" content="147">
 
 
 
-<meta itemprop="keywords" content="gpg,postfix,adminsys," />
-<meta property="og:title" content="Utiliser caff avec postfix" />
-<meta property="og:description" content="J&rsquo;ai eu il y a peu un problème avec caff qui ne voulait plus utiliser exim pour envoyer ses mails. Voici comment faire pour le remplacer par postfix.
-Configuration de postfix On commence par installer postfix :
-aptitude install postfix  On édite le fichier /etc/postfix/main.cf pour rajouter ce qui suit à la fin :
-relayhost = [IP_DE_VOTRE_SERVEUR]:587 smtp_sasl_auth_enable = yes smtp_sasl_password_maps = hash:/etc/postfix/sasl_auth smtp_sasl_security_options = noplaintext, noanonymous smtp_sasl_tls_security_options = noanonymous smtp_sasl_mechanism_filter = plain, login smtp_use_tls = yes  Puis on crée le fichier /etc/postfix/sasl_auth avec la ligne suivante :" />
+<meta itemprop="keywords" content="gpg,postfix,adminsys," /><meta property="og:title" content="Utiliser caff avec postfix" />
+<meta property="og:description" content="J&rsquo;ai eu il y a peu un problème avec caffqui ne voulait plus utiliser eximpour envoyer ses mails. Voici comment faire pour le remplacer par postfix.
+Configuration de postfix On commence par installer postfix:
+aptitude install postfix On édite le fichier /etc/postfix/main.cfpour rajouter ce qui suit à la fin :
+relayhost = [IP_DE_VOTRE_SERVEUR]:587 smtp_sasl_auth_enable = yes smtp_sasl_password_maps = hash:/etc/postfix/sasl_auth smtp_sasl_security_options = noplaintext, noanonymous smtp_sasl_tls_security_options = noanonymous smtp_sasl_mechanism_filter = plain, login smtp_use_tls = yes Puis on crée le fichier /etc/postfix/sasl_authavec la ligne suivante :" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.cyphercat.eu/posts/adminsys/utiliser-caff-avec-postfix/" />
 <meta property="article:published_time" content="2014-09-09T16:00:00+00:00" />
 <meta property="article:modified_time" content="2014-09-09T16:00:00+00:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Utiliser caff avec postfix"/>
-<meta name="twitter:description" content="J&rsquo;ai eu il y a peu un problème avec caff qui ne voulait plus utiliser exim pour envoyer ses mails. Voici comment faire pour le remplacer par postfix.
-Configuration de postfix On commence par installer postfix :
-aptitude install postfix  On édite le fichier /etc/postfix/main.cf pour rajouter ce qui suit à la fin :
-relayhost = [IP_DE_VOTRE_SERVEUR]:587 smtp_sasl_auth_enable = yes smtp_sasl_password_maps = hash:/etc/postfix/sasl_auth smtp_sasl_security_options = noplaintext, noanonymous smtp_sasl_tls_security_options = noanonymous smtp_sasl_mechanism_filter = plain, login smtp_use_tls = yes  Puis on crée le fichier /etc/postfix/sasl_auth avec la ligne suivante :"/>
+<meta name="twitter:description" content="J&rsquo;ai eu il y a peu un problème avec caffqui ne voulait plus utiliser eximpour envoyer ses mails. Voici comment faire pour le remplacer par postfix.
+Configuration de postfix On commence par installer postfix:
+aptitude install postfix On édite le fichier /etc/postfix/main.cfpour rajouter ce qui suit à la fin :
+relayhost = [IP_DE_VOTRE_SERVEUR]:587 smtp_sasl_auth_enable = yes smtp_sasl_password_maps = hash:/etc/postfix/sasl_auth smtp_sasl_security_options = noplaintext, noanonymous smtp_sasl_tls_security_options = noanonymous smtp_sasl_mechanism_filter = plain, login smtp_use_tls = yes Puis on crée le fichier /etc/postfix/sasl_authavec la ligne suivante :"/>
 
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -84,19 +81,11 @@ relayhost = [IP_DE_VOTRE_SERVEUR]:587 smtp_sasl_auth_enable = yes smtp_sasl_pass
 				<h1>Utiliser caff avec postfix</h1>
 			</header>
 			<div class="content">
-				
-
-<p>J&rsquo;ai eu il y a peu un problème avec <code>caff</code> qui ne voulait plus utiliser <code>exim</code> pour envoyer ses mails. Voici comment faire pour le remplacer par <code>postfix</code>.</p>
-
+				<p>J&rsquo;ai eu il y a peu un problème avec <!-- raw HTML omitted -->caff<!-- raw HTML omitted --> qui ne voulait plus utiliser <!-- raw HTML omitted -->exim<!-- raw HTML omitted --> pour envoyer ses mails. Voici comment faire pour le remplacer par <!-- raw HTML omitted -->postfix<!-- raw HTML omitted -->.</p>
 <h4 id="configuration-de-postfix">Configuration de postfix<a href="#configuration-de-postfix" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
-
-<p>On commence par installer <code>postfix</code> :</p>
-
+<p>On commence par installer <!-- raw HTML omitted -->postfix<!-- raw HTML omitted --> :</p>
 <pre><code>aptitude install postfix
-</code></pre>
-
-<p>On édite le fichier <code>/etc/postfix/main.cf</code> pour rajouter ce qui suit à la fin :</p>
-
+</code></pre><p>On édite le fichier <!-- raw HTML omitted -->/etc/postfix/main.cf<!-- raw HTML omitted --> pour rajouter ce qui suit à la fin :</p>
 <pre><code>relayhost = [IP_DE_VOTRE_SERVEUR]:587
 smtp_sasl_auth_enable = yes
 smtp_sasl_password_maps = hash:/etc/postfix/sasl_auth
@@ -104,16 +93,11 @@ smtp_sasl_security_options = noplaintext, noanonymous
 smtp_sasl_tls_security_options = noanonymous
 smtp_sasl_mechanism_filter = plain, login
 smtp_use_tls = yes
-</code></pre>
-
-<p>Puis on crée le fichier <code>/etc/postfix/sasl_auth</code> avec la ligne suivante :</p>
-
+</code></pre><p>Puis on crée le fichier <!-- raw HTML omitted -->/etc/postfix/sasl_auth<!-- raw HTML omitted --> avec la ligne suivante :</p>
 <pre><code>[IP_DE_VOTRE_SERVEUR]:587  smtp@libwalk.so:IeNguco4ae
-</code></pre>
-
-<ul>
+</code></pre><ul>
 <li><strong>IP_DE_VOTRE_SERVEUR</strong> étant l&rsquo;adresse de votre serveur de messagerie,</li>
-<li><strong>smtp@libwalk.so</strong> étant une adresse de messagerie existante et utilisable,</li>
+<li><strong><a href="mailto:smtp@libwalk.so">smtp@libwalk.so</a></strong> étant une adresse de messagerie existante et utilisable,</li>
 <li><strong>IeNguco4ae</strong> étant le mot de passe pour accéder à l&rsquo;adresse mail de la ligne précédente. Pour créer un mot de passe rapidement, vous pouvez utiliser la commande <a href="https://packages.debian.org/wheezy/admin/pwgen"><code>pwgen</code></a> après l&rsquo;avoir installé sur votre système (<code>aptitude install pwgen</code>) avec par exemple la commande <code>pwgen 20 1</code>.</li>
 </ul>
 
@@ -140,7 +124,7 @@ smtp_use_tls = yes
 	</main>
 
 	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
-		<p>&copy; 2019 <a href="https://www.cyphercat.eu">Skhaen</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
+		<p>&copy; 2020 <a href="https://www.cyphercat.eu">Skhaen</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
 		<p>
 			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://www.cyphercat.eu/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
 		</p>
