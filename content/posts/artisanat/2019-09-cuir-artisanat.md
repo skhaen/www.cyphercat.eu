@@ -47,20 +47,24 @@ Pour le moment, j'ai fait quasiment tout mes achats chez [decocuir.com](https://
 
 > Astuce : si vous vous demandez si il nécessaire d'acheter quelque chose mais que vous le voyez dans absolument aucune vidéo, c'est que la réponse est sans doute non (le contraire n'est par contre pas forcément vrai) ;-)
 
-## Pour la France
+## Sites
+
+### Pour la France
 
 * [decocuir.com](https://www.decocuir.com)
 * [crea-cuir.com](https://crea-cuir.com/)
 * [cuirtextilecrea.com](https://www.cuirtextilecrea.com/)
 * [mando.fr](https://mando.fr/) (plutôt pour les entreprises)
 
-## Ailleurs 
+### Ailleurs 
 
 Faites attention, en dehors de l'Europe il y aura 20% de taxes lors du passage de douane)
 
 * [rmleathersupply.com](https://www.rmleathersupply.com/) (USA)
 
-## "kit" de base
+## Quoi acheter ?
+
+### "kit" de base
 
 Vous pouvez souvent trouver des packs vendus dans les magasins. Dans l'absolu, si vous n'êtes pas sûr d'avoir besoin de tout, je vous conseille d'éviter et de choisir vous même ce dont vous avez besoin. Plusieurs chaînes ont fait des vidéos sur ce qu'ils conseillent comme outils "par défaut", ça peut vous aider à vous faire une idée (garder juste en tête que pour la plupart ce sont des professionnels et qu'ils n'ont pas forcément les mêmes besoins que nous ;-)).
 
@@ -71,7 +75,7 @@ Vous pouvez souvent trouver des packs vendus dans les magasins. Dans l'absolu, s
 
 Pour ce qui est de couper, un (petit) cutter sera parfait pour commencer, pas la peine d'investir dans de la grosse lame pour le moment.
 
-## Ma liste
+### Ma liste
 
 J'ai repris mes différentes factures depuis que j'ai commencé et j'ai listé les outils que j'utilise absolument tout le temps. J'ai ajouté des liens quand c'est possible, mais n'oubliez pas qu'il existe d'autres magasins en ligne, ainsi que des alternatives.
 
