@@ -110,7 +110,7 @@ Bien entendu, vous pouvez aussi en faire vous même si vous le souhaitez (voir p
 
 Les liens ci-dessous devraient vous servir après vos premiers projets, quand vous allez vouloir vous améliorer :)
 
-## Comment choisir des griffes ?
+## Comment choisir des griffes ?
 
 Graaaande question, surtout au moment de comprendre les différences entre "griffe à frapper" (pricking irons) ou "griffe à percer" :
 
