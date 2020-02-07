@@ -10,6 +10,8 @@ title = "[cuir] Par où commencer ?"
 
 +++
 
+> Dernière édition : 2020-02-07
+
 ...quand on veut travailler le cuir ? C'est une très bonne question (merci de l'avoir posé), et donc, histoire de vous faciliter la vie, vous trouverez ci-dessous quelques pistes qui devraient normalement vous aider.
 
 Avant toute chose, faites vous un thé, puis réfléchissez quelques minutes à ce que vous voulez faire pour le moment : [porte-cartes, portefeuilles, sacs, ceintures](https://fr.wikipedia.org/wiki/Maroquinerie)), chaussures, [Bourrellerie](https://www.youtube.com/watch?v=8Qwily1ZTh8), [repoussage](https://www.youtube.com/watch?v=rfv3iQYDUgs), [accessoires pour jeux de rôle grandeur nature](https://fr.wikipedia.org/wiki/Jeu_de_r%C3%B4le_grandeur_nature), sellerie, reconstitution historique, vestes, accessoires BDSM...), le choix est très, très vaste.
@@ -20,16 +22,16 @@ Avant d'acheter le moindre truc, je vous conseille **vivement** de passer quelqu
 
 Voici une petite liste de mes préférés :
 
+* [Little King Goods](https://www.youtube.com/channel/UCKSql-GFCO400w7xNFbYeug) (maroquinerie)
+* [Studio Hael](https://www.youtube.com/channel/UCi5rRT9m6p3EoYCcgLR4WZA) (maroquinerie)
+* [Equus Leather](https://www.youtube.com/channel/UCiJZG7AeyFTvykBpx3W88GQ/videos) (maroquinerie)
 * [Dark Horse Workshop](https://www.youtube.com/channel/UCZDVOD2cC4twP3TjuIQCbPQ) (maroquinerie, viking, repoussage)
 * [Corter Leather](https://www.youtube.com/channel/UCoYR1doityX-Cac-3lP4MLA) (maroquinerie)
-* [Little King Goods](https://www.youtube.com/channel/UCKSql-GFCO400w7xNFbYeug) (maroquinerie)
-* [Equus Leather](https://www.youtube.com/channel/UCiJZG7AeyFTvykBpx3W88GQ/videos) (maroquinerie)
 * [HAHNS Atelier](https://www.youtube.com/channel/UCJYSHaxWbDhYgh-PH0nashw) (maroquinerie)
 * [Brian the bootmaker](https://www.youtube.com/channel/UCPjoWhob1Mhi0MtOHCzMKZA) (cordonnerie, comme le nom l'indique)
 * [makesupply](https://www.youtube.com/channel/UCaegWtm_7zJU-dWG0StCupQ/videos) (maroquinerie)
 * [chartermade](https://www.youtube.com/channel/UC1xBgBntZv4mCtKtskU8i_Q) (maroquinerie)
 * [Prince Armory](https://www.youtube.com/channel/UCmtnq4rV4X8ri1-4hq2fJlg) (des armures ! en cuirs !)
-* [Studio Hael](https://www.youtube.com/channel/UCi5rRT9m6p3EoYCcgLR4WZA) (maroquinerie)
 
 Bonus :
 
@@ -43,7 +45,20 @@ Si vous connaissez d'autres chaînes de qualité, et en particulier des chaines 
 
 Pour le moment, j'ai fait quasiment tout mes achats chez [decocuir.com](https://www.decocuir.com), mais vous avez aussi tout les sites de ventes en ligne que vous pouvez trouver (comme [crea-cuir.com](https://crea-cuir.com/)). Concernant ce qu'il faut acheter, c'est nettement plus compliqué. Ça va dépendre de ce que vous voulez faire et bien entendu de votre budget. C'est pour ça que à mon avis, il est primordial de passer un peu de temps à regarder des vidéos avant de se lancer.
 
-> Astuce : si vous vous demandez si il nécessaire d'acheter quelque chose mais que vous le voyez dans absolument aucune vidéo, c'est que la réponse est sans doute non (le contraire n'est par contre pas forcément vrai) ;-) 
+> Astuce : si vous vous demandez si il nécessaire d'acheter quelque chose mais que vous le voyez dans absolument aucune vidéo, c'est que la réponse est sans doute non (le contraire n'est par contre pas forcément vrai) ;-)
+
+## Pour la France
+
+* [decocuir.com](https://www.decocuir.com)
+* [crea-cuir.com](https://crea-cuir.com/)
+* [cuirtextilecrea.com](https://www.cuirtextilecrea.com/)
+* [mando.fr](https://mando.fr/) (plutôt pour les entreprises)
+
+## Ailleurs 
+
+Faites attention, en dehors de l'Europe il y aura 20% de taxes lors du passage de douane)
+
+* [rmleathersupply.com](https://www.rmleathersupply.com/) (USA)
 
 ## "kit" de base
 
@@ -101,10 +116,13 @@ Si vous allez sur les sites des chaines de la partie "Vidéos", ils en vendent q
 
 Bien entendu, vous pouvez aussi en faire vous même si vous le souhaitez (voir par exemple "*[Making Leather Patterns](https://www.instructables.com/lesson/Making-Leather-Patterns/)* sur instructables.com).
 
-# Et des cours en ligne, c'est possible ?
+# Où est ce que je peux apprendre ?
+
+En dehors de youtube en général :
 
 * [Armitage Leather](https://vimeo.com/ondemand/armitageleather) - Secrets from the Workshop sur vimeo (+ [youtube](https://www.youtube.com/user/Nordicbadger))
 * [Leathercraft masterclass](https://www.leathercraftmasterclass.com/)
+* [leatherworker.net/forum](https://leatherworker.net/forum/)
 
 # FAQ
 
@@ -114,7 +132,7 @@ Les liens ci-dessous devraient vous servir après vos premiers projets, quand vo
 
 Graaaande question, surtout au moment de comprendre les différences entre "griffe à frapper" (pricking irons) ou "griffe à percer" :
 
-* Pricking Iron Reviews : [résumé texte]](https://bd4a19d1-2fe8-40b7-89f8-9a3f92d4106d.filesusr.com/ugd/725555_c557a9825e664398bbff455c2a18d0cf.pdf), ou en [vidéo](https://www.youtube.com/watch?v=rjNOWo5076s&list=PLu5txPOIXtG1WRnPzzpxACppYwf_inmYh) (Armitage, que l'on ne remerciera jamais assez !)
+* Pricking Iron Reviews : [résumé texte](https://bd4a19d1-2fe8-40b7-89f8-9a3f92d4106d.filesusr.com/ugd/725555_c557a9825e664398bbff455c2a18d0cf.pdf), ou en [vidéo](https://www.youtube.com/watch?v=rjNOWo5076s&list=PLu5txPOIXtG1WRnPzzpxACppYwf_inmYh) (Armitage, que l'on ne remerciera jamais assez !)
 * "[Pricking Irons. Vintage vs Modern. What's The Difference?](https://www.leathercraftmasterclass.com/post/pricking-irons-vintage-vs-modern-what-s-the-difference)" (leathercraftmasterclass)
 
 
