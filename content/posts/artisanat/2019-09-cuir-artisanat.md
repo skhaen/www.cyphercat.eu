@@ -139,6 +139,9 @@ Graaaande question, surtout au moment de comprendre les différences entre "grif
 * Pricking Iron Reviews : [résumé texte](https://bd4a19d1-2fe8-40b7-89f8-9a3f92d4106d.filesusr.com/ugd/725555_c557a9825e664398bbff455c2a18d0cf.pdf), ou en [vidéo](https://www.youtube.com/watch?v=rjNOWo5076s&list=PLu5txPOIXtG1WRnPzzpxACppYwf_inmYh) (Armitage, que l'on ne remerciera jamais assez !)
 * "[Pricking Irons. Vintage vs Modern. What's The Difference?](https://www.leathercraftmasterclass.com/post/pricking-irons-vintage-vs-modern-what-s-the-difference)" (leathercraftmasterclass)
 
+## Comment choisir son fil ?
+
+* [Quel fil et aiguille choisir pour réaliser de très belles coutures sur cuir ?](https://www.decocuir.com/guide-couture-cuir) (decocuir.fr)
 
 ## Couture
 
