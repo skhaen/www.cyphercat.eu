@@ -8,17 +8,18 @@
 	<meta name="theme-color" content="#494f5c">
 	<meta name="msapplication-TileColor" content="#494f5c">
 <meta itemprop="name" content="Debug SSL/TLS avec OpenSSL - partie 1">
-<meta itemprop="description" content="Si tu es en pleine session de dé/bug SSL/TLS, cet article peut t&#39;éviter quelques désagréments ;-)
+<meta itemprop="description" content="Si tu es en pleine session de dé/bug SSL/TLS, cet article peut t&rsquo;éviter quelques désagréments ;-)
 SSL Labs, l&rsquo;incontournable On ne le présente plus, le site de Qualys permet de tester la configuration de son serveur facilement avec une interface web bien faite. Le test permet d&rsquo;avoir un rapport concernant les points suivants :
  Authentification : validité du certificat (nom du site, période de validité&hellip;), présence et validité de la chaîne de certificat (chain) Protocoles diposnibles (SSLv2, SSLv3, TLS 1.">
-<meta itemprop="datePublished" content="2015-07-17T12:53:00&#43;00:00" />
-<meta itemprop="dateModified" content="2015-07-17T12:53:00&#43;00:00" />
+<meta itemprop="datePublished" content="2015-07-17T12:53:00+00:00" />
+<meta itemprop="dateModified" content="2015-07-17T12:53:00+00:00" />
 <meta itemprop="wordCount" content="1196">
 
 
 
-<meta itemprop="keywords" content="adminsys,ssl,apache2," /><meta property="og:title" content="Debug SSL/TLS avec OpenSSL - partie 1" />
-<meta property="og:description" content="Si tu es en pleine session de dé/bug SSL/TLS, cet article peut t&#39;éviter quelques désagréments ;-)
+<meta itemprop="keywords" content="adminsys,ssl,apache2," />
+<meta property="og:title" content="Debug SSL/TLS avec OpenSSL - partie 1" />
+<meta property="og:description" content="Si tu es en pleine session de dé/bug SSL/TLS, cet article peut t&rsquo;éviter quelques désagréments ;-)
 SSL Labs, l&rsquo;incontournable On ne le présente plus, le site de Qualys permet de tester la configuration de son serveur facilement avec une interface web bien faite. Le test permet d&rsquo;avoir un rapport concernant les points suivants :
  Authentification : validité du certificat (nom du site, période de validité&hellip;), présence et validité de la chaîne de certificat (chain) Protocoles diposnibles (SSLv2, SSLv3, TLS 1." />
 <meta property="og:type" content="article" />
@@ -27,7 +28,7 @@ SSL Labs, l&rsquo;incontournable On ne le présente plus, le site de Qualys perm
 <meta property="article:modified_time" content="2015-07-17T12:53:00+00:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Debug SSL/TLS avec OpenSSL - partie 1"/>
-<meta name="twitter:description" content="Si tu es en pleine session de dé/bug SSL/TLS, cet article peut t&#39;éviter quelques désagréments ;-)
+<meta name="twitter:description" content="Si tu es en pleine session de dé/bug SSL/TLS, cet article peut t&rsquo;éviter quelques désagréments ;-)
 SSL Labs, l&rsquo;incontournable On ne le présente plus, le site de Qualys permet de tester la configuration de son serveur facilement avec une interface web bien faite. Le test permet d&rsquo;avoir un rapport concernant les points suivants :
  Authentification : validité du certificat (nom du site, période de validité&hellip;), présence et validité de la chaîne de certificat (chain) Protocoles diposnibles (SSLv2, SSLv3, TLS 1."/>
 
@@ -78,7 +79,7 @@ SSL Labs, l&rsquo;incontournable On ne le présente plus, le site de Qualys perm
 				<h1>Debug SSL/TLS avec OpenSSL - partie 1</h1>
 			</header>
 			<div class="content">
-				<p>Si tu es en pleine session de dé/bug SSL/TLS, cet article peut t'éviter quelques désagréments ;-)</p>
+				<p>Si tu es en pleine session de dé/bug SSL/TLS, cet article peut t&rsquo;éviter quelques désagréments ;-)</p>
 <h3 id="ssl-labshttpswwwssllabscom-lincontournable"><a href="https://www.ssllabs.com/">SSL Labs</a>, l&rsquo;incontournable<a href="#ssl-labshttpswwwssllabscom-lincontournable" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 <p>On ne le présente plus, le site de Qualys permet de <a href="https://www.ssllabs.com/ssltest/">tester la configuration de son serveur</a> facilement avec une interface web bien faite. Le test permet d&rsquo;avoir un rapport concernant les points suivants :</p>
 <ul>
@@ -89,7 +90,7 @@ SSL Labs, l&rsquo;incontournable On ne le présente plus, le site de Qualys perm
 <li>Simulations de connexions avec de nombreux clients (Android, Firefox, IE, Java, Safari, &hellip;),</li>
 <li>détails (Forward Secrecy, HSTS, utilisation du protocole RC4, etc etc&hellip;).</li>
 </ul>
-<p>Le tout avec des notes allant de A à F et les pistes à suivre pour améliorer sa connexion. Si vous ne l&rsquo;avez pas encore fait c&rsquo;est la première étape parfaite. À noter que SSL Labs permet aussi de <a href="https://www.ssllabs.com/ssltest/viewMyClient.html">tester son navigateur</a> et fournit de la data sur <a href="https://www.trustworthyinternet.org/ssl-pulse/">l'écosystème HTTPS sur Internet</a>.</p>
+<p>Le tout avec des notes allant de A à F et les pistes à suivre pour améliorer sa connexion. Si vous ne l&rsquo;avez pas encore fait c&rsquo;est la première étape parfaite. À noter que SSL Labs permet aussi de <a href="https://www.ssllabs.com/ssltest/viewMyClient.html">tester son navigateur</a> et fournit de la data sur <a href="https://www.trustworthyinternet.org/ssl-pulse/">l&rsquo;écosystème HTTPS sur Internet</a>.</p>
 <h3 id="création-dun-csr-et-dun-key">Création d&rsquo;un .csr et d&rsquo;un .key<a href="#création-dun-csr-et-dun-key" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 <p>Pour créer une <em><a href="https://en.wikipedia.org/wiki/Certificate_signing_request">Certificate Signing Request</a></em> (<em>.csr</em>) et une nouvelle <a href="https://fr.wikipedia.org/wiki/Cryptographie_asym%C3%A9trique">clé privée</a> (<em>.key</em>):</p>
 <pre><code>openssl req -sha256 -out /etc/ssl/private/exemple.csr -new -newkey rsa:2048 -nodes -keyout /etc/ssl/private/exemple.key
@@ -104,7 +105,7 @@ SSL Labs, l&rsquo;incontournable On ne le présente plus, le site de Qualys perm
 <li><code>-keyout /etc/ssl/private/exemple.key</code> : indique le fichier où sera enregistrée la clé privée</li>
 </ul>
 <h3 id="cest-pourquoi-déjà-ce-certificat-">c&rsquo;est pourquoi déjà ce certificat ?<a href="#cest-pourquoi-déjà-ce-certificat-" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
-<p>Quand soudainement (enfin disons quelques temps plus tard), le drame ! Vous ne savez plus quel certificat fait quoi et pour qui, ou jusqu'à quand il est valide :</p>
+<p>Quand soudainement (enfin disons quelques temps plus tard), le drame ! Vous ne savez plus quel certificat fait quoi et pour qui, ou jusqu&rsquo;à quand il est valide :</p>
 <pre><code>openssl x509 -text -in VotreCertificat.crt -noout
 </code></pre><h3 id="et-les-deux-fichiers-là-ils-vont-ensemble-">et les deux fichiers, là, ils vont ensemble ?<a href="#et-les-deux-fichiers-là-ils-vont-ensemble-" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 <p>Pour la clé privée :</p>
@@ -186,7 +187,7 @@ CONNECTED(00000003)
 openssl ciphers -v 'ALL:!aNULL:!eNULL'
 </code></pre><pre><code>openssl list-cipher-commands
 openssl list-message-digest-commands
-</code></pre><p>Vous pouvez &ldquo;créer&rdquo; votre suite avec <a href="https://www.openssl.org/docs/apps/ciphers.html#CIPHER_STRINGS">les critères suivants</a> (algo de chiffrement, de hashage, d&rsquo;authentification&hellip;), la question que vous allez poser devrait donc être &ldquo;ok, mais on fait comment ?&quot;.</p>
+</code></pre><p>Vous pouvez &ldquo;créer&rdquo; votre suite avec <a href="https://www.openssl.org/docs/apps/ciphers.html#CIPHER_STRINGS">les critères suivants</a> (algo de chiffrement, de hashage, d&rsquo;authentification&hellip;), la question que vous allez poser devrait donc être &ldquo;ok, mais on fait comment ?&rdquo;.</p>
 <blockquote>
 <p><strong>Note</strong> : vous pouvez à tout moment regarder ce que contient <a href="https://www.openssl.org/docs/apps/ciphers.html#CIPHER_STRINGS">un ensemble d&rsquo;algos</a> avec la commande que l&rsquo;on vient de voir. Si par exempke vous voulez voir ce que <code>EXP</code> contient, vous pouvez le faire avec la commande <code>openssl ciphers -v 'EXP'</code>.</p>
 </blockquote>

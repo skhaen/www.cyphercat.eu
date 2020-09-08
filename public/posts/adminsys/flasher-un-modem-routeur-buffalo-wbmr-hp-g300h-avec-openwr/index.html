@@ -11,13 +11,14 @@
 <meta itemprop="description" content="Petit tuto pour flasher un Buffalo WBMR-HP-G300H sur OpenWRT 12.09 - Attitude Adjustment.
  EDIT 2014-05-24 : rajout des 2 liens pour régler le bug du switch (tout à la fin de cet article)  Pour cette recette, il vous faudra :
  un Buffalo WBMR-HP-G300H (disponible par exemple sur monclick.fr pour 72 € ou chez Amazon à partir de ~80 €), un ordinateur avec un OS acceptable, une connexion Internet qui fonctionne, de la (bonne) vodka, du gin, de l&rsquo;amaretto, du triple sec, du schnapps, &hellip; ne vous en faites pas, vous aurez la liste complète un peu plus loin son utilisation aussi.">
-<meta itemprop="datePublished" content="2014-03-04T17:58:00&#43;00:00" />
-<meta itemprop="dateModified" content="2014-03-04T17:58:00&#43;00:00" />
+<meta itemprop="datePublished" content="2014-03-04T17:58:00+00:00" />
+<meta itemprop="dateModified" content="2014-03-04T17:58:00+00:00" />
 <meta itemprop="wordCount" content="1439">
 
 
 
-<meta itemprop="keywords" content="adminsys,openwrt," /><meta property="og:title" content="Flasher un modem routeur buffalo WBMR HP g300h avec OpenWRT" />
+<meta itemprop="keywords" content="adminsys,openwrt," />
+<meta property="og:title" content="Flasher un modem routeur buffalo WBMR HP g300h avec OpenWRT" />
 <meta property="og:description" content="Petit tuto pour flasher un Buffalo WBMR-HP-G300H sur OpenWRT 12.09 - Attitude Adjustment.
  EDIT 2014-05-24 : rajout des 2 liens pour régler le bug du switch (tout à la fin de cet article)  Pour cette recette, il vous faudra :
  un Buffalo WBMR-HP-G300H (disponible par exemple sur monclick.fr pour 72 € ou chez Amazon à partir de ~80 €), un ordinateur avec un OS acceptable, une connexion Internet qui fonctionne, de la (bonne) vodka, du gin, de l&rsquo;amaretto, du triple sec, du schnapps, &hellip; ne vous en faites pas, vous aurez la liste complète un peu plus loin son utilisation aussi." />
@@ -213,7 +214,7 @@ opkg install kmod-ltq-dsl-firmware-a-ar9
 <pre><code>/etc/init.d/dsl_control start
 /etc/init.d/br2684ctl enable
 /etc/init.d/br2684ctl start
-</code></pre><p>on vérifie l'état de l&rsquo;ADSL :</p>
+</code></pre><p>on vérifie l&rsquo;état de l&rsquo;ADSL :</p>
 <pre><code>/etc/init.d/dsl_control status
 </code></pre><p>ce qui donne (si ça marche) quelque chose comme :</p>
 <pre><code>Chipset:			Ifx-AR9 1.2
@@ -229,7 +230,7 @@ Data Rate:              0 b/s / 0 b/s
 Line Attenuation:       0.0dB / 0.0dB
 Noise Margin:           0.0dB / 0.0dB
 Line Uptime:            down
-</code></pre><p>Si vous avez la chance d'être dans une association de la <a href="http://ffdn.org/">Fédération FDN</a>, vous pouvez essayer de demander à un adminsys de jeter un coup d&rsquo;oeil à vos logs de connexions (côté FAI), vous pouvez ainsi mieux définir le (ou l&rsquo;absence de) problème.</p>
+</code></pre><p>Si vous avez la chance d&rsquo;être dans une association de la <a href="http://ffdn.org/">Fédération FDN</a>, vous pouvez essayer de demander à un adminsys de jeter un coup d&rsquo;oeil à vos logs de connexions (côté FAI), vous pouvez ainsi mieux définir le (ou l&rsquo;absence de) problème.</p>
 <h3 id="et-le-wifihttpwikiopenwrtorgtohbuffalowbmr-hp-g300hconfigurewifi">et le <a href="http://wiki.openwrt.org/toh/buffalo/wbmr-hp-g300h#configure.wifi">wifi</a><a href="#et-le-wifihttpwikiopenwrtorgtohbuffalowbmr-hp-g300hconfigurewifi" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 <p>On installe le paquet nécessaire :</p>
 <pre><code>opkg install kmod-ath9k

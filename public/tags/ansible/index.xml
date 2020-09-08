@@ -19,7 +19,7 @@
       
       <guid>https://www.cyphercat.eu/posts/adminsys/deploiement-et-automatisation-avec-ansible-partie-1/</guid>
       <description>Au programme de cette année : l&amp;rsquo;automatisation ! Il existe plusieurs outils connus pour ça, vous en avez sans aucun doute entendu parler si vous êtes adminsys : Puppet, Chef, Salt et le petit dernier : Ansible.
-Ansible a la réputation d&#39;être le plus &amp;ldquo;accessible&amp;rdquo; avec une courbe d&amp;rsquo;apprentissage assez basse. Il peut être pertinent de l&amp;rsquo;utiliser à partir d&amp;rsquo;un seul serveur pour faciliter des déploiements selon les besoins (configuration des outils basique, serveur web, BDD&amp;hellip;).</description>
+Ansible a la réputation d&amp;rsquo;être le plus &amp;ldquo;accessible&amp;rdquo; avec une courbe d&amp;rsquo;apprentissage assez basse. Il peut être pertinent de l&amp;rsquo;utiliser à partir d&amp;rsquo;un seul serveur pour faciliter des déploiements selon les besoins (configuration des outils basique, serveur web, BDD&amp;hellip;).</description>
     </item>
     
   </channel>

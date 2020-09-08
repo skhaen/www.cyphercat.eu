@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-fr</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Wed, 25 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 26 Feb 2020 20:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.cyphercat.eu/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Bash - best practices</title>
+      <link>https://www.cyphercat.eu/posts/adminsys/bash-best-practices/</link>
+      <pubDate>Wed, 26 Feb 2020 20:00:00 +0000</pubDate>
+      
+      <guid>https://www.cyphercat.eu/posts/adminsys/bash-best-practices/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>[cuir] Par où commencer ?</title>
@@ -18,8 +27,8 @@
       <pubDate>Wed, 25 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>https://www.cyphercat.eu/posts/artisanat/artisanat-par-ou-commencer/</guid>
-      <description>Dernière édition : 2020-02-07
- &amp;hellip;quand on veut travailler le cuir ? C&amp;rsquo;est une très bonne question (merci de l&amp;rsquo;avoir posé), et donc, histoire de vous faciliter la vie, vous trouverez ci-dessous quelques pistes qui devraient normalement vous aider.
+      <description>Mise à jour :
+ 2020-09-08 : ajout de plusieurs magasins 2020-02-07  Par où commencer ? &amp;hellip;quand on veut travailler le cuir ? C&amp;rsquo;est une très bonne question (merci de l&amp;rsquo;avoir posé), et donc, histoire de vous faciliter la vie, vous trouverez ci-dessous quelques pistes qui devraient normalement vous aider.
 Avant toute chose, faites vous un thé, puis réfléchissez quelques minutes à ce que vous voulez faire pour le moment : porte-cartes, portefeuilles, sacs, ceintures), chaussures, Bourrellerie, repoussage, accessoires pour jeux de rôle grandeur nature, sellerie, reconstitution historique, vestes, accessoires BDSM&amp;hellip;), le choix est très, très vaste.</description>
     </item>
     
@@ -52,7 +61,7 @@ Avant toute chose, faites vous un thé, puis réfléchissez quelques minutes à 
       <guid>https://www.cyphercat.eu/posts/divers/ieufi-update/</guid>
       <description>Plus personne ne l&amp;rsquo;attendait, et là, soudainement, juillet 2019 : PAF !
 Le site www.iletaitunefoisinternet.fr vient de subir une mise à jour. La dernière devait dater de novembre 2014 !
-Et juste pour se souvenir, IEUFI avant juillet 2019, c&#39;était ça :
+Et juste pour se souvenir, IEUFI avant juillet 2019, c&amp;rsquo;était ça :
 Et maintenant :
 Et (on peut toujours espérer) que l&amp;rsquo;on reverra des mises à jour dessus avant 2024&amp;hellip;</description>
     </item>
@@ -85,7 +94,7 @@ J&amp;rsquo;en ai profité pour faire un peu de nettoyage en archivant les artic
       <pubDate>Tue, 18 Sep 2018 19:42:59 +0000</pubDate>
       
       <guid>https://www.cyphercat.eu/posts/marotte/les-buttes-dans-la-permaculture/</guid>
-      <description>j&amp;rsquo;ai commencé cet article il y a nettement trop longtemps, je le publie &amp;ldquo;en l&#39;état&amp;rdquo;, ça peut toujours servir. Je le terminerai peut-être un jour si ça intéresse du monde.
+      <description>j&amp;rsquo;ai commencé cet article il y a nettement trop longtemps, je le publie &amp;ldquo;en l&amp;rsquo;état&amp;rdquo;, ça peut toujours servir. Je le terminerai peut-être un jour si ça intéresse du monde.
  Si vous vous intéressez à l&amp;rsquo;agroécologie ou à la permaculture, vous avez dû voir passer quelque chose concernant la culture sur butte. Pourquoi ? Parce que c&amp;rsquo;est sans doute la partie la plus accessible et la plus compréhensible par le &amp;ldquo;grand public&amp;rdquo;.</description>
     </item>
     
@@ -129,7 +138,7 @@ FIRST  document current state discover recent changes (commits, &amp;hellip;) ch
       <description>Nos remerciements à Sandra Schwab pour cette histoire. Vous pouvez lire l&amp;rsquo;original sur twitter: @ScribblingSandy.
   Transcription (English) et traduction : Anonyme(s), Cryptie, Shiv, Skhaen.
   FEEL FREE TO COPY AND/OR SHARE!
- Comment le fascisme s&amp;rsquo;installe ? Quand vous grandissez et que vous allez à l&#39;école en Allemagne, vous allez couvrir le troisième Reich plusieurs fois.
+ Comment le fascisme s&amp;rsquo;installe ? Quand vous grandissez et que vous allez à l&amp;rsquo;école en Allemagne, vous allez couvrir le troisième Reich plusieurs fois.
 En Histoire, nous le voyons au moins deux fois. En allemand, nous en parlons quand nous lisons des nouvelles ou des poêmes.</description>
     </item>
     
@@ -153,7 +162,7 @@ In history, we went throught it at least twice; in German we talked about it whe
       
       <guid>https://www.cyphercat.eu/posts/adminsys/comment-se-debarrasser-de-son-ecran-fantome/</guid>
       <description>Note à moi même pour ne pas perdre une heure à cause de cette saloperie si ça recommence :
-Pour une Debian / Ubuntu et un #### d&#39;écran VGA fantôme :
+Pour une Debian / Ubuntu et un #### d&amp;rsquo;écran VGA fantôme :
 Éditer /etc/default/grub pour y ajouter video=VGA-1:d entre les quotes de GRUB_CMDLINE_LINUX.
 GRUB_CMDLINE_LINUX=&amp;quot;video=VGA-1:d&amp;quot; Si vous avez un doute, se référer à xrandr -q ou à ls /sys/class/drm pour la liste de vos périphériques. Exemple sur mon ordi :
 ls /sys/class/drm -1 card0 card0-DP-1 card0-eDP-1 card0-HDMI-A-1 card0-VGA-1 controlD64 renderD128 On retrouve donc cette $$$##$$ de VGA fantôme (card0-VGA-1), on enlève le début, on garde la partie qui nous intéresse (VGA-1) et on sait quoi rajouter à sa config.</description>
@@ -166,7 +175,7 @@ ls /sys/class/drm -1 card0 card0-DP-1 card0-eDP-1 card0-HDMI-A-1 card0-VGA-1 con
       
       <guid>https://www.cyphercat.eu/posts/adminsys/deploiement-et-automatisation-avec-ansible-partie-1/</guid>
       <description>Au programme de cette année : l&amp;rsquo;automatisation ! Il existe plusieurs outils connus pour ça, vous en avez sans aucun doute entendu parler si vous êtes adminsys : Puppet, Chef, Salt et le petit dernier : Ansible.
-Ansible a la réputation d&#39;être le plus &amp;ldquo;accessible&amp;rdquo; avec une courbe d&amp;rsquo;apprentissage assez basse. Il peut être pertinent de l&amp;rsquo;utiliser à partir d&amp;rsquo;un seul serveur pour faciliter des déploiements selon les besoins (configuration des outils basique, serveur web, BDD&amp;hellip;).</description>
+Ansible a la réputation d&amp;rsquo;être le plus &amp;ldquo;accessible&amp;rdquo; avec une courbe d&amp;rsquo;apprentissage assez basse. Il peut être pertinent de l&amp;rsquo;utiliser à partir d&amp;rsquo;un seul serveur pour faciliter des déploiements selon les besoins (configuration des outils basique, serveur web, BDD&amp;hellip;).</description>
     </item>
     
     <item>
@@ -195,7 +204,7 @@ Donc, histoire que l&amp;rsquo;on se soit bien compris : on cherche un client ma
       
       <guid>https://www.cyphercat.eu/posts/divers/about-jacob-appelbaum/</guid>
       <description>When harassment, sexual or otherwise, requires a cost-benefit analysis, you have failed.
- Jacob Appelbaum &amp;amp; others  Jacob Appelbaum on twitlonger (2016-06-06) ourresponse.org - &amp;ldquo;In solidarity with Jacob Appelbaum against the way this is being handled and on the side of justice for all&amp;quot;. (2016-06-11)  Violet Blue  “But he does good work.” with many sources/links (2016-06-15)  Nick Farr  Hi. I’m Nick Farr. (2016-06-05)  Isis Agora Lovecruft  &amp;ldquo;Forest&amp;rdquo; on jacobappelbaum.</description>
+ Jacob Appelbaum &amp;amp; others  Jacob Appelbaum on twitlonger (2016-06-06) ourresponse.org - &amp;ldquo;In solidarity with Jacob Appelbaum against the way this is being handled and on the side of justice for all&amp;rdquo;. (2016-06-11)  Violet Blue  “But he does good work.” with many sources/links (2016-06-15)  Nick Farr  Hi. I’m Nick Farr. (2016-06-05)  Isis Agora Lovecruft  &amp;ldquo;Forest&amp;rdquo; on jacobappelbaum.</description>
     </item>
     
     <item>
@@ -205,7 +214,7 @@ Donc, histoire que l&amp;rsquo;on se soit bien compris : on cherche un client ma
       
       <guid>https://www.cyphercat.eu/posts/surveillance/nsa-observer-liste-des-ressources/</guid>
       <description>Entre début 2013 et fin 2014, nous avons collecté et analysé les informations publiques leaké par Edward Snowden concernant la surveillance globale de la NSA et de ses alliés.
-Sites  www.nsa-observer.net Le profil github, vous y retrouverez une partie des documents et surtout la base de données.  Conférence Ma conférence &amp;ldquo;Monde sous surveillance&amp;rdquo; qui faisait un joli point d&#39;étape lors de l&#39;édition 2014 de Pas Sage En Seine est disponible à plusieurs endroits : youtube, le compte youtube de NUMA ou encore sur Ubicast.</description>
+Sites  www.nsa-observer.net Le profil github, vous y retrouverez une partie des documents et surtout la base de données.  Conférence Ma conférence &amp;ldquo;Monde sous surveillance&amp;rdquo; qui faisait un joli point d&amp;rsquo;étape lors de l&amp;rsquo;édition 2014 de Pas Sage En Seine est disponible à plusieurs endroits : youtube, le compte youtube de NUMA ou encore sur Ubicast.</description>
     </item>
     
     <item>
@@ -216,17 +225,7 @@ Sites  www.nsa-observer.net Le profil github, vous y retrouverez une partie des 
       <guid>https://www.cyphercat.eu/posts/divers/braindump-1/</guid>
       <description>Braindump rapide de mes lectures de 2015, on sait jamais, ça pourrait intéresser d&amp;rsquo;autres personnes.
 J&amp;rsquo;ai tenté de mettre en place une notation avec différentes catégories : personnages (profondeur, charisme,&amp;hellip;), scénario, etc&amp;hellip; Les notes sont sur 5. Et vous pouvez voir rapidement les résumés en cliquant sur les liens vers goodreads.com :)
-Honor Harrington, de David Weber (13 tomes, série terminée) Mon gros coup de cœur de l&amp;rsquo;année, j&amp;rsquo;ai lu les 13 tomes en ~3 mois&amp;hellip; De la SF comme j&amp;rsquo;aime, impossible de prévoir ce qui va se passer, l&amp;rsquo;héroine est parfaite, les différents protagonistes ont tous une vrai personnalité et le scénario est loin d&#39;être superficiel.</description>
-    </item>
-    
-    <item>
-      <title>Et si on parlait de Calibre ?</title>
-      <link>https://www.cyphercat.eu/posts/adminsys/configuration-calibre/</link>
-      <pubDate>Tue, 01 Dec 2015 17:21:53 +0000</pubDate>
-      
-      <guid>https://www.cyphercat.eu/posts/adminsys/configuration-calibre/</guid>
-      <description>Bon, après (ne pas) avoir utilisé le logiciel libre Calibre pour gérer ma bibliothèque d&amp;rsquo;ebooks, j&amp;rsquo;arrive à un moment où elle commence à être un peu trop grosse pour le faire à la main.
-N&amp;rsquo;attendez pas d&amp;rsquo;avoir une bibliothèque conséquente avant d&amp;rsquo;utiliser Calibre, c&amp;rsquo;est le meilleur moyen de s&amp;rsquo;en mordre les doigts et d&amp;rsquo;y passer quelques heures le temps de modifier des métadonnées de livres incohérentes : mieux vaut le faire au fur et à mesure.</description>
+Honor Harrington, de David Weber (13 tomes, série terminée) Mon gros coup de cœur de l&amp;rsquo;année, j&amp;rsquo;ai lu les 13 tomes en ~3 mois&amp;hellip; De la SF comme j&amp;rsquo;aime, impossible de prévoir ce qui va se passer, l&amp;rsquo;héroine est parfaite, les différents protagonistes ont tous une vrai personnalité et le scénario est loin d&amp;rsquo;être superficiel.</description>
     </item>
     
   </channel>

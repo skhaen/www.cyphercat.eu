@@ -10,13 +10,14 @@
 <meta itemprop="name" content="Remonter une attaque avec les logs d&#39;Apache2">
 <meta itemprop="description" content="Nous allons voir dans cet article comment remonter une attaque suite au piratage d&rsquo;un site avec les logs d&rsquo;Apache. On partira du principe que Apache est déjà configuré pour mettre ses logs dans /var/log/apache2 et dans les fichiers access.log et error.log.
 La documentation d&rsquo;apache explique très bien comment est formé une ligne typique d&rsquo;un fichier de log, mais découpons finement la ligne suivante pour voir ce que ça signifie :">
-<meta itemprop="datePublished" content="2015-04-29T15:08:00&#43;00:00" />
-<meta itemprop="dateModified" content="2015-04-29T15:08:00&#43;00:00" />
+<meta itemprop="datePublished" content="2015-04-29T15:08:00+00:00" />
+<meta itemprop="dateModified" content="2015-04-29T15:08:00+00:00" />
 <meta itemprop="wordCount" content="2136">
 
 
 
-<meta itemprop="keywords" content="adminsys,logs," /><meta property="og:title" content="Remonter une attaque avec les logs d&#39;Apache2" />
+<meta itemprop="keywords" content="adminsys,logs," />
+<meta property="og:title" content="Remonter une attaque avec les logs d&#39;Apache2" />
 <meta property="og:description" content="Nous allons voir dans cet article comment remonter une attaque suite au piratage d&rsquo;un site avec les logs d&rsquo;Apache. On partira du principe que Apache est déjà configuré pour mettre ses logs dans /var/log/apache2 et dans les fichiers access.log et error.log.
 La documentation d&rsquo;apache explique très bien comment est formé une ligne typique d&rsquo;un fichier de log, mais découpons finement la ligne suivante pour voir ce que ça signifie :" />
 <meta property="og:type" content="article" />
@@ -179,7 +180,7 @@ La documentation d&rsquo;apache explique très bien comment est formé une ligne
 81.163.131.61 [28/Mar/2015:06:03:10] &quot;POST /index.php?q=ckeditor%2Fxss 200
 </code></pre><p>Puis une requête sur un fichier avec un nom étrange :</p>
 <pre><code>81.163.131.61 [28/Mar/2015:06:07:06] &quot;POST /sites/all/themes/wtm7973n.php HTTP/1.1&quot; 200
-</code></pre><p>Et il vient d'être créé :</p>
+</code></pre><p>Et il vient d&rsquo;être créé :</p>
 <pre><code>ls -l ./sites/all/themes/wtm7973n.php
 -rw-rw---- 1 2003 2003 1285 mars  28 06:03 ./sites/all/themes/wtm7973n.php
 </code></pre><p>Si on continue encore un peu dans les logs, on voit cette ligne :</p>
@@ -187,7 +188,7 @@ La documentation d&rsquo;apache explique très bien comment est formé une ligne
 </code></pre><p>Rien ne vous saute aux yeux ? Le fichier <a href="http://www.wpbeginner.com/glossary/wp-config-php/">wp-conf.php</a> est propre à wordpress, et n&rsquo;a rien à faire sur un drupal. Il faudra prévoir de faire un peu de nettoyage par la suite.</p>
 <h4 id="vu-">VU !<a href="#vu-" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
 <p>Donc, on aurait une attaque sur &ldquo;ckeditor&rdquo;, qui aurait permis de créer d&rsquo;autres fichiers. Après une petite recherche, <a href="https://www.drupal.org/project/ckeditor">ckeditor</a> est un module pour Drupal avec <a href="https://www.drupal.org/node/2357029">des failles connues</a>, <a href="https://www.drupal.org/node/1404488#comment-6616334">dont la notre</a>.</p>
-<p>Un <a href="https://www.drupal.org/node/1482528">patch existe</a>, il suffirait donc de restaurer une sauvegarde du site datant d&rsquo;AVANT l&rsquo;attaque puis de mettre le module à jour, ce qui permet d'éviter de devoir nettoyer les fichiers un par un, au risque d&rsquo;en louper.</p>
+<p>Un <a href="https://www.drupal.org/node/1482528">patch existe</a>, il suffirait donc de restaurer une sauvegarde du site datant d&rsquo;AVANT l&rsquo;attaque puis de mettre le module à jour, ce qui permet d&rsquo;éviter de devoir nettoyer les fichiers un par un, au risque d&rsquo;en louper.</p>
 <p>#### Allons plus loin</p>
 <p>L&rsquo;attaque <em>semble</em> venir d&rsquo;une faille de ce module, mais autant en être sûr. N&rsquo;hésitez surtout pas à rechercher dans les logs toutes les IP ayant fait une requête sur les fichiers pirates (wp-conf.php, wtm7973n.php&hellip;), puis sur toutes les requêtes que ces adresses IP ont faites.</p>
 <p>Je ne vais pas vous mettre les logs de ces recherches ici, ça prendrait trop de place, mais je note que :</p>
@@ -232,7 +233,7 @@ La documentation d&rsquo;apache explique très bien comment est formé une ligne
 [01:50:27] [error] [client 189.18.60.245]
 [01:50:27] [error] [client 189.18.60.245] 2015-04-20 01:50:27 (171 KB/s) - `w.txt' saved [29582/29582]
 [01:50:27] [error] [client 189.18.60.245]
-</code></pre><p>La meilleure solution serait de mettre à jour le site pour utiliser une version de php plus récente que la version dont il a besoin actuellement (php 5.2) qui possède des vulnérabilités. Hélas, la meilleure solution n'étant pas toujours possible, il va falloir patcher directement. Si on connait la cause du problème, on trouve normalement des solutions rapidement sur le net, dans notre cas : <a href="https://blog.sucuri.net/2012/05/php-cgi-vulnerability-exploited-in-the-wild.html">PHP-CGI Vulnerability Exploited in the Wild</a> qui explique le fonctionnement et la parade de cette attaque via un <code>.htaccess</code>.</p>
+</code></pre><p>La meilleure solution serait de mettre à jour le site pour utiliser une version de php plus récente que la version dont il a besoin actuellement (php 5.2) qui possède des vulnérabilités. Hélas, la meilleure solution n&rsquo;étant pas toujours possible, il va falloir patcher directement. Si on connait la cause du problème, on trouve normalement des solutions rapidement sur le net, dans notre cas : <a href="https://blog.sucuri.net/2012/05/php-cgi-vulnerability-exploited-in-the-wild.html">PHP-CGI Vulnerability Exploited in the Wild</a> qui explique le fonctionnement et la parade de cette attaque via un <code>.htaccess</code>.</p>
 <p>Vous pouvez également éditer directement le(s) vhost(s)p our y ajouter les trois lignes suivantes :</p>
 <pre><code>RewriteEngine on
 RewriteCond %{QUERY_STRING} (%2d|-)d.*auto_prepend  [NC]
@@ -255,7 +256,7 @@ RewriteRule .? - [F,L]
 <li>Drupal : <a href="http://drupalfr.org/documentation/mise-a-jour">mise à jour</a> - <a href="https://www.drupal.org/security">alertes sécurité</a></li>
 <li>Dotclear : <a href="http://fr.dotclear.org/documentation/2.0/admin/upgrade">mise à jour</a></li>
 <li>Joomla : <a href="http://aide.joomla.fr/telechargements/joomla-3-x-package-d-installation-et-patchs/patch-de-mise-a-jour-pour-joomla-3-3">mise à jour</a></li>
-<li>Spip : <a href="http://www.spip.net/fr_article1318.html">mise à jour</a> - [écran de sécurité](<a href="http://www.spip.net/fr_article4200.html">http://www.spip.net/fr_article4200.html</a> Mettre en place l'écran de sécurité)</li>
+<li>Spip : <a href="http://www.spip.net/fr_article1318.html">mise à jour</a> - [écran de sécurité](<a href="http://www.spip.net/fr_article4200.html">http://www.spip.net/fr_article4200.html</a> Mettre en place l&rsquo;écran de sécurité)</li>
 <li>Typo3 : <a href="http://www.typo3.fr/mises-a-jour.html">mise à jour</a> - <a href="https://typo3.org/teams/security/security-bulletins">alertes sécurité</a></li>
 <li>Wordpress : <a href="http://codex.wordpress.org/fr:Mettre_a_Jour_WordPress">mise à jour</a> - <a href="http://codex.wordpress.org/Hardening_WordPress">renforcer wordpress</a></li>
 </ul>

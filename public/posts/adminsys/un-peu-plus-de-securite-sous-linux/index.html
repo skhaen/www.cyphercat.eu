@@ -9,16 +9,17 @@
 	<meta name="msapplication-TileColor" content="#494f5c">
 <meta itemprop="name" content="Un peu plus de sécurité sous Linux">
 <meta itemprop="description" content="Au programme de cet article (testé sur Debian Wheezy) :
- Mises à jour : cron-apt et checkrestart Sécurité virus : clamav, malwares maldet, rootkits rkhunter, chkrootkit, lynis vérification de l&rsquo;intégrité des paquets : debsums nettoyage : deborphan, &hellip; backups  IMPORTANT :  la plupart des commandes ci-dessous nécessitent d&#39;être root ou d&rsquo;utiliser la commande sudo, tous ces logiciels ont normalement des logs dans /var/log, et c&rsquo;est TRÈS utile pour trouver pourquoi ça ne marche pas, il faut avoir un logiciel de mail configuré (comme postfix) pour pouvoir envoyer des mails, n&rsquo;oubliez pas de RELANCER le programme après une modification pour la prendre en comptes?">
-<meta itemprop="datePublished" content="2015-02-15T16:10:00&#43;00:00" />
-<meta itemprop="dateModified" content="2015-02-15T16:10:00&#43;00:00" />
+ Mises à jour : cron-apt et checkrestart Sécurité virus : clamav, malwares maldet, rootkits rkhunter, chkrootkit, lynis vérification de l&rsquo;intégrité des paquets : debsums nettoyage : deborphan, &hellip; backups  IMPORTANT :  la plupart des commandes ci-dessous nécessitent d&rsquo;être root ou d&rsquo;utiliser la commande sudo, tous ces logiciels ont normalement des logs dans /var/log, et c&rsquo;est TRÈS utile pour trouver pourquoi ça ne marche pas, il faut avoir un logiciel de mail configuré (comme postfix) pour pouvoir envoyer des mails, n&rsquo;oubliez pas de RELANCER le programme après une modification pour la prendre en comptes?">
+<meta itemprop="datePublished" content="2015-02-15T16:10:00+00:00" />
+<meta itemprop="dateModified" content="2015-02-15T16:10:00+00:00" />
 <meta itemprop="wordCount" content="1835">
 
 
 
-<meta itemprop="keywords" content="adminsys," /><meta property="og:title" content="Un peu plus de sécurité sous Linux" />
+<meta itemprop="keywords" content="adminsys," />
+<meta property="og:title" content="Un peu plus de sécurité sous Linux" />
 <meta property="og:description" content="Au programme de cet article (testé sur Debian Wheezy) :
- Mises à jour : cron-apt et checkrestart Sécurité virus : clamav, malwares maldet, rootkits rkhunter, chkrootkit, lynis vérification de l&rsquo;intégrité des paquets : debsums nettoyage : deborphan, &hellip; backups  IMPORTANT :  la plupart des commandes ci-dessous nécessitent d&#39;être root ou d&rsquo;utiliser la commande sudo, tous ces logiciels ont normalement des logs dans /var/log, et c&rsquo;est TRÈS utile pour trouver pourquoi ça ne marche pas, il faut avoir un logiciel de mail configuré (comme postfix) pour pouvoir envoyer des mails, n&rsquo;oubliez pas de RELANCER le programme après une modification pour la prendre en comptes?" />
+ Mises à jour : cron-apt et checkrestart Sécurité virus : clamav, malwares maldet, rootkits rkhunter, chkrootkit, lynis vérification de l&rsquo;intégrité des paquets : debsums nettoyage : deborphan, &hellip; backups  IMPORTANT :  la plupart des commandes ci-dessous nécessitent d&rsquo;être root ou d&rsquo;utiliser la commande sudo, tous ces logiciels ont normalement des logs dans /var/log, et c&rsquo;est TRÈS utile pour trouver pourquoi ça ne marche pas, il faut avoir un logiciel de mail configuré (comme postfix) pour pouvoir envoyer des mails, n&rsquo;oubliez pas de RELANCER le programme après une modification pour la prendre en comptes?" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.cyphercat.eu/posts/adminsys/un-peu-plus-de-securite-sous-linux/" />
 <meta property="article:published_time" content="2015-02-15T16:10:00+00:00" />
@@ -26,7 +27,7 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Un peu plus de sécurité sous Linux"/>
 <meta name="twitter:description" content="Au programme de cet article (testé sur Debian Wheezy) :
- Mises à jour : cron-apt et checkrestart Sécurité virus : clamav, malwares maldet, rootkits rkhunter, chkrootkit, lynis vérification de l&rsquo;intégrité des paquets : debsums nettoyage : deborphan, &hellip; backups  IMPORTANT :  la plupart des commandes ci-dessous nécessitent d&#39;être root ou d&rsquo;utiliser la commande sudo, tous ces logiciels ont normalement des logs dans /var/log, et c&rsquo;est TRÈS utile pour trouver pourquoi ça ne marche pas, il faut avoir un logiciel de mail configuré (comme postfix) pour pouvoir envoyer des mails, n&rsquo;oubliez pas de RELANCER le programme après une modification pour la prendre en comptes?"/>
+ Mises à jour : cron-apt et checkrestart Sécurité virus : clamav, malwares maldet, rootkits rkhunter, chkrootkit, lynis vérification de l&rsquo;intégrité des paquets : debsums nettoyage : deborphan, &hellip; backups  IMPORTANT :  la plupart des commandes ci-dessous nécessitent d&rsquo;être root ou d&rsquo;utiliser la commande sudo, tous ces logiciels ont normalement des logs dans /var/log, et c&rsquo;est TRÈS utile pour trouver pourquoi ça ne marche pas, il faut avoir un logiciel de mail configuré (comme postfix) pour pouvoir envoyer des mails, n&rsquo;oubliez pas de RELANCER le programme après une modification pour la prendre en comptes?"/>
 
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -88,7 +89,7 @@
 </ul>
 <h6 id="important-">IMPORTANT :<a href="#important-" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h6>
 <ul>
-<li>la plupart des commandes ci-dessous nécessitent d'être root ou d&rsquo;utiliser la commande <code>sudo</code>,</li>
+<li>la plupart des commandes ci-dessous nécessitent d&rsquo;être root ou d&rsquo;utiliser la commande <code>sudo</code>,</li>
 <li>tous ces logiciels ont normalement <a href="https://www.debian-fr.org/consulter-les-logs-quoi-ou-que-rechercher-t27590.html">des logs</a> dans <code>/var/log</code>, et c&rsquo;est TRÈS utile pour trouver <a href="https://www.debian-fr.org/consulter-les-logs-quoi-ou-que-rechercher-t27590.html">pourquoi ça ne marche pas</a>,</li>
 <li>il faut avoir un logiciel de mail configuré (comme <code>postfix</code>) pour pouvoir envoyer des mails,</li>
 <li>n&rsquo;oubliez pas de RELANCER le programme après une modification pour la prendre en comptes?</li>
@@ -249,11 +250,11 @@ ln -s  /usr/local/maldetect/sigs/rfxn.ndb rfxn.ndb
 <p>Pour l&rsquo;installer puis le mettre à jour :</p>
 <pre><code>aptitude install rkhunter
 rkhunter --update
-</code></pre><p>Pour dire à <code>rkhunter</code> de regarder l'état de certains fichiers de configurations et de les stocker pour détecter des altérations par la suite (à faire idéalement sur un système neuf) :</p>
+</code></pre><p>Pour dire à <code>rkhunter</code> de regarder l&rsquo;état de certains fichiers de configurations et de les stocker pour détecter des altérations par la suite (à faire idéalement sur un système neuf) :</p>
 <pre><code>rkhunter --propupd
 </code></pre><p>Pour lancer un test (n&rsquo;oubliez pas que le résultat sera aussi dans <code>/var/log/rkhunter.log</code>) :</p>
 <pre><code>rkhunter --check --skip-keypress --report-warnings-only
-</code></pre><p>Le fichier de configuration se trouve dans <code>/etc/rkhunter.conf</code>, vous pouvez y configurer, entre autre, votre adresse mail pour recevoir les alertes. <code>rkhunter</code> peut générer des faux positifs, vous pouvez trouver dans la <a href="http://doc.ubuntu-fr.org/rkhunter">documentation d&rsquo;Ubuntu </a> comment l'éviter.</p>
+</code></pre><p>Le fichier de configuration se trouve dans <code>/etc/rkhunter.conf</code>, vous pouvez y configurer, entre autre, votre adresse mail pour recevoir les alertes. <code>rkhunter</code> peut générer des faux positifs, vous pouvez trouver dans la <a href="http://doc.ubuntu-fr.org/rkhunter">documentation d&rsquo;Ubuntu </a> comment l&rsquo;éviter.</p>
 <p>Plus de détails dans <a href="http://www.sublimigeek.fr/installer-paquet-rkhunter-debian">cet article très complet sur sublimigeek.com</a>.</p>
 <h2 id="chkrootkithttpspackagesdebianorgfrwheezychkrootkit"><a href="https://packages.debian.org/fr/wheezy/chkrootkit">chkrootkit</a><a href="#chkrootkithttpspackagesdebianorgfrwheezychkrootkit" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
 <p>chkrootkit est un anti-rootkit connu sous Linux, mais il faut noter que la version disponible dans wheezy est la <a href="https://packages.debian.org/fr/wheezy/chkrootkit">0.49</a> qui date de 2008, la <a href="https://packages.debian.org/fr/jessie/chkrootkit">0.50</a>, sorti en 2014 est disponible dans Jessie.</p>
@@ -304,14 +305,14 @@ REPORT_MAIL=mail@example.net
 <p><a href="https://www.octopuce.fr">Octopuce</a> a mis en ligne un petit script qui vous aidera à faire rapidement et simplement des backups sur un disque dur externe (ou une clé USB avec assez de place) : <a href="https://www.octopuce.fr/faire-des-backups-facilement/">faire des backups facilement</a>.</p>
 <p>Plus d&rsquo;excuses, au boulot !</p>
 <h2 id="pour-aller-un-peu-plus-loin">Pour aller un peu plus loin<a href="#pour-aller-un-peu-plus-loin" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
-<p>faire écouter vos programmes en local s&rsquo;ils n&rsquo;ont pas besoin d'être atteint de l&rsquo;extérieur. C&rsquo;est normalement la configuration par défaut dans Debian, mais si vous installez des paquets externes, vous pouvez le vérifier facilement avec la commande <code>netstat -lptn</code>.</p>
+<p>faire écouter vos programmes en local s&rsquo;ils n&rsquo;ont pas besoin d&rsquo;être atteint de l&rsquo;extérieur. C&rsquo;est normalement la configuration par défaut dans Debian, mais si vous installez des paquets externes, vous pouvez le vérifier facilement avec la commande <code>netstat -lptn</code>.</p>
 <p>Pour continuer cet article, n&rsquo;oubliez surtout pas de vérifier et d&rsquo;<a href="http://www.alsacreations.com/tuto/lire/622-Securite-firewall-iptables.html">améliorer vos configurations</a> régulièrement.</p>
 <p>N&rsquo;oubliez pas non plus de vous tenir au courant :</p>
 <ul>
 <li><a href="http://oss-security.openwall.org/subscribe">oss-security Mailing List</a> (attention, c&rsquo;est verbeux)</li>
 <li><a href="https://www.debian.org/security/">Informations de sécurité</a> concernant Debian</li>
 </ul>
-<p>La configuration de ces différents utilitaires dépends évidemmment de vos besoins et de votre modèle de menaces. Envoyer des informations par mail ou télécharger des paquets sur un canal non sécurisé peut donner des informations sur l'état de votre système. N&rsquo;hésitez jamais à utiliser un outil comme <a href="https://torproject.org/">Tor</a>.</p>
+<p>La configuration de ces différents utilitaires dépends évidemmment de vos besoins et de votre modèle de menaces. Envoyer des informations par mail ou télécharger des paquets sur un canal non sécurisé peut donner des informations sur l&rsquo;état de votre système. N&rsquo;hésitez jamais à utiliser un outil comme <a href="https://torproject.org/">Tor</a>.</p>
 <p>Idéalement, les différents processus devraient être lancé automatiquement, régulièrement et envoyer un email immédiatement en cas de problème pour vous alerter.</p>
 <p>Cet article vise à donner des idées de pistes à suivre pour la maintenance d&rsquo;un poste personnel ou d&rsquo;un serveur, rien de plus.</p>
 

@@ -13,13 +13,14 @@ update   2015-03-19 : comment avoir un certificat autosigné qui fonctionne avec
   2015-01-05 : on oublie bettercryto, et l&rsquo;on rajoute une jolie ciphersuite pour avoir seulement du PFS
   2014-12-30 : ajout de la section bettercrypto concernant TLS
   2014-12-12 : ajout de la ciphersuite dans la partie SSL/TLS">
-<meta itemprop="datePublished" content="2014-02-14T18:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2014-02-14T18:00:00&#43;00:00" />
+<meta itemprop="datePublished" content="2014-02-14T18:00:00+00:00" />
+<meta itemprop="dateModified" content="2014-02-14T18:00:00+00:00" />
 <meta itemprop="wordCount" content="2077">
 
 
 
-<meta itemprop="keywords" content="adminsys,ssl,prosody,xmpp," /><meta property="og:title" content="Installer un serveur XMPP/jabber avec Prosody sous Debian" />
+<meta itemprop="keywords" content="adminsys,ssl,prosody,xmpp," />
+<meta property="og:title" content="Installer un serveur XMPP/jabber avec Prosody sous Debian" />
 <meta property="og:description" content="Sous-titre : comment installer Prosody 0.9.3 sous Debian et avoir un A sur xmpp.net.
 update   2015-03-19 : comment avoir un certificat autosigné qui fonctionne avec les versions &ldquo;récentes&rdquo; de pidgin (voir EN BAS de cet article)
   2015-01-05 : on oublie bettercryto, et l&rsquo;on rajoute une jolie ciphersuite pour avoir seulement du PFS
@@ -131,7 +132,7 @@ aptitude update &amp;&amp; aptitude -t wheezy-backports install lua-sec-prosody
 </code></pre><p>Il faut <a href="http://prosody.im/doc/configure">modifier/compléter les champs suivants</a> (avec évidemment <strong>vos</strong> informations à la place de <em>example.tld</em>) :</p>
 <p>Qui est administrateur du serveur (tout en haut du fichier) ?</p>
 <pre><code>admins = {&quot;admin@exemple.tld&quot;}
-</code></pre><p>Voulez vous autoriser les inscriptions sur votre serveur ? À moins de savoir ce que vous faites, je vous conseille grandement de le mettre sur <code>false</code> afin d'éviter de servir aux spammeurs et aux bots.</p>
+</code></pre><p>Voulez vous autoriser les inscriptions sur votre serveur ? À moins de savoir ce que vous faites, je vous conseille grandement de le mettre sur <code>false</code> afin d&rsquo;éviter de servir aux spammeurs et aux bots.</p>
 <pre><code>allow_registration = false;
 </code></pre><p>Quel domaine voulez vous utiliser (tout en bas du fichier) ? N&rsquo;oubliez pas de changer <em>example.tld</em> pour votre domaine.</p>
 <pre><code>VirtualHost &quot;example.tld&quot;
@@ -287,7 +288,7 @@ allow_unencrypted_plain_auth = false;
 <p>Les <a href="https://prosody.im/doc/s2s#security">options</a> <em>s2s_secure_domains</em> et <em>s2s_insecure_domains</em>  peuvent aussi vous intéresser, surtout si vous voulez parler avec des personnes qui sont sur gmail (ce qui veut dire que ça ne sera pas chiffré).</p>
 <p>Concernant la <strong>ciphersuite</strong>, <a href="http://prosody.im/doc/advanced_ssl_config#ciphers">le choix par défaut</a> de Prosody est déjà pas mal :</p>
 <pre><code>ciphers = &quot;HIGH+kEDH:HIGH+kEECDH:HIGH:!PSK:!SRP:!3DES:!aNULL&quot;;
-</code></pre><p>Il faut tout de même enlever <code>RC4</code> et <code>eNULL</code>, et tant qu'à faire, autant faire une liste de ciphers avec seulement du PFS (<a href="https://fr.wikipedia.org/wiki/Confidentialit%C3%A9_persistante">Perfect Forward Secrecy</a>) (c&rsquo;est à mettre dans le bloc <code>ssl { }</code>) :</p>
+</code></pre><p>Il faut tout de même enlever <code>RC4</code> et <code>eNULL</code>, et tant qu&rsquo;à faire, autant faire une liste de ciphers avec seulement du PFS (<a href="https://fr.wikipedia.org/wiki/Confidentialit%C3%A9_persistante">Perfect Forward Secrecy</a>) (c&rsquo;est à mettre dans le bloc <code>ssl { }</code>) :</p>
 <pre><code>ciphers = &quot;EECDH+ECDSA+AESGCM EECDH+aRSA+AESGCM EECDH+ECDSA+SHA384 EECDH+ECDSA+SHA256 EECDH+aRSA+SHA384 EECDH+aRSA+SHA256 EECDH EDH+aRSA !RC4 !aNULL !eNULL !LOW !3DES !MD5 !EXP !PSK !SRP !DSS&quot;;
 </code></pre><h4 id="dns">DNS<a href="#dns" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
 <p>N&rsquo;oubliez pas d&rsquo;ajouter les enregistrements <a href="https://fr.wikipedia.org/wiki/Enregistrement_SRV">SRV dans vos DNS</a> :</p>
@@ -301,7 +302,7 @@ iptables -I INPUT -p tcp --dport 5222 -j ACCEPT
 iptables -I OUTPUT -p tcp --sport 5222 -j ACCEPT
 </code></pre><p>#### Avoir un certificat autosigné qui passe bien (par exemple pour un hidden service tor)</p>
 <p>Les versions récentes de pidgin (&gt; v2.10.10) <a href="http://pidgin.10357.n7.nabble.com/16412-Unable-to-connect-to-XMPP-servers-using-self-signed-certificates-td130960.html">refusent de se connecter</a> à des serveurs utilisant un certificat autosigné. C&rsquo;est dû à une option de <a href="https://fr.wikipedia.org/wiki/X.509">X509</a>, <a href="https://www.openssl.org/docs/apps/x509v3_config.html#Basic-Constraints">basicConstraints</a>, qui ne doit pas contenir <code>CA:false</code></p>
-<p>Nous allons faire une copie du fichier <code>/etc/ssl/openssl.cnf</code> sur le poste servant à générer nos clés, afin de pouvoir l'éditer et histoire de pouvoir revenir en arrière sans problème  :</p>
+<p>Nous allons faire une copie du fichier <code>/etc/ssl/openssl.cnf</code> sur le poste servant à générer nos clés, afin de pouvoir l&rsquo;éditer et histoire de pouvoir revenir en arrière sans problème  :</p>
 <pre><code>cp /etc/ssl/openssl.cnf /var/tmp/openssl2.cnf
 </code></pre><p>On édite le fichier avec son éditeur préféré (ici <code>vim</code>) :</p>
 <pre><code>vim /etc/ssl/openssl.cnf

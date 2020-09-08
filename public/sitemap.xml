@@ -3,27 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.cyphercat.eu/tags/adminsys/</loc>
+    <lastmod>2020-02-26T20:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.cyphercat.eu/posts/adminsys/bash-best-practices/</loc>
+    <lastmod>2020-02-26T20:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.cyphercat.eu/tags/mails/</loc>
+    <lastmod>2020-02-26T20:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.cyphercat.eu/posts/</loc>
+    <lastmod>2020-02-26T20:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.cyphercat.eu/</loc>
+    <lastmod>2020-02-26T20:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.cyphercat.eu/tags/</loc>
+    <lastmod>2020-02-26T20:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.cyphercat.eu/posts/artisanat/artisanat-par-ou-commencer/</loc>
     <lastmod>2019-09-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.cyphercat.eu/tags/artisanat/</loc>
-    <lastmod>2019-09-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.cyphercat.eu/posts/</loc>
-    <lastmod>2019-09-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.cyphercat.eu/</loc>
-    <lastmod>2019-09-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.cyphercat.eu/tags/</loc>
     <lastmod>2019-09-25T00:00:00+00:00</lastmod>
   </url>
   
@@ -64,11 +79,6 @@
   
   <url>
     <loc>https://www.cyphercat.eu/posts/adminsys/puppet-partie-2/</loc>
-    <lastmod>2017-05-20T12:02:04+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.cyphercat.eu/tags/adminsys/</loc>
     <lastmod>2017-05-20T12:02:04+00:00</lastmod>
   </url>
   
@@ -115,11 +125,6 @@
   <url>
     <loc>https://www.cyphercat.eu/tags/ansible/</loc>
     <lastmod>2017-01-01T18:04:58+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.cyphercat.eu/tags/mails/</loc>
-    <lastmod>2016-08-10T17:06:51+00:00</lastmod>
   </url>
   
   <url>
@@ -395,6 +400,10 @@
   <url>
     <loc>https://www.cyphercat.eu/posts/compostelle/compostelle-preparation/</loc>
     <lastmod>2013-09-11T19:27:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.cyphercat.eu/posts/adminsys/epub-sans-drm/</loc>
   </url>
   
 </urlset>

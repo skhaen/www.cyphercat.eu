@@ -11,13 +11,14 @@
 <meta itemprop="description" content="Lancer un run puppet avec cron Lancement automatique du run puppet sur les nodes avec cron toutes les heures :
  note : chaque tache cron ajouté nativement par puppet sera mis dans crontab, vous pouvez les lister avec crontab -l sur vos nodes.
  cron{&#34;puppet&#34;:ensure=&gt;present,command=&gt;&#39;puppet agent -t --http_read_timeout 2m --logdest /var/log/puppetlabs/puppet/puppet`/bin/date &#43;\\%Y\\%m\\%d\\%H\\%M`.log 1&gt;/dev/null 2&gt;&amp;1&#39;,user=&gt;&#39;root&#39;,minute=&gt;fqdn_rand(60),require=&gt;File[&#39;/var/log/puppet&#39;],}Si vous souhaites voir le détail des options, c&rsquo;est sur configuration.html. Le $fqdn_rand(60) (cf. #fqdnrand, permet d&rsquo;indiquer aléatoirement une valeur de 0 à 60 (la valeur max étant non inclus selon la documentation) pour la configuration du cron.">
-<meta itemprop="datePublished" content="2017-05-20T12:02:04&#43;00:00" />
-<meta itemprop="dateModified" content="2017-05-20T12:02:04&#43;00:00" />
+<meta itemprop="datePublished" content="2017-05-20T12:02:04+00:00" />
+<meta itemprop="dateModified" content="2017-05-20T12:02:04+00:00" />
 <meta itemprop="wordCount" content="267">
 
 
 
-<meta itemprop="keywords" content="puppet,adminsys," /><meta property="og:title" content="[Puppet] [2] : run puppet et cron" />
+<meta itemprop="keywords" content="puppet,adminsys," />
+<meta property="og:title" content="[Puppet] [2] : run puppet et cron" />
 <meta property="og:description" content="Lancer un run puppet avec cron Lancement automatique du run puppet sur les nodes avec cron toutes les heures :
  note : chaque tache cron ajouté nativement par puppet sera mis dans crontab, vous pouvez les lister avec crontab -l sur vos nodes.
  cron{&#34;puppet&#34;:ensure=&gt;present,command=&gt;&#39;puppet agent -t --http_read_timeout 2m --logdest /var/log/puppetlabs/puppet/puppet`/bin/date &#43;\\%Y\\%m\\%d\\%H\\%M`.log 1&gt;/dev/null 2&gt;&amp;1&#39;,user=&gt;&#39;root&#39;,minute=&gt;fqdn_rand(60),require=&gt;File[&#39;/var/log/puppet&#39;],}Si vous souhaites voir le détail des options, c&rsquo;est sur configuration.html. Le $fqdn_rand(60) (cf. #fqdnrand, permet d&rsquo;indiquer aléatoirement une valeur de 0 à 60 (la valeur max étant non inclus selon la documentation) pour la configuration du cron." />
@@ -83,15 +84,15 @@
 <blockquote>
 <p><strong>note</strong> : chaque tache cron ajouté nativement par puppet sera mis dans <code>crontab</code>, vous pouvez les <strong>l</strong>ister  avec <code>crontab -l</code> sur vos nodes.</p>
 </blockquote>
-<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="w">  </span>cron<span class="w"> </span>{<span class="w"> </span><span class="s2">&#34;puppet&#34;</span><span class="k"></span><span class="p">:</span><span class="w">
-</span><span class="w"></span><span class="w">    </span>ensure<span class="w">  </span>=&gt;<span class="w"> </span>present<span class="p">,</span><span class="w">
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="w">  </span>cron<span class="w"> </span>{<span class="w"> </span><span class="s2">&#34;puppet&#34;</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span>ensure<span class="w">  </span>=&gt;<span class="w"> </span>present<span class="p">,</span><span class="w">
 </span><span class="w">    </span>command<span class="w"> </span>=&gt;<span class="w"> </span><span class="s1">&#39;puppet agent -t --http_read_timeout 2m --logdest /var/log/puppetlabs/puppet/puppet`/bin/date +\\%Y\\%m\\%d\\%H\\%M`.log 1&gt;/dev/null 2&gt;&amp;1&#39;</span><span class="p">,</span><span class="w">
 </span><span class="w">    </span>user<span class="w">    </span>=&gt;<span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="p">,</span><span class="w">
 </span><span class="w">    </span>minute<span class="w">  </span>=&gt;<span class="w"> </span>fqdn_rand(<span class="m">60</span>)<span class="p">,</span><span class="w">
-</span><span class="w">    </span>require<span class="w"> </span>=&gt;<span class="w"> </span>File<span class="p">[</span><span class="s1">&#39;/var/log/puppet&#39;</span><span class="p">]</span><span class="p">,</span><span class="w">
+</span><span class="w">    </span>require<span class="w"> </span>=&gt;<span class="w"> </span>File<span class="p">[</span><span class="s1">&#39;/var/log/puppet&#39;</span><span class="p">],</span><span class="w">
 </span><span class="w">  </span>}<span class="w">
 </span></code></pre></div><p>Si vous souhaites voir le détail des options, c&rsquo;est sur <a href="https://docs.puppet.com/puppet/latest/configuration.html#httpreadtimeout">configuration.html</a>. Le <code>$fqdn_rand(60)</code> (cf. <a href="https://docs.puppet.com/puppet/latest/function.html#fqdnrand">#fqdnrand</a>, permet d&rsquo;indiquer aléatoirement une valeur de 0 à 60 (la valeur max étant non inclus selon la documentation) pour la configuration du cron.</p>
-<p>Cette méthode permet d'éviter d&rsquo;avoir tout les runs qui se lancent au meme moment, ce qui pourrait surchager le master.</p>
+<p>Cette méthode permet d&rsquo;éviter d&rsquo;avoir tout les runs qui se lancent au meme moment, ce qui pourrait surchager le master.</p>
 <blockquote>
 <p><strong>ATTENTION</strong> : Si vous des anciennes versions de Puppet sur vos nodes (2.7 sur Debian wheezy sans les backports par exemple), certaines options peuvent ne pas passer : n&rsquo;hésitez pas à vérifier ce qui est valide/obsolète et à tester.</p>
 </blockquote>

@@ -9,16 +9,17 @@
 	<meta name="msapplication-TileColor" content="#494f5c">
 <meta itemprop="name" content="[Ansible] Déploiement et automatisation avec Ansible - partie 1">
 <meta itemprop="description" content="Au programme de cette année : l&rsquo;automatisation ! Il existe plusieurs outils connus pour ça, vous en avez sans aucun doute entendu parler si vous êtes adminsys : Puppet, Chef, Salt et le petit dernier : Ansible.
-Ansible a la réputation d&#39;être le plus &ldquo;accessible&rdquo; avec une courbe d&rsquo;apprentissage assez basse. Il peut être pertinent de l&rsquo;utiliser à partir d&rsquo;un seul serveur pour faciliter des déploiements selon les besoins (configuration des outils basique, serveur web, BDD&hellip;).">
-<meta itemprop="datePublished" content="2017-01-01T18:04:58&#43;00:00" />
-<meta itemprop="dateModified" content="2017-01-01T18:04:58&#43;00:00" />
+Ansible a la réputation d&rsquo;être le plus &ldquo;accessible&rdquo; avec une courbe d&rsquo;apprentissage assez basse. Il peut être pertinent de l&rsquo;utiliser à partir d&rsquo;un seul serveur pour faciliter des déploiements selon les besoins (configuration des outils basique, serveur web, BDD&hellip;).">
+<meta itemprop="datePublished" content="2017-01-01T18:04:58+00:00" />
+<meta itemprop="dateModified" content="2017-01-01T18:04:58+00:00" />
 <meta itemprop="wordCount" content="1147">
 
 
 
-<meta itemprop="keywords" content="adminsys,ansible," /><meta property="og:title" content="[Ansible] Déploiement et automatisation avec Ansible - partie 1" />
+<meta itemprop="keywords" content="adminsys,ansible," />
+<meta property="og:title" content="[Ansible] Déploiement et automatisation avec Ansible - partie 1" />
 <meta property="og:description" content="Au programme de cette année : l&rsquo;automatisation ! Il existe plusieurs outils connus pour ça, vous en avez sans aucun doute entendu parler si vous êtes adminsys : Puppet, Chef, Salt et le petit dernier : Ansible.
-Ansible a la réputation d&#39;être le plus &ldquo;accessible&rdquo; avec une courbe d&rsquo;apprentissage assez basse. Il peut être pertinent de l&rsquo;utiliser à partir d&rsquo;un seul serveur pour faciliter des déploiements selon les besoins (configuration des outils basique, serveur web, BDD&hellip;)." />
+Ansible a la réputation d&rsquo;être le plus &ldquo;accessible&rdquo; avec une courbe d&rsquo;apprentissage assez basse. Il peut être pertinent de l&rsquo;utiliser à partir d&rsquo;un seul serveur pour faciliter des déploiements selon les besoins (configuration des outils basique, serveur web, BDD&hellip;)." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.cyphercat.eu/posts/adminsys/deploiement-et-automatisation-avec-ansible-partie-1/" />
 <meta property="article:published_time" content="2017-01-01T18:04:58+00:00" />
@@ -26,7 +27,7 @@ Ansible a la réputation d&#39;être le plus &ldquo;accessible&rdquo; avec une c
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="[Ansible] Déploiement et automatisation avec Ansible - partie 1"/>
 <meta name="twitter:description" content="Au programme de cette année : l&rsquo;automatisation ! Il existe plusieurs outils connus pour ça, vous en avez sans aucun doute entendu parler si vous êtes adminsys : Puppet, Chef, Salt et le petit dernier : Ansible.
-Ansible a la réputation d&#39;être le plus &ldquo;accessible&rdquo; avec une courbe d&rsquo;apprentissage assez basse. Il peut être pertinent de l&rsquo;utiliser à partir d&rsquo;un seul serveur pour faciliter des déploiements selon les besoins (configuration des outils basique, serveur web, BDD&hellip;)."/>
+Ansible a la réputation d&rsquo;être le plus &ldquo;accessible&rdquo; avec une courbe d&rsquo;apprentissage assez basse. Il peut être pertinent de l&rsquo;utiliser à partir d&rsquo;un seul serveur pour faciliter des déploiements selon les besoins (configuration des outils basique, serveur web, BDD&hellip;)."/>
 
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -76,7 +77,7 @@ Ansible a la réputation d&#39;être le plus &ldquo;accessible&rdquo; avec une c
 			</header>
 			<div class="content">
 				<p>Au programme de cette année : l&rsquo;automatisation ! Il existe plusieurs outils connus pour ça, vous en avez sans aucun doute entendu parler si vous êtes adminsys : <a href="https://puppet.com">Puppet</a>, <a href="https://www.chef.io/chef/">Chef</a>, <a href="https://saltstack.com/">Salt</a> et le petit dernier : <a href="https://www.ansible.com/">Ansible</a>.</p>
-<p>Ansible a la réputation d'être le plus &ldquo;accessible&rdquo; avec une courbe d&rsquo;apprentissage assez basse. Il peut être pertinent de l&rsquo;utiliser à partir d&rsquo;un seul serveur pour faciliter des déploiements selon les besoins (configuration des outils basique, serveur web, BDD&hellip;).</p>
+<p>Ansible a la réputation d&rsquo;être le plus &ldquo;accessible&rdquo; avec une courbe d&rsquo;apprentissage assez basse. Il peut être pertinent de l&rsquo;utiliser à partir d&rsquo;un seul serveur pour faciliter des déploiements selon les besoins (configuration des outils basique, serveur web, BDD&hellip;).</p>
 <p>Au contraire des trois autres, il n&rsquo;utilise pas d&rsquo;agents (<em><a href="https://www.ansible.com/benefits-of-agentless-architecture">agentless</a></em>), c&rsquo;est à dire que rien n&rsquo;a besoin de tourner côté serveur pour le faire fonctionner, ce qui le rend <em>de facto</em> plus facile à mettre en place. <strong>Il requiert seulement un accès SSH et python sur les serveur</strong>.</p>
 <p>Toujours concernant Ansible (bien entendu), on parle souvent d&rsquo;<strong><a href="https://fr.wikipedia.org/wiki/Idempotence">idempotance</a></strong>, ce qui signifie qu&rsquo;une opération a le même effet qu&rsquo;on l&rsquo;applique une ou plusieurs fois.</p>
 <p>Les recettes utilisent du <a href="https://docs.ansible.com/ansible/YAMLSyntax.html">YAML</a> et <a href="https://docs.ansible.com/ansible/playbooks_filters.html">Jinja2</a> pour les templates. L&rsquo;utilisation de YAML permet d&rsquo;avoir des recettes normalement facile à lire et à comprendre. À noter aussi que grâce au (ou à cause du) YAML, l&rsquo;indentation est primordiale et source de bug si elle n&rsquo;est pas respecté comme on le verra plus tard.</p>
@@ -158,12 +159,12 @@ skhn-002 | SUCCESS | rc=0 | (stdout)  16:33:14 up 1 day,  2:05,  1 user,  load a
 </span><span class="w">  </span><span class="k">remote_user</span><span class="p">:</span><span class="w"> </span>root<span class="w">
 </span><span class="w">
 </span><span class="w">  </span><span class="k">tasks</span><span class="p">:</span><span class="w">
-</span><span class="w"></span><span class="w">  </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span>install<span class="w"> </span>common<span class="w"> </span>packages<span class="w"> </span>for<span class="w"> </span>all<span class="w"> </span>servers<span class="w">
-</span><span class="w">    </span><span class="k">apt</span><span class="p">:</span><span class="w"> </span><span class="w">
+</span><span class="w">  </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span>install<span class="w"> </span>common<span class="w"> </span>packages<span class="w"> </span>for<span class="w"> </span>all<span class="w"> </span>servers<span class="w">
+</span><span class="w">    </span><span class="k">apt</span><span class="p">:</span><span class="w"> 
 </span><span class="w">      </span>update_cache=yes<span class="w">
 </span><span class="w">      </span>state=latest<span class="w">
 </span><span class="w">      </span>name={{item}}<span class="w">
-</span><span class="w">    </span><span class="k">with_items</span><span class="p">:</span><span class="w"> </span><span class="w">
+</span><span class="w">    </span><span class="k">with_items</span><span class="p">:</span><span class="w"> 
 </span><span class="w">    </span>- curl<span class="w">
 </span><span class="w">    </span>- htop<span class="w">
 </span><span class="w">    </span>- ncdu<span class="w">
@@ -178,7 +179,7 @@ skhn-002 | SUCCESS | rc=0 | (stdout)  16:33:14 up 1 day,  2:05,  1 user,  load a
 </span><span class="w">    </span>- screen<span class="w">
 </span></code></pre></div><p>Après l&rsquo;avoir enregistré, il suffira de lancer la commande suivante pour installer cette liste de paquets sur tout les serveurs :</p>
 <pre><code>ansible-playbook -i hosts /etc/ansible/roles/skhn_common.yml
-</code></pre><p>Et c'était donc notre premier rôle, yay \o/</p>
+</code></pre><p>Et c&rsquo;était donc notre premier rôle, yay \o/</p>
 <p>Vous avez peut être remarqué 2/3 trucs :</p>
 <ul>
 <li>un rôle commence toujours par <code>---</code>,</li>

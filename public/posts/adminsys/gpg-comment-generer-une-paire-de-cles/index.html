@@ -10,13 +10,14 @@
 <meta itemprop="name" content="GPG - Comment générer une paire de clés">
 <meta itemprop="description" content="j&rsquo;avais publié cet article à l&rsquo;origine sur cyphercat.eu il y a quelques temps. Ça servira sans doute plus si ça traine sur ici.
  La génération d&rsquo;une clé asymétrique GPG sous un système Unix / Gnu/Linux est particulièrement simple (une fois que l&rsquo;on sait le faire ;-)), et c&rsquo;est justement ce que nous allons voir ici. Si les détails vous intéressent, ou si vous avez besoin d&rsquo;explications plus détaillées, vous pouvez aller voir sur gnupg.">
-<meta itemprop="datePublished" content="2015-05-19T14:30:00&#43;00:00" />
-<meta itemprop="dateModified" content="2015-05-19T14:30:00&#43;00:00" />
+<meta itemprop="datePublished" content="2015-05-19T14:30:00+00:00" />
+<meta itemprop="dateModified" content="2015-05-19T14:30:00+00:00" />
 <meta itemprop="wordCount" content="1563">
 
 
 
-<meta itemprop="keywords" content="adminsys,gpg," /><meta property="og:title" content="GPG - Comment générer une paire de clés" />
+<meta itemprop="keywords" content="adminsys,gpg," />
+<meta property="og:title" content="GPG - Comment générer une paire de clés" />
 <meta property="og:description" content="j&rsquo;avais publié cet article à l&rsquo;origine sur cyphercat.eu il y a quelques temps. Ça servira sans doute plus si ça traine sur ici.
  La génération d&rsquo;une clé asymétrique GPG sous un système Unix / Gnu/Linux est particulièrement simple (une fois que l&rsquo;on sait le faire ;-)), et c&rsquo;est justement ce que nous allons voir ici. Si les détails vous intéressent, ou si vous avez besoin d&rsquo;explications plus détaillées, vous pouvez aller voir sur gnupg." />
 <meta property="og:type" content="article" />
@@ -116,7 +117,7 @@ Quelle taille de clé désirez-vous ? (2048)
  m = la clé expire dans n mois
  y = la clé expire dans n années
 La clé** est valide pour ? (0)
-</code></pre><p>Le programme vous demande alors &ldquo;<em>La clé n&rsquo;expire pas du tout. Est-ce correct ? (o/N)</em>&quot;, la réponse est donc &ldquo;<em>o</em>&quot;.</p>
+</code></pre><p>Le programme vous demande alors &ldquo;<em>La clé n&rsquo;expire pas du tout. Est-ce correct ? (o/N)</em>&rdquo;, la réponse est donc &ldquo;<em>o</em>&rdquo;.</p>
 <p>Voici la partie &ldquo;intéressante&rdquo; : le nom, l&rsquo;adresse mail et le commentaire. Voici un exemple :</p>
 <pre><code>Vous avez besoin d'un nom d'utilisateur pour identifier votre clé; le 
 programme le construit à partir du nom réel, d'un commentaire et d'une
@@ -128,7 +129,7 @@ Vous avez sélectionné ce nom d'utilisateur:
 &quot;Nobody (it's a trap) &lt;nobody@cyphercat.eu&gt;&quot;
 
 Changer le (N)om, le (C)ommentaire, l'(E)-mail ou (O)K/(Q)uitter ?
-</code></pre><p>Si toutes les infos vous semblent bonnes, vous pouvez valider comme précédemment (avec la touche &ldquo;<em>o</em>&quot;, puis valider avec la touche entrée, mais vous avez l&rsquo;habitude maintenant). Vous pouvez bien entendu mettre ce que vous voulez pour &ldquo;<em>nom réel</em>&rdquo; : prénom et/ou nom, pseudo, …, vous n'êtes pas obligé de remplir &ldquo;<em>commentaire</em>, et encore une fois, vous pouvez y mettre ce que vous voulez, comme un complément d&rsquo;information, ou une citation (du moment que ce n&rsquo;est pas trop long).</p>
+</code></pre><p>Si toutes les infos vous semblent bonnes, vous pouvez valider comme précédemment (avec la touche &ldquo;<em>o</em>&rdquo;, puis valider avec la touche entrée, mais vous avez l&rsquo;habitude maintenant). Vous pouvez bien entendu mettre ce que vous voulez pour &ldquo;<em>nom réel</em>&rdquo; : prénom et/ou nom, pseudo, …, vous n&rsquo;êtes pas obligé de remplir &ldquo;<em>commentaire</em>, et encore une fois, vous pouvez y mettre ce que vous voulez, comme un complément d&rsquo;information, ou une citation (du moment que ce n&rsquo;est pas trop long).</p>
 <p>Et là, soudainement, l&rsquo;angoisse ! Le programme vous demande votre <em>phrase de passe</em></p>
 <pre><code>Entrez la phrase de passe:
 </code></pre><blockquote>

@@ -12,13 +12,14 @@
 Configuration de postfix On commence par installer postfix:
 aptitude install postfix On édite le fichier /etc/postfix/main.cfpour rajouter ce qui suit à la fin :
 relayhost = [IP_DE_VOTRE_SERVEUR]:587 smtp_sasl_auth_enable = yes smtp_sasl_password_maps = hash:/etc/postfix/sasl_auth smtp_sasl_security_options = noplaintext, noanonymous smtp_sasl_tls_security_options = noanonymous smtp_sasl_mechanism_filter = plain, login smtp_use_tls = yes Puis on crée le fichier /etc/postfix/sasl_authavec la ligne suivante :">
-<meta itemprop="datePublished" content="2014-09-09T16:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2014-09-09T16:00:00&#43;00:00" />
+<meta itemprop="datePublished" content="2014-09-09T16:00:00+00:00" />
+<meta itemprop="dateModified" content="2014-09-09T16:00:00+00:00" />
 <meta itemprop="wordCount" content="147">
 
 
 
-<meta itemprop="keywords" content="gpg,postfix,adminsys," /><meta property="og:title" content="Utiliser caff avec postfix" />
+<meta itemprop="keywords" content="gpg,postfix,adminsys," />
+<meta property="og:title" content="Utiliser caff avec postfix" />
 <meta property="og:description" content="J&rsquo;ai eu il y a peu un problème avec caffqui ne voulait plus utiliser eximpour envoyer ses mails. Voici comment faire pour le remplacer par postfix.
 Configuration de postfix On commence par installer postfix:
 aptitude install postfix On édite le fichier /etc/postfix/main.cfpour rajouter ce qui suit à la fin :

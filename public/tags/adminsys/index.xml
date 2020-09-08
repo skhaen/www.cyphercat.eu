@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-fr</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sat, 20 May 2017 12:02:04 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 26 Feb 2020 20:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.cyphercat.eu/tags/adminsys/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Bash - best practices</title>
+      <link>https://www.cyphercat.eu/posts/adminsys/bash-best-practices/</link>
+      <pubDate>Wed, 26 Feb 2020 20:00:00 +0000</pubDate>
+      
+      <guid>https://www.cyphercat.eu/posts/adminsys/bash-best-practices/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>[Puppet] [2] : run puppet et cron</title>
@@ -50,7 +59,7 @@ FIRST  document current state discover recent changes (commits, &amp;hellip;) ch
       
       <guid>https://www.cyphercat.eu/posts/adminsys/comment-se-debarrasser-de-son-ecran-fantome/</guid>
       <description>Note à moi même pour ne pas perdre une heure à cause de cette saloperie si ça recommence :
-Pour une Debian / Ubuntu et un #### d&#39;écran VGA fantôme :
+Pour une Debian / Ubuntu et un #### d&amp;rsquo;écran VGA fantôme :
 Éditer /etc/default/grub pour y ajouter video=VGA-1:d entre les quotes de GRUB_CMDLINE_LINUX.
 GRUB_CMDLINE_LINUX=&amp;quot;video=VGA-1:d&amp;quot; Si vous avez un doute, se référer à xrandr -q ou à ls /sys/class/drm pour la liste de vos périphériques. Exemple sur mon ordi :
 ls /sys/class/drm -1 card0 card0-DP-1 card0-eDP-1 card0-HDMI-A-1 card0-VGA-1 controlD64 renderD128 On retrouve donc cette $$$##$$ de VGA fantôme (card0-VGA-1), on enlève le début, on garde la partie qui nous intéresse (VGA-1) et on sait quoi rajouter à sa config.</description>
@@ -63,7 +72,7 @@ ls /sys/class/drm -1 card0 card0-DP-1 card0-eDP-1 card0-HDMI-A-1 card0-VGA-1 con
       
       <guid>https://www.cyphercat.eu/posts/adminsys/deploiement-et-automatisation-avec-ansible-partie-1/</guid>
       <description>Au programme de cette année : l&amp;rsquo;automatisation ! Il existe plusieurs outils connus pour ça, vous en avez sans aucun doute entendu parler si vous êtes adminsys : Puppet, Chef, Salt et le petit dernier : Ansible.
-Ansible a la réputation d&#39;être le plus &amp;ldquo;accessible&amp;rdquo; avec une courbe d&amp;rsquo;apprentissage assez basse. Il peut être pertinent de l&amp;rsquo;utiliser à partir d&amp;rsquo;un seul serveur pour faciliter des déploiements selon les besoins (configuration des outils basique, serveur web, BDD&amp;hellip;).</description>
+Ansible a la réputation d&amp;rsquo;être le plus &amp;ldquo;accessible&amp;rdquo; avec une courbe d&amp;rsquo;apprentissage assez basse. Il peut être pertinent de l&amp;rsquo;utiliser à partir d&amp;rsquo;un seul serveur pour faciliter des déploiements selon les besoins (configuration des outils basique, serveur web, BDD&amp;hellip;).</description>
     </item>
     
     <item>
@@ -92,7 +101,7 @@ On partira aussi du principe que l&amp;rsquo;on n&amp;rsquo;aime pas beaucoup le
       <pubDate>Fri, 17 Jul 2015 12:53:00 +0000</pubDate>
       
       <guid>https://www.cyphercat.eu/posts/adminsys/debug-tls/</guid>
-      <description>Si tu es en pleine session de dé/bug SSL/TLS, cet article peut t&#39;éviter quelques désagréments ;-)
+      <description>Si tu es en pleine session de dé/bug SSL/TLS, cet article peut t&amp;rsquo;éviter quelques désagréments ;-)
 SSL Labs, l&amp;rsquo;incontournable On ne le présente plus, le site de Qualys permet de tester la configuration de son serveur facilement avec une interface web bien faite. Le test permet d&amp;rsquo;avoir un rapport concernant les points suivants :
  Authentification : validité du certificat (nom du site, période de validité&amp;hellip;), présence et validité de la chaîne de certificat (chain) Protocoles diposnibles (SSLv2, SSLv3, TLS 1.</description>
     </item>
@@ -124,7 +133,7 @@ La documentation d&amp;rsquo;apache explique très bien comment est formé une l
       
       <guid>https://www.cyphercat.eu/posts/adminsys/un-peu-plus-de-securite-sous-linux/</guid>
       <description>Au programme de cet article (testé sur Debian Wheezy) :
- Mises à jour : cron-apt et checkrestart Sécurité virus : clamav, malwares maldet, rootkits rkhunter, chkrootkit, lynis vérification de l&amp;rsquo;intégrité des paquets : debsums nettoyage : deborphan, &amp;hellip; backups  IMPORTANT :  la plupart des commandes ci-dessous nécessitent d&#39;être root ou d&amp;rsquo;utiliser la commande sudo, tous ces logiciels ont normalement des logs dans /var/log, et c&amp;rsquo;est TRÈS utile pour trouver pourquoi ça ne marche pas, il faut avoir un logiciel de mail configuré (comme postfix) pour pouvoir envoyer des mails, n&amp;rsquo;oubliez pas de RELANCER le programme après une modification pour la prendre en comptes?</description>
+ Mises à jour : cron-apt et checkrestart Sécurité virus : clamav, malwares maldet, rootkits rkhunter, chkrootkit, lynis vérification de l&amp;rsquo;intégrité des paquets : debsums nettoyage : deborphan, &amp;hellip; backups  IMPORTANT :  la plupart des commandes ci-dessous nécessitent d&amp;rsquo;être root ou d&amp;rsquo;utiliser la commande sudo, tous ces logiciels ont normalement des logs dans /var/log, et c&amp;rsquo;est TRÈS utile pour trouver pourquoi ça ne marche pas, il faut avoir un logiciel de mail configuré (comme postfix) pour pouvoir envoyer des mails, n&amp;rsquo;oubliez pas de RELANCER le programme après une modification pour la prendre en comptes?</description>
     </item>
     
     <item>

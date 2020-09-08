@@ -10,13 +10,14 @@
 <meta itemprop="name" content="DIE SSLv3, DIE!">
 <meta itemprop="description" content="Vous avez sans doute vu passer la faille concernant le protocole SSLv3 trouvée par une équipe de Google et annoncée dans la nuit du 14 octobre 2014 (POODLE, pour Padding Oracle On Downgraded Legacy Encryption). Cette faille concerne directement le protocole et ne peut pas être corrigée simplement. La solution la plus saine est de désactiver SSLv3 en vérifiant bien que TLSv1.0, TLSv1.1 et TLSv1.2 fonctionnent.
  Annonce de Google sur : googleonlinesecurity.">
-<meta itemprop="datePublished" content="2014-10-15T15:35:00&#43;00:00" />
-<meta itemprop="dateModified" content="2014-10-15T15:35:00&#43;00:00" />
+<meta itemprop="datePublished" content="2014-10-15T15:35:00+00:00" />
+<meta itemprop="dateModified" content="2014-10-15T15:35:00+00:00" />
 <meta itemprop="wordCount" content="663">
 
 
 
-<meta itemprop="keywords" content="ssl,adminsys," /><meta property="og:title" content="DIE SSLv3, DIE!" />
+<meta itemprop="keywords" content="ssl,adminsys," />
+<meta property="og:title" content="DIE SSLv3, DIE!" />
 <meta property="og:description" content="Vous avez sans doute vu passer la faille concernant le protocole SSLv3 trouvée par une équipe de Google et annoncée dans la nuit du 14 octobre 2014 (POODLE, pour Padding Oracle On Downgraded Legacy Encryption). Cette faille concerne directement le protocole et ne peut pas être corrigée simplement. La solution la plus saine est de désactiver SSLv3 en vérifiant bien que TLSv1.0, TLSv1.1 et TLSv1.2 fonctionnent.
  Annonce de Google sur : googleonlinesecurity." />
 <meta property="og:type" content="article" />
@@ -101,7 +102,7 @@
 <h4 id="configuration-a-hrefhttpshttpdapacheorgdocs22modmod_sslhtmlsslprotocolapachea-avec-openssl">Configuration <!-- raw HTML omitted -->Apache<!-- raw HTML omitted --> avec OpenSSL<a href="#configuration-a-hrefhttpshttpdapacheorgdocs22modmod_sslhtmlsslprotocolapachea-avec-openssl" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
 <pre><code>SSLProtocol All -SSLv2 -SSLv3
 </code></pre>
-<p>Nous vous conseillons grandement d'éditer le fichier <!-- raw HTML omitted -->/etc/apache2/mods-enabled/ssl.conf<!-- raw HTML omitted --> pour améliorer la configuration par défaut du serveur en modifiant au minimum la ligne <!-- raw HTML omitted -->SSLProtocol<!-- raw HTML omitted --> pour la suivante : <code>SSLProtocol -SSLv2 -SSLv3</code>.</p>
+<p>Nous vous conseillons grandement d&rsquo;éditer le fichier <!-- raw HTML omitted -->/etc/apache2/mods-enabled/ssl.conf<!-- raw HTML omitted --> pour améliorer la configuration par défaut du serveur en modifiant au minimum la ligne <!-- raw HTML omitted -->SSLProtocol<!-- raw HTML omitted --> pour la suivante : <code>SSLProtocol -SSLv2 -SSLv3</code>.</p>
 <h4 id="configuration-a-hrefhttpnginxorgendocshttpconfiguring_https_servershtmlnginxa-avec-openssl">Configuration <!-- raw HTML omitted -->Nginx<!-- raw HTML omitted --> avec OpenSSL<a href="#configuration-a-hrefhttpnginxorgendocshttpconfiguring_https_servershtmlnginxa-avec-openssl" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
 <pre><code>ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
 </code></pre><h4 id="configuration-a-hrefhttpwiki2dovecotorgssldovecota">Configuration <!-- raw HTML omitted -->Dovecot<!-- raw HTML omitted --><a href="#configuration-a-hrefhttpwiki2dovecotorgssldovecota" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
@@ -121,7 +122,7 @@ smtpd_tls_mandatory_ciphers=high
 <h4 id="configuration-a-hrefhttpscommunityopenvpnnetopenvpnwikihardeningversion6useof--tls-cipheropenvpna">Configuration <!-- raw HTML omitted -->OpenVPN<!-- raw HTML omitted --><a href="#configuration-a-hrefhttpscommunityopenvpnnetopenvpnwikihardeningversion6useof--tls-cipheropenvpna" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
 <p>Pour améliorer la sécurité d&rsquo;OpenVPN, se référer à l&rsquo;article <!-- raw HTML omitted -->Hardening OpenVPN<!-- raw HTML omitted --></p>
 <p>###Comment je peux tester ma configuration ?</p>
-<p>Sur le plan général, je vous conseille aussi le très bon &ldquo;<!-- raw HTML omitted -->Applied crypto hardening<!-- raw HTML omitted -->&rdquo; qui ne demande qu'à être améliorer. Tout comme <a href="http://jeveuxhttps.fr/">JeveuxHTTPS.fr</a>. Vous pouvez tester votre configuration avec le très, très bon <!-- raw HTML omitted -->SSLLabs.com<!-- raw HTML omitted -->, ou encore avec les commandes suivantes dans un terminal :</p>
+<p>Sur le plan général, je vous conseille aussi le très bon &ldquo;<!-- raw HTML omitted -->Applied crypto hardening<!-- raw HTML omitted -->&rdquo; qui ne demande qu&rsquo;à être améliorer. Tout comme <a href="http://jeveuxhttps.fr/">JeveuxHTTPS.fr</a>. Vous pouvez tester votre configuration avec le très, très bon <!-- raw HTML omitted -->SSLLabs.com<!-- raw HTML omitted -->, ou encore avec les commandes suivantes dans un terminal :</p>
 <h4 id="avec-openssl">Avec OpenSSL<a href="#avec-openssl" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
 <p>Avec la commande <!-- raw HTML omitted -->OpenSSL s_client<!-- raw HTML omitted -->:</p>
 <pre><code>openssl s_client -connect HOST:PORT OPTION

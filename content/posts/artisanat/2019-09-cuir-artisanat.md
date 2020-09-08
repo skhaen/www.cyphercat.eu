@@ -10,7 +10,13 @@ title = "[cuir] Par où commencer ?"
 
 +++
 
-> Dernière édition : 2020-02-07
+Mise à jour :
+
+* 2020-09-08 : ajout de plusieurs magasins
+* 2020-02-07
+
+
+# Par où commencer ?
 
 ...quand on veut travailler le cuir ? C'est une très bonne question (merci de l'avoir posé), et donc, histoire de vous faciliter la vie, vous trouverez ci-dessous quelques pistes qui devraient normalement vous aider.
 
@@ -47,20 +53,26 @@ Pour le moment, j'ai fait quasiment tout mes achats chez [decocuir.com](https://
 
 > Astuce : si vous vous demandez si il nécessaire d'acheter quelque chose mais que vous le voyez dans absolument aucune vidéo, c'est que la réponse est sans doute non (le contraire n'est par contre pas forcément vrai) ;-)
 
-## Sites
+## Sites / magasins
 
 ### Pour la France
 
 * [decocuir.com](https://www.decocuir.com)
 * [crea-cuir.com](https://crea-cuir.com/)
 * [cuirtextilecrea.com](https://www.cuirtextilecrea.com/)
+* [cuirschadefaux.com](https://cuirschadefaux.com)
+* [esprit-cuir.fr](https://www.esprit-cuir.fr/boutique/)
 * [mando.fr](https://mando.fr/) (plutôt pour les entreprises)
+* [poursin-paris.fr](https://www.instagram.com/maisonpoursin/) (bouclerie depuis 1830, magasin à paris)
+* [fages-aiglon.fr](https://www.fages-aiglon.fr/)
+* [bouton-de-col.fr](https://www.bouton-de-col.fr/)
 
 ### Ailleurs 
 
 Faites attention, en dehors de l'Europe il y aura 20% de taxes lors du passage de douane)
 
 * [rmleathersupply.com](https://www.rmleathersupply.com/) (USA)
+* [buckleguy.com](https://www.buckleguy.com) (USA, pas mal pour de la bouclerie)
 
 ## Quoi acheter ?
 

@@ -9,19 +9,20 @@
 	<meta name="msapplication-TileColor" content="#494f5c">
 <meta itemprop="name" content="Comment se débarrasser de son écran fantôme">
 <meta itemprop="description" content="Note à moi même pour ne pas perdre une heure à cause de cette saloperie si ça recommence :
-Pour une Debian / Ubuntu et un #### d&#39;écran VGA fantôme :
+Pour une Debian / Ubuntu et un #### d&rsquo;écran VGA fantôme :
 Éditer /etc/default/grub pour y ajouter video=VGA-1:d entre les quotes de GRUB_CMDLINE_LINUX.
 GRUB_CMDLINE_LINUX=&quot;video=VGA-1:d&quot; Si vous avez un doute, se référer à xrandr -q ou à ls /sys/class/drm pour la liste de vos périphériques. Exemple sur mon ordi :
 ls /sys/class/drm -1 card0 card0-DP-1 card0-eDP-1 card0-HDMI-A-1 card0-VGA-1 controlD64 renderD128 On retrouve donc cette $$$##$$ de VGA fantôme (card0-VGA-1), on enlève le début, on garde la partie qui nous intéresse (VGA-1) et on sait quoi rajouter à sa config.">
-<meta itemprop="datePublished" content="2017-01-20T19:37:30&#43;00:00" />
-<meta itemprop="dateModified" content="2017-01-20T19:37:30&#43;00:00" />
+<meta itemprop="datePublished" content="2017-01-20T19:37:30+00:00" />
+<meta itemprop="dateModified" content="2017-01-20T19:37:30+00:00" />
 <meta itemprop="wordCount" content="114">
 
 
 
-<meta itemprop="keywords" content="adminsys," /><meta property="og:title" content="Comment se débarrasser de son écran fantôme" />
+<meta itemprop="keywords" content="adminsys," />
+<meta property="og:title" content="Comment se débarrasser de son écran fantôme" />
 <meta property="og:description" content="Note à moi même pour ne pas perdre une heure à cause de cette saloperie si ça recommence :
-Pour une Debian / Ubuntu et un #### d&#39;écran VGA fantôme :
+Pour une Debian / Ubuntu et un #### d&rsquo;écran VGA fantôme :
 Éditer /etc/default/grub pour y ajouter video=VGA-1:d entre les quotes de GRUB_CMDLINE_LINUX.
 GRUB_CMDLINE_LINUX=&quot;video=VGA-1:d&quot; Si vous avez un doute, se référer à xrandr -q ou à ls /sys/class/drm pour la liste de vos périphériques. Exemple sur mon ordi :
 ls /sys/class/drm -1 card0 card0-DP-1 card0-eDP-1 card0-HDMI-A-1 card0-VGA-1 controlD64 renderD128 On retrouve donc cette $$$##$$ de VGA fantôme (card0-VGA-1), on enlève le début, on garde la partie qui nous intéresse (VGA-1) et on sait quoi rajouter à sa config." />
@@ -32,7 +33,7 @@ ls /sys/class/drm -1 card0 card0-DP-1 card0-eDP-1 card0-HDMI-A-1 card0-VGA-1 con
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Comment se débarrasser de son écran fantôme"/>
 <meta name="twitter:description" content="Note à moi même pour ne pas perdre une heure à cause de cette saloperie si ça recommence :
-Pour une Debian / Ubuntu et un #### d&#39;écran VGA fantôme :
+Pour une Debian / Ubuntu et un #### d&rsquo;écran VGA fantôme :
 Éditer /etc/default/grub pour y ajouter video=VGA-1:d entre les quotes de GRUB_CMDLINE_LINUX.
 GRUB_CMDLINE_LINUX=&quot;video=VGA-1:d&quot; Si vous avez un doute, se référer à xrandr -q ou à ls /sys/class/drm pour la liste de vos périphériques. Exemple sur mon ordi :
 ls /sys/class/drm -1 card0 card0-DP-1 card0-eDP-1 card0-HDMI-A-1 card0-VGA-1 controlD64 renderD128 On retrouve donc cette $$$##$$ de VGA fantôme (card0-VGA-1), on enlève le début, on garde la partie qui nous intéresse (VGA-1) et on sait quoi rajouter à sa config."/>
@@ -85,7 +86,7 @@ ls /sys/class/drm -1 card0 card0-DP-1 card0-eDP-1 card0-HDMI-A-1 card0-VGA-1 con
 			</header>
 			<div class="content">
 				<p>Note à moi même pour ne pas perdre une heure à cause de cette saloperie si ça recommence :</p>
-<p>Pour une Debian / Ubuntu et un #### d'écran VGA fantôme :</p>
+<p>Pour une Debian / Ubuntu et un #### d&rsquo;écran VGA fantôme :</p>
 <p>Éditer  <code>/etc/default/grub</code> pour y ajouter <code>video=VGA-1:d</code> entre les quotes de   <code>GRUB_CMDLINE_LINUX</code>.</p>
 <pre><code>GRUB_CMDLINE_LINUX=&quot;video=VGA-1:d&quot;
 </code></pre><p>Si vous avez un doute, se référer à <code>xrandr -q</code> ou à <code>ls /sys/class/drm</code> pour la liste de vos périphériques. Exemple sur mon ordi :</p>
